@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProfitPlay", "MainForm_Client\ProfitPlay.vbproj", "{E348CF1E-C09E-4E62-881D-1B493DAA30BE}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProfitPlay_DB", "ProfitPlay_DB\ProfitPlay_DB.vbproj", "{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E348CF1E-C09E-4E62-881D-1B493DAA30BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E348CF1E-C09E-4E62-881D-1B493DAA30BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E348CF1E-C09E-4E62-881D-1B493DAA30BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E348CF1E-C09E-4E62-881D-1B493DAA30BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
