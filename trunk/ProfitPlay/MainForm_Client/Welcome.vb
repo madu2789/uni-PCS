@@ -1,12 +1,12 @@
 ﻿Public Class Welcome
 
+    Dim ws As New Profit_WS.Service1SoapClient
+
     Dim estat As Boolean = True 'indica qui accedeix al sistema:
     'true vol dir mode client
     'false mode empleat
 
     Private Sub Welcome_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-
 
 
     End Sub
@@ -32,6 +32,7 @@
             End If
         Else
             'empleat: accedeix a la base de dades per log
+            resultat.Text = CInt(ws.MultiplicaNumeros(txtb_login.Text, txtb_password.Text))
 
         End If
 
