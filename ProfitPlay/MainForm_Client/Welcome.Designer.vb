@@ -31,6 +31,7 @@ Partial Class Welcome
         Me.lbl_login = New System.Windows.Forms.Label
         Me.lbl_password = New System.Windows.Forms.Label
         Me.gpb_client = New System.Windows.Forms.GroupBox
+        Me.num_comensals = New System.Windows.Forms.NumericUpDown
         Me.Label4 = New System.Windows.Forms.Label
         Me.lbl_nombre_mesa = New System.Windows.Forms.Label
         Me.txtb_nomTaula = New System.Windows.Forms.TextBox
@@ -38,13 +39,13 @@ Partial Class Welcome
         Me.lbl_bienvenidos = New System.Windows.Forms.Label
         Me.pcb_client = New System.Windows.Forms.PictureBox
         Me.pcb_empleat = New System.Windows.Forms.PictureBox
-        Me.num_comensals = New System.Windows.Forms.NumericUpDown
         Me.Button1 = New System.Windows.Forms.Button
+        Me.resultat = New System.Windows.Forms.Label
         Me.gpb_empleat.SuspendLayout()
         Me.gpb_client.SuspendLayout()
+        CType(Me.num_comensals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcb_client, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcb_empleat, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_comensals, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_welcome
@@ -125,6 +126,13 @@ Partial Class Welcome
         Me.gpb_client.TabStop = False
         Me.gpb_client.Text = "Client"
         '
+        'num_comensals
+        '
+        Me.num_comensals.Location = New System.Drawing.Point(160, 77)
+        Me.num_comensals.Name = "num_comensals"
+        Me.num_comensals.Size = New System.Drawing.Size(61, 20)
+        Me.num_comensals.TabIndex = 6
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -191,13 +199,6 @@ Partial Class Welcome
         Me.pcb_empleat.TabStop = False
         Me.pcb_empleat.Visible = False
         '
-        'num_comensals
-        '
-        Me.num_comensals.Location = New System.Drawing.Point(160, 77)
-        Me.num_comensals.Name = "num_comensals"
-        Me.num_comensals.Size = New System.Drawing.Size(61, 20)
-        Me.num_comensals.TabIndex = 6
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(410, 286)
@@ -207,14 +208,23 @@ Partial Class Welcome
         Me.Button1.Text = "canvia"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'resultat
+        '
+        Me.resultat.AutoSize = True
+        Me.resultat.Location = New System.Drawing.Point(410, 350)
+        Me.resultat.Name = "resultat"
+        Me.resultat.Size = New System.Drawing.Size(39, 13)
+        Me.resultat.TabIndex = 10
+        Me.resultat.Text = "Label1"
+        '
         'Welcome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(718, 405)
+        Me.Controls.Add(Me.resultat)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.pcb_client)
         Me.Controls.Add(Me.lbl_bienvenidos)
         Me.Controls.Add(Me.lbl_benvinguts)
         Me.Controls.Add(Me.gpb_client)
@@ -222,15 +232,16 @@ Partial Class Welcome
         Me.Controls.Add(Me.btn_enter)
         Me.Controls.Add(Me.lbl_welcome)
         Me.Controls.Add(Me.pcb_empleat)
+        Me.Controls.Add(Me.pcb_client)
         Me.Name = "Welcome"
         Me.Text = "Benvinguda"
         Me.gpb_empleat.ResumeLayout(False)
         Me.gpb_empleat.PerformLayout()
         Me.gpb_client.ResumeLayout(False)
         Me.gpb_client.PerformLayout()
+        CType(Me.num_comensals, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcb_client, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcb_empleat, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_comensals, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,5 +263,6 @@ Partial Class Welcome
     Friend WithEvents pcb_empleat As System.Windows.Forms.PictureBox
     Friend WithEvents num_comensals As System.Windows.Forms.NumericUpDown
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents resultat As System.Windows.Forms.Label
 
 End Class
