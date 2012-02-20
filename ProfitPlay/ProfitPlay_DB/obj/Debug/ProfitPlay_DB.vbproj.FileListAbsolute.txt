@@ -1,0 +1,10 @@
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Debug\ProfitPlay_DB.exe
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Debug\ProfitPlay_DB.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Debug\ProfitPlay_DB.xml
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.ControlDB.resources
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.Resources.resources
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.vbproj.GenerateResource.Cache
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.exe
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.xml
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.pdb
