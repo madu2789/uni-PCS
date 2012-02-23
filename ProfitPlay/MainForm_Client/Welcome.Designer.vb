@@ -207,6 +207,7 @@ Partial Class Welcome
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "canvia"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'resultat
         '
