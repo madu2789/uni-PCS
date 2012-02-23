@@ -73,17 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="BaseDadesClasses\admin.vb" />
-    <Compile Include="BaseDadesClasses\alergias.vb" />
-    <Compile Include="BaseDadesClasses\carta.vb" />
-    <Compile Include="BaseDadesClasses\empleado.vb" />
-    <Compile Include="BaseDadesClasses\ingrediente.vb" />
-    <Compile Include="BaseDadesClasses\mesa.vb" />
-    <Compile Include="BaseDadesClasses\pedido.vb" />
-    <Compile Include="BaseDadesClasses\persona.vb" />
-    <Compile Include="BaseDadesClasses\producto.vb" />
-    <Compile Include="BaseDadesClasses\producto_ingrediente.vb" />
-    <Compile Include="BaseDadesClasses\usuario.vb" />
     <Compile Include="Client_Anula.Designer.vb">
       <DependentUpon>Client_Anula.vb</DependentUpon>
     </Compile>
