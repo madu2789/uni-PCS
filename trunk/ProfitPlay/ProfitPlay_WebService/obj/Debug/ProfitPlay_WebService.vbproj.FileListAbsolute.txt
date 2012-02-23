@@ -16,3 +16,12 @@ C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.dll
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.xml
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.pdb
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.dll
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.pdb
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.xml
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.Resources.resources
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.vbproj.GenerateResource.Cache
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.dll
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.xml
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Debug\ProfitPlay_WebService.pdb

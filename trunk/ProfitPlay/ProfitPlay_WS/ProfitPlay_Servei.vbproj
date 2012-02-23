@@ -108,6 +108,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProfitPlay_DB\ProfitPlay_DB.vbproj">
+      <Project>{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}</Project>
+      <Name>ProfitPlay_DB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
