@@ -1,0 +1,13 @@
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\bin\Debug\profit_play.accdb
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\bin\Debug\ProfitPlay_WS.exe
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\bin\Debug\ProfitPlay_WS.pdb
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\bin\Debug\ProfitPlay_WS.xml
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\bin\Debug\ProfitPlay_DB.exe
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\bin\Debug\ProfitPlay_DB.pdb
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\bin\Debug\ProfitPlay_DB.xml
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\obj\Debug\ProfitPlay_WS.Resources.resources
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\obj\Debug\ProfitPlay_Servei.vbproj.GenerateResource.Cache
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\obj\Debug\ProfitPlay_WS.exe
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\obj\Debug\ProfitPlay_WS.xml
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WS\obj\Debug\ProfitPlay_WS.pdb
