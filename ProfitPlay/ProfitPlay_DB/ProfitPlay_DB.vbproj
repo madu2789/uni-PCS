@@ -100,10 +100,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="profit_playDataSet1.Designer.vb">
+    <Compile Include="ProvaDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
+      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -128,16 +128,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="profit_playDataSet1.xsc">
-      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
+    <None Include="ProvaDataSet.xsc">
+      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
     </None>
-    <None Include="profit_playDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>profit_playDataSet1.Designer.vb</LastGenOutput>
+    <None Include="ProvaDataSet.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProvaDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="profit_playDataSet1.xss">
-      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
+    <None Include="ProvaDataSet.xss">
+      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

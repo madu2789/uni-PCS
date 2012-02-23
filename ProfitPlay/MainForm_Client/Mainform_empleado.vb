@@ -1,5 +1,10 @@
 ﻿Public Class Mainform_empleado
 
+    Public Sub New(ByVal nom As String)
+        InitializeComponent()
+        lbl_taula.Text = nom
+    End Sub
+
     Private Sub btn_gest_users_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_users.Click
         Me.Hide()
         Emp_Gestio_usuaris.Show()

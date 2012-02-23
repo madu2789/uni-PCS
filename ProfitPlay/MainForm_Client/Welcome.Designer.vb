@@ -39,8 +39,6 @@ Partial Class Welcome
         Me.lbl_bienvenidos = New System.Windows.Forms.Label
         Me.pcb_client = New System.Windows.Forms.PictureBox
         Me.pcb_empleat = New System.Windows.Forms.PictureBox
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.resultat = New System.Windows.Forms.Label
         Me.gpb_empleat.SuspendLayout()
         Me.gpb_client.SuspendLayout()
         CType(Me.num_comensals, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -199,33 +197,12 @@ Partial Class Welcome
         Me.pcb_empleat.TabStop = False
         Me.pcb_empleat.Visible = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(410, 286)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "canvia"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
-        '
-        'resultat
-        '
-        Me.resultat.AutoSize = True
-        Me.resultat.Location = New System.Drawing.Point(410, 350)
-        Me.resultat.Name = "resultat"
-        Me.resultat.Size = New System.Drawing.Size(39, 13)
-        Me.resultat.TabIndex = 10
-        Me.resultat.Text = "Label1"
-        '
         'Welcome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(718, 405)
-        Me.Controls.Add(Me.resultat)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_bienvenidos)
         Me.Controls.Add(Me.lbl_benvinguts)
         Me.Controls.Add(Me.gpb_client)
@@ -263,7 +240,5 @@ Partial Class Welcome
     Friend WithEvents pcb_client As System.Windows.Forms.PictureBox
     Friend WithEvents pcb_empleat As System.Windows.Forms.PictureBox
     Friend WithEvents num_comensals As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents resultat As System.Windows.Forms.Label
 
 End Class

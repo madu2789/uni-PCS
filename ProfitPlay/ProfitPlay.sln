@@ -4,11 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProfitPlay", "MainForm_Client\ProfitPlay.vbproj", "{E348CF1E-C09E-4E62-881D-1B493DAA30BE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{01F84002-47B3-483A-842D-96C70BD8342B} = {01F84002-47B3-483A-842D-96C70BD8342B}
+		{2EA9C2A5-D961-431B-9AFA-794B000BC8BC} = {2EA9C2A5-D961-431B-9AFA-794B000BC8BC}
 	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProfitPlay_DB", "ProfitPlay_DB\ProfitPlay_DB.vbproj", "{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProfitPlay_Servei", "ProfitPlay_WS\ProfitPlay_Servei.vbproj", "{2EA9C2A5-D961-431B-9AFA-794B000BC8BC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{01F84002-47B3-483A-842D-96C70BD8342B} = {01F84002-47B3-483A-842D-96C70BD8342B}
+		{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B} = {44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProfitPlay_WebService", "ProfitPlay_WebService\ProfitPlay_WebService.vbproj", "{01F84002-47B3-483A-842D-96C70BD8342B}"
 	ProjectSection(ProjectDependencies) = postProject
