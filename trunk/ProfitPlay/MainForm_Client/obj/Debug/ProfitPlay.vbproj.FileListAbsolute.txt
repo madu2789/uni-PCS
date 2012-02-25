@@ -92,3 +92,9 @@ C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\P
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_WS.xml
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_DB.pdb
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_DB.xml
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_WS.exe
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_DB.exe
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_WS.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_WS.xml
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_DB.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\ProfitPlay_DB.xml
