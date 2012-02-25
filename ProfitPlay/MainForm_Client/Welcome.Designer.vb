@@ -130,6 +130,7 @@ Partial Class Welcome
         Me.num_comensals.Name = "num_comensals"
         Me.num_comensals.Size = New System.Drawing.Size(61, 20)
         Me.num_comensals.TabIndex = 6
+        Me.num_comensals.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label4
         '

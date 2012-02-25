@@ -19,3 +19,4 @@ C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\Pro
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.exe
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.xml
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Debug\ProfitPlay_DB.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Debug\profit_play.accdb

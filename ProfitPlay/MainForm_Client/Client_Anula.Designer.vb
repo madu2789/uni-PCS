@@ -28,9 +28,6 @@ Partial Class Client_Anula
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripDropDownButton
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton
-        Me.EliminarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.lbl_anular = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
@@ -41,6 +38,7 @@ Partial Class Client_Anula
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.btn_estat = New System.Windows.Forms.Button
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton
         Me.grb_anular.SuspendLayout()
         CType(Me.pcb_anular, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
@@ -105,34 +103,12 @@ Partial Class Client_Anula
         '
         'ToolStripButton2
         '
-        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem})
         Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
         Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton2.Name = "ToolStripButton2"
         Me.ToolStripButton2.Size = New System.Drawing.Size(168, 20)
         Me.ToolStripButton2.Text = "Espaguetis"
         Me.ToolStripButton2.ToolTipText = "Espaguetis" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ingredients"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem1})
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(168, 20)
-        Me.ToolStripButton1.Text = "Macarrons"
-        '
-        'EliminarToolStripMenuItem1
-        '
-        Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
-        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem1.Text = "Eliminar"
         '
         'lbl_anular
         '
@@ -240,6 +216,14 @@ Partial Class Client_Anula
         Me.btn_estat.TabIndex = 1
         Me.btn_estat.UseVisualStyleBackColor = True
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(168, 20)
+        Me.ToolStripButton1.Text = "Macarrons"
+        '
         'Client_Anula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -271,9 +255,6 @@ Partial Class Client_Anula
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripDropDownButton
-    Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripDropDownButton
-    Friend WithEvents EliminarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents lbl_anular As System.Windows.Forms.Label
     Friend WithEvents pnl_plats As System.Windows.Forms.Panel
     Friend WithEvents btn_menu_anular As System.Windows.Forms.Button
@@ -284,4 +265,5 @@ Partial Class Client_Anula
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents lbl_punts As System.Windows.Forms.Label
     Friend WithEvents btn_estat As System.Windows.Forms.Button
+    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripDropDownButton
 End Class
