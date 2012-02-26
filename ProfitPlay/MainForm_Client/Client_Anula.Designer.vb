@@ -26,8 +26,7 @@ Partial Class Client_Anula
         Me.grb_anular = New System.Windows.Forms.GroupBox
         Me.pcb_anular = New System.Windows.Forms.PictureBox
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripDropDownButton
+        Me.llista_productes_eliminar = New System.Windows.Forms.ToolStrip
         Me.lbl_anular = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
@@ -38,12 +37,10 @@ Partial Class Client_Anula
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.btn_estat = New System.Windows.Forms.Button
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton
         Me.grb_anular.SuspendLayout()
         CType(Me.pcb_anular, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
@@ -76,7 +73,7 @@ Partial Class Client_Anula
         '
         'ToolStripContainer1.ContentPanel
         '
-        Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.ToolStrip1)
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.llista_productes_eliminar)
         Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(170, 178)
         Me.ToolStripContainer1.Location = New System.Drawing.Point(54, 52)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
@@ -88,27 +85,18 @@ Partial Class Client_Anula
         '
         Me.ToolStripContainer1.TopToolStripPanel.Padding = New System.Windows.Forms.Padding(0, 0, 25, 25)
         '
-        'ToolStrip1
+        'llista_productes_eliminar
         '
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ToolStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton2, Me.ToolStripButton1})
-        Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ToolStrip1.Size = New System.Drawing.Size(170, 178)
-        Me.ToolStrip1.TabIndex = 2
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(168, 20)
-        Me.ToolStripButton2.Text = "Espaguetis"
-        Me.ToolStripButton2.ToolTipText = "Espaguetis" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ingredients"
+        Me.llista_productes_eliminar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.llista_productes_eliminar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.llista_productes_eliminar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
+        Me.llista_productes_eliminar.Location = New System.Drawing.Point(0, 0)
+        Me.llista_productes_eliminar.Name = "llista_productes_eliminar"
+        Me.llista_productes_eliminar.Padding = New System.Windows.Forms.Padding(0)
+        Me.llista_productes_eliminar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.llista_productes_eliminar.Size = New System.Drawing.Size(170, 178)
+        Me.llista_productes_eliminar.TabIndex = 2
+        Me.llista_productes_eliminar.Text = "ToolStrip1"
         '
         'lbl_anular
         '
@@ -216,14 +204,6 @@ Partial Class Client_Anula
         Me.btn_estat.TabIndex = 1
         Me.btn_estat.UseVisualStyleBackColor = True
         '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(168, 20)
-        Me.ToolStripButton1.Text = "Macarrons"
-        '
         'Client_Anula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,8 +222,6 @@ Partial Class Client_Anula
         Me.ToolStripContainer1.ContentPanel.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.pnl_plats.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
@@ -253,8 +231,7 @@ Partial Class Client_Anula
     Friend WithEvents grb_anular As System.Windows.Forms.GroupBox
     Friend WithEvents pcb_anular As System.Windows.Forms.PictureBox
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripDropDownButton
+    Friend WithEvents llista_productes_eliminar As System.Windows.Forms.ToolStrip
     Friend WithEvents lbl_anular As System.Windows.Forms.Label
     Friend WithEvents pnl_plats As System.Windows.Forms.Panel
     Friend WithEvents btn_menu_anular As System.Windows.Forms.Button
@@ -265,5 +242,4 @@ Partial Class Client_Anula
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents lbl_punts As System.Windows.Forms.Label
     Friend WithEvents btn_estat As System.Windows.Forms.Button
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripDropDownButton
 End Class

@@ -1,9 +1,23 @@
 ﻿Public Class Client_Anula
 
-    Dim element As ToolStripItem
-    Private Sub addItem(ByVal cadena As String)
+    Dim element As New ToolStripButton()
 
-        ToolStrip1.Items.Add(cadena)
+    Private Sub setDefaults(ByVal e As ToolStripButton)
+
+        Dim padding As PaddingConverter = New PaddingConverter
+
+        e.Alignment = ToolStripItemAlignment.Left
+        e.AutoSize = True
+        e.AutoToolTip = True
+        e.BackColor = Color.LightBlue
+        e.Image = System.Drawing.SystemIcons.Application.ToBitmap
+        e.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText
+        e.DoubleClickEnabled = False
+        e.ImageAlign = ContentAlignment.MiddleCenter
+        e.ImageScaling = ToolStripItemImageScaling.SizeToFit
+        e.Margin = New System.Windows.Forms.Padding(0, 0, 3, 0)
+        e.Width = 168
+        e.Height = 20
 
     End Sub
 
@@ -25,29 +39,23 @@
         Client_Pago.Show()
         Me.Hide()
     End Sub
-
-    Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
-
-    End Sub
-
-    Private Sub grb_anular_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles grb_anular.Enter
-
-    End Sub
    
     Private Sub Client_Anula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Dim a As PaddingConverter = New PaddingConverter()
         Dim i As Integer = 0
-        Dim element_list As ToolStripItemCollection = ToolStrip1.Items
+        Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items
         For i = 0 To element_list.Count
 
-            MsgBox("Nom: " & element_list.Item(i).Text, MsgBoxStyle.Critical)
+            MsgBox("Padding: " & a.ConvertFromString(element_list.Item(i).Padding.ToString), MsgBoxStyle.Critical)
 
         Next
     End Sub
 
-    Private Sub DeleteItem(ByVal sender As Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
+    Private Sub DeleteItem(ByVal sender As Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
 
         Dim result = MsgBox("Realment vol eliminar " & e.ClickedItem.Text & "?", MsgBoxStyle.OkCancel, "Està segur?")
-        Dim element_list As ToolStripItemCollection = ToolStrip1.Items
+        Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items
 
         If result = MsgBoxResult.Ok Then
 
@@ -62,9 +70,36 @@
 
             Next
 
-            ToolStrip1.Refresh()
+            llista_productes_eliminar.Refresh()
 
         End If
+
+    End Sub
+
+    Private Sub insertToolStripItem()
+
+        Dim input = InputBox("Que vols afegir?", "Afegir", "")
+        Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items
+        Dim e As ToolStripButton = New ToolStripButton()
+
+        Try
+
+            e.Text = input
+            setDefaults(e)
+            element_list.Insert(element_list.Count, e)
+            llista_productes_eliminar.Refresh()
+
+        Catch ex As Exception
+
+            MsgBox("El contador val " & element_list.Count, MsgBoxStyle.Critical)
+
+        End Try
+        
+    End Sub
+
+    Private Sub pcb_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pcb_anular.Click
+
+        insertToolStripItem()
 
     End Sub
 End Class
