@@ -47,7 +47,7 @@
         Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items
         For i = 0 To element_list.Count
 
-            MsgBox("Padding: " & a.ConvertFromString(element_list.Item(i).Padding.ToString), MsgBoxStyle.Critical)
+            'MsgBox("Padding: " & a.ConvertFromString(element_list.Item(i).Padding.ToString), MsgBoxStyle.Critical)
 
         Next
     End Sub
