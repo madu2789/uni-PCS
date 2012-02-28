@@ -1,10 +1,15 @@
 ﻿Public Class Mainform_client
 
-    Public Sub New(ByVal nom As String)
+    Public nom_taula As String
+    Public punts_taula As String
+
+    Public Sub New(ByVal nom As String, ByVal punts As String)
         InitializeComponent()
         lbl_taula.Text = nom
+        lbl_punts.Text = punts
+        nom_taula = nom
+        punts_taula = punts
     End Sub
-
 
     Private Sub Mainform_client_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -33,4 +38,14 @@
         Client_Pago.Show()
         Me.Hide()
     End Sub
+
+    Public Function GetNom() As String
+        Return nom_taula
+    End Function
+
+    Public Function GetPunts() As String
+        Return punts_taula
+    End Function
+
+
 End Class
