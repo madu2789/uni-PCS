@@ -1,5 +1,10 @@
 ﻿Public Class Client_Pago
 
+    Private Sub Client_Pago_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
+    End Sub
+
     Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
         Client_Anula.Show()
         Me.Hide()
@@ -19,4 +24,5 @@
         Me.Hide()
     End Sub
 
+   
 End Class
