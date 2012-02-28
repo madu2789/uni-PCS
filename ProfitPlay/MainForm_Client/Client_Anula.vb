@@ -42,6 +42,9 @@
    
     Private Sub Client_Anula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
+
         Dim a As PaddingConverter = New PaddingConverter()
         Dim i As Integer = 0
         Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items

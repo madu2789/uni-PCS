@@ -1,12 +1,12 @@
 ﻿Public Class Mainform_client
 
-    Public nom_taula As String
-    Public punts_taula As String
+    Public Shared nom_taula As String
+    Public Shared punts_taula As String
 
     Public Sub New(ByVal nom As String, ByVal punts As String)
         InitializeComponent()
         lbl_taula.Text = nom
-        lbl_punts.Text = punts
+        lbl_punts.Text = lbl_punts.Text + punts
         nom_taula = nom
         punts_taula = punts
     End Sub

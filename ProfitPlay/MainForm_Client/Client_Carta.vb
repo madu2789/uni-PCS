@@ -1,10 +1,8 @@
 ﻿Public Class Client_Carta
 
-    Dim main As Mainform_client
-
     Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        lbl_taula.Text = main.GetNom()
-        lbl_punts.Text = main.GetPunts()
+        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
     End Sub
 
     Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click

@@ -15,4 +15,10 @@ Public Class Service1
         Return a * b
     End Function
 
+    <WebMethod()> _
+    Public Function LogEmpleat(ByVal a As String, ByVal b As String) As Boolean
+
+        Return True
+    End Function
+
 End Class

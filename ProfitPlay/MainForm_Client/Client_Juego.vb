@@ -1,5 +1,10 @@
 ﻿Public Class Client_Juego
 
+    Private Sub Client_Juego_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
+    End Sub
+
     Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
         Client_Anula.Show()
         Me.Hide()
@@ -23,5 +28,4 @@
         grpb_menu_joc.Show()
     End Sub
 
-   
 End Class

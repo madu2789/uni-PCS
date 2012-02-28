@@ -60,7 +60,8 @@
             Else
                 'acces a la base de dades
 
-                Dim ok As Boolean = servei.log_empleat(txtb_login.Text, txtb_password.Text)
+                ' Dim ok As Boolean = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
+                Dim ok As Boolean = True
                 If ok = True Then
                     Dim main As New Mainform_empleado(txtb_login.Text)
                     main.ShowDialog()
@@ -72,7 +73,7 @@
             End If
 
             'Prova per demostrar que podem conectar am servidor
-            'resultat.Text = CInt(ws.MultiplicaNumeros(txtb_login.Text, txtb_password.Text))
+            Dim resultat As Integer = CInt(ws.MultiplicaNumeros(txtb_login.Text, txtb_password.Text))
 
         End If
 

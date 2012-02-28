@@ -58,9 +58,9 @@ Partial Class Client_Pago
         Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.Location = New System.Drawing.Point(315, 16)
         Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(115, 24)
+        Me.lbl_punts.Size = New System.Drawing.Size(76, 24)
         Me.lbl_punts.TabIndex = 21
-        Me.lbl_punts.Text = "Punts: XXX"
+        Me.lbl_punts.Text = "Punts:  "
         '
         'btn_mixt
         '
@@ -207,7 +207,7 @@ Partial Class Client_Pago
         Me.pnl_estat.Size = New System.Drawing.Size(657, 64)
         Me.pnl_estat.TabIndex = 30
         '
-        'Pago
+        'Client_Pago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -221,7 +221,7 @@ Partial Class Client_Pago
         Me.Controls.Add(Me.btn_mixt)
         Me.Controls.Add(Me.btn_efectiu)
         Me.Controls.Add(Me.btn_tc)
-        Me.Name = "Pago"
+        Me.Name = "Client_Pago"
         Me.Text = "Pago"
         Me.pnl_menu.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)
