@@ -1,7 +1,7 @@
-﻿
-Public Class Welcome
+﻿Public Class Welcome
 
     Dim ws As New Profit_WS.Service1SoapClient
+    Dim servei As New ProfitPlay_WS.WS
     Dim estat As Boolean = True 'indica qui accedeix al sistema:
     'true vol dir mode client
     'false mode empleat
@@ -44,11 +44,11 @@ Public Class Welcome
             Else
                 If txtb_nomTaula.Text Is Nothing Then
                     'constructor amb nom propi (nostre)!
-                    Dim main As New Mainform_client(txtb_nomTaula.Text)
+                    Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
                     main.ShowDialog()
                 Else
                     'constructor amb nom demanat!
-                    Dim main As New Mainform_client(txtb_nomTaula.Text)
+                    Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
                     main.ShowDialog()
                 End If
                 Me.Hide()
@@ -59,7 +59,7 @@ Public Class Welcome
                 MsgBox("error introdueix dades!")
             Else
                 'acces a la base de dades
-                Dim servei As New ProfitPlay_WS.WS
+
                 Dim ok As Boolean = servei.log_empleat(txtb_login.Text, txtb_password.Text)
                 If ok = True Then
                     Dim main As New Mainform_empleado(txtb_login.Text)
