@@ -9,10 +9,17 @@ Imports System.ComponentModel
 <ToolboxItem(False)> _
 Public Class Service1
     Inherits System.Web.Services.WebService
+    Dim carta As New Carta
+
 
     <WebMethod()> _
     Public Function MultiplicaNumeros(ByVal a As Integer, ByVal b As Integer) As Integer
         Return a * b
+    End Function
+
+    <WebMethod()> _
+   Public Function donamDades(ByVal a As Integer, ByVal b As Integer) As String
+        Return carta.donamDades
     End Function
 
     <WebMethod()> _

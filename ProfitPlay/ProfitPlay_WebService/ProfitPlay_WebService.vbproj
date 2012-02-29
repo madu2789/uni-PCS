@@ -85,6 +85,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carta.vb" />
     <Compile Include="Service1.asmx.vb">
       <DependentUpon>Service1.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -123,6 +124,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProfitPlay_DB\ProfitPlay_DB.vbproj">
+      <Project>{44A54BA0-0A5B-4681-9B9F-1DFB52FE6A5B}</Project>
+      <Name>ProfitPlay_DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

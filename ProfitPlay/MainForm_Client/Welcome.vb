@@ -73,7 +73,7 @@
             End If
 
             'Prova per demostrar que podem conectar am servidor
-            Dim resultat As Integer = CInt(ws.MultiplicaNumeros(txtb_login.Text, txtb_password.Text))
+            ' Dim resultat As Integer = CInt(ws.MultiplicaNumeros(txtb_login.Text, txtb_password.Text))
 
         End If
 

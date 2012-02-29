@@ -105,6 +105,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProvaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProvaDataSet.vb">
+      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ControlDB.resx">
