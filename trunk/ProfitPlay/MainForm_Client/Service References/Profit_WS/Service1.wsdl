@@ -17,6 +17,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="LogEmpleat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="a" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="b" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogEmpleatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogEmpleatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="MultiplicaNumerosSoapIn">
@@ -25,10 +40,20 @@
   <wsdl:message name="MultiplicaNumerosSoapOut">
     <wsdl:part name="parameters" element="tns:MultiplicaNumerosResponse" />
   </wsdl:message>
+  <wsdl:message name="LogEmpleatSoapIn">
+    <wsdl:part name="parameters" element="tns:LogEmpleat" />
+  </wsdl:message>
+  <wsdl:message name="LogEmpleatSoapOut">
+    <wsdl:part name="parameters" element="tns:LogEmpleatResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="MultiplicaNumeros">
       <wsdl:input message="tns:MultiplicaNumerosSoapIn" />
       <wsdl:output message="tns:MultiplicaNumerosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogEmpleat">
+      <wsdl:input message="tns:LogEmpleatSoapIn" />
+      <wsdl:output message="tns:LogEmpleatSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -42,11 +67,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LogEmpleat">
+      <soap:operation soapAction="http://tempuri.org/LogEmpleat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="MultiplicaNumeros">
       <soap12:operation soapAction="http://tempuri.org/MultiplicaNumeros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogEmpleat">
+      <soap12:operation soapAction="http://tempuri.org/LogEmpleat" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

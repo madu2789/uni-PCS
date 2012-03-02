@@ -244,12 +244,6 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProfitPlay_WS\ProfitPlay_Servei.vbproj">
-      <Project>{2EA9C2A5-D961-431B-9AFA-794B000BC8BC}</Project>
-      <Name>ProfitPlay_Servei</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

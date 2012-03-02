@@ -32,7 +32,7 @@
         conDB.Close()
     End Sub
 
-    Public Function consulta_empleat(ByVal user As String, ByVal password As String) As Boolean
+    Public Function consulta_empleat(ByVal user As String, ByVal password As String) As String
         Dim ok As Boolean = False
         Dim busca_user As String = ""
         Dim trobat_login As String = ""
@@ -41,22 +41,14 @@
         'per probar
         connect()
         Try
-            cmd = conDB.CreateCommand
-            busca_user = "SELECT password FROM [Empleado] WHERE nom = '" & user & "';"
-            cmd.CommandText = busca_user
-            Dim cmdReader As System.Data.OleDb.OleDbDataReader = cmd.ExecuteReader()
-            While cmdReader.Read()
-                trobat_password = cmdReader(0)
-            End While
-            If trobat_password = password Then
-                ok = True
-            End If
+            'empleatDA.
+            
         Catch ex As Exception
             MsgBox("error llegeix user", MsgBoxStyle.Critical)
         End Try
         disconnect()
 
-        Return ok
+        Return trobat_password
     End Function
 
     Public Function GetProductes() As DataTable
@@ -71,6 +63,16 @@
         Return DS.Producto
     End Function
 
-
+    Public Function GetCarta() As DataTable
+        Try
+            connect()
+            cartaDA.Connection = conDB
+            cartaDA.Fill(DS.Carta)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB", MsgBoxStyle.Critical)
+        End Try
+        Return DS.Carta
+    End Function
 
 End Class

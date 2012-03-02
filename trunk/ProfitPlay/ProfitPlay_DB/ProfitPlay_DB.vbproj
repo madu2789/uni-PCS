@@ -67,17 +67,6 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDadesClasses\admin.vb" />
-    <Compile Include="BaseDadesClasses\alergias.vb" />
-    <Compile Include="BaseDadesClasses\carta.vb" />
-    <Compile Include="BaseDadesClasses\empleado.vb" />
-    <Compile Include="BaseDadesClasses\ingrediente.vb" />
-    <Compile Include="BaseDadesClasses\mesa.vb" />
-    <Compile Include="BaseDadesClasses\pedido.vb" />
-    <Compile Include="BaseDadesClasses\persona.vb" />
-    <Compile Include="BaseDadesClasses\producto.vb" />
-    <Compile Include="BaseDadesClasses\producto_ingrediente.vb" />
-    <Compile Include="BaseDadesClasses\usuario.vb" />
     <Compile Include="ControlDB.vb">
       <SubType>Form</SubType>
     </Compile>
