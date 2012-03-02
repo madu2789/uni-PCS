@@ -2,9 +2,7 @@
 
     Dim BD As New ProfitPlay_DB.ControlDB
 
-    Public Function donamDades() As DataTable
-        Dim ds As New DataTable
-        ds = BD.GetCarta()
-        Return ds
+    Public Function GetCarta() As DataTable
+        Return BD.GetCarta()
     End Function
 End Class
