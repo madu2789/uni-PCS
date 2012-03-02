@@ -1,7 +1,6 @@
 ﻿Public Class Welcome
 
     Dim ws As New Profit_WS.Service1SoapClient
-    Dim servei As New ProfitPlay_WS.WS
     Dim estat As Boolean = True 'indica qui accedeix al sistema:
     'true vol dir mode client
     'false mode empleat
@@ -60,8 +59,7 @@
             Else
                 'acces a la base de dades
 
-                ' Dim ok As Boolean = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
-                Dim ok As Boolean = True
+                Dim ok As Boolean = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
                 If ok = True Then
                     Dim main As New Mainform_empleado(txtb_login.Text)
                     main.ShowDialog()
@@ -69,12 +67,7 @@
                 Else
                     MsgBox("error! accés denegat!", MsgBoxStyle.Critical)
                 End If
-
             End If
-
-            'Prova per demostrar que podem conectar am servidor
-            ' Dim resultat As Integer = CInt(ws.MultiplicaNumeros(txtb_login.Text, txtb_password.Text))
-
         End If
 
     End Sub
