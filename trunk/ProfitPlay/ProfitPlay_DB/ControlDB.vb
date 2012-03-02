@@ -32,17 +32,16 @@
         conDB.Close()
     End Sub
 
-    Public Function consulta_empleat(ByVal user As String, ByVal password As String) As String
-        Dim ok As Boolean = False
-        Dim busca_user As String = ""
-        Dim trobat_login As String = ""
+    Public Function consulta_empleat(ByVal user As String) As String
+        
         Dim trobat_password As String = ""
 
         'per probar
         connect()
         Try
-            'empleatDA.
-            
+            'no mo reconeix al DS
+            empleatDA.ComprovaPassword(user)
+
         Catch ex As Exception
             MsgBox("error llegeix user", MsgBoxStyle.Critical)
         End Try

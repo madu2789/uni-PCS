@@ -10,22 +10,21 @@ Imports System.ComponentModel
 Public Class Service1
     Inherits System.Web.Services.WebService
     Dim carta As New Carta
-    Dim empleat As New Empleado
+    Dim empleat As New Empleat
 
     <WebMethod()> _
-  Public Function donamDades(ByVal a As Integer, ByVal b As Integer) As DataTable
-        Return carta.donamDades
+  Public Function Getcarta() As DataTable
+        Return carta.GetCarta
     End Function
-
-    <WebMethod()> _
-    Public Function MultiplicaNumeros(ByVal a As Integer, ByVal b As Integer) As Integer
-        Return a * b
-    End Function
-
 
     <WebMethod()> _
     Public Function LogEmpleat(ByVal user As String, ByVal password As String) As Boolean
         Return empleat.log_empleat(user, password)
+    End Function
+
+    <WebMethod()> _
+   Public Function MultiplicaNumeros(ByVal a As Integer, ByVal b As Integer) As Integer
+        Return a * b
     End Function
 
 End Class
