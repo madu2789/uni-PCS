@@ -87,6 +87,7 @@
     Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         lbl_taula.Text = Mainform_client.nom_taula
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
+        btn_bebidas.PerformClick()
     End Sub
 
     Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
@@ -136,9 +137,23 @@
         initStructure()
         btn_primeros.PerformClick()
     End Sub
-    Private Sub lv_productes_disponibles_click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lv_productos_disp.Click
+    Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
+
+        For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+
+            If (lv_productos_disp.Items.Item(i).Selected = True) Then
+
+                MsgBox("Seleccionat " + lv_productos_disp.Items(i).Text, MsgBoxStyle.AbortRetryIgnore)
+                lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Clone)
+
+            End If
+
+        Next
 
 
+    End Sub
+
+    Private Sub grb_menu_carta_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles grb_menu_carta.Enter
 
     End Sub
 End Class
