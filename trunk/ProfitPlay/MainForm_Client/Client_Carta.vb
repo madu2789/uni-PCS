@@ -1,6 +1,7 @@
 ﻿Public Class Client_Carta
 
     Dim carta As structure_carta
+    Dim comanda As ArrayList
 
     Structure structure_carta
 
@@ -19,6 +20,7 @@
         carta.segons = New ArrayList
         carta.postres = New ArrayList
         carta.begudes = New ArrayList
+        comanda = New ArrayList
 
         lv_productos_disp.Clear()
         lv_pedidos.Clear()
@@ -28,7 +30,6 @@
 
     Private Sub fillStructure(ByVal s As String, ByRef carta As structure_carta)
 
-        initStructure()
 
         If (s = "primer") Then
 
@@ -68,6 +69,8 @@
 
     Private Sub addInfoLvPedidos(ByVal p As ArrayList)
 
+        Dim item As ListViewItem = New ListViewItem
+
         lv_productos_disp.Show()
         If (p IsNot Nothing) Then
 
@@ -87,6 +90,7 @@
     Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         lbl_taula.Text = Mainform_client.nom_taula
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
+        initStructure()
         btn_bebidas.PerformClick()
     End Sub
 
@@ -96,7 +100,14 @@
     End Sub
 
     Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
-        'per fer!
+
+        For i As Integer = 0 To lv_pedidos.Items.Count - 1
+
+            MsgBox("Seleccionat " + lv_pedidos.Items.Item(i).Text)
+            comanda.Add(lv_pedidos.Items.Item(i).Text)
+
+        Next
+
     End Sub
 
     Private Sub btn_jugar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_jugar.Click
@@ -109,13 +120,9 @@
         Me.Hide()
     End Sub
 
-
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
-
-        Me.Show()
         fillStructure("beguda", carta)
         addInfoLvPedidos(carta.begudes)
-
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
@@ -134,22 +141,21 @@
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
-        initStructure()
-        btn_primeros.PerformClick()
+        fillStructure("bebida", carta)
+        btn_bebidas.PerformClick()
     End Sub
     Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
 
+        'lv_pedidos.Clear()
         For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
             If (lv_productos_disp.Items.Item(i).Selected = True) Then
 
-                MsgBox("Seleccionat " + lv_productos_disp.Items(i).Text, MsgBoxStyle.AbortRetryIgnore)
-                lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Clone)
+                lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
 
             End If
 
         Next
-
 
     End Sub
 
