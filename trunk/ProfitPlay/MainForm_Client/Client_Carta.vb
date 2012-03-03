@@ -20,6 +20,10 @@
         carta.postres = New ArrayList
         carta.begudes = New ArrayList
 
+        lv_productos_disp.Clear()
+        lv_pedidos.Clear()
+        grb_pedido.Show()
+
     End Sub
 
     Private Sub fillStructure(ByVal s As String, ByRef carta As structure_carta)
@@ -28,7 +32,7 @@
 
         If (s = "primer") Then
 
-            For i As Integer = 0 To 10
+            For i As Integer = 0 To 10 Step 1
 
                 carta.primers.Add(s & i.ToString)
 
@@ -36,7 +40,7 @@
 
         ElseIf (s = "segon") Then
 
-            For i As Integer = 0 To 10
+            For i As Integer = 0 To 10 Step 1
 
                 carta.segons.Add(s & i.ToString)
 
@@ -44,7 +48,7 @@
 
         ElseIf (s = "postre") Then
 
-            For i As Integer = 0 To 10
+            For i As Integer = 0 To 10 Step 1
 
                 carta.postres.Add(s & i.ToString)
 
@@ -52,7 +56,7 @@
 
         ElseIf (s = "beguda") Then
 
-            For i As Integer = 0 To 10
+            For i As Integer = 0 To 10 Step 1
 
                 carta.begudes.Add(s & i.ToString)
 
@@ -64,6 +68,7 @@
 
     Private Sub addInfoLvPedidos(ByVal p As ArrayList)
 
+        lv_productos_disp.Show()
         If (p IsNot Nothing) Then
 
             lv_productos_disp.Items.Clear()
@@ -73,11 +78,11 @@
 
             Next
 
+            lv_productos_disp.Update()
+
         End If
 
     End Sub
-
-
 
     Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         lbl_taula.Text = Mainform_client.nom_taula
@@ -105,8 +110,11 @@
 
 
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
+
+        Me.Show()
         fillStructure("beguda", carta)
         addInfoLvPedidos(carta.begudes)
+
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
@@ -122,5 +130,15 @@
     Private Sub btn_postres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_postres.Click
         fillStructure("postre", carta)
         addInfoLvPedidos(carta.postres)
+    End Sub
+
+    Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
+        initStructure()
+        btn_primeros.PerformClick()
+    End Sub
+    Private Sub lv_productes_disponibles_click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lv_productos_disp.Click
+
+
+
     End Sub
 End Class
