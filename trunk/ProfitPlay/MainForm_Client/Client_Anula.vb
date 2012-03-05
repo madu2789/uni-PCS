@@ -1,6 +1,7 @@
 ﻿Public Class Client_Anula
 
     Dim element As New ToolStripButton()
+    Dim m_comanda As Comanda
 
     Private Sub setDefaults(ByVal e As ToolStripButton)
 
@@ -26,6 +27,8 @@
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
+        Client_Carta.setComanda(m_comanda)
+        Client_Carta.refreshComanda()
         Client_Carta.Show()
         Me.Hide()
     End Sub
@@ -46,13 +49,10 @@
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
         Dim a As PaddingConverter = New PaddingConverter()
-        Dim i As Integer = 0
-        Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items
-        For i = 0 To element_list.Count
+        m_comanda = Client_Carta.getComanda()
 
-            'MsgBox("Padding: " & a.ConvertFromString(element_list.Item(i).Padding.ToString), MsgBoxStyle.Critical)
+        MsgBox("Tenim al contador " + m_comanda.getComanda.Count)
 
-        Next
     End Sub
 
     Private Sub DeleteItem(ByVal sender As Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
@@ -81,23 +81,37 @@
 
     Private Sub insertToolStripItem()
 
+        For Each p As String In m_comanda.getComanda
+
+            llista_productes_eliminar.Items.Add(p)
+
+        Next
+
+    End Sub
+
+    Private Sub insertToolStripItemOLD()
+
         Dim input = InputBox("Que vols afegir?", "Afegir", "")
         Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items
         Dim e As ToolStripButton = New ToolStripButton()
 
-        Try
+        For i As Integer = 0 To m_comanda.getComanda.Count - 1 Step 1
 
-            e.Text = input
-            setDefaults(e)
-            element_list.Insert(element_list.Count, e)
-            llista_productes_eliminar.Refresh()
+            Try
 
-        Catch ex As Exception
+                e.Text = m_comanda.getComanda.Item(i)
+                setDefaults(e)
+                element_list.Insert(element_list.Count, e)
+                llista_productes_eliminar.Refresh()
 
-            MsgBox("El contador val " & element_list.Count, MsgBoxStyle.Critical)
+            Catch ex As Exception
 
-        End Try
-        
+                MsgBox("El contador val " & element_list.Count, MsgBoxStyle.Critical)
+
+            End Try
+
+        Next
+
     End Sub
 
     Private Sub pcb_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pcb_anular.Click

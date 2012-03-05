@@ -1,69 +1,21 @@
 ﻿Public Class Client_Carta
 
-    Dim carta As structure_carta
-    Dim comanda As ArrayList
-
-    Structure structure_carta
-
-        Dim primers As ArrayList
-        Dim segons As ArrayList
-        Dim postres As ArrayList
-        Dim begudes As ArrayList
-
-    End Structure
-
+    Private m_carta As Carta
+    Private m_comanda As Comanda
 
     Private Sub initStructure()
 
-        carta = New structure_carta
-        carta.primers = New ArrayList
-        carta.segons = New ArrayList
-        carta.postres = New ArrayList
-        carta.begudes = New ArrayList
-        comanda = New ArrayList
-
+        m_carta = New Carta()
+        m_comanda = New Comanda()
         lv_productos_disp.Clear()
         lv_pedidos.Clear()
         grb_pedido.Show()
 
     End Sub
 
-    Private Sub fillStructure(ByVal s As String, ByRef carta As structure_carta)
+    Private Sub fillStructure(ByVal s As String, ByVal categoria As String)
 
-
-        If (s = "primer") Then
-
-            For i As Integer = 0 To 10 Step 1
-
-                carta.primers.Add(s & i.ToString)
-
-            Next
-
-        ElseIf (s = "segon") Then
-
-            For i As Integer = 0 To 10 Step 1
-
-                carta.segons.Add(s & i.ToString)
-
-            Next
-
-        ElseIf (s = "postre") Then
-
-            For i As Integer = 0 To 10 Step 1
-
-                carta.postres.Add(s & i.ToString)
-
-            Next
-
-        ElseIf (s = "beguda") Then
-
-            For i As Integer = 0 To 10 Step 1
-
-                carta.begudes.Add(s & i.ToString)
-
-            Next
-
-        End If
+        m_carta.fillElements(s, categoria)
 
     End Sub
 
@@ -92,6 +44,7 @@
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
         initStructure()
         btn_bebidas.PerformClick()
+        refreshComanda()
     End Sub
 
     Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
@@ -104,9 +57,11 @@
         For i As Integer = 0 To lv_pedidos.Items.Count - 1
 
             MsgBox("Seleccionat " + lv_pedidos.Items.Item(i).Text)
-            comanda.Add(lv_pedidos.Items.Item(i).Text)
+            m_comanda.insertElement(lv_pedidos.Items.Item(i).Text)
 
         Next
+
+        lv_pedidos.Clear()
 
     End Sub
 
@@ -121,37 +76,37 @@
     End Sub
 
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
-        fillStructure("beguda", carta)
-        addInfoLvPedidos(carta.begudes)
+        fillStructure("beguda", "beguda")
+        addInfoLvPedidos(m_carta.getCarta.begudes)
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
-        fillStructure("primer", carta)
-        addInfoLvPedidos(carta.primers)
+        fillStructure("primer", "primer")
+        addInfoLvPedidos(m_carta.getCarta.primers)
     End Sub
 
     Private Sub btn_segundos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_segundos.Click
-        fillStructure("segon", carta)
-        addInfoLvPedidos(carta.segons)
+        fillStructure("segon", "segons")
+        addInfoLvPedidos(m_carta.getCarta.segons)
     End Sub
 
     Private Sub btn_postres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_postres.Click
-        fillStructure("postre", carta)
-        addInfoLvPedidos(carta.postres)
+        fillStructure("postre", "postres")
+        addInfoLvPedidos(m_carta.getCarta.postres)
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
-        fillStructure("bebida", carta)
+        fillStructure("bebida", "bebida")
         btn_bebidas.PerformClick()
     End Sub
     Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
 
-        'lv_pedidos.Clear()
         For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
             If (lv_productos_disp.Items.Item(i).Selected = True) Then
 
                 lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
+                m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
 
             End If
 
@@ -159,7 +114,27 @@
 
     End Sub
 
+    Public Function getComanda() As Comanda
+        Return m_comanda
+    End Function
+
+    Public Sub setComanda(ByVal edited_command As Comanda)
+        Me.m_comanda = edited_command
+    End Sub
+
     Private Sub grb_menu_carta_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles grb_menu_carta.Enter
+
+    End Sub
+
+    Public Sub refreshComanda()
+
+        lv_pedidos.Clear()
+
+        For s As Integer = 0 To m_comanda.getComanda.Count - 1 Step 1
+
+            lv_pedidos.Items.Add(m_comanda.getComanda.Item(s))
+
+        Next
 
     End Sub
 End Class
