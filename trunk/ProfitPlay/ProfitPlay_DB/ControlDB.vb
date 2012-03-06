@@ -74,4 +74,30 @@
         Return DS.Carta
     End Function
 
+    Public Function SetComanda(ByVal id_comanda As String, ByVal id_taula As String, ByVal productes As ArrayList) As Boolean
+        Dim ok As Boolean = False
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            'per fer al dataset
+            'ok = comandaDA.InsertComanda(id_comanda, id_taula, productes)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB", MsgBoxStyle.Critical)
+        End Try
+        Return ok
+    End Function
+
+    Public Function GetComanda() As DataTable
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            comandaDA.Fill(DS.Pedido)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB", MsgBoxStyle.Critical)
+        End Try
+        Return DS.Carta
+    End Function
+
 End Class
