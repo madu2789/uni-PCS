@@ -11,6 +11,7 @@ Public Class Service1
     Inherits System.Web.Services.WebService
     Dim carta As New Carta
     Dim empleat As New Empleat
+    Dim comanda As New Comanda
 
     <WebMethod()> _
   Public Function Getcarta() As DataTable
@@ -19,6 +20,11 @@ Public Class Service1
 
     <WebMethod()> _
     Public Function LogEmpleat(ByVal user As String, ByVal password As String) As Boolean
+        Return empleat.log_empleat(user, password)
+    End Function
+
+    <WebMethod()> _
+    Public Function InsertaComada(ByVal user As String, ByVal password As String) As Boolean
         Return empleat.log_empleat(user, password)
     End Function
 
