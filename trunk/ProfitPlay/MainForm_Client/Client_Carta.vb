@@ -177,6 +177,17 @@
     End Sub
 
     Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
-        MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
+        Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
+
+        If (result = MsgBoxResult.Ok) Then
+            Me.Dispose()
+            Dim merda As New Client_Carta
+            merda.ShowDialog()
+
+        End If
+    End Sub
+
+    Private Sub btn_cancela_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancela.Click
+        pnl_info_producte.Hide()
     End Sub
 End Class

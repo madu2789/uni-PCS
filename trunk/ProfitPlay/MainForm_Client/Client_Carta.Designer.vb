@@ -39,7 +39,6 @@ Partial Class Client_Carta
         Me.btn_Pagar = New System.Windows.Forms.Button
         Me.btn_jugar = New System.Windows.Forms.Button
         Me.grb_menu_carta = New System.Windows.Forms.GroupBox
-        Me.btn_postres = New System.Windows.Forms.Button
         Me.grb_pedido = New System.Windows.Forms.GroupBox
         Me.pnl_info_producte = New System.Windows.Forms.Panel
         Me.pcb_producte = New System.Windows.Forms.PictureBox
@@ -50,6 +49,7 @@ Partial Class Client_Carta
         Me.lbl_ingredients = New System.Windows.Forms.Label
         Me.lbl_descripcio = New System.Windows.Forms.Label
         Me.lbl_titol_producte = New System.Windows.Forms.Label
+        Me.btn_confirma_carta = New System.Windows.Forms.Button
         Me.btn_confirma_comanda = New System.Windows.Forms.Button
         Me.lbl_productos_sel = New System.Windows.Forms.Label
         Me.lbl_productos_dispo = New System.Windows.Forms.Label
@@ -57,10 +57,10 @@ Partial Class Client_Carta
         Me.lv_productos_disp = New System.Windows.Forms.ListView
         Me.Nombre = New System.Windows.Forms.ColumnHeader
         Me.Cantidad = New System.Windows.Forms.ColumnHeader
+        Me.btn_postres = New System.Windows.Forms.Button
         Me.btn_segundos = New System.Windows.Forms.Button
         Me.btn_primeros = New System.Windows.Forms.Button
         Me.btn_bebidas = New System.Windows.Forms.Button
-        Me.btn_confirma_carta = New System.Windows.Forms.Button
         Me.pnl_estat.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.grb_menu_carta.SuspendLayout()
@@ -179,16 +179,6 @@ Partial Class Client_Carta
         Me.grb_menu_carta.TabStop = False
         Me.grb_menu_carta.Text = "Carta"
         '
-        'btn_postres
-        '
-        Me.btn_postres.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_postres.Location = New System.Drawing.Point(486, 19)
-        Me.btn_postres.Name = "btn_postres"
-        Me.btn_postres.Size = New System.Drawing.Size(136, 55)
-        Me.btn_postres.TabIndex = 10
-        Me.btn_postres.Text = "Postres"
-        Me.btn_postres.UseVisualStyleBackColor = True
-        '
         'grb_pedido
         '
         Me.grb_pedido.Controls.Add(Me.pnl_info_producte)
@@ -198,9 +188,9 @@ Partial Class Client_Carta
         Me.grb_pedido.Controls.Add(Me.lbl_productos_dispo)
         Me.grb_pedido.Controls.Add(Me.lv_pedidos)
         Me.grb_pedido.Controls.Add(Me.lv_productos_disp)
-        Me.grb_pedido.Location = New System.Drawing.Point(19, 83)
+        Me.grb_pedido.Location = New System.Drawing.Point(6, 86)
         Me.grb_pedido.Name = "grb_pedido"
-        Me.grb_pedido.Size = New System.Drawing.Size(633, 311)
+        Me.grb_pedido.Size = New System.Drawing.Size(646, 305)
         Me.grb_pedido.TabIndex = 20
         Me.grb_pedido.TabStop = False
         Me.grb_pedido.Text = "Hacer pedido"
@@ -216,7 +206,7 @@ Partial Class Client_Carta
         Me.pnl_info_producte.Controls.Add(Me.lbl_ingredients)
         Me.pnl_info_producte.Controls.Add(Me.lbl_descripcio)
         Me.pnl_info_producte.Controls.Add(Me.lbl_titol_producte)
-        Me.pnl_info_producte.Location = New System.Drawing.Point(162, 19)
+        Me.pnl_info_producte.Location = New System.Drawing.Point(159, 19)
         Me.pnl_info_producte.Name = "pnl_info_producte"
         Me.pnl_info_producte.Size = New System.Drawing.Size(465, 276)
         Me.pnl_info_producte.TabIndex = 23
@@ -301,6 +291,15 @@ Partial Class Client_Carta
         Me.lbl_titol_producte.TabIndex = 7
         Me.lbl_titol_producte.Text = "Macarrons amb formatge"
         '
+        'btn_confirma_carta
+        '
+        Me.btn_confirma_carta.Location = New System.Drawing.Point(501, 236)
+        Me.btn_confirma_carta.Name = "btn_confirma_carta"
+        Me.btn_confirma_carta.Size = New System.Drawing.Size(110, 32)
+        Me.btn_confirma_carta.TabIndex = 24
+        Me.btn_confirma_carta.Text = "Confirmar Comanda"
+        Me.btn_confirma_carta.UseVisualStyleBackColor = True
+        '
         'btn_confirma_comanda
         '
         Me.btn_confirma_comanda.Location = New System.Drawing.Point(282, 320)
@@ -360,10 +359,20 @@ Partial Class Client_Carta
         '
         Me.Cantidad.Text = "Cantidad"
         '
+        'btn_postres
+        '
+        Me.btn_postres.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_postres.Location = New System.Drawing.Point(507, 19)
+        Me.btn_postres.Name = "btn_postres"
+        Me.btn_postres.Size = New System.Drawing.Size(144, 55)
+        Me.btn_postres.TabIndex = 10
+        Me.btn_postres.Text = "Postres"
+        Me.btn_postres.UseVisualStyleBackColor = True
+        '
         'btn_segundos
         '
         Me.btn_segundos.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_segundos.Location = New System.Drawing.Point(322, 20)
+        Me.btn_segundos.Location = New System.Drawing.Point(341, 20)
         Me.btn_segundos.Name = "btn_segundos"
         Me.btn_segundos.Size = New System.Drawing.Size(136, 55)
         Me.btn_segundos.TabIndex = 9
@@ -373,7 +382,7 @@ Partial Class Client_Carta
         'btn_primeros
         '
         Me.btn_primeros.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_primeros.Location = New System.Drawing.Point(166, 20)
+        Me.btn_primeros.Location = New System.Drawing.Point(172, 20)
         Me.btn_primeros.Name = "btn_primeros"
         Me.btn_primeros.Size = New System.Drawing.Size(136, 54)
         Me.btn_primeros.TabIndex = 8
@@ -389,15 +398,6 @@ Partial Class Client_Carta
         Me.btn_bebidas.TabIndex = 7
         Me.btn_bebidas.Text = "Begudes"
         Me.btn_bebidas.UseVisualStyleBackColor = True
-        '
-        'btn_confirma_carta
-        '
-        Me.btn_confirma_carta.Location = New System.Drawing.Point(501, 236)
-        Me.btn_confirma_carta.Name = "btn_confirma_carta"
-        Me.btn_confirma_carta.Size = New System.Drawing.Size(110, 32)
-        Me.btn_confirma_carta.TabIndex = 24
-        Me.btn_confirma_carta.Text = "Confirmar Comanda"
-        Me.btn_confirma_carta.UseVisualStyleBackColor = True
         '
         'Client_Carta
         '
