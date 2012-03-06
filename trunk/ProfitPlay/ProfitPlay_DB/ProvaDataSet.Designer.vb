@@ -1897,7 +1897,7 @@ Partial Public Class ProvaDataSet
         
         Private columnId_pedido As Global.System.Data.DataColumn
         
-        Private columnId_persona As Global.System.Data.DataColumn
+        Private columnId_Mesa As Global.System.Data.DataColumn
         
         Private columnId_producto As Global.System.Data.DataColumn
         
@@ -1947,9 +1947,9 @@ Partial Public Class ProvaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property Id_personaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property Id_MesaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnId_persona
+                Return Me.columnId_Mesa
             End Get
         End Property
         
@@ -2010,9 +2010,9 @@ Partial Public Class ProvaDataSet
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddPedidoRow(ByVal Id_persona As Integer, ByVal Id_producto As Integer, ByVal hora As Integer, ByVal notas As String, ByVal estado As String) As PedidoRow
+        Public Overloads Function AddPedidoRow(ByVal Id_Mesa As Integer, ByVal Id_producto As Integer, ByVal hora As Integer, ByVal notas As String, ByVal estado As String) As PedidoRow
             Dim rowPedidoRow As PedidoRow = CType(Me.NewRow,PedidoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Id_persona, Id_producto, hora, notas, estado}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Id_Mesa, Id_producto, hora, notas, estado}
             rowPedidoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPedidoRow)
             Return rowPedidoRow
@@ -2038,7 +2038,7 @@ Partial Public Class ProvaDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Friend Sub InitVars()
             Me.columnId_pedido = MyBase.Columns("Id_pedido")
-            Me.columnId_persona = MyBase.Columns("Id_persona")
+            Me.columnId_Mesa = MyBase.Columns("Id_Mesa")
             Me.columnId_producto = MyBase.Columns("Id_producto")
             Me.columnhora = MyBase.Columns("hora")
             Me.columnnotas = MyBase.Columns("notas")
@@ -2049,8 +2049,8 @@ Partial Public Class ProvaDataSet
         Private Sub InitClass()
             Me.columnId_pedido = New Global.System.Data.DataColumn("Id_pedido", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId_pedido)
-            Me.columnId_persona = New Global.System.Data.DataColumn("Id_persona", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId_persona)
+            Me.columnId_Mesa = New Global.System.Data.DataColumn("Id_Mesa", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId_Mesa)
             Me.columnId_producto = New Global.System.Data.DataColumn("Id_producto", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId_producto)
             Me.columnhora = New Global.System.Data.DataColumn("hora", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -3734,16 +3734,16 @@ Partial Public Class ProvaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property Id_persona() As Integer
+        Public Property Id_Mesa() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablePedido.Id_personaColumn),Integer)
+                    Return CType(Me(Me.tablePedido.Id_MesaColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Id_persona' de la tabla 'Pedido' es DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Id_Mesa' de la tabla 'Pedido' es DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePedido.Id_personaColumn) = value
+                Me(Me.tablePedido.Id_MesaColumn) = value
             End Set
         End Property
         
@@ -3804,13 +3804,13 @@ Partial Public Class ProvaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IsId_personaNull() As Boolean
-            Return Me.IsNull(Me.tablePedido.Id_personaColumn)
+        Public Function IsId_MesaNull() As Boolean
+            Return Me.IsNull(Me.tablePedido.Id_MesaColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetId_personaNull()
-            Me(Me.tablePedido.Id_personaColumn) = Global.System.Convert.DBNull
+        Public Sub SetId_MesaNull()
+            Me(Me.tablePedido.Id_MesaColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -6411,7 +6411,7 @@ Namespace ProvaDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Pedido"
             tableMapping.ColumnMappings.Add("Id_pedido", "Id_pedido")
-            tableMapping.ColumnMappings.Add("Id_persona", "Id_persona")
+            tableMapping.ColumnMappings.Add("Id_persona", "Id_Mesa")
             tableMapping.ColumnMappings.Add("Id_producto", "Id_producto")
             tableMapping.ColumnMappings.Add("hora", "hora")
             tableMapping.ColumnMappings.Add("notas", "notas")
