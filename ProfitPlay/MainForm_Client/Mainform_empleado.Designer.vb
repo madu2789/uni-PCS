@@ -179,6 +179,7 @@ Partial Class Mainform_empleado
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_plats)
         Me.Name = "Mainform_empleado"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mainform_empleado"
         Me.pnl_plats.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)

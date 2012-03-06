@@ -41,6 +41,7 @@
             If num_comensals.Value < 1 Then
                 MsgBox("Número de comensals incorrecte!!!", MsgBoxStyle.Critical)
             Else
+                Me.Hide()
                 If txtb_nomTaula.Text Is Nothing Then
                     'constructor amb nom propi (nostre)!
                     Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
@@ -50,7 +51,6 @@
                     Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
                     main.ShowDialog()
                 End If
-                Me.Hide()
             End If
         Else
             'empleat: accedeix a la base de dades per log
@@ -61,9 +61,9 @@
 
                 Dim ok As Boolean = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
                 If ok = True Then
+                    Me.Hide()
                     Dim main As New Mainform_empleado(txtb_login.Text)
                     main.ShowDialog()
-                    Me.Hide()
                 Else
                     MsgBox("error! accés denegat!", MsgBoxStyle.Critical)
                 End If

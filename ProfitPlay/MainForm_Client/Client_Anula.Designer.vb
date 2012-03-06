@@ -214,6 +214,7 @@ Partial Class Client_Anula
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Name = "Client_Anula"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Client_Anula"
         Me.grb_anular.ResumeLayout(False)
         Me.grb_anular.PerformLayout()

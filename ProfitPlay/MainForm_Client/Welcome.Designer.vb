@@ -213,6 +213,7 @@ Partial Class Welcome
         Me.Controls.Add(Me.pcb_empleat)
         Me.Controls.Add(Me.pcb_client)
         Me.Name = "Welcome"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Benvinguda"
         Me.gpb_empleat.ResumeLayout(False)
         Me.gpb_empleat.PerformLayout()
