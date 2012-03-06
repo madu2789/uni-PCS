@@ -79,8 +79,18 @@
         Try
             connect()
             comandaDA.Connection = conDB
-            'per fer al dataset
-            'ok = comandaDA.InsertComanda(id_comanda, id_taula, productes)
+
+            'revisar format de la query
+
+            Dim estat As String = ""
+            Dim notes As String = ""
+            Dim hora As String = ""
+            Dim producte As String = productes.Item(1)
+
+            For Each producte In productes
+                comandaDA.InsertComanda(estat, id_taula, producte, notes, hora)
+            Next
+
             disconnect()
         Catch ex As Exception
             MsgBox("error DB", MsgBoxStyle.Critical)
