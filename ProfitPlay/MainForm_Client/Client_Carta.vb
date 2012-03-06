@@ -153,14 +153,26 @@
 
             If (lv_productos_disp.Items.Item(i).Selected = True) Then
 
-                lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-                m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+                If (nud_cantitat.Value = 0) Then
+
+                    MsgBox("Selecciona una quantitat", MsgBoxStyle.Exclamation, "Error de quantitat")
+                    pnl_info_producte.Show()
+
+                Else
+
+                    For a As Integer = 0 To nud_cantitat.Value - 1 Step 1
+
+                        lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
+                        m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+                        pnl_info_producte.Hide()
+
+                    Next
+
+                End If
 
             End If
 
         Next
-
-        pnl_info_producte.Hide()
 
     End Sub
 
