@@ -222,6 +222,7 @@ Partial Class Client_Pago
         Me.Controls.Add(Me.btn_efectiu)
         Me.Controls.Add(Me.btn_tc)
         Me.Name = "Client_Pago"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pago"
         Me.pnl_menu.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)

@@ -40,6 +40,7 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
+        Me.btn_gest_pagos = New System.Windows.Forms.Button
         Me.btn_gest_stock = New System.Windows.Forms.Button
         Me.btn_config_fichero = New System.Windows.Forms.Button
         Me.btn_gest_users = New System.Windows.Forms.Button
@@ -56,7 +57,6 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_cognom = New System.Windows.Forms.Label
         Me.lbl_password = New System.Windows.Forms.Label
         Me.lbl_nom = New System.Windows.Forms.Label
-        Me.btn_gest_pagos = New System.Windows.Forms.Button
         Me.grb_users.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
@@ -241,6 +241,16 @@ Partial Class Emp_Gestio_usuaris
         Me.pnl_plats.Size = New System.Drawing.Size(143, 466)
         Me.pnl_plats.TabIndex = 34
         '
+        'btn_gest_pagos
+        '
+        Me.btn_gest_pagos.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_gest_pagos.Location = New System.Drawing.Point(2, 204)
+        Me.btn_gest_pagos.Name = "btn_gest_pagos"
+        Me.btn_gest_pagos.Size = New System.Drawing.Size(135, 55)
+        Me.btn_gest_pagos.TabIndex = 25
+        Me.btn_gest_pagos.Text = "Gestionar Pagaments"
+        Me.btn_gest_pagos.UseVisualStyleBackColor = True
+        '
         'btn_gest_stock
         '
         Me.btn_gest_stock.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -399,16 +409,6 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_nom.TabIndex = 0
         Me.lbl_nom.Text = "Nom:"
         '
-        'btn_gest_pagos
-        '
-        Me.btn_gest_pagos.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_pagos.Location = New System.Drawing.Point(2, 204)
-        Me.btn_gest_pagos.Name = "btn_gest_pagos"
-        Me.btn_gest_pagos.Size = New System.Drawing.Size(135, 55)
-        Me.btn_gest_pagos.TabIndex = 25
-        Me.btn_gest_pagos.Text = "Gestionar Pagaments"
-        Me.btn_gest_pagos.UseVisualStyleBackColor = True
-        '
         'Emp_Gestio_usuaris
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -420,6 +420,7 @@ Partial Class Emp_Gestio_usuaris
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Name = "Emp_Gestio_usuaris"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Emp_Gestio_usuaris"
         Me.grb_users.ResumeLayout(False)
         Me.ToolStripContainer1.ContentPanel.ResumeLayout(False)

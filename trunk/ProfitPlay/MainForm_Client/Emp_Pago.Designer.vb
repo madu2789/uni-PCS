@@ -284,6 +284,7 @@ Partial Class Emp_Pago
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Name = "Emp_Pago"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleado_Pago"
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()

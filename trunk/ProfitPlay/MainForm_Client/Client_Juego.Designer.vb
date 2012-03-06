@@ -227,6 +227,7 @@ Partial Class Client_Juego
         Me.Controls.Add(Me.grpb_menu_joc)
         Me.Controls.Add(Me.pnl_jocs)
         Me.Name = "Client_Juego"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Juego"
         Me.pnl_jocs.ResumeLayout(False)
         Me.grpb_menu_joc.ResumeLayout(False)
