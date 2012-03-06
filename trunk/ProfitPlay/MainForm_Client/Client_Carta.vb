@@ -9,12 +9,58 @@
         lv_pedidos.Clear()
         grb_pedido.Show()
         productes = New List(Of Producto)
+        m_comanda = New Comanda
+        fillStructure()
 
     End Sub
 
-    Private Sub fillStructure(ByVal p As Producto)
+    Private Sub fillStructure()
 
-        productes.Add(p)
+        For i As Integer = 0 To 10 Step 1
+
+            Dim p As Producto = New Producto()
+            p.setNom("primeros " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(CType(i, Double))
+            p.setTipus("primeros")
+            productes.Add(p)
+
+        Next
+
+        For i As Integer = 0 To 10 Step 1
+
+            Dim p As Producto = New Producto()
+            p.setNom("segundos " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(CType(i, Double))
+            p.setTipus("segundos")
+            productes.Add(p)
+
+        Next
+
+        For i As Integer = 0 To 10 Step 1
+
+            Dim p As Producto = New Producto()
+            p.setNom("postres " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(CType(i, Double))
+            p.setTipus("postres")
+            productes.Add(p)
+
+        Next
+
+        For i As Integer = 0 To 10 Step 1
+
+            Dim p As Producto = New Producto()
+            p.setNom("bebidas " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(CType(i, Double))
+            p.setTipus("bebidas")
+            productes.Add(p)
+
+        Next
+
+        MsgBox("Tenim " + productes.Count.ToString + " items", MsgBoxStyle.AbortRetryIgnore)
 
     End Sub
 
@@ -23,32 +69,39 @@
         Dim item As ListViewItem = New ListViewItem
 
         lv_productos_disp.Show()
-        If (productes IsNot Nothing) Then
+        lv_productos_disp.Items.Clear()
 
-            lv_productos_disp.Items.Clear()
-            For i As Integer = 0 To productes.Count Step 1
+        For i As Integer = 0 To productes.Count - 1 Step 1
 
+            If (s = productes(i).getTipus) Then
+
+                'MsgBox("S: " + s + " Tipus: " + productes(i).getTipus)
                 lv_productos_disp.Items.Add(productes.Item(i).getNom)
 
-            Next
+            End If
 
-            lv_productos_disp.Update()
+        Next
 
-        End If
+        lv_productos_disp.Update()
 
     End Sub
 
     Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         lbl_taula.Text = Mainform_client.nom_taula
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
         initStructure()
         btn_bebidas.PerformClick()
         refreshComanda()
+
     End Sub
 
     Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
+
         Client_Anula.Show()
         Me.Hide()
+        Me.Dispose()
+
     End Sub
 
     Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
@@ -75,80 +128,25 @@
     End Sub
 
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
-
-        Dim p As Producto = New Producto()
-        Dim preu As Double = 10
-
-        For i As Integer = 0 To 10 Step 1
-
-            p.setNom("beguda " + i.ToString)
-            p.setDescripcio("descripcio " + i.ToString)
-            p.setPreu(preu)
-            fillStructure(p)
-
-        Next
-
         addInfoLvPedidos("bebidas")
-
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
-
-        Dim p As Producto = New Producto()
-        Dim preu As Double = 20
-
-        For i As Integer = 0 To 10 Step 1
-
-            p.setNom("primeros " + i.ToString)
-            p.setDescripcio("descripcio " + i.ToString)
-            p.setPreu(preu)
-            fillStructure(p)
-
-        Next
-
         addInfoLvPedidos("primeros")
-
     End Sub
 
     Private Sub btn_segundos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_segundos.Click
-
-        Dim p As Producto = New Producto()
-        Dim preu As Double = 30
-
-        For i As Integer = 0 To 10 Step 1
-
-            p.setNom("segundos " + i.ToString)
-            p.setDescripcio("descripcio " + i.ToString)
-            p.setPreu(preu)
-            fillStructure(p)
-
-        Next
         addInfoLvPedidos("segundos")
-
     End Sub
 
     Private Sub btn_postres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_postres.Click
-
-        Dim p As Producto = New Producto()
-        Dim preu As Double = 40
-
-        For i As Integer = 0 To 10 Step 1
-
-            p.setNom("postres " + i.ToString)
-            p.setDescripcio("descripcio " + i.ToString)
-            p.setPreu(preu)
-            fillStructure(p)
-
-        Next
         addInfoLvPedidos("postres")
-
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
-        Dim p As Producto = New Producto()
-        fillStructure(p)
         btn_bebidas.PerformClick()
     End Sub
+
     Private Sub lv_productes_disponibles_doubleclick(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
 
         For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
