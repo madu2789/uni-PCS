@@ -1,35 +1,34 @@
 ﻿Public Class Client_Carta
 
-    Private m_carta As Carta
     Private m_comanda As Comanda
+    Private productes As List(Of Producto)
 
     Private Sub initStructure()
 
-        m_carta = New Carta()
-        m_comanda = New Comanda()
         lv_productos_disp.Clear()
         lv_pedidos.Clear()
         grb_pedido.Show()
+        productes = New List(Of Producto)
 
     End Sub
 
-    Private Sub fillStructure(ByVal s As String, ByVal categoria As String)
+    Private Sub fillStructure(ByVal p As Producto)
 
-        m_carta.fillElements(s, categoria)
+        productes.Add(p)
 
     End Sub
 
-    Private Sub addInfoLvPedidos(ByVal p As ArrayList)
+    Private Sub addInfoLvPedidos(ByVal s As String)
 
         Dim item As ListViewItem = New ListViewItem
 
         lv_productos_disp.Show()
-        If (p IsNot Nothing) Then
+        If (productes IsNot Nothing) Then
 
             lv_productos_disp.Items.Clear()
-            For Each nom As String In p
+            For i As Integer = 0 To productes.Count Step 1
 
-                lv_productos_disp.Items.Add(nom)
+                lv_productos_disp.Items.Add(productes.Item(i).getNom)
 
             Next
 
@@ -76,27 +75,78 @@
     End Sub
 
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
-        fillStructure("beguda", "beguda")
-        addInfoLvPedidos(m_carta.getCarta.begudes)
+
+        Dim p As Producto = New Producto()
+        Dim preu As Double = 10
+
+        For i As Integer = 0 To 10 Step 1
+
+            p.setNom("beguda " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(preu)
+            fillStructure(p)
+
+        Next
+
+        addInfoLvPedidos("bebidas")
+
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
-        fillStructure("primer", "primer")
-        addInfoLvPedidos(m_carta.getCarta.primers)
+
+        Dim p As Producto = New Producto()
+        Dim preu As Double = 20
+
+        For i As Integer = 0 To 10 Step 1
+
+            p.setNom("primeros " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(preu)
+            fillStructure(p)
+
+        Next
+
+        addInfoLvPedidos("primeros")
+
     End Sub
 
     Private Sub btn_segundos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_segundos.Click
-        fillStructure("segon", "segons")
-        addInfoLvPedidos(m_carta.getCarta.segons)
+
+        Dim p As Producto = New Producto()
+        Dim preu As Double = 30
+
+        For i As Integer = 0 To 10 Step 1
+
+            p.setNom("segundos " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(preu)
+            fillStructure(p)
+
+        Next
+        addInfoLvPedidos("segundos")
+
     End Sub
 
     Private Sub btn_postres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_postres.Click
-        fillStructure("postre", "postres")
-        addInfoLvPedidos(m_carta.getCarta.postres)
+
+        Dim p As Producto = New Producto()
+        Dim preu As Double = 40
+
+        For i As Integer = 0 To 10 Step 1
+
+            p.setNom("postres " + i.ToString)
+            p.setDescripcio("descripcio " + i.ToString)
+            p.setPreu(preu)
+            fillStructure(p)
+
+        Next
+        addInfoLvPedidos("postres")
+
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
-        fillStructure("bebida", "bebida")
+        Dim p As Producto = New Producto()
+        fillStructure(p)
         btn_bebidas.PerformClick()
     End Sub
     Private Sub lv_productes_disponibles_doubleclick(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
