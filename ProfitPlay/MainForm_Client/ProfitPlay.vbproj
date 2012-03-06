@@ -86,6 +86,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Carta.vb" />
+    <Compile Include="Producto.vb" />
     <Compile Include="Comanda.vb" />
     <Compile Include="Emp_Pago.Designer.vb">
       <DependentUpon>Emp_Pago.vb</DependentUpon>

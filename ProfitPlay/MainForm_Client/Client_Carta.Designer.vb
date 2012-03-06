@@ -23,12 +23,12 @@ Partial Class Client_Carta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Carta))
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Macarrons", "6 €"}, -1)
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Espaguetis a la Bolonyesa", "5 €"}, -1)
-        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Amanida verda", "4.5 €"}, -1)
-        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Sopa de peix", "4 €"}, -1)
+        Dim ListViewItem13 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
+        Dim ListViewItem14 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
+        Dim ListViewItem15 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Macarrons", "6 €"}, -1)
+        Dim ListViewItem16 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Espaguetis a la Bolonyesa", "5 €"}, -1)
+        Dim ListViewItem17 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Amanida verda", "4.5 €"}, -1)
+        Dim ListViewItem18 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Sopa de peix", "4 €"}, -1)
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
@@ -60,6 +60,7 @@ Partial Class Client_Carta
         Me.btn_segundos = New System.Windows.Forms.Button
         Me.btn_primeros = New System.Windows.Forms.Button
         Me.btn_bebidas = New System.Windows.Forms.Button
+        Me.btn_confirma_carta = New System.Windows.Forms.Button
         Me.pnl_estat.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.grb_menu_carta.SuspendLayout()
@@ -166,8 +167,8 @@ Partial Class Client_Carta
         '
         'grb_menu_carta
         '
-        Me.grb_menu_carta.Controls.Add(Me.btn_postres)
         Me.grb_menu_carta.Controls.Add(Me.grb_pedido)
+        Me.grb_menu_carta.Controls.Add(Me.btn_postres)
         Me.grb_menu_carta.Controls.Add(Me.btn_segundos)
         Me.grb_menu_carta.Controls.Add(Me.btn_primeros)
         Me.grb_menu_carta.Controls.Add(Me.btn_bebidas)
@@ -191,6 +192,7 @@ Partial Class Client_Carta
         'grb_pedido
         '
         Me.grb_pedido.Controls.Add(Me.pnl_info_producte)
+        Me.grb_pedido.Controls.Add(Me.btn_confirma_carta)
         Me.grb_pedido.Controls.Add(Me.btn_confirma_comanda)
         Me.grb_pedido.Controls.Add(Me.lbl_productos_sel)
         Me.grb_pedido.Controls.Add(Me.lbl_productos_dispo)
@@ -214,7 +216,7 @@ Partial Class Client_Carta
         Me.pnl_info_producte.Controls.Add(Me.lbl_ingredients)
         Me.pnl_info_producte.Controls.Add(Me.lbl_descripcio)
         Me.pnl_info_producte.Controls.Add(Me.lbl_titol_producte)
-        Me.pnl_info_producte.Location = New System.Drawing.Point(157, 19)
+        Me.pnl_info_producte.Location = New System.Drawing.Point(162, 19)
         Me.pnl_info_producte.Name = "pnl_info_producte"
         Me.pnl_info_producte.Size = New System.Drawing.Size(465, 276)
         Me.pnl_info_producte.TabIndex = 23
@@ -243,9 +245,9 @@ Partial Class Client_Carta
         Me.lbl_cantitat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_cantitat.Location = New System.Drawing.Point(26, 156)
         Me.lbl_cantitat.Name = "lbl_cantitat"
-        Me.lbl_cantitat.Size = New System.Drawing.Size(55, 16)
+        Me.lbl_cantitat.Size = New System.Drawing.Size(63, 16)
         Me.lbl_cantitat.TabIndex = 10
-        Me.lbl_cantitat.Text = "Cantitat:"
+        Me.lbl_cantitat.Text = "Quantitat:"
         '
         'btn_afegeix
         '
@@ -328,7 +330,7 @@ Partial Class Client_Carta
         '
         'lv_pedidos
         '
-        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
+        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem13, ListViewItem14})
         Me.lv_pedidos.Location = New System.Drawing.Point(239, 69)
         Me.lv_pedidos.Name = "lv_pedidos"
         Me.lv_pedidos.Size = New System.Drawing.Size(147, 226)
@@ -340,9 +342,9 @@ Partial Class Client_Carta
         '
         Me.lv_productos_disp.AllowDrop = True
         Me.lv_productos_disp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Nombre, Me.Cantidad})
-        ListViewItem3.Checked = True
-        ListViewItem3.StateImageIndex = 1
-        Me.lv_productos_disp.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem6})
+        ListViewItem15.Checked = True
+        ListViewItem15.StateImageIndex = 1
+        Me.lv_productos_disp.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem15, ListViewItem16, ListViewItem17, ListViewItem18})
         Me.lv_productos_disp.Location = New System.Drawing.Point(6, 67)
         Me.lv_productos_disp.Name = "lv_productos_disp"
         Me.lv_productos_disp.Size = New System.Drawing.Size(145, 228)
@@ -387,6 +389,15 @@ Partial Class Client_Carta
         Me.btn_bebidas.TabIndex = 7
         Me.btn_bebidas.Text = "Begudes"
         Me.btn_bebidas.UseVisualStyleBackColor = True
+        '
+        'btn_confirma_carta
+        '
+        Me.btn_confirma_carta.Location = New System.Drawing.Point(501, 236)
+        Me.btn_confirma_carta.Name = "btn_confirma_carta"
+        Me.btn_confirma_carta.Size = New System.Drawing.Size(110, 32)
+        Me.btn_confirma_carta.TabIndex = 24
+        Me.btn_confirma_carta.Text = "Confirmar Comanda"
+        Me.btn_confirma_carta.UseVisualStyleBackColor = True
         '
         'Client_Carta
         '
@@ -443,4 +454,5 @@ Partial Class Client_Carta
     Friend WithEvents btn_segundos As System.Windows.Forms.Button
     Friend WithEvents btn_primeros As System.Windows.Forms.Button
     Friend WithEvents btn_bebidas As System.Windows.Forms.Button
+    Friend WithEvents btn_confirma_carta As System.Windows.Forms.Button
 End Class

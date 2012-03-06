@@ -99,7 +99,7 @@
         fillStructure("bebida", "bebida")
         btn_bebidas.PerformClick()
     End Sub
-    Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
+    Private Sub lv_productes_disponibles_doubleclick(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
 
         For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
@@ -111,6 +111,15 @@
             End If
 
         Next
+
+    End Sub
+
+    Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.Click
+
+        pnl_info_producte.Show()
+        lbl_titol_producte.Text = "Aquesta es el titol"
+        lbl_descripcio.Text = "Aquesta es la descripccio"
+        lbl_ingredients.Text = "Els ingredients: a, b, c, d"
 
     End Sub
 
@@ -136,5 +145,26 @@
 
         Next
 
+    End Sub
+
+    Private Sub btn_afegeix_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegeix.Click
+
+        For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+
+            If (lv_productos_disp.Items.Item(i).Selected = True) Then
+
+                lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
+                m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+
+            End If
+
+        Next
+
+        pnl_info_producte.Hide()
+
+    End Sub
+
+    Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
+        MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
     End Sub
 End Class
