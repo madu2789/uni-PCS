@@ -1,8 +1,33 @@
 ﻿Public Class Mainform_empleado
 
-    Public Sub New(ByVal nom As String)
+    Public Sub New(ByVal nom As String, ByVal rol As String)
         InitializeComponent()
         lbl_taula.Text = nom
+
+        Select Case rol
+            Case "Administrador"
+                btn_gest_comandes.Hide()
+                btn_gest_pagos.Hide()
+            Case "Camarero"
+                btn_gest_users.Hide()
+                btn_gest_carta.Hide()
+                btn_gest_stock.Hide()
+            Case "Barman"
+                btn_gest_users.Hide()
+                btn_gest_carta.Hide()
+                btn_gest_pagos.Hide()
+                btn_gest_stock.Hide()
+            Case "Cheff"
+                btn_gest_users.Hide()
+                btn_gest_carta.Hide()
+                btn_gest_pagos.Hide()
+                btn_gest_stock.Hide()
+            Case Else
+
+        End Select
+
+
+
     End Sub
 
     Private Sub btn_gest_users_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_users.Click
