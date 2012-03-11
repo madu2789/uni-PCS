@@ -59,10 +59,10 @@
             Else
                 'acces a la base de dades
 
-                Dim ok As Boolean = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
-                If ok = True Then
+                Dim rol As String = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
+                If rol = True Then
                     Me.Hide()
-                    Dim main As New Mainform_empleado(txtb_login.Text)
+                    Dim main As New Mainform_empleado(txtb_login.Text, rol)
                     main.ShowDialog()
                 Else
                     MsgBox("error! accés denegat!", MsgBoxStyle.Critical)
