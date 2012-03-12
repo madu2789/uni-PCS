@@ -19,7 +19,7 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-    Public Function LogEmpleat(ByVal user As String, ByVal password As String) As Boolean
+    Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String
         Return empleat.log_empleat(user, password)
     End Function
 

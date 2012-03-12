@@ -32,23 +32,20 @@
         conDB.Close()
     End Sub
 
-    Public Function consulta_empleat(ByVal user As String) As String()
-
-        Dim trobat(2) As String
-
+    Public Function consulta_empleat(ByVal user As String) As DataTable
         Try
             connect()
 
             'no mo reconeix al DS
             empleatDA.Connection = conDB
-            Dim empleat As String = empleatDA.ComprovaPassword(user)
+            empleatDA.ComprovaPassword(DS.Empleado, user)
 
         Catch ex As Exception
             MsgBox("error llegeix user", MsgBoxStyle.Critical)
         End Try
         disconnect()
 
-        Return trobat
+        Return DS.Empleado
     End Function
 
     Public Function GetProductes() As DataTable

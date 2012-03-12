@@ -4,19 +4,29 @@ Public Class Empleat
     Dim BD As New ProfitPlay_DB.ControlDB
 
     Public Function log_empleat(ByVal user As String, ByVal password As String) As String
-        Dim validacio As Boolean = False
-        Dim trobat() As String
+        Dim validacio As String = Nothing
+        Dim info As DataTable
+        Dim passwordBD As String = ""
+        Dim rol As String = ""
 
-        trobat = BD.consulta_empleat(user)
+        Try
+            info = BD.consulta_empleat(user)
 
-        trobat(0) = "password"
-        trobat(1) = "rol"
+            For Each fila In info.Rows
+                ' MsgBox(fila("password").ToString(), MsgBoxStyle.Exclamation)
+                'MsgBox(fila("rol").ToString(), MsgBoxStyle.Exclamation)
+                passwordBD = fila("password").ToString
+                rol = fila("rol").ToString
+            Next
+        Catch ex As Exception
+            MsgBox("error al traspas de dades al WS", MsgBoxStyle.Critical)
+        End Try
 
-        If trobat(0) = password Then
-            validacio = True
+        If passwordBD = password Then
+            validacio = rol
         End If
 
-        Return trobat(1)
+        Return validacio
     End Function
 
 
