@@ -241,6 +241,7 @@
     <None Include="Service References\Profit_WS\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
     <None Include="Service References\Profit_WS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>

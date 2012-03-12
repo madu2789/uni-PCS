@@ -166,9 +166,9 @@ Partial Class Mainform_empleado
         Me.lbl_punts.ForeColor = System.Drawing.Color.DarkOrange
         Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
         Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(135, 29)
+        Me.lbl_punts.Size = New System.Drawing.Size(63, 29)
         Me.lbl_punts.TabIndex = 0
-        Me.lbl_punts.Text = "Rol: XXX"
+        Me.lbl_punts.Text = "Rol:"
         '
         'Mainform_empleado
         '
