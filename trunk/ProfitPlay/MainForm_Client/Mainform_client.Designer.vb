@@ -32,6 +32,7 @@ Partial Class Mainform_client
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.pnl_estat = New System.Windows.Forms.Panel
+        Me.wb_pantalla_principal = New System.Windows.Forms.WebBrowser
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
@@ -133,12 +134,23 @@ Partial Class Mainform_client
         Me.pnl_estat.Size = New System.Drawing.Size(664, 69)
         Me.pnl_estat.TabIndex = 31
         '
+        'wb_pantalla_principal
+        '
+        Me.wb_pantalla_principal.Location = New System.Drawing.Point(140, 62)
+        Me.wb_pantalla_principal.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wb_pantalla_principal.Name = "wb_pantalla_principal"
+        Me.wb_pantalla_principal.Size = New System.Drawing.Size(639, 380)
+        Me.wb_pantalla_principal.TabIndex = 32
+        Me.wb_pantalla_principal.Url = New System.Uri("http://www.restalo.es", System.UriKind.Absolute)
+        Me.wb_pantalla_principal.WebBrowserShortcutsEnabled = False
+        '
         'Mainform_client
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(791, 454)
+        Me.Controls.Add(Me.wb_pantalla_principal)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Name = "Mainform_client"
@@ -159,4 +171,5 @@ Partial Class Mainform_client
     Friend WithEvents btn_menu_anular As System.Windows.Forms.Button
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents pnl_estat As System.Windows.Forms.Panel
+    Friend WithEvents wb_pantalla_principal As System.Windows.Forms.WebBrowser
 End Class

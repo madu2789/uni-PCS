@@ -49,7 +49,7 @@ Partial Class Emp_Gestio_usuaris
         Me.grb_insert_modifica = New System.Windows.Forms.GroupBox
         Me.btn_afegir = New System.Windows.Forms.Button
         Me.btn_cancela = New System.Windows.Forms.Button
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.cmbx_rol = New System.Windows.Forms.ComboBox
         Me.txtb_cognom = New System.Windows.Forms.TextBox
         Me.txtb_password = New System.Windows.Forms.TextBox
         Me.txtb_nom = New System.Windows.Forms.TextBox
@@ -305,7 +305,7 @@ Partial Class Emp_Gestio_usuaris
         '
         Me.grb_insert_modifica.Controls.Add(Me.btn_afegir)
         Me.grb_insert_modifica.Controls.Add(Me.btn_cancela)
-        Me.grb_insert_modifica.Controls.Add(Me.ComboBox1)
+        Me.grb_insert_modifica.Controls.Add(Me.cmbx_rol)
         Me.grb_insert_modifica.Controls.Add(Me.txtb_cognom)
         Me.grb_insert_modifica.Controls.Add(Me.txtb_password)
         Me.grb_insert_modifica.Controls.Add(Me.txtb_nom)
@@ -343,14 +343,14 @@ Partial Class Emp_Gestio_usuaris
         Me.btn_cancela.Text = "Cancel·la"
         Me.btn_cancela.UseVisualStyleBackColor = False
         '
-        'ComboBox1
+        'cmbx_rol
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Administrador", "Cheff", "Barman", "Camarero"})
-        Me.ComboBox1.Location = New System.Drawing.Point(128, 184)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(108, 21)
-        Me.ComboBox1.TabIndex = 40
+        Me.cmbx_rol.FormattingEnabled = True
+        Me.cmbx_rol.Items.AddRange(New Object() {"Administrador", "Cheff", "Barman", "Camarero"})
+        Me.cmbx_rol.Location = New System.Drawing.Point(128, 184)
+        Me.cmbx_rol.Name = "cmbx_rol"
+        Me.cmbx_rol.Size = New System.Drawing.Size(108, 21)
+        Me.cmbx_rol.TabIndex = 40
         '
         'txtb_cognom
         '
@@ -471,7 +471,7 @@ Partial Class Emp_Gestio_usuaris
     Friend WithEvents txtb_cognom As System.Windows.Forms.TextBox
     Friend WithEvents txtb_password As System.Windows.Forms.TextBox
     Friend WithEvents txtb_nom As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbx_rol As System.Windows.Forms.ComboBox
     Friend WithEvents btn_afegir As System.Windows.Forms.Button
     Friend WithEvents btn_cancela As System.Windows.Forms.Button
     Friend WithEvents btn_estat As System.Windows.Forms.Button

@@ -60,8 +60,6 @@
 
         Next
 
-        MsgBox("Tenim " + productes.Count.ToString + " items", MsgBoxStyle.AbortRetryIgnore)
-
     End Sub
 
     Private Sub addInfoLvPedidos(ByVal s As String)
@@ -149,6 +147,7 @@
 
     Private Sub lv_productes_disponibles_doubleclick(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
 
+        pnl_info_producte.Hide()
         For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
             If (lv_productos_disp.Items.Item(i).Selected = True) Then
@@ -164,10 +163,12 @@
 
     Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.Click
 
-        pnl_info_producte.Show()
+
+        System.Threading.Thread.Sleep(170)
         lbl_titol_producte.Text = "Aquesta es el titol"
         lbl_descripcio.Text = "Aquesta es la descripccio"
         lbl_ingredients.Text = "Els ingredients: a, b, c, d"
+        pnl_info_producte.Show()
 
     End Sub
 
@@ -241,4 +242,5 @@
     Private Sub btn_cancela_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancela.Click
         pnl_info_producte.Hide()
     End Sub
+
 End Class
