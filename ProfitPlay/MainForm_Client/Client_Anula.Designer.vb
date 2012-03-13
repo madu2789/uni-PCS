@@ -24,7 +24,8 @@ Partial Class Client_Anula
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Anula))
         Me.grb_anular = New System.Windows.Forms.GroupBox
-        Me.pcb_anular = New System.Windows.Forms.PictureBox
+        Me.container2 = New System.Windows.Forms.ToolStripContainer
+        Me.lbl_productes_no_espera = New System.Windows.Forms.Label
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
         Me.llista_productes_eliminar = New System.Windows.Forms.ToolStrip
         Me.lbl_anular = New System.Windows.Forms.Label
@@ -37,8 +38,10 @@ Partial Class Client_Anula
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.btn_estat = New System.Windows.Forms.Button
+        Me.llista_resta_productes = New System.Windows.Forms.ToolStrip
         Me.grb_anular.SuspendLayout()
-        CType(Me.pcb_anular, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.container2.ContentPanel.SuspendLayout()
+        Me.container2.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
@@ -47,7 +50,8 @@ Partial Class Client_Anula
         '
         'grb_anular
         '
-        Me.grb_anular.Controls.Add(Me.pcb_anular)
+        Me.grb_anular.Controls.Add(Me.container2)
+        Me.grb_anular.Controls.Add(Me.lbl_productes_no_espera)
         Me.grb_anular.Controls.Add(Me.ToolStripContainer1)
         Me.grb_anular.Controls.Add(Me.lbl_anular)
         Me.grb_anular.Location = New System.Drawing.Point(178, 73)
@@ -57,16 +61,31 @@ Partial Class Client_Anula
         Me.grb_anular.TabStop = False
         Me.grb_anular.Text = "Anular"
         '
-        'pcb_anular
+        'container2
         '
-        Me.pcb_anular.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pcb_anular.Image = CType(resources.GetObject("pcb_anular.Image"), System.Drawing.Image)
-        Me.pcb_anular.Location = New System.Drawing.Point(312, 52)
-        Me.pcb_anular.Name = "pcb_anular"
-        Me.pcb_anular.Size = New System.Drawing.Size(172, 129)
-        Me.pcb_anular.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcb_anular.TabIndex = 33
-        Me.pcb_anular.TabStop = False
+        '
+        'container2.ContentPanel
+        '
+        Me.container2.ContentPanel.Controls.Add(Me.llista_resta_productes)
+        Me.container2.ContentPanel.Size = New System.Drawing.Size(170, 178)
+        Me.container2.Location = New System.Drawing.Point(288, 52)
+        Me.container2.Name = "container2"
+        Me.container2.Size = New System.Drawing.Size(170, 203)
+        Me.container2.TabIndex = 34
+        Me.container2.Text = "ToolStripContainer2"
+        '
+        'container2.TopToolStripPanel
+        '
+        Me.container2.TopToolStripPanel.Padding = New System.Windows.Forms.Padding(0, 0, 25, 25)
+        '
+        'lbl_productes_no_espera
+        '
+        Me.lbl_productes_no_espera.AutoSize = True
+        Me.lbl_productes_no_espera.Location = New System.Drawing.Point(313, 23)
+        Me.lbl_productes_no_espera.Name = "lbl_productes_no_espera"
+        Me.lbl_productes_no_espera.Size = New System.Drawing.Size(101, 13)
+        Me.lbl_productes_no_espera.TabIndex = 33
+        Me.lbl_productes_no_espera.Text = "Resta de Productes"
         '
         'ToolStripContainer1
         '
@@ -101,7 +120,7 @@ Partial Class Client_Anula
         'lbl_anular
         '
         Me.lbl_anular.AutoSize = True
-        Me.lbl_anular.Location = New System.Drawing.Point(51, 26)
+        Me.lbl_anular.Location = New System.Drawing.Point(87, 23)
         Me.lbl_anular.Name = "lbl_anular"
         Me.lbl_anular.Size = New System.Drawing.Size(108, 13)
         Me.lbl_anular.TabIndex = 1
@@ -204,6 +223,19 @@ Partial Class Client_Anula
         Me.btn_estat.TabIndex = 1
         Me.btn_estat.UseVisualStyleBackColor = True
         '
+        'llista_resta_productes
+        '
+        Me.llista_resta_productes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.llista_resta_productes.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.llista_resta_productes.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
+        Me.llista_resta_productes.Location = New System.Drawing.Point(0, 0)
+        Me.llista_resta_productes.Name = "llista_resta_productes"
+        Me.llista_resta_productes.Padding = New System.Windows.Forms.Padding(0)
+        Me.llista_resta_productes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.llista_resta_productes.Size = New System.Drawing.Size(170, 178)
+        Me.llista_resta_productes.TabIndex = 3
+        Me.llista_resta_productes.Text = "ToolStrip1"
+        '
         'Client_Anula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -218,7 +250,10 @@ Partial Class Client_Anula
         Me.Text = "Client_Anula"
         Me.grb_anular.ResumeLayout(False)
         Me.grb_anular.PerformLayout()
-        CType(Me.pcb_anular, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.container2.ContentPanel.ResumeLayout(False)
+        Me.container2.ContentPanel.PerformLayout()
+        Me.container2.ResumeLayout(False)
+        Me.container2.PerformLayout()
         Me.ToolStripContainer1.ContentPanel.ResumeLayout(False)
         Me.ToolStripContainer1.ContentPanel.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
@@ -230,7 +265,6 @@ Partial Class Client_Anula
 
     End Sub
     Friend WithEvents grb_anular As System.Windows.Forms.GroupBox
-    Friend WithEvents pcb_anular As System.Windows.Forms.PictureBox
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents llista_productes_eliminar As System.Windows.Forms.ToolStrip
     Friend WithEvents lbl_anular As System.Windows.Forms.Label
@@ -243,4 +277,7 @@ Partial Class Client_Anula
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents lbl_punts As System.Windows.Forms.Label
     Friend WithEvents btn_estat As System.Windows.Forms.Button
+    Friend WithEvents container2 As System.Windows.Forms.ToolStripContainer
+    Friend WithEvents lbl_productes_no_espera As System.Windows.Forms.Label
+    Friend WithEvents llista_resta_productes As System.Windows.Forms.ToolStrip
 End Class

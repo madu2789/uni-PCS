@@ -185,13 +185,16 @@
 
     Public Sub refreshComanda()
 
-        lv_pedidos.Clear()
+        If m_comanda IsNot Nothing Then
 
-        For s As Integer = 0 To m_comanda.getComanda.Count - 1 Step 1
+            lv_pedidos.Clear()
+            For s As Integer = 0 To m_comanda.getComanda.Count - 1 Step 1
 
-            lv_pedidos.Items.Add(m_comanda.getComanda.Item(s))
+                lv_pedidos.Items.Add(m_comanda.getComanda.Item(s))
 
-        Next
+            Next
+
+        End If
 
     End Sub
 
