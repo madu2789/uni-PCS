@@ -226,16 +226,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Service References\Profit_WS\Service1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Profit_WS\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Profit_WS\Service1.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Profit_WS\configuration.svcinfo" />
@@ -246,6 +242,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Profit_WS\Service11.disco" />
+    <None Include="Service References\Profit_WS\Service11.wsdl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
