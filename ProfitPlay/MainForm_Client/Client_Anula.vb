@@ -2,6 +2,7 @@
 
     Dim element As New ToolStripButton()
     Dim m_comanda As Comanda
+    Dim tota_comanda As Comanda = New Comanda
 
     Private Sub setDefaults(ByVal e As ToolStripButton)
 
@@ -34,6 +35,7 @@
         Client_Carta.Show()
         Me.Dispose()
         Me.Hide()
+
     End Sub
 
     Private Sub btn_jugar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_jugar.Click
@@ -94,6 +96,7 @@
 
             Next
 
+            'nomes inserim aqui el que ja no esta en espera (de la bbdd)
             For Each p As String In m_comanda.getComanda
                 llista_resta_productes.Items.Add(p)
 
@@ -125,12 +128,6 @@
             End Try
 
         Next
-
-    End Sub
-
-    Private Sub pcb_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-
 
     End Sub
 
