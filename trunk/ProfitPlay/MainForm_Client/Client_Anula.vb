@@ -27,9 +27,12 @@
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
+
+        'grabo el que ja tenia a la bbdd a la bbdd i afeixo que el que hem venia (menys el eliminat)
         Client_Carta.setComanda(m_comanda)
         Client_Carta.refreshComanda()
         Client_Carta.Show()
+        Me.Dispose()
         Me.Hide()
     End Sub
 
@@ -51,7 +54,10 @@
         Dim a As PaddingConverter = New PaddingConverter()
         m_comanda = Client_Carta.getComanda()
 
-        MsgBox("Tenim al contador " + m_comanda.getComanda.Count)
+        'llegir tot el que hi ha acumulat a la bbdd
+
+        'llegeixo el que hem ve de nou de la carta
+        insertToolStripItem()
 
     End Sub
 
@@ -81,11 +87,19 @@
 
     Private Sub insertToolStripItem()
 
-        For Each p As String In m_comanda.getComanda
+        If m_comanda IsNot Nothing Then
+            For Each p As String In m_comanda.getComanda
 
-            llista_productes_eliminar.Items.Add(p)
+                llista_productes_eliminar.Items.Add(p)
 
-        Next
+            Next
+
+            For Each p As String In m_comanda.getComanda
+                llista_resta_productes.Items.Add(p)
+
+            Next
+        End If
+        
 
     End Sub
 
@@ -114,9 +128,10 @@
 
     End Sub
 
-    Private Sub pcb_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pcb_anular.Click
+    Private Sub pcb_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
-        insertToolStripItem()
+
 
     End Sub
+
 End Class
