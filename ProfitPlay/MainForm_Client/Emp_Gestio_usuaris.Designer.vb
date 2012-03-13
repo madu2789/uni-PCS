@@ -26,14 +26,7 @@ Partial Class Emp_Gestio_usuaris
         Me.grb_users = New System.Windows.Forms.GroupBox
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripDropDownButton
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.EliminarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripDropDownButton
-        Me.EliminarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-        Me.EliminarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
         Me.pcb_sortir = New System.Windows.Forms.PictureBox
@@ -57,11 +50,11 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_cognom = New System.Windows.Forms.Label
         Me.lbl_password = New System.Windows.Forms.Label
         Me.lbl_nom = New System.Windows.Forms.Label
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.grb_users.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
         CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,7 +93,6 @@ Partial Class Emp_Gestio_usuaris
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton2, Me.ToolStripButton1})
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -108,50 +100,6 @@ Partial Class Emp_Gestio_usuaris
         Me.ToolStrip1.Size = New System.Drawing.Size(170, 178)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem, Me.EliminarToolStripMenuItem2})
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(168, 20)
-        Me.ToolStripButton2.Text = "Daniel Madurell"
-        Me.ToolStripButton2.ToolTipText = "Administrador"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.EliminarToolStripMenuItem.Text = "Modificar"
-        '
-        'EliminarToolStripMenuItem2
-        '
-        Me.EliminarToolStripMenuItem2.Name = "EliminarToolStripMenuItem2"
-        Me.EliminarToolStripMenuItem2.Size = New System.Drawing.Size(125, 22)
-        Me.EliminarToolStripMenuItem2.Text = "Eliminar"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem1, Me.EliminarToolStripMenuItem3})
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(168, 20)
-        Me.ToolStripButton1.Text = "David DeAlvarado"
-        Me.ToolStripButton1.ToolTipText = "Cheff"
-        '
-        'EliminarToolStripMenuItem1
-        '
-        Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
-        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
-        Me.EliminarToolStripMenuItem1.Text = "Modificar"
-        '
-        'EliminarToolStripMenuItem3
-        '
-        Me.EliminarToolStripMenuItem3.Name = "EliminarToolStripMenuItem3"
-        Me.EliminarToolStripMenuItem3.Size = New System.Drawing.Size(125, 22)
-        Me.EliminarToolStripMenuItem3.Text = "Eliminar"
         '
         'ToolStrip2
         '
@@ -162,14 +110,6 @@ Partial Class Emp_Gestio_usuaris
         Me.ToolStrip2.Size = New System.Drawing.Size(107, 25)
         Me.ToolStrip2.TabIndex = 0
         Me.ToolStrip2.Text = "Afegir"
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(95, 22)
-        Me.ToolStripButton3.Text = "Afegir Usuari"
         '
         'pnl_estat
         '
@@ -409,6 +349,14 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_nom.TabIndex = 0
         Me.lbl_nom.Text = "Nom:"
         '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripButton3.Text = "Afegir Usuari"
+        '
         'Emp_Gestio_usuaris
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -429,8 +377,6 @@ Partial Class Emp_Gestio_usuaris
         Me.ToolStripContainer1.TopToolStripPanel.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
         Me.pnl_estat.ResumeLayout(False)
@@ -445,14 +391,7 @@ Partial Class Emp_Gestio_usuaris
     Friend WithEvents grb_users As System.Windows.Forms.GroupBox
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripDropDownButton
-    Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EliminarToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripDropDownButton
-    Friend WithEvents EliminarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EliminarToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStrip2 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
     Friend WithEvents pnl_estat As System.Windows.Forms.Panel
     Friend WithEvents pcb_sortir As System.Windows.Forms.PictureBox
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
@@ -476,4 +415,5 @@ Partial Class Emp_Gestio_usuaris
     Friend WithEvents btn_cancela As System.Windows.Forms.Button
     Friend WithEvents btn_estat As System.Windows.Forms.Button
     Friend WithEvents btn_gest_pagos As System.Windows.Forms.Button
+    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
 End Class

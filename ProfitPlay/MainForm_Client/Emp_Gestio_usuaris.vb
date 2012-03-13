@@ -56,7 +56,7 @@
         Else
 
             'insert a base de dades empleat
-
+            ToolStrip1.Items.Add(txtb_nom.Text + " " + txtb_cognom.Text)
             grb_insert_modifica.Hide()
 
         End If
@@ -65,5 +65,15 @@
 
     Private Sub btn_cancela_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancela.Click
         grb_insert_modifica.Hide()
+    End Sub
+
+    Private Sub ToolStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
+        For i As Integer = 0 To ToolStrip1.Items.Count - 1 Step 1
+
+            If (e.ClickedItem.Text = ToolStrip1.Items.Item(i).Text) Then
+                ToolStrip1.Items.RemoveAt(i)
+            End If
+
+        Next
     End Sub
 End Class
