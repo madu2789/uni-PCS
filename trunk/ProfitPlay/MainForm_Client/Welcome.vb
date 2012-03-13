@@ -59,8 +59,8 @@
             Else
                 'acces a la base de dades
 
-                '  Dim rol As String = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
-                Dim rol As String = "Administrador"
+                Dim rol As String = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
+                'Dim rol As String = "Administrador"
                 If rol IsNot Nothing Then
                     Me.Hide()
                     Dim main As New Mainform_empleado(txtb_login.Text, rol)
