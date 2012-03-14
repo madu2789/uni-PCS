@@ -20,6 +20,7 @@
 
         For i As Integer = 0 To productes.Count - 1 Step 1
 
+            MsgBox("El count es borrant a la comanda" + productes.Count.ToString, MsgBoxStyle.AbortRetryIgnore)
             If (productes.Item(i) = p) Then
 
                 productes.RemoveAt(i)

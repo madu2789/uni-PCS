@@ -145,32 +145,32 @@
         btn_bebidas.PerformClick()
     End Sub
 
-    Private Sub lv_productes_disponibles_doubleclick(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
+    'Private Sub lv_productes_disponibles_doubleclick(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
 
-        pnl_info_producte.Hide()
-        For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+    '    pnl_info_producte.Hide()
+    '    For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
-            If (lv_productos_disp.Items.Item(i).Selected = True) Then
+    '        If (lv_productos_disp.Items.Item(i).Selected = True) Then
 
-                lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-                m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+    '            lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
+    '            m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
 
-            End If
+    '        End If
 
-        Next
+    '    Next
 
-    End Sub
+    'End Sub
 
-    Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.Click
+    'Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.Click
 
 
-        System.Threading.Thread.Sleep(170)
-        lbl_titol_producte.Text = "Aquesta es el titol"
-        lbl_descripcio.Text = "Aquesta es la descripccio"
-        lbl_ingredients.Text = "Els ingredients: a, b, c, d"
-        pnl_info_producte.Show()
+    '    System.Threading.Thread.Sleep(170)
+    '    lbl_titol_producte.Text = "Aquesta es el titol"
+    '    lbl_descripcio.Text = "Aquesta es la descripccio"
+    '    lbl_ingredients.Text = "Els ingredients: a, b, c, d"
+    '    pnl_info_producte.Show()
 
-    End Sub
+    'End Sub
 
     Public Function getComanda() As Comanda
         Return m_comanda
@@ -243,4 +243,46 @@
         pnl_info_producte.Hide()
     End Sub
 
+    Private Sub btn_add_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_add_prod.Click
+
+        pnl_info_producte.Hide()
+        For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+
+            If (lv_productos_disp.Items.Item(i).Selected = True) Then
+
+                lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
+                m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+
+            End If
+
+        Next
+
+    End Sub
+
+    Private Sub btn_del_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_del_prod.Click
+
+        pnl_info_producte.Hide()
+        For i As Integer = 0 To lv_pedidos.Items.Count - 1 Step 1
+
+            MsgBox("El count borrant es " + lv_pedidos.Items.Count.ToString, MsgBoxStyle.AbortRetryIgnore)
+            If (lv_pedidos.Items.Item(i).Selected = True) Then
+
+                m_comanda.deleteElement(lv_pedidos.Items.Item(i).Text)
+                lv_pedidos.Items.RemoveAt(i)
+
+            End If
+
+        Next
+
+    End Sub
+
+    Private Sub btn_info_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_info_prod.Click
+
+        System.Threading.Thread.Sleep(170)
+        lbl_titol_producte.Text = "Aquesta es el titol"
+        lbl_descripcio.Text = "Aquesta es la descripccio"
+        lbl_ingredients.Text = "Els ingredients: a, b, c, d"
+        pnl_info_producte.Show()
+
+    End Sub
 End Class
