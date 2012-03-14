@@ -40,6 +40,7 @@ Partial Class Client_Carta
         Me.btn_jugar = New System.Windows.Forms.Button
         Me.grb_menu_carta = New System.Windows.Forms.GroupBox
         Me.grb_pedido = New System.Windows.Forms.GroupBox
+        Me.btn_info_prod = New System.Windows.Forms.Button
         Me.pnl_info_producte = New System.Windows.Forms.Panel
         Me.pcb_producte = New System.Windows.Forms.PictureBox
         Me.nud_cantitat = New System.Windows.Forms.NumericUpDown
@@ -57,6 +58,8 @@ Partial Class Client_Carta
         Me.lv_productos_disp = New System.Windows.Forms.ListView
         Me.Nombre = New System.Windows.Forms.ColumnHeader
         Me.Cantidad = New System.Windows.Forms.ColumnHeader
+        Me.btn_add_prod = New System.Windows.Forms.Button
+        Me.btn_del_prod = New System.Windows.Forms.Button
         Me.btn_postres = New System.Windows.Forms.Button
         Me.btn_segundos = New System.Windows.Forms.Button
         Me.btn_primeros = New System.Windows.Forms.Button
@@ -84,22 +87,22 @@ Partial Class Client_Carta
         'lbl_taula
         '
         Me.lbl_taula.AutoSize = True
-        Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
+        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
         Me.lbl_taula.TabIndex = 22
         Me.lbl_taula.Text = "Taula: XXX"
         '
         'lbl_punts
         '
         Me.lbl_punts.AutoSize = True
-        Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
         Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(97, 29)
+        Me.lbl_punts.Size = New System.Drawing.Size(106, 31)
         Me.lbl_punts.TabIndex = 0
         Me.lbl_punts.Text = "Punts: "
         '
@@ -127,7 +130,7 @@ Partial Class Client_Carta
         '
         'btn_menu_anular
         '
-        Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Location = New System.Drawing.Point(0, 278)
         Me.btn_menu_anular.Name = "btn_menu_anular"
         Me.btn_menu_anular.Size = New System.Drawing.Size(135, 85)
@@ -137,7 +140,7 @@ Partial Class Client_Carta
         '
         'btn_veurecarta
         '
-        Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Location = New System.Drawing.Point(0, 35)
         Me.btn_veurecarta.Name = "btn_veurecarta"
         Me.btn_veurecarta.Size = New System.Drawing.Size(135, 55)
@@ -147,7 +150,7 @@ Partial Class Client_Carta
         '
         'btn_Pagar
         '
-        Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Location = New System.Drawing.Point(0, 141)
         Me.btn_Pagar.Name = "btn_Pagar"
         Me.btn_Pagar.Size = New System.Drawing.Size(135, 55)
@@ -157,7 +160,7 @@ Partial Class Client_Carta
         '
         'btn_jugar
         '
-        Me.btn_jugar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_jugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_jugar.Location = New System.Drawing.Point(0, 89)
         Me.btn_jugar.Name = "btn_jugar"
         Me.btn_jugar.Size = New System.Drawing.Size(135, 55)
@@ -188,6 +191,9 @@ Partial Class Client_Carta
         Me.grb_pedido.Controls.Add(Me.lbl_productos_dispo)
         Me.grb_pedido.Controls.Add(Me.lv_pedidos)
         Me.grb_pedido.Controls.Add(Me.lv_productos_disp)
+        Me.grb_pedido.Controls.Add(Me.btn_add_prod)
+        Me.grb_pedido.Controls.Add(Me.btn_del_prod)
+        Me.grb_pedido.Controls.Add(Me.btn_info_prod)
         Me.grb_pedido.Location = New System.Drawing.Point(6, 86)
         Me.grb_pedido.Name = "grb_pedido"
         Me.grb_pedido.Size = New System.Drawing.Size(646, 305)
@@ -195,6 +201,15 @@ Partial Class Client_Carta
         Me.grb_pedido.TabStop = False
         Me.grb_pedido.Text = "Hacer pedido"
         Me.grb_pedido.Visible = False
+        '
+        'btn_info_prod
+        '
+        Me.btn_info_prod.Location = New System.Drawing.Point(157, 207)
+        Me.btn_info_prod.Name = "btn_info_prod"
+        Me.btn_info_prod.Size = New System.Drawing.Size(75, 23)
+        Me.btn_info_prod.TabIndex = 27
+        Me.btn_info_prod.Text = "Veure Info"
+        Me.btn_info_prod.UseVisualStyleBackColor = True
         '
         'pnl_info_producte
         '
@@ -206,7 +221,7 @@ Partial Class Client_Carta
         Me.pnl_info_producte.Controls.Add(Me.lbl_ingredients)
         Me.pnl_info_producte.Controls.Add(Me.lbl_descripcio)
         Me.pnl_info_producte.Controls.Add(Me.lbl_titol_producte)
-        Me.pnl_info_producte.Location = New System.Drawing.Point(159, 19)
+        Me.pnl_info_producte.Location = New System.Drawing.Point(157, 19)
         Me.pnl_info_producte.Name = "pnl_info_producte"
         Me.pnl_info_producte.Size = New System.Drawing.Size(465, 276)
         Me.pnl_info_producte.TabIndex = 23
@@ -360,9 +375,27 @@ Partial Class Client_Carta
         '
         Me.Cantidad.Text = "Cantidad"
         '
+        'btn_add_prod
+        '
+        Me.btn_add_prod.Location = New System.Drawing.Point(157, 105)
+        Me.btn_add_prod.Name = "btn_add_prod"
+        Me.btn_add_prod.Size = New System.Drawing.Size(75, 23)
+        Me.btn_add_prod.TabIndex = 25
+        Me.btn_add_prod.Text = "--->"
+        Me.btn_add_prod.UseVisualStyleBackColor = True
+        '
+        'btn_del_prod
+        '
+        Me.btn_del_prod.Location = New System.Drawing.Point(157, 157)
+        Me.btn_del_prod.Name = "btn_del_prod"
+        Me.btn_del_prod.Size = New System.Drawing.Size(75, 23)
+        Me.btn_del_prod.TabIndex = 26
+        Me.btn_del_prod.Text = "<---"
+        Me.btn_del_prod.UseVisualStyleBackColor = True
+        '
         'btn_postres
         '
-        Me.btn_postres.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_postres.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_postres.Location = New System.Drawing.Point(507, 19)
         Me.btn_postres.Name = "btn_postres"
         Me.btn_postres.Size = New System.Drawing.Size(144, 55)
@@ -372,7 +405,7 @@ Partial Class Client_Carta
         '
         'btn_segundos
         '
-        Me.btn_segundos.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_segundos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_segundos.Location = New System.Drawing.Point(341, 20)
         Me.btn_segundos.Name = "btn_segundos"
         Me.btn_segundos.Size = New System.Drawing.Size(136, 55)
@@ -382,7 +415,7 @@ Partial Class Client_Carta
         '
         'btn_primeros
         '
-        Me.btn_primeros.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_primeros.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_primeros.Location = New System.Drawing.Point(172, 20)
         Me.btn_primeros.Name = "btn_primeros"
         Me.btn_primeros.Size = New System.Drawing.Size(136, 54)
@@ -392,7 +425,7 @@ Partial Class Client_Carta
         '
         'btn_bebidas
         '
-        Me.btn_bebidas.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_bebidas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_bebidas.Location = New System.Drawing.Point(6, 23)
         Me.btn_bebidas.Name = "btn_bebidas"
         Me.btn_bebidas.Size = New System.Drawing.Size(136, 53)
@@ -457,4 +490,7 @@ Partial Class Client_Carta
     Friend WithEvents btn_primeros As System.Windows.Forms.Button
     Friend WithEvents btn_bebidas As System.Windows.Forms.Button
     Friend WithEvents btn_confirma_carta As System.Windows.Forms.Button
+    Friend WithEvents btn_add_prod As System.Windows.Forms.Button
+    Friend WithEvents btn_del_prod As System.Windows.Forms.Button
+    Friend WithEvents btn_info_prod As System.Windows.Forms.Button
 End Class
