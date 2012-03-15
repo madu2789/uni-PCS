@@ -199,14 +199,12 @@ Partial Class Client_Carta
         Me.grb_pedido.Controls.Add(Me.lbl_productos_dispo)
         Me.grb_pedido.Controls.Add(Me.lv_pedidos)
         Me.grb_pedido.Controls.Add(Me.lv_productos_disp)
-<<<<<<< .mine
-        Me.grb_pedido.Location = New System.Drawing.Point(11, 86)
-=======
+
         Me.grb_pedido.Controls.Add(Me.btn_add_prod)
         Me.grb_pedido.Controls.Add(Me.btn_del_prod)
         Me.grb_pedido.Controls.Add(Me.btn_info_prod)
         Me.grb_pedido.Location = New System.Drawing.Point(6, 86)
->>>>>>> .r53
+
         Me.grb_pedido.Name = "grb_pedido"
         Me.grb_pedido.Size = New System.Drawing.Size(635, 305)
         Me.grb_pedido.TabIndex = 20
