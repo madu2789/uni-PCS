@@ -25,6 +25,7 @@ Partial Class Client_Anula
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Anula))
         Me.grb_anular = New System.Windows.Forms.GroupBox
         Me.container2 = New System.Windows.Forms.ToolStripContainer
+        Me.llista_resta_productes = New System.Windows.Forms.ToolStrip
         Me.lbl_productes_no_espera = New System.Windows.Forms.Label
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
         Me.llista_productes_eliminar = New System.Windows.Forms.ToolStrip
@@ -38,7 +39,6 @@ Partial Class Client_Anula
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.btn_estat = New System.Windows.Forms.Button
-        Me.llista_resta_productes = New System.Windows.Forms.ToolStrip
         Me.grb_anular.SuspendLayout()
         Me.container2.ContentPanel.SuspendLayout()
         Me.container2.SuspendLayout()
@@ -77,6 +77,19 @@ Partial Class Client_Anula
         'container2.TopToolStripPanel
         '
         Me.container2.TopToolStripPanel.Padding = New System.Windows.Forms.Padding(0, 0, 25, 25)
+        '
+        'llista_resta_productes
+        '
+        Me.llista_resta_productes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.llista_resta_productes.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.llista_resta_productes.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
+        Me.llista_resta_productes.Location = New System.Drawing.Point(0, 0)
+        Me.llista_resta_productes.Name = "llista_resta_productes"
+        Me.llista_resta_productes.Padding = New System.Windows.Forms.Padding(0)
+        Me.llista_resta_productes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.llista_resta_productes.Size = New System.Drawing.Size(170, 178)
+        Me.llista_resta_productes.TabIndex = 3
+        Me.llista_resta_productes.Text = "ToolStrip1"
         '
         'lbl_productes_no_espera
         '
@@ -136,47 +149,55 @@ Partial Class Client_Anula
         Me.pnl_plats.Controls.Add(Me.btn_jugar)
         Me.pnl_plats.Location = New System.Drawing.Point(-8, -18)
         Me.pnl_plats.Name = "pnl_plats"
-        Me.pnl_plats.Size = New System.Drawing.Size(135, 466)
+        Me.pnl_plats.Size = New System.Drawing.Size(159, 473)
         Me.pnl_plats.TabIndex = 32
         '
         'btn_menu_anular
         '
         Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_menu_anular.Location = New System.Drawing.Point(0, 278)
+        Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
+        Me.btn_menu_anular.Location = New System.Drawing.Point(8, 369)
         Me.btn_menu_anular.Name = "btn_menu_anular"
-        Me.btn_menu_anular.Size = New System.Drawing.Size(135, 85)
+        Me.btn_menu_anular.Size = New System.Drawing.Size(145, 95)
         Me.btn_menu_anular.TabIndex = 17
-        Me.btn_menu_anular.Text = "Solicitar anular comanda"
+        Me.btn_menu_anular.Text = "Comanda"
+        Me.btn_menu_anular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_menu_anular.UseVisualStyleBackColor = True
         '
         'btn_veurecarta
         '
         Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_veurecarta.Location = New System.Drawing.Point(0, 35)
+        Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
+        Me.btn_veurecarta.Location = New System.Drawing.Point(8, 66)
         Me.btn_veurecarta.Name = "btn_veurecarta"
-        Me.btn_veurecarta.Size = New System.Drawing.Size(135, 55)
+        Me.btn_veurecarta.Size = New System.Drawing.Size(145, 95)
         Me.btn_veurecarta.TabIndex = 11
         Me.btn_veurecarta.Text = "Veure Carta"
+        Me.btn_veurecarta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_veurecarta.UseVisualStyleBackColor = True
         '
         'btn_Pagar
         '
         Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Pagar.Location = New System.Drawing.Point(0, 141)
+        Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_Pagar.Location = New System.Drawing.Point(8, 268)
         Me.btn_Pagar.Name = "btn_Pagar"
-        Me.btn_Pagar.Size = New System.Drawing.Size(135, 55)
+        Me.btn_Pagar.Size = New System.Drawing.Size(145, 95)
         Me.btn_Pagar.TabIndex = 14
         Me.btn_Pagar.Text = "Pagar i sortir"
+        Me.btn_Pagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_Pagar.UseVisualStyleBackColor = True
         '
         'btn_jugar
         '
         Me.btn_jugar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_jugar.Location = New System.Drawing.Point(0, 89)
+        Me.btn_jugar.Image = Global.MainForm_Client.My.Resources.Resources.juego
+        Me.btn_jugar.Location = New System.Drawing.Point(8, 167)
         Me.btn_jugar.Name = "btn_jugar"
-        Me.btn_jugar.Size = New System.Drawing.Size(135, 55)
+        Me.btn_jugar.Size = New System.Drawing.Size(145, 95)
         Me.btn_jugar.TabIndex = 13
         Me.btn_jugar.Text = "Jugar"
+        Me.btn_jugar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_jugar.UseVisualStyleBackColor = True
         '
         'pnl_estat
@@ -188,7 +209,7 @@ Partial Class Client_Anula
         Me.pnl_estat.Controls.Add(Me.btn_estat)
         Me.pnl_estat.Location = New System.Drawing.Point(126, -18)
         Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(664, 69)
+        Me.pnl_estat.Size = New System.Drawing.Size(707, 69)
         Me.pnl_estat.TabIndex = 34
         '
         'lbl_taula
@@ -223,25 +244,12 @@ Partial Class Client_Anula
         Me.btn_estat.TabIndex = 1
         Me.btn_estat.UseVisualStyleBackColor = True
         '
-        'llista_resta_productes
-        '
-        Me.llista_resta_productes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.llista_resta_productes.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.llista_resta_productes.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
-        Me.llista_resta_productes.Location = New System.Drawing.Point(0, 0)
-        Me.llista_resta_productes.Name = "llista_resta_productes"
-        Me.llista_resta_productes.Padding = New System.Windows.Forms.Padding(0)
-        Me.llista_resta_productes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.llista_resta_productes.Size = New System.Drawing.Size(170, 178)
-        Me.llista_resta_productes.TabIndex = 3
-        Me.llista_resta_productes.Text = "ToolStrip1"
-        '
         'Client_Anula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(783, 430)
+        Me.ClientSize = New System.Drawing.Size(844, 472)
         Me.Controls.Add(Me.grb_anular)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
