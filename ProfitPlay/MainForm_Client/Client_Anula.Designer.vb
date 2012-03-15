@@ -156,7 +156,7 @@ Partial Class Client_Anula
         '
         Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
-        Me.btn_menu_anular.Location = New System.Drawing.Point(8, 369)
+        Me.btn_menu_anular.Location = New System.Drawing.Point(8, 371)
         Me.btn_menu_anular.Name = "btn_menu_anular"
         Me.btn_menu_anular.Size = New System.Drawing.Size(145, 95)
         Me.btn_menu_anular.TabIndex = 17
@@ -168,7 +168,7 @@ Partial Class Client_Anula
         '
         Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
-        Me.btn_veurecarta.Location = New System.Drawing.Point(8, 66)
+        Me.btn_veurecarta.Location = New System.Drawing.Point(8, 77)
         Me.btn_veurecarta.Name = "btn_veurecarta"
         Me.btn_veurecarta.Size = New System.Drawing.Size(145, 95)
         Me.btn_veurecarta.TabIndex = 11
@@ -180,7 +180,7 @@ Partial Class Client_Anula
         '
         Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
-        Me.btn_Pagar.Location = New System.Drawing.Point(8, 268)
+        Me.btn_Pagar.Location = New System.Drawing.Point(8, 273)
         Me.btn_Pagar.Name = "btn_Pagar"
         Me.btn_Pagar.Size = New System.Drawing.Size(145, 95)
         Me.btn_Pagar.TabIndex = 14
@@ -192,7 +192,7 @@ Partial Class Client_Anula
         '
         Me.btn_jugar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_jugar.Image = Global.MainForm_Client.My.Resources.Resources.juego
-        Me.btn_jugar.Location = New System.Drawing.Point(8, 167)
+        Me.btn_jugar.Location = New System.Drawing.Point(8, 175)
         Me.btn_jugar.Name = "btn_jugar"
         Me.btn_jugar.Size = New System.Drawing.Size(145, 95)
         Me.btn_jugar.TabIndex = 13
@@ -207,9 +207,9 @@ Partial Class Client_Anula
         Me.pnl_estat.Controls.Add(Me.lbl_taula)
         Me.pnl_estat.Controls.Add(Me.lbl_punts)
         Me.pnl_estat.Controls.Add(Me.btn_estat)
-        Me.pnl_estat.Location = New System.Drawing.Point(126, -18)
+        Me.pnl_estat.Location = New System.Drawing.Point(126, -16)
         Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(707, 69)
+        Me.pnl_estat.Size = New System.Drawing.Size(707, 83)
         Me.pnl_estat.TabIndex = 34
         '
         'lbl_taula
@@ -217,7 +217,7 @@ Partial Class Client_Anula
         Me.lbl_taula.AutoSize = True
         Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
+        Me.lbl_taula.Location = New System.Drawing.Point(115, 26)
         Me.lbl_taula.Name = "lbl_taula"
         Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
         Me.lbl_taula.TabIndex = 22
@@ -228,7 +228,7 @@ Partial Class Client_Anula
         Me.lbl_punts.AutoSize = True
         Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
+        Me.lbl_punts.Location = New System.Drawing.Point(352, 26)
         Me.lbl_punts.Name = "lbl_punts"
         Me.lbl_punts.Size = New System.Drawing.Size(97, 29)
         Me.lbl_punts.TabIndex = 0
