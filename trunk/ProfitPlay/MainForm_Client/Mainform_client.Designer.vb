@@ -47,12 +47,10 @@ Partial Class Mainform_client
         Me.lbl_punts.TabIndex = 0
         Me.lbl_punts.Text = "Punts:  "
         '
-<<<<<<< .mine
-=======
         'btn_estat
         '
         Me.btn_estat.AutoSize = True
-        Me.btn_estat.Image = CType(resources.GetObject("btn_estat.Image"), System.Drawing.Image)
+        'Me.btn_estat.Image = CType(Resources.GetObject("btn_estat.Image"), System.Drawing.Image)
         Me.btn_estat.Location = New System.Drawing.Point(591, 12)
         Me.btn_estat.Name = "btn_estat"
         Me.btn_estat.Size = New System.Drawing.Size(55, 57)
@@ -89,7 +87,6 @@ Partial Class Mainform_client
         Me.btn_veurecarta.Text = "Veure Carta"
         Me.btn_veurecarta.UseVisualStyleBackColor = True
         '
->>>>>>> .r53
         'pnl_plats
         '
         Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
@@ -103,8 +100,6 @@ Partial Class Mainform_client
         Me.pnl_plats.Size = New System.Drawing.Size(159, 473)
         Me.pnl_plats.TabIndex = 16
         '
-<<<<<<< .mine
-=======
         'btn_menu_anular
         '
         Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -115,7 +110,6 @@ Partial Class Mainform_client
         Me.btn_menu_anular.Text = "Solicitar anular comanda"
         Me.btn_menu_anular.UseVisualStyleBackColor = True
         '
->>>>>>> .r53
         'lbl_taula
         '
         Me.lbl_taula.AutoSize = True
