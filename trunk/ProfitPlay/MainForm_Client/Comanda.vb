@@ -18,21 +18,26 @@
 
     Public Sub deleteElement(ByVal p As String)
 
-        For i As Integer = 0 To productes.Count - 1 Step 1
+        If (productes.Count > 0) Then
 
-            MsgBox("El count es borrant a la comanda" + productes.Count.ToString, MsgBoxStyle.AbortRetryIgnore)
-            If (productes.Item(i) = p) Then
+            For i As Integer = productes.Count - 1 To 0 Step -1
 
-                productes.RemoveAt(i)
+                If (productes.Item(i) = p) Then
 
-            End If
+                    productes.RemoveAt(i)
 
-        Next
+                End If
+
+            Next
+
+        End If
 
     End Sub
 
     Public Sub insertElement(ByVal s As String)
+
         productes.Add(s)
+
     End Sub
 
 End Class

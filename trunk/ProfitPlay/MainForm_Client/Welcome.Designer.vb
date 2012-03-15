@@ -49,10 +49,10 @@ Partial Class Welcome
         'lbl_welcome
         '
         Me.lbl_welcome.AutoSize = True
-        Me.lbl_welcome.Font = New System.Drawing.Font("Modern No. 20", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_welcome.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_welcome.Location = New System.Drawing.Point(372, 50)
         Me.lbl_welcome.Name = "lbl_welcome"
-        Me.lbl_welcome.Size = New System.Drawing.Size(280, 65)
+        Me.lbl_welcome.Size = New System.Drawing.Size(317, 73)
         Me.lbl_welcome.TabIndex = 0
         Me.lbl_welcome.Text = "Welcome!"
         '
@@ -160,20 +160,20 @@ Partial Class Welcome
         'lbl_benvinguts
         '
         Me.lbl_benvinguts.AutoSize = True
-        Me.lbl_benvinguts.Font = New System.Drawing.Font("Modern No. 20", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_benvinguts.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_benvinguts.Location = New System.Drawing.Point(372, 123)
         Me.lbl_benvinguts.Name = "lbl_benvinguts"
-        Me.lbl_benvinguts.Size = New System.Drawing.Size(334, 65)
+        Me.lbl_benvinguts.Size = New System.Drawing.Size(369, 73)
         Me.lbl_benvinguts.TabIndex = 4
         Me.lbl_benvinguts.Text = "Benvinguts!"
         '
         'lbl_bienvenidos
         '
         Me.lbl_bienvenidos.AutoSize = True
-        Me.lbl_bienvenidos.Font = New System.Drawing.Font("Modern No. 20", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_bienvenidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_bienvenidos.Location = New System.Drawing.Point(372, 197)
         Me.lbl_bienvenidos.Name = "lbl_bienvenidos"
-        Me.lbl_bienvenidos.Size = New System.Drawing.Size(359, 65)
+        Me.lbl_bienvenidos.Size = New System.Drawing.Size(401, 73)
         Me.lbl_bienvenidos.TabIndex = 5
         Me.lbl_bienvenidos.Text = "Bienvenidos!"
         '
@@ -203,7 +203,7 @@ Partial Class Welcome
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(718, 405)
+        Me.ClientSize = New System.Drawing.Size(766, 405)
         Me.Controls.Add(Me.lbl_bienvenidos)
         Me.Controls.Add(Me.lbl_benvinguts)
         Me.Controls.Add(Me.gpb_client)
