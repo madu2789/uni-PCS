@@ -53,7 +53,6 @@
         lbl_taula.Text = Mainform_client.nom_taula
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
-        Dim a As PaddingConverter = New PaddingConverter()
         m_comanda = Client_Carta.getComanda()
 
         'llegir tot el que hi ha acumulat a la bbdd
@@ -122,8 +121,6 @@
                 llista_productes_eliminar.Refresh()
 
             Catch ex As Exception
-
-                MsgBox("El contador val " & element_list.Count, MsgBoxStyle.Critical)
 
             End Try
 

@@ -229,12 +229,13 @@
     End Sub
 
     Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
-        Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
 
+        Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
         If (result = MsgBoxResult.Ok) Then
-            Me.Dispose()
+
             Dim merda As New Client_Carta
             merda.ShowDialog()
+            Me.Dispose()
 
         End If
     End Sub
@@ -262,17 +263,22 @@
     Private Sub btn_del_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_del_prod.Click
 
         pnl_info_producte.Hide()
-        For i As Integer = 0 To lv_pedidos.Items.Count - 1 Step 1
 
-            MsgBox("El count borrant es " + lv_pedidos.Items.Count.ToString, MsgBoxStyle.AbortRetryIgnore)
-            If (lv_pedidos.Items.Item(i).Selected = True) Then
+        If lv_pedidos.Items.Count > 0 Then
 
-                m_comanda.deleteElement(lv_pedidos.Items.Item(i).Text)
-                lv_pedidos.Items.RemoveAt(i)
+            For i As Integer = lv_pedidos.Items.Count - 1 To 0 Step -1
 
-            End If
+                If (lv_pedidos.Items.Item(i).Selected = True) Then
 
-        Next
+                    m_comanda.deleteElement(lv_pedidos.Items.Item(i).Text)
+                    lv_pedidos.Items.Item(i).Selected = False
+                    lv_pedidos.Items.RemoveAt(i)
+
+                End If
+
+            Next
+
+        End If
 
     End Sub
 
