@@ -23,12 +23,12 @@ Partial Class Client_Carta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Carta))
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Macarrons", "6 €"}, -1)
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Espaguetis a la Bolonyesa", "5 €"}, -1)
-        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Amanida verda", "4.5 €"}, -1)
-        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Sopa de peix", "4 €"}, -1)
+        Dim ListViewItem37 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
+        Dim ListViewItem38 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
+        Dim ListViewItem39 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Macarrons", "6 €"}, -1)
+        Dim ListViewItem40 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Espaguetis a la Bolonyesa", "5 €"}, -1)
+        Dim ListViewItem41 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Amanida verda", "4.5 €"}, -1)
+        Dim ListViewItem42 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Sopa de peix", "4 €"}, -1)
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
@@ -81,7 +81,7 @@ Partial Class Client_Carta
         Me.pnl_estat.Controls.Add(Me.btn_estat)
         Me.pnl_estat.Location = New System.Drawing.Point(119, -8)
         Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(674, 66)
+        Me.pnl_estat.Size = New System.Drawing.Size(707, 69)
         Me.pnl_estat.TabIndex = 34
         '
         'lbl_taula
@@ -125,47 +125,55 @@ Partial Class Client_Carta
         Me.pnl_plats.Controls.Add(Me.btn_jugar)
         Me.pnl_plats.Location = New System.Drawing.Point(-6, -8)
         Me.pnl_plats.Name = "pnl_plats"
-        Me.pnl_plats.Size = New System.Drawing.Size(131, 466)
+        Me.pnl_plats.Size = New System.Drawing.Size(159, 473)
         Me.pnl_plats.TabIndex = 35
         '
         'btn_menu_anular
         '
         Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_menu_anular.Location = New System.Drawing.Point(0, 278)
+        Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
+        Me.btn_menu_anular.Location = New System.Drawing.Point(11, 373)
         Me.btn_menu_anular.Name = "btn_menu_anular"
-        Me.btn_menu_anular.Size = New System.Drawing.Size(135, 85)
+        Me.btn_menu_anular.Size = New System.Drawing.Size(145, 95)
         Me.btn_menu_anular.TabIndex = 17
-        Me.btn_menu_anular.Text = "Solicitar anular comanda"
+        Me.btn_menu_anular.Text = "Comanda"
+        Me.btn_menu_anular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_menu_anular.UseVisualStyleBackColor = True
         '
         'btn_veurecarta
         '
         Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_veurecarta.Location = New System.Drawing.Point(0, 35)
+        Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
+        Me.btn_veurecarta.Location = New System.Drawing.Point(11, 70)
         Me.btn_veurecarta.Name = "btn_veurecarta"
-        Me.btn_veurecarta.Size = New System.Drawing.Size(135, 55)
+        Me.btn_veurecarta.Size = New System.Drawing.Size(145, 95)
         Me.btn_veurecarta.TabIndex = 11
         Me.btn_veurecarta.Text = "Veure Carta"
+        Me.btn_veurecarta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_veurecarta.UseVisualStyleBackColor = True
         '
         'btn_Pagar
         '
         Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Pagar.Location = New System.Drawing.Point(0, 141)
+        Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_Pagar.Location = New System.Drawing.Point(11, 272)
         Me.btn_Pagar.Name = "btn_Pagar"
-        Me.btn_Pagar.Size = New System.Drawing.Size(135, 55)
+        Me.btn_Pagar.Size = New System.Drawing.Size(145, 95)
         Me.btn_Pagar.TabIndex = 14
         Me.btn_Pagar.Text = "Pagar i sortir"
+        Me.btn_Pagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_Pagar.UseVisualStyleBackColor = True
         '
         'btn_jugar
         '
         Me.btn_jugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_jugar.Location = New System.Drawing.Point(0, 89)
+        Me.btn_jugar.Image = Global.MainForm_Client.My.Resources.Resources.juego
+        Me.btn_jugar.Location = New System.Drawing.Point(11, 171)
         Me.btn_jugar.Name = "btn_jugar"
-        Me.btn_jugar.Size = New System.Drawing.Size(135, 55)
+        Me.btn_jugar.Size = New System.Drawing.Size(145, 95)
         Me.btn_jugar.TabIndex = 13
         Me.btn_jugar.Text = "Jugar"
+        Me.btn_jugar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.btn_jugar.UseVisualStyleBackColor = True
         '
         'grb_menu_carta
@@ -175,9 +183,9 @@ Partial Class Client_Carta
         Me.grb_menu_carta.Controls.Add(Me.btn_segundos)
         Me.grb_menu_carta.Controls.Add(Me.btn_primeros)
         Me.grb_menu_carta.Controls.Add(Me.btn_bebidas)
-        Me.grb_menu_carta.Location = New System.Drawing.Point(135, 61)
+        Me.grb_menu_carta.Location = New System.Drawing.Point(166, 63)
         Me.grb_menu_carta.Name = "grb_menu_carta"
-        Me.grb_menu_carta.Size = New System.Drawing.Size(658, 397)
+        Me.grb_menu_carta.Size = New System.Drawing.Size(660, 397)
         Me.grb_menu_carta.TabIndex = 36
         Me.grb_menu_carta.TabStop = False
         Me.grb_menu_carta.Text = "Carta"
@@ -191,12 +199,16 @@ Partial Class Client_Carta
         Me.grb_pedido.Controls.Add(Me.lbl_productos_dispo)
         Me.grb_pedido.Controls.Add(Me.lv_pedidos)
         Me.grb_pedido.Controls.Add(Me.lv_productos_disp)
+<<<<<<< .mine
+        Me.grb_pedido.Location = New System.Drawing.Point(11, 86)
+=======
         Me.grb_pedido.Controls.Add(Me.btn_add_prod)
         Me.grb_pedido.Controls.Add(Me.btn_del_prod)
         Me.grb_pedido.Controls.Add(Me.btn_info_prod)
         Me.grb_pedido.Location = New System.Drawing.Point(6, 86)
+>>>>>>> .r53
         Me.grb_pedido.Name = "grb_pedido"
-        Me.grb_pedido.Size = New System.Drawing.Size(646, 305)
+        Me.grb_pedido.Size = New System.Drawing.Size(635, 305)
         Me.grb_pedido.TabIndex = 20
         Me.grb_pedido.TabStop = False
         Me.grb_pedido.Text = "Hacer pedido"
@@ -223,7 +235,7 @@ Partial Class Client_Carta
         Me.pnl_info_producte.Controls.Add(Me.lbl_titol_producte)
         Me.pnl_info_producte.Location = New System.Drawing.Point(157, 19)
         Me.pnl_info_producte.Name = "pnl_info_producte"
-        Me.pnl_info_producte.Size = New System.Drawing.Size(465, 276)
+        Me.pnl_info_producte.Size = New System.Drawing.Size(470, 276)
         Me.pnl_info_producte.TabIndex = 23
         Me.pnl_info_producte.Visible = False
         '
@@ -345,7 +357,7 @@ Partial Class Client_Carta
         '
         'lv_pedidos
         '
-        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
+        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem37, ListViewItem38})
         Me.lv_pedidos.Location = New System.Drawing.Point(239, 69)
         Me.lv_pedidos.Name = "lv_pedidos"
         Me.lv_pedidos.Size = New System.Drawing.Size(147, 226)
@@ -357,9 +369,9 @@ Partial Class Client_Carta
         '
         Me.lv_productos_disp.AllowDrop = True
         Me.lv_productos_disp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Nombre, Me.Cantidad})
-        ListViewItem3.Checked = True
-        ListViewItem3.StateImageIndex = 1
-        Me.lv_productos_disp.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem6})
+        ListViewItem39.Checked = True
+        ListViewItem39.StateImageIndex = 1
+        Me.lv_productos_disp.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem39, ListViewItem40, ListViewItem41, ListViewItem42})
         Me.lv_productos_disp.Location = New System.Drawing.Point(6, 67)
         Me.lv_productos_disp.Name = "lv_productos_disp"
         Me.lv_productos_disp.Size = New System.Drawing.Size(145, 228)
@@ -396,9 +408,9 @@ Partial Class Client_Carta
         'btn_postres
         '
         Me.btn_postres.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_postres.Location = New System.Drawing.Point(507, 19)
+        Me.btn_postres.Location = New System.Drawing.Point(503, 18)
         Me.btn_postres.Name = "btn_postres"
-        Me.btn_postres.Size = New System.Drawing.Size(144, 55)
+        Me.btn_postres.Size = New System.Drawing.Size(140, 55)
         Me.btn_postres.TabIndex = 10
         Me.btn_postres.Text = "Postres"
         Me.btn_postres.UseVisualStyleBackColor = True
@@ -406,9 +418,9 @@ Partial Class Client_Carta
         'btn_segundos
         '
         Me.btn_segundos.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_segundos.Location = New System.Drawing.Point(341, 20)
+        Me.btn_segundos.Location = New System.Drawing.Point(340, 19)
         Me.btn_segundos.Name = "btn_segundos"
-        Me.btn_segundos.Size = New System.Drawing.Size(136, 55)
+        Me.btn_segundos.Size = New System.Drawing.Size(140, 55)
         Me.btn_segundos.TabIndex = 9
         Me.btn_segundos.Text = "Segons"
         Me.btn_segundos.UseVisualStyleBackColor = True
@@ -416,9 +428,9 @@ Partial Class Client_Carta
         'btn_primeros
         '
         Me.btn_primeros.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_primeros.Location = New System.Drawing.Point(172, 20)
+        Me.btn_primeros.Location = New System.Drawing.Point(174, 18)
         Me.btn_primeros.Name = "btn_primeros"
-        Me.btn_primeros.Size = New System.Drawing.Size(136, 54)
+        Me.btn_primeros.Size = New System.Drawing.Size(140, 55)
         Me.btn_primeros.TabIndex = 8
         Me.btn_primeros.Text = "Primers"
         Me.btn_primeros.UseVisualStyleBackColor = True
@@ -426,9 +438,9 @@ Partial Class Client_Carta
         'btn_bebidas
         '
         Me.btn_bebidas.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_bebidas.Location = New System.Drawing.Point(6, 23)
+        Me.btn_bebidas.Location = New System.Drawing.Point(12, 20)
         Me.btn_bebidas.Name = "btn_bebidas"
-        Me.btn_bebidas.Size = New System.Drawing.Size(136, 53)
+        Me.btn_bebidas.Size = New System.Drawing.Size(140, 55)
         Me.btn_bebidas.TabIndex = 7
         Me.btn_bebidas.Text = "Begudes"
         Me.btn_bebidas.UseVisualStyleBackColor = True
@@ -438,7 +450,7 @@ Partial Class Client_Carta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
-        Me.ClientSize = New System.Drawing.Size(828, 485)
+        Me.ClientSize = New System.Drawing.Size(844, 472)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.grb_menu_carta)
         Me.Controls.Add(Me.pnl_estat)
