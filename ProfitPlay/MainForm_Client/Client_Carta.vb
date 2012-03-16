@@ -102,7 +102,7 @@
 
     End Sub
 
-    Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
+    Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         For i As Integer = 0 To lv_pedidos.Items.Count - 1
 

@@ -217,7 +217,7 @@ Partial Class Client_Anula
         Me.lbl_taula.AutoSize = True
         Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_taula.Location = New System.Drawing.Point(115, 26)
+        Me.lbl_taula.Location = New System.Drawing.Point(99, 26)
         Me.lbl_taula.Name = "lbl_taula"
         Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
         Me.lbl_taula.TabIndex = 22
@@ -228,7 +228,7 @@ Partial Class Client_Anula
         Me.lbl_punts.AutoSize = True
         Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_punts.Location = New System.Drawing.Point(352, 26)
+        Me.lbl_punts.Location = New System.Drawing.Point(333, 26)
         Me.lbl_punts.Name = "lbl_punts"
         Me.lbl_punts.Size = New System.Drawing.Size(97, 29)
         Me.lbl_punts.TabIndex = 0
