@@ -10,7 +10,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
+    Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'per fer!
     End Sub
 

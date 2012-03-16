@@ -30,19 +30,19 @@ Partial Class Client_Juego
         Me.btn_donar = New System.Windows.Forms.Button
         Me.btn_demanar = New System.Windows.Forms.Button
         Me.grpb_menu_joc = New System.Windows.Forms.GroupBox
-        Me.pnl_estat = New System.Windows.Forms.Panel
-        Me.lbl_taula = New System.Windows.Forms.Label
-        Me.lbl_punts = New System.Windows.Forms.Label
-        Me.btn_estat = New System.Windows.Forms.Button
         Me.pnl_plats = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.btn_veurecarta = New System.Windows.Forms.Button
         Me.btn_Pagar = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
+        Me.lbl_punts = New System.Windows.Forms.Label
+        Me.lbl_taula = New System.Windows.Forms.Label
+        Me.pnl_estat = New System.Windows.Forms.Panel
+        Me.btn_estat = New System.Windows.Forms.Button
         Me.pnl_jocs.SuspendLayout()
         Me.grpb_menu_joc.SuspendLayout()
-        Me.pnl_estat.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
+        Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_jocs
@@ -51,7 +51,7 @@ Partial Class Client_Juego
         Me.pnl_jocs.Controls.Add(Me.Button4)
         Me.pnl_jocs.Controls.Add(Me.Button1)
         Me.pnl_jocs.Controls.Add(Me.Button2)
-        Me.pnl_jocs.Location = New System.Drawing.Point(672, 48)
+        Me.pnl_jocs.Location = New System.Drawing.Point(705, 37)
         Me.pnl_jocs.Name = "pnl_jocs"
         Me.pnl_jocs.Size = New System.Drawing.Size(135, 408)
         Me.pnl_jocs.TabIndex = 26
@@ -59,7 +59,7 @@ Partial Class Client_Juego
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(0, 35)
+        Me.Button4.Location = New System.Drawing.Point(0, 104)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(135, 55)
         Me.Button4.TabIndex = 11
@@ -69,7 +69,7 @@ Partial Class Client_Juego
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(0, 137)
+        Me.Button1.Location = New System.Drawing.Point(0, 285)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(135, 55)
         Me.Button1.TabIndex = 14
@@ -79,7 +79,7 @@ Partial Class Client_Juego
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(0, 86)
+        Me.Button2.Location = New System.Drawing.Point(0, 192)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(135, 55)
         Me.Button2.TabIndex = 13
@@ -121,27 +121,65 @@ Partial Class Client_Juego
         Me.grpb_menu_joc.TabStop = False
         Me.grpb_menu_joc.Text = "Opcions joc"
         '
-        'pnl_estat
+        'pnl_plats
         '
-        Me.pnl_estat.BackColor = System.Drawing.Color.RoyalBlue
-        Me.pnl_estat.Controls.Add(Me.lbl_taula)
-        Me.pnl_estat.Controls.Add(Me.lbl_punts)
-        Me.pnl_estat.Controls.Add(Me.btn_estat)
-        Me.pnl_estat.Location = New System.Drawing.Point(133, 0)
-        Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(674, 66)
-        Me.pnl_estat.TabIndex = 32
+        Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
+        Me.pnl_plats.Controls.Add(Me.btn_menu_anular)
+        Me.pnl_plats.Controls.Add(Me.btn_veurecarta)
+        Me.pnl_plats.Controls.Add(Me.btn_Pagar)
+        Me.pnl_plats.Controls.Add(Me.Button3)
+        Me.pnl_plats.Location = New System.Drawing.Point(-2, -19)
+        Me.pnl_plats.Name = "pnl_plats"
+        Me.pnl_plats.Size = New System.Drawing.Size(153, 473)
+        Me.pnl_plats.TabIndex = 33
         '
-        'lbl_taula
+        'btn_menu_anular
         '
-        Me.lbl_taula.AutoSize = True
-        Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
-        Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
-        Me.lbl_taula.TabIndex = 22
-        Me.lbl_taula.Text = "Taula: XXX"
+        Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
+        Me.btn_menu_anular.Location = New System.Drawing.Point(5, 375)
+        Me.btn_menu_anular.Name = "btn_menu_anular"
+        Me.btn_menu_anular.Size = New System.Drawing.Size(145, 95)
+        Me.btn_menu_anular.TabIndex = 17
+        Me.btn_menu_anular.Text = "Comanda"
+        Me.btn_menu_anular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btn_menu_anular.UseVisualStyleBackColor = True
+        '
+        'btn_veurecarta
+        '
+        Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
+        Me.btn_veurecarta.Location = New System.Drawing.Point(5, 85)
+        Me.btn_veurecarta.Name = "btn_veurecarta"
+        Me.btn_veurecarta.Size = New System.Drawing.Size(145, 95)
+        Me.btn_veurecarta.TabIndex = 11
+        Me.btn_veurecarta.Text = "Veure Carta"
+        Me.btn_veurecarta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btn_veurecarta.UseVisualStyleBackColor = True
+        '
+        'btn_Pagar
+        '
+        Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_Pagar.Location = New System.Drawing.Point(5, 279)
+        Me.btn_Pagar.Name = "btn_Pagar"
+        Me.btn_Pagar.Size = New System.Drawing.Size(145, 95)
+        Me.btn_Pagar.TabIndex = 14
+        Me.btn_Pagar.Text = "Pagar i sortir"
+        Me.btn_Pagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btn_Pagar.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.MainForm_Client.My.Resources.Resources.juego
+        Me.Button3.Location = New System.Drawing.Point(5, 181)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(145, 95)
+        Me.Button3.TabIndex = 13
+        Me.Button3.Text = "Jugar"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'lbl_punts
         '
@@ -154,86 +192,56 @@ Partial Class Client_Juego
         Me.lbl_punts.TabIndex = 0
         Me.lbl_punts.Text = "Punts:"
         '
+        'lbl_taula
+        '
+        Me.lbl_taula.AutoSize = True
+        Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
+        Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
+        Me.lbl_taula.Name = "lbl_taula"
+        Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
+        Me.lbl_taula.TabIndex = 22
+        Me.lbl_taula.Text = "Taula: XXX"
+        '
+        'pnl_estat
+        '
+        Me.pnl_estat.BackColor = System.Drawing.Color.RoyalBlue
+        Me.pnl_estat.Controls.Add(Me.btn_estat)
+        Me.pnl_estat.Controls.Add(Me.lbl_taula)
+        Me.pnl_estat.Controls.Add(Me.lbl_punts)
+        Me.pnl_estat.Location = New System.Drawing.Point(154, -9)
+        Me.pnl_estat.Name = "pnl_estat"
+        Me.pnl_estat.Size = New System.Drawing.Size(686, 72)
+        Me.pnl_estat.TabIndex = 32
+        '
         'btn_estat
         '
         Me.btn_estat.AutoSize = True
-        Me.btn_estat.Image = CType(resources.GetObject("btn_estat.Image"), System.Drawing.Image)
-        Me.btn_estat.Location = New System.Drawing.Point(591, 8)
+        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_estat.Location = New System.Drawing.Point(599, 3)
         Me.btn_estat.Name = "btn_estat"
-        Me.btn_estat.Size = New System.Drawing.Size(55, 57)
-        Me.btn_estat.TabIndex = 1
+        Me.btn_estat.Size = New System.Drawing.Size(88, 86)
+        Me.btn_estat.TabIndex = 23
         Me.btn_estat.UseVisualStyleBackColor = True
-        '
-        'pnl_plats
-        '
-        Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
-        Me.pnl_plats.Controls.Add(Me.btn_menu_anular)
-        Me.pnl_plats.Controls.Add(Me.btn_veurecarta)
-        Me.pnl_plats.Controls.Add(Me.btn_Pagar)
-        Me.pnl_plats.Controls.Add(Me.Button3)
-        Me.pnl_plats.Location = New System.Drawing.Point(-2, 0)
-        Me.pnl_plats.Name = "pnl_plats"
-        Me.pnl_plats.Size = New System.Drawing.Size(136, 466)
-        Me.pnl_plats.TabIndex = 33
-        '
-        'btn_menu_anular
-        '
-        Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_menu_anular.Location = New System.Drawing.Point(0, 278)
-        Me.btn_menu_anular.Name = "btn_menu_anular"
-        Me.btn_menu_anular.Size = New System.Drawing.Size(135, 85)
-        Me.btn_menu_anular.TabIndex = 17
-        Me.btn_menu_anular.Text = "Solicitar anular comanda"
-        Me.btn_menu_anular.UseVisualStyleBackColor = True
-        '
-        'btn_veurecarta
-        '
-        Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_veurecarta.Location = New System.Drawing.Point(0, 35)
-        Me.btn_veurecarta.Name = "btn_veurecarta"
-        Me.btn_veurecarta.Size = New System.Drawing.Size(135, 55)
-        Me.btn_veurecarta.TabIndex = 11
-        Me.btn_veurecarta.Text = "Veure Carta"
-        Me.btn_veurecarta.UseVisualStyleBackColor = True
-        '
-        'btn_Pagar
-        '
-        Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Pagar.Location = New System.Drawing.Point(0, 141)
-        Me.btn_Pagar.Name = "btn_Pagar"
-        Me.btn_Pagar.Size = New System.Drawing.Size(135, 55)
-        Me.btn_Pagar.TabIndex = 14
-        Me.btn_Pagar.Text = "Pagar i sortir"
-        Me.btn_Pagar.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(0, 89)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(135, 55)
-        Me.Button3.TabIndex = 13
-        Me.Button3.Text = "Jugar"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Client_Juego
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleTurquoise
-        Me.ClientSize = New System.Drawing.Size(805, 417)
-        Me.Controls.Add(Me.pnl_estat)
+        Me.ClientSize = New System.Drawing.Size(844, 472)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.grpb_menu_joc)
+        Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_jocs)
         Me.Name = "Client_Juego"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Juego"
         Me.pnl_jocs.ResumeLayout(False)
         Me.grpb_menu_joc.ResumeLayout(False)
+        Me.pnl_plats.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
-        Me.pnl_plats.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -244,13 +252,13 @@ Partial Class Client_Juego
     Friend WithEvents btn_donar As System.Windows.Forms.Button
     Friend WithEvents btn_demanar As System.Windows.Forms.Button
     Friend WithEvents grpb_menu_joc As System.Windows.Forms.GroupBox
-    Friend WithEvents pnl_estat As System.Windows.Forms.Panel
-    Friend WithEvents lbl_taula As System.Windows.Forms.Label
-    Friend WithEvents lbl_punts As System.Windows.Forms.Label
-    Friend WithEvents btn_estat As System.Windows.Forms.Button
     Friend WithEvents pnl_plats As System.Windows.Forms.Panel
     Friend WithEvents btn_menu_anular As System.Windows.Forms.Button
     Friend WithEvents btn_veurecarta As System.Windows.Forms.Button
     Friend WithEvents btn_Pagar As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents lbl_punts As System.Windows.Forms.Label
+    Friend WithEvents lbl_taula As System.Windows.Forms.Label
+    Friend WithEvents pnl_estat As System.Windows.Forms.Panel
+    Friend WithEvents btn_estat As System.Windows.Forms.Button
 End Class
