@@ -284,11 +284,33 @@
 
     Private Sub btn_info_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_info_prod.Click
 
-        System.Threading.Thread.Sleep(170)
-        lbl_titol_producte.Text = "Aquesta es el titol"
-        lbl_descripcio.Text = "Aquesta es la descripccio"
-        lbl_ingredients.Text = "Els ingredients: a, b, c, d"
-        pnl_info_producte.Show()
+        Dim dialog As New info_producte
 
+        'aixo ve de la bbdd
+        dialog.lbl_titol_producte.Text = "Aquesta es el titol"
+        dialog.lbl_descripcio.Text = "Aquesta es la descripccio"
+        dialog.lbl_ingredients.Text = "Els ingredients: a, b, c, d"
+
+        Dim res = dialog.ShowDialog()
+
+        If (res = Windows.Forms.DialogResult.OK) Then
+
+            For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+
+                If (lv_productos_disp.Items.Item(i).Selected = True) Then
+
+                    For a As Integer = 0 To nud_cantitat.Value - 1 Step 1
+
+                        lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
+                        m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+                        pnl_info_producte.Hide()
+
+                    Next
+
+                End If
+
+            Next
+
+        End If
     End Sub
 End Class

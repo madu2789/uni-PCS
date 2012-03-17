@@ -121,7 +121,7 @@
   <data name="btn_mixt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfcAAAFOCAIAAAAU0sPNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAP+lSURBVHhenP0FdFRZu4UL83XjkBB3x6UbGrpxd3d3lwS3
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAP+lSURBVHhenP0FdFRZu4UL83XjkBB3x6UbGrpxd3d3lwS3
         EEHi7oZbBAKBEHd3D+4SIO7B+rPT/7Nr0Tl9v3PuGXf8Y7xjj12VqkpFaq655zvfuTpcD/I/e97V2fWU
         lc2x01ZHTp4+ZGaxz8PLhpsWJw/Y2JnaOZhxv7XtcTcPq8jIkNTUyLKS9McPcx+WZ5SXJD8uT3nxOPPp
         gzROnj/Jef+2/MWzosysmLt3rwcFB9wI9r98yeX6NY+Y6Ov5eTEPH6RTxUUJ5WUpiQk3vL1OHzq48aSl
@@ -8440,4 +8440,7 @@
         RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==
 </value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

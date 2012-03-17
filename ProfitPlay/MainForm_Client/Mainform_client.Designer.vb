@@ -62,7 +62,7 @@ Partial Class Mainform_client
         '
         'btn_menu_anular
         '
-        Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
         Me.btn_menu_anular.Location = New System.Drawing.Point(4, 368)
         Me.btn_menu_anular.Name = "btn_menu_anular"
@@ -74,7 +74,7 @@ Partial Class Mainform_client
         '
         'btn_veurecarta
         '
-        Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
         Me.btn_veurecarta.Location = New System.Drawing.Point(4, 66)
         Me.btn_veurecarta.Name = "btn_veurecarta"
@@ -86,7 +86,7 @@ Partial Class Mainform_client
         '
         'btn_Pagar
         '
-        Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
         Me.btn_Pagar.Location = New System.Drawing.Point(4, 267)
         Me.btn_Pagar.Name = "btn_Pagar"
@@ -98,7 +98,7 @@ Partial Class Mainform_client
         '
         'btn_jugar
         '
-        Me.btn_jugar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_jugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_jugar.Image = Global.MainForm_Client.My.Resources.Resources.juego
         Me.btn_jugar.Location = New System.Drawing.Point(4, 167)
         Me.btn_jugar.Name = "btn_jugar"

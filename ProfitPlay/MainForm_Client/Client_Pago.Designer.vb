@@ -35,16 +35,16 @@ Partial Class Client_Pago
         Me.btn_Pagar = New System.Windows.Forms.Button
         Me.btn_jugar = New System.Windows.Forms.Button
         Me.pnl_estat = New System.Windows.Forms.Panel
-        Me.lbl_punts = New System.Windows.Forms.Label
-        Me.lbl_taula = New System.Windows.Forms.Label
         Me.btn_estat = New System.Windows.Forms.Button
+        Me.lbl_taula = New System.Windows.Forms.Label
+        Me.lbl_punts = New System.Windows.Forms.Label
         Me.pnl_menu.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_mixt
         '
-        Me.btn_mixt.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_mixt.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_mixt.ForeColor = System.Drawing.Color.Yellow
         Me.btn_mixt.Image = CType(resources.GetObject("btn_mixt.Image"), System.Drawing.Image)
         Me.btn_mixt.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -57,7 +57,7 @@ Partial Class Client_Pago
         '
         'btn_efectiu
         '
-        Me.btn_efectiu.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_efectiu.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_efectiu.ForeColor = System.Drawing.Color.Yellow
         Me.btn_efectiu.Image = CType(resources.GetObject("btn_efectiu.Image"), System.Drawing.Image)
         Me.btn_efectiu.Location = New System.Drawing.Point(187, 165)
@@ -69,7 +69,7 @@ Partial Class Client_Pago
         '
         'btn_tc
         '
-        Me.btn_tc.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_tc.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_tc.ForeColor = System.Drawing.Color.Black
         Me.btn_tc.Image = CType(resources.GetObject("btn_tc.Image"), System.Drawing.Image)
         Me.btn_tc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -82,7 +82,7 @@ Partial Class Client_Pago
         '
         'btn_previs
         '
-        Me.btn_previs.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_previs.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_previs.ForeColor = System.Drawing.Color.Indigo
         Me.btn_previs.Image = CType(resources.GetObject("btn_previs.Image"), System.Drawing.Image)
         Me.btn_previs.Location = New System.Drawing.Point(510, 293)
@@ -95,20 +95,20 @@ Partial Class Client_Pago
         'lbl_importtotal
         '
         Me.lbl_importtotal.AutoSize = True
-        Me.lbl_importtotal.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_importtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_importtotal.Location = New System.Drawing.Point(183, 96)
         Me.lbl_importtotal.Name = "lbl_importtotal"
-        Me.lbl_importtotal.Size = New System.Drawing.Size(168, 24)
+        Me.lbl_importtotal.Size = New System.Drawing.Size(172, 25)
         Me.lbl_importtotal.TabIndex = 26
         Me.lbl_importtotal.Text = "Import total: XXX"
         '
         'lbl_importparcial
         '
         Me.lbl_importparcial.AutoSize = True
-        Me.lbl_importparcial.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_importparcial.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_importparcial.Location = New System.Drawing.Point(506, 96)
         Me.lbl_importparcial.Name = "lbl_importparcial"
-        Me.lbl_importparcial.Size = New System.Drawing.Size(225, 24)
+        Me.lbl_importparcial.Size = New System.Drawing.Size(246, 25)
         Me.lbl_importparcial.TabIndex = 27
         Me.lbl_importparcial.Text = "Import per persona: XXX"
         '
@@ -127,7 +127,7 @@ Partial Class Client_Pago
         '
         'btn_menu_anular
         '
-        Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
         Me.btn_menu_anular.Location = New System.Drawing.Point(5, 368)
         Me.btn_menu_anular.Name = "btn_menu_anular"
@@ -139,7 +139,7 @@ Partial Class Client_Pago
         '
         'btn_veurecarta
         '
-        Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
         Me.btn_veurecarta.Location = New System.Drawing.Point(5, 69)
         Me.btn_veurecarta.Name = "btn_veurecarta"
@@ -151,7 +151,7 @@ Partial Class Client_Pago
         '
         'btn_Pagar
         '
-        Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
         Me.btn_Pagar.Location = New System.Drawing.Point(5, 268)
         Me.btn_Pagar.Name = "btn_Pagar"
@@ -163,7 +163,7 @@ Partial Class Client_Pago
         '
         'btn_jugar
         '
-        Me.btn_jugar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_jugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_jugar.Image = Global.MainForm_Client.My.Resources.Resources.juego
         Me.btn_jugar.Location = New System.Drawing.Point(5, 168)
         Me.btn_jugar.Name = "btn_jugar"
@@ -185,28 +185,6 @@ Partial Class Client_Pago
         Me.pnl_estat.Size = New System.Drawing.Size(707, 76)
         Me.pnl_estat.TabIndex = 30
         '
-        'lbl_punts
-        '
-        Me.lbl_punts.AutoSize = True
-        Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_punts.Location = New System.Drawing.Point(369, 17)
-        Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(97, 29)
-        Me.lbl_punts.TabIndex = 29
-        Me.lbl_punts.Text = "Punts: "
-        '
-        'lbl_taula
-        '
-        Me.lbl_taula.AutoSize = True
-        Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_taula.Location = New System.Drawing.Point(122, 17)
-        Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
-        Me.lbl_taula.TabIndex = 30
-        Me.lbl_taula.Text = "Taula: XXX"
-        '
         'btn_estat
         '
         Me.btn_estat.AutoSize = True
@@ -216,6 +194,28 @@ Partial Class Client_Pago
         Me.btn_estat.Size = New System.Drawing.Size(105, 86)
         Me.btn_estat.TabIndex = 31
         Me.btn_estat.UseVisualStyleBackColor = True
+        '
+        'lbl_taula
+        '
+        Me.lbl_taula.AutoSize = True
+        Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
+        Me.lbl_taula.Location = New System.Drawing.Point(122, 17)
+        Me.lbl_taula.Name = "lbl_taula"
+        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
+        Me.lbl_taula.TabIndex = 30
+        Me.lbl_taula.Text = "Taula: XXX"
+        '
+        'lbl_punts
+        '
+        Me.lbl_punts.AutoSize = True
+        Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
+        Me.lbl_punts.Location = New System.Drawing.Point(369, 17)
+        Me.lbl_punts.Name = "lbl_punts"
+        Me.lbl_punts.Size = New System.Drawing.Size(106, 31)
+        Me.lbl_punts.TabIndex = 29
+        Me.lbl_punts.Text = "Punts: "
         '
         'Client_Pago
         '

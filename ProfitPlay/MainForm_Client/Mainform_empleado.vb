@@ -4,6 +4,7 @@
     Public Shared rolempleat As String
 
     Public Sub New(ByVal nom As String, ByVal rol As String)
+
         InitializeComponent()
         nomempleat = nom
         rolempleat = rol
@@ -11,6 +12,7 @@
         lbl_punts.Text = rolempleat
 
         Select Case rol
+
             Case "Administrador"
                 btn_gest_comandes.Hide()
                 btn_gest_pagos.Hide()
@@ -35,8 +37,6 @@
 
         End Select
 
-
-
     End Sub
 
     Private Sub btn_gest_users_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_users.Click
@@ -58,4 +58,5 @@
         Me.Hide()
         Emp_Pago.Show()
     End Sub
+
 End Class

@@ -58,7 +58,7 @@ Partial Class Client_Juego
         '
         'Button4
         '
-        Me.Button4.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Location = New System.Drawing.Point(0, 104)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(135, 55)
@@ -68,7 +68,7 @@ Partial Class Client_Juego
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(0, 285)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(135, 55)
@@ -78,7 +78,7 @@ Partial Class Client_Juego
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(0, 192)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(135, 55)
@@ -88,7 +88,7 @@ Partial Class Client_Juego
         '
         'btn_donar
         '
-        Me.btn_donar.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_donar.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_donar.ForeColor = System.Drawing.Color.Blue
         Me.btn_donar.Image = CType(resources.GetObject("btn_donar.Image"), System.Drawing.Image)
         Me.btn_donar.Location = New System.Drawing.Point(40, 195)
@@ -100,7 +100,7 @@ Partial Class Client_Juego
         '
         'btn_demanar
         '
-        Me.btn_demanar.Font = New System.Drawing.Font("Modern No. 20", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_demanar.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_demanar.ForeColor = System.Drawing.Color.Blue
         Me.btn_demanar.Image = CType(resources.GetObject("btn_demanar.Image"), System.Drawing.Image)
         Me.btn_demanar.Location = New System.Drawing.Point(40, 58)
@@ -135,7 +135,7 @@ Partial Class Client_Juego
         '
         'btn_menu_anular
         '
-        Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
         Me.btn_menu_anular.Location = New System.Drawing.Point(5, 375)
         Me.btn_menu_anular.Name = "btn_menu_anular"
@@ -147,7 +147,7 @@ Partial Class Client_Juego
         '
         'btn_veurecarta
         '
-        Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
         Me.btn_veurecarta.Location = New System.Drawing.Point(5, 85)
         Me.btn_veurecarta.Name = "btn_veurecarta"
@@ -159,7 +159,7 @@ Partial Class Client_Juego
         '
         'btn_Pagar
         '
-        Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
         Me.btn_Pagar.Location = New System.Drawing.Point(5, 279)
         Me.btn_Pagar.Name = "btn_Pagar"
@@ -171,7 +171,7 @@ Partial Class Client_Juego
         '
         'Button3
         '
-        Me.Button3.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.MainForm_Client.My.Resources.Resources.juego
         Me.Button3.Location = New System.Drawing.Point(5, 181)
         Me.Button3.Name = "Button3"
@@ -184,22 +184,22 @@ Partial Class Client_Juego
         'lbl_punts
         '
         Me.lbl_punts.AutoSize = True
-        Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
         Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(88, 29)
+        Me.lbl_punts.Size = New System.Drawing.Size(98, 31)
         Me.lbl_punts.TabIndex = 0
         Me.lbl_punts.Text = "Punts:"
         '
         'lbl_taula
         '
         Me.lbl_taula.AutoSize = True
-        Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
+        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
         Me.lbl_taula.TabIndex = 22
         Me.lbl_taula.Text = "Taula: XXX"
         '

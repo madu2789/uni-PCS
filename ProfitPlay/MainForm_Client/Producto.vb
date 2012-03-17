@@ -44,6 +44,4 @@
         Return preu
     End Function
 
-
-
 End Class
