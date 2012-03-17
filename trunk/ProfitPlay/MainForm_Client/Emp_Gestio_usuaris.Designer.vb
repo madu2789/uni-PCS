@@ -27,6 +27,7 @@ Partial Class Emp_Gestio_usuaris
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
         Me.pcb_sortir = New System.Windows.Forms.PictureBox
@@ -50,7 +51,6 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_cognom = New System.Windows.Forms.Label
         Me.lbl_password = New System.Windows.Forms.Label
         Me.lbl_nom = New System.Windows.Forms.Label
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.grb_users.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
@@ -65,9 +65,9 @@ Partial Class Emp_Gestio_usuaris
         'grb_users
         '
         Me.grb_users.Controls.Add(Me.ToolStripContainer1)
-        Me.grb_users.Location = New System.Drawing.Point(180, 122)
+        Me.grb_users.Location = New System.Drawing.Point(148, 115)
         Me.grb_users.Name = "grb_users"
-        Me.grb_users.Size = New System.Drawing.Size(240, 326)
+        Me.grb_users.Size = New System.Drawing.Size(325, 345)
         Me.grb_users.TabIndex = 36
         Me.grb_users.TabStop = False
         Me.grb_users.Text = "Gestió usuaris"
@@ -78,10 +78,10 @@ Partial Class Emp_Gestio_usuaris
         'ToolStripContainer1.ContentPanel
         '
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.ToolStrip1)
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(170, 178)
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(260, 245)
         Me.ToolStripContainer1.Location = New System.Drawing.Point(28, 39)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(170, 203)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(260, 270)
         Me.ToolStripContainer1.TabIndex = 33
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         '
@@ -97,7 +97,7 @@ Partial Class Emp_Gestio_usuaris
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ToolStrip1.Size = New System.Drawing.Size(170, 178)
+        Me.ToolStrip1.Size = New System.Drawing.Size(260, 245)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -111,6 +111,14 @@ Partial Class Emp_Gestio_usuaris
         Me.ToolStrip2.TabIndex = 0
         Me.ToolStrip2.Text = "Afegir"
         '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(95, 22)
+        Me.ToolStripButton3.Text = "Afegir Usuari"
+        '
         'pnl_estat
         '
         Me.pnl_estat.BackColor = System.Drawing.Color.Green
@@ -121,25 +129,25 @@ Partial Class Emp_Gestio_usuaris
         Me.pnl_estat.Controls.Add(Me.lbl_punts)
         Me.pnl_estat.Location = New System.Drawing.Point(113, 6)
         Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(664, 69)
+        Me.pnl_estat.Size = New System.Drawing.Size(719, 69)
         Me.pnl_estat.TabIndex = 35
         '
         'btn_estat
         '
         Me.btn_estat.AutoSize = True
-        Me.btn_estat.Image = CType(resources.GetObject("btn_estat.Image"), System.Drawing.Image)
-        Me.btn_estat.Location = New System.Drawing.Point(516, 5)
+        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_estat.Location = New System.Drawing.Point(565, -3)
         Me.btn_estat.Name = "btn_estat"
-        Me.btn_estat.Size = New System.Drawing.Size(55, 57)
+        Me.btn_estat.Size = New System.Drawing.Size(72, 91)
         Me.btn_estat.TabIndex = 38
         Me.btn_estat.UseVisualStyleBackColor = True
         '
         'pcb_sortir
         '
         Me.pcb_sortir.Image = CType(resources.GetObject("pcb_sortir.Image"), System.Drawing.Image)
-        Me.pcb_sortir.Location = New System.Drawing.Point(577, 5)
+        Me.pcb_sortir.Location = New System.Drawing.Point(643, -2)
         Me.pcb_sortir.Name = "pcb_sortir"
-        Me.pcb_sortir.Size = New System.Drawing.Size(69, 57)
+        Me.pcb_sortir.Size = New System.Drawing.Size(75, 69)
         Me.pcb_sortir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pcb_sortir.TabIndex = 23
         Me.pcb_sortir.TabStop = False
@@ -147,22 +155,22 @@ Partial Class Emp_Gestio_usuaris
         'lbl_taula
         '
         Me.lbl_taula.AutoSize = True
-        Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_taula.ForeColor = System.Drawing.Color.DarkOrange
         Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(173, 29)
+        Me.lbl_taula.Size = New System.Drawing.Size(173, 31)
         Me.lbl_taula.TabIndex = 22
         Me.lbl_taula.Text = "Usuari: XXX"
         '
         'lbl_punts
         '
         Me.lbl_punts.AutoSize = True
-        Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.ForeColor = System.Drawing.Color.DarkOrange
         Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
         Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(135, 29)
+        Me.lbl_punts.Size = New System.Drawing.Size(132, 31)
         Me.lbl_punts.TabIndex = 0
         Me.lbl_punts.Text = "Rol: XXX"
         '
@@ -183,60 +191,60 @@ Partial Class Emp_Gestio_usuaris
         '
         'btn_gest_pagos
         '
-        Me.btn_gest_pagos.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_pagos.Location = New System.Drawing.Point(2, 204)
+        Me.btn_gest_pagos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_gest_pagos.Location = New System.Drawing.Point(2, 305)
         Me.btn_gest_pagos.Name = "btn_gest_pagos"
-        Me.btn_gest_pagos.Size = New System.Drawing.Size(135, 55)
+        Me.btn_gest_pagos.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_pagos.TabIndex = 25
         Me.btn_gest_pagos.Text = "Gestionar Pagaments"
         Me.btn_gest_pagos.UseVisualStyleBackColor = True
         '
         'btn_gest_stock
         '
-        Me.btn_gest_stock.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_stock.Location = New System.Drawing.Point(1, 152)
+        Me.btn_gest_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_gest_stock.Location = New System.Drawing.Point(2, 239)
         Me.btn_gest_stock.Name = "btn_gest_stock"
-        Me.btn_gest_stock.Size = New System.Drawing.Size(135, 55)
+        Me.btn_gest_stock.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_stock.TabIndex = 18
         Me.btn_gest_stock.Text = "Gestionar Stock"
         Me.btn_gest_stock.UseVisualStyleBackColor = True
         '
         'btn_config_fichero
         '
-        Me.btn_config_fichero.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_config_fichero.Location = New System.Drawing.Point(1, 365)
+        Me.btn_config_fichero.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_config_fichero.Location = New System.Drawing.Point(2, 371)
         Me.btn_config_fichero.Name = "btn_config_fichero"
         Me.btn_config_fichero.Size = New System.Drawing.Size(135, 85)
         Me.btn_config_fichero.TabIndex = 17
-        Me.btn_config_fichero.Text = "Configurar fitxer interesos"
+        Me.btn_config_fichero.Text = "Configurar interesos"
         Me.btn_config_fichero.UseVisualStyleBackColor = True
         '
         'btn_gest_users
         '
-        Me.btn_gest_users.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_users.Location = New System.Drawing.Point(1, -2)
+        Me.btn_gest_users.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_gest_users.Location = New System.Drawing.Point(3, 41)
         Me.btn_gest_users.Name = "btn_gest_users"
-        Me.btn_gest_users.Size = New System.Drawing.Size(135, 55)
+        Me.btn_gest_users.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_users.TabIndex = 11
         Me.btn_gest_users.Text = "Gestionar Usuaris"
         Me.btn_gest_users.UseVisualStyleBackColor = True
         '
         'btn_gest_comandes
         '
-        Me.btn_gest_comandes.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_comandes.Location = New System.Drawing.Point(1, 102)
+        Me.btn_gest_comandes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_gest_comandes.Location = New System.Drawing.Point(2, 173)
         Me.btn_gest_comandes.Name = "btn_gest_comandes"
-        Me.btn_gest_comandes.Size = New System.Drawing.Size(135, 55)
+        Me.btn_gest_comandes.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_comandes.TabIndex = 14
         Me.btn_gest_comandes.Text = "Gestionar Comandes"
         Me.btn_gest_comandes.UseVisualStyleBackColor = True
         '
         'btn_gest_carta
         '
-        Me.btn_gest_carta.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_carta.Location = New System.Drawing.Point(1, 50)
+        Me.btn_gest_carta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_gest_carta.Location = New System.Drawing.Point(3, 107)
         Me.btn_gest_carta.Name = "btn_gest_carta"
-        Me.btn_gest_carta.Size = New System.Drawing.Size(135, 55)
+        Me.btn_gest_carta.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_carta.TabIndex = 13
         Me.btn_gest_carta.Text = "Gestionar Carta"
         Me.btn_gest_carta.UseVisualStyleBackColor = True
@@ -253,9 +261,9 @@ Partial Class Emp_Gestio_usuaris
         Me.grb_insert_modifica.Controls.Add(Me.lbl_cognom)
         Me.grb_insert_modifica.Controls.Add(Me.lbl_password)
         Me.grb_insert_modifica.Controls.Add(Me.lbl_nom)
-        Me.grb_insert_modifica.Location = New System.Drawing.Point(437, 122)
+        Me.grb_insert_modifica.Location = New System.Drawing.Point(508, 115)
         Me.grb_insert_modifica.Name = "grb_insert_modifica"
-        Me.grb_insert_modifica.Size = New System.Drawing.Size(297, 326)
+        Me.grb_insert_modifica.Size = New System.Drawing.Size(325, 345)
         Me.grb_insert_modifica.TabIndex = 37
         Me.grb_insert_modifica.TabStop = False
         Me.grb_insert_modifica.Text = "Info"
@@ -349,20 +357,12 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_nom.TabIndex = 0
         Me.lbl_nom.Text = "Nom:"
         '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(95, 22)
-        Me.ToolStripButton3.Text = "Afegir Usuari"
-        '
         'Emp_Gestio_usuaris
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
-        Me.ClientSize = New System.Drawing.Size(761, 479)
+        Me.ClientSize = New System.Drawing.Size(844, 472)
         Me.Controls.Add(Me.grb_insert_modifica)
         Me.Controls.Add(Me.grb_users)
         Me.Controls.Add(Me.pnl_plats)

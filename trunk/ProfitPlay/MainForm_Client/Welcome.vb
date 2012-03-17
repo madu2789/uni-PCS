@@ -36,6 +36,7 @@
     End Sub
 
     Private Sub btn_enter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_enter.Click
+
         If estat = True Then
             'client: accedeix directament al sistema
             If num_comensals.Value < 1 Then
@@ -56,6 +57,9 @@
             'empleat: accedeix a la base de dades per log
             If txtb_login.Text = "" Or txtb_password.Text = "" Then
                 MsgBox("error introdueix dades!")
+                Me.Hide()
+                Dim main As New Mainform_empleado("debug", "debug")
+                main.ShowDialog()
             Else
                 'acces a la base de dades
 

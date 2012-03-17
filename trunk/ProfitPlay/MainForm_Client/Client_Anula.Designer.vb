@@ -154,7 +154,7 @@ Partial Class Client_Anula
         '
         'btn_menu_anular
         '
-        Me.btn_menu_anular.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
         Me.btn_menu_anular.Location = New System.Drawing.Point(8, 371)
         Me.btn_menu_anular.Name = "btn_menu_anular"
@@ -166,7 +166,7 @@ Partial Class Client_Anula
         '
         'btn_veurecarta
         '
-        Me.btn_veurecarta.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
         Me.btn_veurecarta.Location = New System.Drawing.Point(8, 77)
         Me.btn_veurecarta.Name = "btn_veurecarta"
@@ -178,7 +178,7 @@ Partial Class Client_Anula
         '
         'btn_Pagar
         '
-        Me.btn_Pagar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
         Me.btn_Pagar.Location = New System.Drawing.Point(8, 273)
         Me.btn_Pagar.Name = "btn_Pagar"
@@ -190,7 +190,7 @@ Partial Class Client_Anula
         '
         'btn_jugar
         '
-        Me.btn_jugar.Font = New System.Drawing.Font("Modern No. 20", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_jugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_jugar.Image = Global.MainForm_Client.My.Resources.Resources.juego
         Me.btn_jugar.Location = New System.Drawing.Point(8, 175)
         Me.btn_jugar.Name = "btn_jugar"
@@ -215,22 +215,22 @@ Partial Class Client_Anula
         'lbl_taula
         '
         Me.lbl_taula.AutoSize = True
-        Me.lbl_taula.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_taula.Location = New System.Drawing.Point(99, 26)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(162, 29)
+        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
         Me.lbl_taula.TabIndex = 22
         Me.lbl_taula.Text = "Taula: XXX"
         '
         'lbl_punts
         '
         Me.lbl_punts.AutoSize = True
-        Me.lbl_punts.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_punts.Location = New System.Drawing.Point(333, 26)
         Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(97, 29)
+        Me.lbl_punts.Size = New System.Drawing.Size(106, 31)
         Me.lbl_punts.TabIndex = 0
         Me.lbl_punts.Text = "Punts: "
         '

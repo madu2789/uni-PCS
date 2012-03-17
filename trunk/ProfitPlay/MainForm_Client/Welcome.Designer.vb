@@ -37,13 +37,13 @@ Partial Class Welcome
         Me.txtb_nomTaula = New System.Windows.Forms.TextBox
         Me.lbl_benvinguts = New System.Windows.Forms.Label
         Me.lbl_bienvenidos = New System.Windows.Forms.Label
-        Me.pcb_client = New System.Windows.Forms.PictureBox
         Me.pcb_empleat = New System.Windows.Forms.PictureBox
+        Me.pcb_client = New System.Windows.Forms.PictureBox
         Me.gpb_empleat.SuspendLayout()
         Me.gpb_client.SuspendLayout()
         CType(Me.num_comensals, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcb_client, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcb_empleat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcb_client, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_welcome
@@ -85,6 +85,7 @@ Partial Class Welcome
         Me.txtb_password.Name = "txtb_password"
         Me.txtb_password.Size = New System.Drawing.Size(100, 20)
         Me.txtb_password.TabIndex = 3
+        Me.txtb_password.UseSystemPasswordChar = True
         '
         'txtb_login
         '
@@ -177,16 +178,6 @@ Partial Class Welcome
         Me.lbl_bienvenidos.TabIndex = 5
         Me.lbl_bienvenidos.Text = "Bienvenidos!"
         '
-        'pcb_client
-        '
-        Me.pcb_client.Image = CType(resources.GetObject("pcb_client.Image"), System.Drawing.Image)
-        Me.pcb_client.Location = New System.Drawing.Point(24, 197)
-        Me.pcb_client.Name = "pcb_client"
-        Me.pcb_client.Size = New System.Drawing.Size(324, 178)
-        Me.pcb_client.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcb_client.TabIndex = 7
-        Me.pcb_client.TabStop = False
-        '
         'pcb_empleat
         '
         Me.pcb_empleat.Image = CType(resources.GetObject("pcb_empleat.Image"), System.Drawing.Image)
@@ -197,6 +188,16 @@ Partial Class Welcome
         Me.pcb_empleat.TabIndex = 8
         Me.pcb_empleat.TabStop = False
         Me.pcb_empleat.Visible = False
+        '
+        'pcb_client
+        '
+        Me.pcb_client.Image = CType(resources.GetObject("pcb_client.Image"), System.Drawing.Image)
+        Me.pcb_client.Location = New System.Drawing.Point(24, 197)
+        Me.pcb_client.Name = "pcb_client"
+        Me.pcb_client.Size = New System.Drawing.Size(324, 178)
+        Me.pcb_client.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcb_client.TabIndex = 7
+        Me.pcb_client.TabStop = False
         '
         'Welcome
         '
@@ -220,8 +221,8 @@ Partial Class Welcome
         Me.gpb_client.ResumeLayout(False)
         Me.gpb_client.PerformLayout()
         CType(Me.num_comensals, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcb_client, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcb_empleat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcb_client, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
