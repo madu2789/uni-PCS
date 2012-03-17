@@ -108,7 +108,7 @@ Partial Class Mainform_empleado
         'btn_gest_carta
         '
         Me.btn_gest_carta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_carta.Location = New System.Drawing.Point(3, 121)
+        Me.btn_gest_carta.Location = New System.Drawing.Point(1, 121)
         Me.btn_gest_carta.Name = "btn_gest_carta"
         Me.btn_gest_carta.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_carta.TabIndex = 13
@@ -141,9 +141,9 @@ Partial Class Mainform_empleado
         'pcb_sortir
         '
         Me.pcb_sortir.Image = CType(resources.GetObject("pcb_sortir.Image"), System.Drawing.Image)
-        Me.pcb_sortir.Location = New System.Drawing.Point(631, 3)
+        Me.pcb_sortir.Location = New System.Drawing.Point(631, -2)
         Me.pcb_sortir.Name = "pcb_sortir"
-        Me.pcb_sortir.Size = New System.Drawing.Size(69, 53)
+        Me.pcb_sortir.Size = New System.Drawing.Size(69, 58)
         Me.pcb_sortir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pcb_sortir.TabIndex = 23
         Me.pcb_sortir.TabStop = False

@@ -40,4 +40,14 @@
 
     End Sub
 
+    Public Sub clearComanda()
+
+        For Each s As String In productes
+
+            deleteElement(s)
+
+        Next
+
+    End Sub
+
 End Class
