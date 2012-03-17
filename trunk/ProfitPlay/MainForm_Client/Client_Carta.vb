@@ -3,6 +3,16 @@
     Private m_comanda As Comanda
     Private productes As List(Of Producto)
 
+    Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
+        initStructure()
+        btn_bebidas.PerformClick()
+        refreshComanda()
+
+    End Sub
+
     Private Sub initStructure()
 
         lv_productos_disp.Clear()
@@ -10,6 +20,7 @@
         grb_pedido.Show()
         productes = New List(Of Producto)
         m_comanda = New Comanda
+
         fillStructure()
 
     End Sub
@@ -19,10 +30,10 @@
         For i As Integer = 0 To 10 Step 1
 
             Dim p As Producto = New Producto()
-            p.setNom("primeros " + i.ToString)
+            p.setNom("primero " + i.ToString)
             p.setDescripcio("descripcio " + i.ToString)
             p.setPreu(CType(i, Double))
-            p.setTipus("primeros")
+            p.setTipus("primero")
             productes.Add(p)
 
         Next
@@ -30,10 +41,10 @@
         For i As Integer = 0 To 10 Step 1
 
             Dim p As Producto = New Producto()
-            p.setNom("segundos " + i.ToString)
+            p.setNom("segundo " + i.ToString)
             p.setDescripcio("descripcio " + i.ToString)
             p.setPreu(CType(i, Double))
-            p.setTipus("segundos")
+            p.setTipus("segundo")
             productes.Add(p)
 
         Next
@@ -41,10 +52,10 @@
         For i As Integer = 0 To 10 Step 1
 
             Dim p As Producto = New Producto()
-            p.setNom("postres " + i.ToString)
+            p.setNom("postre " + i.ToString)
             p.setDescripcio("descripcio " + i.ToString)
             p.setPreu(CType(i, Double))
-            p.setTipus("postres")
+            p.setTipus("postre")
             productes.Add(p)
 
         Next
@@ -52,10 +63,10 @@
         For i As Integer = 0 To 10 Step 1
 
             Dim p As Producto = New Producto()
-            p.setNom("bebidas " + i.ToString)
+            p.setNom("bebida " + i.ToString)
             p.setDescripcio("descripcio " + i.ToString)
             p.setPreu(CType(i, Double))
-            p.setTipus("bebidas")
+            p.setTipus("bebida")
             productes.Add(p)
 
         Next
@@ -73,7 +84,6 @@
 
             If (s = productes(i).getTipus) Then
 
-                'MsgBox("S: " + s + " Tipus: " + productes(i).getTipus)
                 lv_productos_disp.Items.Add(productes.Item(i).getNom)
 
             End If
@@ -81,16 +91,6 @@
         Next
 
         lv_productos_disp.Update()
-
-    End Sub
-
-    Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        lbl_taula.Text = Mainform_client.nom_taula
-        lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
-        initStructure()
-        btn_bebidas.PerformClick()
-        refreshComanda()
 
     End Sub
 
@@ -126,51 +126,24 @@
     End Sub
 
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
-        addInfoLvPedidos("bebidas")
+        addInfoLvPedidos("bebida")
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
-        addInfoLvPedidos("primeros")
+        addInfoLvPedidos("primero")
     End Sub
 
     Private Sub btn_segundos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_segundos.Click
-        addInfoLvPedidos("segundos")
+        addInfoLvPedidos("segundo")
     End Sub
 
     Private Sub btn_postres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_postres.Click
-        addInfoLvPedidos("postres")
+        addInfoLvPedidos("postre")
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
         btn_bebidas.PerformClick()
     End Sub
-
-    'Private Sub lv_productes_disponibles_doubleclick(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.DoubleClick
-
-    '    pnl_info_producte.Hide()
-    '    For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
-
-    '        If (lv_productos_disp.Items.Item(i).Selected = True) Then
-
-    '            lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-    '            m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
-
-    '        End If
-
-    '    Next
-
-    'End Sub
-
-    'Private Sub lv_productes_disponibles_click(ByVal sender As System.Windows.Forms.ListView, ByVal e As System.EventArgs) Handles lv_productos_disp.Click
-
-
-    '    System.Threading.Thread.Sleep(170)
-    '    lbl_titol_producte.Text = "Aquesta es el titol"
-    '    lbl_descripcio.Text = "Aquesta es la descripccio"
-    '    lbl_ingredients.Text = "Els ingredients: a, b, c, d"
-    '    pnl_info_producte.Show()
-
-    'End Sub
 
     Public Function getComanda() As Comanda
         Return m_comanda
@@ -199,34 +172,34 @@
 
     End Sub
 
-    Private Sub btn_afegeix_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegeix.Click
+    'Private Sub btn_afegeix_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
-        For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+    '    For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
-            If (lv_productos_disp.Items.Item(i).Selected = True) Then
+    '        If (lv_productos_disp.Items.Item(i).Selected = True) Then
 
-                If (nud_cantitat.Value = 0) Then
+    '            If (nud_cantitat.Value = 0) Then
 
-                    MsgBox("Selecciona una quantitat", MsgBoxStyle.Exclamation, "Error de quantitat")
-                    pnl_info_producte.Show()
+    '                MsgBox("Selecciona una quantitat", MsgBoxStyle.Exclamation, "Error de quantitat")
+    '                pnl_info_producte.Show()
 
-                Else
+    '            Else
 
-                    For a As Integer = 0 To nud_cantitat.Value - 1 Step 1
+    '                For a As Integer = 0 To nud_cantitat.Value - 1 Step 1
 
-                        lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-                        m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
-                        pnl_info_producte.Hide()
+    '                    lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
+    '                    m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+    '                    pnl_info_producte.Hide()
 
-                    Next
+    '                Next
 
-                End If
+    '            End If
 
-            End If
+    '        End If
 
-        Next
+    '    Next
 
-    End Sub
+    'End Sub
 
     Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
 
@@ -240,13 +213,8 @@
         End If
     End Sub
 
-    Private Sub btn_cancela_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancela.Click
-        pnl_info_producte.Hide()
-    End Sub
-
     Private Sub btn_add_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_add_prod.Click
 
-        pnl_info_producte.Hide()
         For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
             If (lv_productos_disp.Items.Item(i).Selected = True) Then
@@ -261,8 +229,6 @@
     End Sub
 
     Private Sub btn_del_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_del_prod.Click
-
-        pnl_info_producte.Hide()
 
         If lv_pedidos.Items.Count > 0 Then
 
@@ -292,6 +258,8 @@
         dialog.lbl_ingredients.Text = "Els ingredients: a, b, c, d"
 
         Dim res = dialog.ShowDialog()
+        Dim quantitat = dialog.getQuanitat()
+        dialog.Dispose()
 
         If (res = Windows.Forms.DialogResult.OK) Then
 
@@ -299,11 +267,10 @@
 
                 If (lv_productos_disp.Items.Item(i).Selected = True) Then
 
-                    For a As Integer = 0 To nud_cantitat.Value - 1 Step 1
+                    For a As Integer = 1 To quantitat Step 1
 
                         lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
                         m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
-                        pnl_info_producte.Hide()
 
                     Next
 

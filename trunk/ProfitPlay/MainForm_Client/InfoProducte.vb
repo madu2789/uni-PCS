@@ -23,4 +23,7 @@ Public Class info_producte
 
     End Sub
 
+    Public Function getQuanitat() As Integer
+        Return nud_cantitat.Value
+    End Function
 End Class
