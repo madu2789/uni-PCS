@@ -194,14 +194,24 @@
         Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
         If (result = MsgBoxResult.Ok) Then
 
-            For s As Integer = 0 To emp_lv_productos_seleccionats.Items.Count - 1 Step 1
+            Dim input = InputBox("Entra nom de la carta", "Nom de la carta", "")
 
-                m_comanda.insertElement(emp_lv_productos_seleccionats.Items.Item(s).Text)
+            If (input = "") Then
 
-            Next
+                MsgBox("Nom de la carta incorrecte", MsgBoxStyle.Critical, "Nom incorrecte")
 
-            m_comanda.showComanda()
-            emp_lv_productos_seleccionats.Clear()
+            Else
+
+                For s As Integer = 0 To emp_lv_productos_seleccionats.Items.Count - 1 Step 1
+
+                    m_comanda.insertElement(emp_lv_productos_seleccionats.Items.Item(s).Text)
+
+                Next
+
+                m_comanda.showComanda()
+                emp_lv_productos_seleccionats.Clear()
+
+            End If
 
         End If
         
