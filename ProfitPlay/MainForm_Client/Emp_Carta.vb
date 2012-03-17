@@ -183,6 +183,8 @@
 
                     Next
 
+                    Exit Sub
+
                 End If
 
             Next
