@@ -8,12 +8,14 @@
     Private Sub Welcome_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Me.KeyPreview = True
+        MsgBox("OJO MADU, per entrar com personal has de fer AltGr + 3 (#)", MsgBoxStyle.Critical, "OJO MADU")
 
     End Sub
+
     Sub Form1_KeyPress(ByVal sender As Object, _
     ByVal e As KeyPressEventArgs) Handles Me.KeyPress
 
-        If (e.KeyChar.ToString() = ">") Then
+        If (e.KeyChar.ToString() = "#") Then
 
             If estat = True Then
                 gpb_client.Hide()
@@ -40,7 +42,7 @@
         If estat = True Then
             'client: accedeix directament al sistema
             If num_comensals.Value < 1 Then
-                MsgBox("Número de comensals incorrecte!!!", MsgBoxStyle.Critical)
+                MsgBox("Número de comensals incorrecte!", MsgBoxStyle.Critical)
             Else
                 Me.Hide()
                 If txtb_nomTaula.Text Is Nothing Then
@@ -56,10 +58,12 @@
         Else
             'empleat: accedeix a la base de dades per log
             If txtb_login.Text = "" Or txtb_password.Text = "" Then
-                MsgBox("error introdueix dades!")
+
+                MsgBox("No pot haver camps en blanc!", MsgBoxStyle.Critical, "Error en els camps")
                 Me.Hide()
                 Dim main As New Mainform_empleado("debug", "debug")
                 main.ShowDialog()
+
             Else
                 'acces a la base de dades
 

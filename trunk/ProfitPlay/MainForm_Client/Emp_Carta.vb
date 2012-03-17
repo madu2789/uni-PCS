@@ -38,6 +38,7 @@
         End Select
 
         ompleLlistaProductes()
+        btn_producto.PerformClick()
 
     End Sub
 
@@ -120,6 +121,8 @@
 
         emp_lv_productos_disp.Refresh()
 
+        grb_carta.Text = "Crear Carta"
+
     End Sub
 
     Private Sub btn_add_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_add_prod_emp.Click
@@ -189,12 +192,13 @@
         End If
     End Sub
 
+    'cal guardar la nova carta a la bbdd
     Private Sub btn_crear_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_crear_carta.Click
 
-        Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
+        Dim result = MsgBox("Crear nova carta?", MsgBoxStyle.OkCancel, "Crear nova carta?")
         If (result = MsgBoxResult.Ok) Then
 
-            Dim input = InputBox("Entra nom de la carta", "Nom de la carta", "")
+            Dim input = InputBox("Entra nom de la carta", "Nom de la carta?", "")
 
             If (input = "") Then
 
@@ -217,4 +221,12 @@
         
     End Sub
 
+    Private Sub btn_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_carta.Click
+        grb_carta.Text = "Veure Cartes Creades"
+    End Sub
+
+    Private Sub btn_ingrediente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ingrediente.Click
+
+        grb_carta.Text = "Veure Ingredients"
+    End Sub
 End Class
