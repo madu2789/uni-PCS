@@ -1,15 +1,15 @@
 ﻿Public Class Emp_carta
 
-    Private listofproducts As New List(Of Producto)
-    Private m_comanda As New Comanda()
+    Private listofproducts
+    Private m_comanda
 
     Private Sub Emp_carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         lbl_taula.Text = Mainform_empleado.nomempleat
         lbl_punts.Text = Mainform_empleado.rolempleat
 
-        listofproducts.Clear()
-        m_comanda.clearComanda()
+        listofproducts = New List(Of Producto)
+        m_comanda = New Comanda()
 
         Select Case Mainform_empleado.rolempleat
 
@@ -129,7 +129,6 @@
             If (emp_lv_productos_disp.Items.Item(i).Selected = True) Then
 
                 emp_lv_productos_seleccionats.Items.Add(emp_lv_productos_disp.Items.Item(i).Text)
-                m_comanda.insertElement(emp_lv_productos_disp.Items.Item(i).Text)
 
             End If
 
@@ -145,7 +144,6 @@
 
                 If (emp_lv_productos_seleccionats.Items.Item(i).Selected = True) Then
 
-                    m_comanda.deleteElement(emp_lv_productos_seleccionats.Items.Item(i).Text)
                     emp_lv_productos_seleccionats.Items.Item(i).Selected = False
                     emp_lv_productos_seleccionats.Items.RemoveAt(i)
 
@@ -160,6 +158,7 @@
     Private Sub btn_info_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_info_prod_emp.Click
 
         Dim dialog As New info_producte
+        Dim added As Boolean = False
 
         'aixo ve de la bbdd
         dialog.lbl_titol_producte.Text = "Aquesta es el titol"
@@ -174,16 +173,14 @@
 
             For i As Integer = 0 To emp_lv_productos_disp.Items.Count - 1 Step 1
 
-                If (emp_lv_productos_disp.Items.Item(i).Selected = True) Then
+                If (emp_lv_productos_disp.Items.Item(i).Selected = True And added = False) Then
 
-                    For a As Integer = 1 To quantitat Step 1
+                    For a As Integer = 0 To quantitat - 1 Step 1
 
                         emp_lv_productos_seleccionats.Items.Add(emp_lv_productos_disp.Items.Item(i).Text)
-                        m_comanda.insertElement(emp_lv_productos_seleccionats.Items.Item(i).Text)
+                        added = True
 
                     Next
-
-                    Exit Sub
 
                 End If
 
@@ -191,4 +188,23 @@
 
         End If
     End Sub
+
+    Private Sub btn_crear_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_crear_carta.Click
+
+        Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
+        If (result = MsgBoxResult.Ok) Then
+
+            For s As Integer = 0 To emp_lv_productos_seleccionats.Items.Count - 1 Step 1
+
+                m_comanda.insertElement(emp_lv_productos_seleccionats.Items.Item(s).Text)
+
+            Next
+
+            m_comanda.showComanda()
+            emp_lv_productos_seleccionats.Clear()
+
+        End If
+        
+    End Sub
+
 End Class

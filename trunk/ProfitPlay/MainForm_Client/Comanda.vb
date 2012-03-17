@@ -50,4 +50,14 @@
 
     End Sub
 
+    Public Sub showComanda()
+
+        For i As Integer = 0 To productes.Count - 1
+
+            MsgBox("Producte " + i.ToString + " " + productes.Item(i), MsgBoxStyle.Critical, "Mostrant Comanda")
+
+        Next
+
+    End Sub
+
 End Class

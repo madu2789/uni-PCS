@@ -172,42 +172,19 @@
 
     End Sub
 
-    'Private Sub btn_afegeix_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    '    For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
-
-    '        If (lv_productos_disp.Items.Item(i).Selected = True) Then
-
-    '            If (nud_cantitat.Value = 0) Then
-
-    '                MsgBox("Selecciona una quantitat", MsgBoxStyle.Exclamation, "Error de quantitat")
-    '                pnl_info_producte.Show()
-
-    '            Else
-
-    '                For a As Integer = 0 To nud_cantitat.Value - 1 Step 1
-
-    '                    lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-    '                    m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
-    '                    pnl_info_producte.Hide()
-
-    '                Next
-
-    '            End If
-
-    '        End If
-
-    '    Next
-
-    'End Sub
-
     Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
 
         Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
         If (result = MsgBoxResult.Ok) Then
 
-            Dim merda As New Client_Carta
-            merda.ShowDialog()
+            For s As Integer = 0 To lv_pedidos.Items.Count - 1 Step 1
+
+                m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
+
+            Next
+
+            Dim a As New Client_Carta
+            a.ShowDialog()
             Me.Dispose()
 
         End If
@@ -220,7 +197,6 @@
             If (lv_productos_disp.Items.Item(i).Selected = True) Then
 
                 lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-                m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
 
             End If
 
@@ -236,9 +212,8 @@
 
                 If (lv_pedidos.Items.Item(i).Selected = True) Then
 
-                    m_comanda.deleteElement(lv_pedidos.Items.Item(i).Text)
-                    lv_pedidos.Items.Item(i).Selected = False
                     lv_pedidos.Items.RemoveAt(i)
+                    lv_pedidos.Items.Item(i).Selected = False
 
                 End If
 
@@ -251,6 +226,7 @@
     Private Sub btn_info_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_info_prod.Click
 
         Dim dialog As New info_producte
+        Dim added As Boolean = False
 
         'aixo ve de la bbdd
         dialog.lbl_titol_producte.Text = "Aquesta es el titol"
@@ -265,21 +241,21 @@
 
             For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
 
-                If (lv_productos_disp.Items.Item(i).Selected = True) Then
+                If (lv_productos_disp.Items.Item(i).Selected = True And added = False) Then
 
                     For a As Integer = 1 To quantitat Step 1
 
                         lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-                        m_comanda.insertElement(lv_productos_disp.Items.Item(i).Text)
+                        added = True
 
                     Next
-
-                    Exit Sub
 
                 End If
 
             Next
 
         End If
+
     End Sub
+
 End Class
