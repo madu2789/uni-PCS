@@ -40,6 +40,7 @@ Partial Class Emp_carta
         Me.btn_producto = New System.Windows.Forms.Button
         Me.btn_carta = New System.Windows.Forms.Button
         Me.grb_carta = New System.Windows.Forms.GroupBox
+        Me.btn_crear_carta = New System.Windows.Forms.Button
         Me.lbl_productos_dispo = New System.Windows.Forms.Label
         Me.emp_lv_productos_seleccionats = New System.Windows.Forms.ListView
         Me.Nombre = New System.Windows.Forms.ColumnHeader
@@ -230,6 +231,7 @@ Partial Class Emp_carta
         '
         'grb_carta
         '
+        Me.grb_carta.Controls.Add(Me.btn_crear_carta)
         Me.grb_carta.Controls.Add(Me.lbl_productos_dispo)
         Me.grb_carta.Controls.Add(Me.emp_lv_productos_seleccionats)
         Me.grb_carta.Controls.Add(Me.emp_lv_productos_disp)
@@ -244,6 +246,15 @@ Partial Class Emp_carta
         Me.grb_carta.TabStop = False
         Me.grb_carta.Text = "Carta"
         '
+        'btn_crear_carta
+        '
+        Me.btn_crear_carta.Location = New System.Drawing.Point(550, 266)
+        Me.btn_crear_carta.Name = "btn_crear_carta"
+        Me.btn_crear_carta.Size = New System.Drawing.Size(110, 32)
+        Me.btn_crear_carta.TabIndex = 34
+        Me.btn_crear_carta.Text = "Crear Carta"
+        Me.btn_crear_carta.UseVisualStyleBackColor = True
+        '
         'lbl_productos_dispo
         '
         Me.lbl_productos_dispo.AutoSize = True
@@ -256,7 +267,7 @@ Partial Class Emp_carta
         'emp_lv_productos_seleccionats
         '
         Me.emp_lv_productos_seleccionats.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Nombre, Me.Cantidad})
-        Me.emp_lv_productos_seleccionats.Location = New System.Drawing.Point(248, 52)
+        Me.emp_lv_productos_seleccionats.Location = New System.Drawing.Point(252, 68)
         Me.emp_lv_productos_seleccionats.Name = "emp_lv_productos_seleccionats"
         Me.emp_lv_productos_seleccionats.Size = New System.Drawing.Size(155, 230)
         Me.emp_lv_productos_seleccionats.Sorting = System.Windows.Forms.SortOrder.Ascending
@@ -275,12 +286,14 @@ Partial Class Emp_carta
         '
         'emp_lv_productos_disp
         '
-        Me.emp_lv_productos_disp.Location = New System.Drawing.Point(6, 52)
+        Me.emp_lv_productos_disp.Location = New System.Drawing.Point(6, 68)
         Me.emp_lv_productos_disp.Name = "emp_lv_productos_disp"
         Me.emp_lv_productos_disp.Size = New System.Drawing.Size(155, 230)
+        Me.emp_lv_productos_disp.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.emp_lv_productos_disp.TabIndex = 29
         Me.emp_lv_productos_disp.TileSize = New System.Drawing.Size(170, 30)
         Me.emp_lv_productos_disp.UseCompatibleStateImageBehavior = False
+        Me.emp_lv_productos_disp.View = System.Windows.Forms.View.Tile
         '
         'lbl_productes_seleccinats
         '
@@ -367,4 +380,5 @@ Partial Class Emp_carta
     Friend WithEvents btn_add_prod_emp As System.Windows.Forms.Button
     Friend WithEvents btn_del_prod_emp As System.Windows.Forms.Button
     Friend WithEvents btn_info_prod_emp As System.Windows.Forms.Button
+    Friend WithEvents btn_crear_carta As System.Windows.Forms.Button
 End Class

@@ -22,8 +22,8 @@ Partial Class Client_Carta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
+        Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
+        Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
         Me.lbl_taula = New System.Windows.Forms.Label
@@ -230,7 +230,7 @@ Partial Class Client_Carta
         '
         'lv_pedidos
         '
-        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3, ListViewItem4})
+        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem7, ListViewItem8})
         Me.lv_pedidos.Location = New System.Drawing.Point(239, 69)
         Me.lv_pedidos.Name = "lv_pedidos"
         Me.lv_pedidos.Size = New System.Drawing.Size(147, 226)
@@ -240,11 +240,11 @@ Partial Class Client_Carta
         '
         'lv_productos_disp
         '
-        Me.lv_productos_disp.AllowDrop = True
         Me.lv_productos_disp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Nombre, Me.Cantidad})
         Me.lv_productos_disp.Location = New System.Drawing.Point(6, 67)
         Me.lv_productos_disp.Name = "lv_productos_disp"
         Me.lv_productos_disp.Size = New System.Drawing.Size(145, 228)
+        Me.lv_productos_disp.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.lv_productos_disp.TabIndex = 18
         Me.lv_productos_disp.UseCompatibleStateImageBehavior = False
         Me.lv_productos_disp.View = System.Windows.Forms.View.Tile
