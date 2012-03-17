@@ -127,18 +127,22 @@
 
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
         addInfoLvPedidos("bebida")
+        grb_pedido.Text = "Afegir Begudes a la comanda"
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
         addInfoLvPedidos("primero")
+        grb_pedido.Text = "Afegir Primers a la comanda"
     End Sub
 
     Private Sub btn_segundos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_segundos.Click
         addInfoLvPedidos("segundo")
+        grb_pedido.Text = "Afegir Segons a la comanda"
     End Sub
 
     Private Sub btn_postres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_postres.Click
         addInfoLvPedidos("postre")
+        grb_pedido.Text = "Afegir Postres a la comanda"
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click
