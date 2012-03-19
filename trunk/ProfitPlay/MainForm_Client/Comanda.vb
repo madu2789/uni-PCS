@@ -2,6 +2,34 @@
 
     Private productes As ArrayList
 
+    Private hora As String
+    Private taula As String
+    Private producte As Integer
+    Private notes As String
+    Private estat As String
+
+    'fer getters i setters
+
+    Public Sub setHora(ByVal s As String)
+        hora = s
+    End Sub
+
+    Public Sub setTaula(ByVal s As String)
+        taula = s
+    End Sub
+
+    Public Sub setProducte(ByVal s As String)
+        producte = s
+    End Sub
+
+    Public Sub setNotes(ByVal s As String)
+        notes = s
+    End Sub
+
+    Public Sub setEstat(ByVal s As String)
+        estat = s
+    End Sub
+
     Public Sub New()
 
         productes = New ArrayList

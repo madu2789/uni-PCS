@@ -29,5 +29,12 @@ Public Class Empleat
         Return validacio
     End Function
 
+    Public Function GetEmpleats() As DataTable
+        Return BD.GetEmpleats()
+    End Function
+
+    Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
+        Return BD.SetEmpleat(nom, password, rol)
+    End Function
 
 End Class

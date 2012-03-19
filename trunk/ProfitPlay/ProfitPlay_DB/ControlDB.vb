@@ -48,6 +48,33 @@
         Return DS.Empleado
     End Function
 
+    Public Function GetEmpleats() As DataTable
+        Try
+            connect()
+            empleatDA.Connection = conDB
+            empleatDA.Fill(DS.Empleado)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB", MsgBoxStyle.Critical)
+        End Try
+        Return DS.Empleado
+    End Function
+
+    Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
+        Dim ok As Boolean = False
+        Try
+            connect()
+            comandaDA.Connection = conDB
+
+            empleatDA.InsertEmpleado(nom, password, rol)
+            disconnect()
+
+        Catch ex As Exception
+            MsgBox("error DB empleat", MsgBoxStyle.Critical)
+        End Try
+        Return ok
+    End Function
+
     Public Function GetProductes() As DataTable
         Try
             connect()
@@ -55,7 +82,7 @@
             producteDA.Fill(DS.Producto)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB", MsgBoxStyle.Critical)
+            MsgBox("error DB productes", MsgBoxStyle.Critical)
         End Try
         Return DS.Producto
     End Function
@@ -67,12 +94,12 @@
             cartaDA.Fill(DS.Carta)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB", MsgBoxStyle.Critical)
+            MsgBox("error DB amb carta", MsgBoxStyle.Critical)
         End Try
         Return DS.Carta
     End Function
 
-    Public Function SetComanda(ByVal id_comanda As String, ByVal id_taula As String, ByVal productes As ArrayList) As Boolean
+    Public Function SetComanda(ByVal id_comanda As String, ByVal id_taula As String, ByVal productes As String) As Boolean
         Dim ok As Boolean = False
         Try
             connect()
@@ -83,7 +110,7 @@
             Dim estat As String = ""
             Dim notes As String = ""
             Dim hora As String = ""
-            Dim producte As String = productes.Item(1)
+            Dim producte As String = ""
 
             For Each producte In productes
                 comandaDA.InsertComanda(estat, id_taula, producte, notes, hora)

@@ -1,5 +1,5 @@
 ﻿Public Class Client_Carta
-
+    Dim ws As New ws_profitplay.Service1SoapClient
     Private m_comanda As Comanda
     Private productes As List(Of Producto)
 
@@ -22,8 +22,34 @@
         m_comanda = New Comanda
 
         fillStructure()
+        ObteProductes()
 
     End Sub
+
+    Private Sub ObteProductes()
+
+        Dim productesDB As DataTable
+
+        productesDB = ws.GetProducte
+        'prova
+        If productesDB Is Nothing Then
+            MsgBox("error", MsgBoxStyle.Critical)
+        End If
+
+        For Each fila In productesDB.Rows
+            'MsgBox(fila("password").ToString(), MsgBoxStyle.Exclamation)
+            'MsgBox(fila("rol").ToString(), MsgBoxStyle.Exclamation)
+
+            Dim p As Producto = New Producto()
+
+            p.setNom(fila("nombre").ToString)
+            p.setPreu(CDbl(fila("precio"))
+            p.setTipus(fila("categoria").ToString)
+            productes.Add(p)
+        Next
+
+    End Sub
+
 
     Private Sub fillStructure()
 

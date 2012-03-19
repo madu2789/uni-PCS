@@ -12,11 +12,8 @@ Public Class Service1
     Dim carta As New Carta
     Dim empleat As New Empleat
     Dim comanda As New Comanda
+    Dim producte As New Producte
 
-    <WebMethod()> _
-  Public Function Getcarta() As DataTable
-        Return carta.GetCarta
-    End Function
 
     <WebMethod()> _
     Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String
@@ -24,8 +21,28 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-    Public Function InsertaComada(ByVal user As String, ByVal password As String) As Boolean
-        Return empleat.log_empleat(user, password)
+   Public Function GetProducte() As DataTable
+        Return producte.GetProducte
+    End Function
+
+    <WebMethod()> _
+   Public Function GetComanda() As DataTable
+        Return comanda.GetComanda
+    End Function
+
+    <WebMethod()> _
+    Public Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean
+        Return comanda.SetComanda(id_comanda, taula, producte)
+    End Function
+
+    <WebMethod()> _
+   Public Function GetEmpleat() As DataTable
+        Return empleat.GetEmpleats
+    End Function
+
+    <WebMethod()> _
+   Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
+        Return comanda.SetComanda(nom, password, rol)
     End Function
 
     <WebMethod()> _

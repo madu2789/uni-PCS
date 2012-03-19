@@ -1,6 +1,6 @@
 ﻿Public Class Welcome
 
-    Dim ws As New Profit_WS.Service1SoapClient
+    Dim ws As New ws_profitplay.Service1SoapClient
     Dim estat As Boolean = True 'indica qui accedeix al sistema:
     'true vol dir mode client
     'false mode empleat
@@ -8,7 +8,7 @@
     Private Sub Welcome_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Me.KeyPreview = True
-        MsgBox("OJO MADU, per entrar com personal has de fer AltGr + 3 (#)", MsgBoxStyle.Critical, "OJO MADU")
+        'MsgBox("OJO MADU, per entrar com personal has de fer AltGr + 3 (#)", MsgBoxStyle.Critical, "OJO MADU")
 
     End Sub
 
