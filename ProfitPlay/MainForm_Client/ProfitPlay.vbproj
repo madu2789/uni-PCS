@@ -142,7 +142,7 @@
     <Compile Include="Client_Pago.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Service References\Profit_WS\Reference.vb">
+    <Compile Include="Service References\ws_profitplay\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -242,21 +242,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Profit_WS\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Profit_WS\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
-    <None Include="Service References\Profit_WS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Profit_WS\Service11.disco" />
-    <None Include="Service References\Profit_WS\Service11.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Image1.jpg" />
@@ -281,6 +267,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\juego_little.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ws_profitplay\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_profitplay\Service1.disco" />
+    <None Include="Service References\ws_profitplay\Service1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_profitplay\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_profitplay\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

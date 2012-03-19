@@ -88,6 +88,7 @@
     <Compile Include="Carta.vb" />
     <Compile Include="Comanda.vb" />
     <Compile Include="Empleat.vb" />
+    <Compile Include="Producte.vb" />
     <Compile Include="Service1.asmx.vb">
       <DependentUpon>Service1.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -153,8 +154,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>53843</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/ProfitPlay_WebService</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>

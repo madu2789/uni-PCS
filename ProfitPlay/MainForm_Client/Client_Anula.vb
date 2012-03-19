@@ -1,5 +1,5 @@
 ﻿Public Class Client_Anula
-
+    Dim ws As New ws_profitplay.Service1SoapClient
     Dim element As New ToolStripButton()
     Dim m_comanda As Comanda
     Dim tota_comanda As Comanda = New Comanda
@@ -56,9 +56,32 @@
         m_comanda = Client_Carta.getComanda()
 
         'llegir tot el que hi ha acumulat a la bbdd
+        ObteComandes()
 
         'llegeixo el que hem ve de nou de la carta
         insertToolStripItem()
+
+    End Sub
+
+    Private Sub ObteComandes()
+        Dim comandesDB As DataTable
+
+        comandesDB = ws.GetComanda
+
+        For Each fila In comandesDB.Rows
+            'MsgBox(fila("password").ToString(), MsgBoxStyle.Exclamation)
+            'MsgBox(fila("rol").ToString(), MsgBoxStyle.Exclamation)
+
+            Dim c As Comanda = New Comanda()
+
+            c.setEstat(fila("estado").ToString)
+            c.setTaula(CInt(fila("Id_Mesa")))
+            c.setProducte(CInt(fila("Id_Producto")))
+            c.setHora(fila("hora").ToString)
+            c.setNotes(fila("notas").ToString)
+            'comandes.Add(p)
+        Next
+
 
     End Sub
 
