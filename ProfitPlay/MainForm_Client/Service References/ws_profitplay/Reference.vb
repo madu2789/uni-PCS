@@ -37,15 +37,11 @@ Namespace ws_profitplay
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetEmpleat() As System.Data.DataTable
+        Function GetEmpleat() As String
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
         Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/MultiplicaNumeros", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function MultiplicaNumeros(ByVal a As Integer, ByVal b As Integer) As Integer
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
@@ -95,16 +91,12 @@ Namespace ws_profitplay
             Return MyBase.Channel.SetComanda(id_comanda, taula, producte)
         End Function
         
-        Public Function GetEmpleat() As System.Data.DataTable Implements ws_profitplay.Service1Soap.GetEmpleat
+        Public Function GetEmpleat() As String Implements ws_profitplay.Service1Soap.GetEmpleat
             Return MyBase.Channel.GetEmpleat
         End Function
         
         Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean Implements ws_profitplay.Service1Soap.SetEmpleat
             Return MyBase.Channel.SetEmpleat(nom, password, rol)
-        End Function
-        
-        Public Function MultiplicaNumeros(ByVal a As Integer, ByVal b As Integer) As Integer Implements ws_profitplay.Service1Soap.MultiplicaNumeros
-            Return MyBase.Channel.MultiplicaNumeros(a, b)
         End Function
     End Class
 End Namespace

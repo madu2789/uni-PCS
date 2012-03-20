@@ -1,4 +1,6 @@
 ﻿Public Class Emp_Gestio_usuaris
+    Dim ws As New ws_profitplay.Service1SoapClient
+    Dim empleats As String
 
     Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
         grb_insert_modifica.Show()
@@ -22,6 +24,8 @@
     Private Sub Emp_Gestio_usuaris_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         lbl_taula.Text = Mainform_empleado.nomempleat
         lbl_punts.Text = Mainform_empleado.rolempleat
+
+        ObteEmpleats()
 
         Select Case Mainform_empleado.rolempleat
             Case "Administrador"
@@ -47,6 +51,13 @@
             Case Else
 
         End Select
+    End Sub
+
+    Private Sub ObteEmpleats()
+
+        empleats = ws.GetEmpleat
+        ToolStrip1.Items.Add(empleats)
+
     End Sub
 
     Private Sub btn_afegir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegir.Click

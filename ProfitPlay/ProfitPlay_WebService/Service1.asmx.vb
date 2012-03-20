@@ -36,7 +36,7 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetEmpleat() As DataTable
+   Public Function GetEmpleat() As String
         Return empleat.GetEmpleats
     End Function
 
@@ -45,9 +45,5 @@ Public Class Service1
         Return comanda.SetComanda(nom, password, rol)
     End Function
 
-    <WebMethod()> _
-   Public Function MultiplicaNumeros(ByVal a As Integer, ByVal b As Integer) As Integer
-        Return a * b
-    End Function
 
 End Class
