@@ -73,14 +73,7 @@
       <s:element name="GetEmpleatResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetEmpleatResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpleatResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -97,21 +90,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="SetEmpleatResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="MultiplicaNumeros">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="a" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="b" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="MultiplicaNumerosResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="MultiplicaNumerosResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -153,12 +131,6 @@
   <wsdl:message name="SetEmpleatSoapOut">
     <wsdl:part name="parameters" element="tns:SetEmpleatResponse" />
   </wsdl:message>
-  <wsdl:message name="MultiplicaNumerosSoapIn">
-    <wsdl:part name="parameters" element="tns:MultiplicaNumeros" />
-  </wsdl:message>
-  <wsdl:message name="MultiplicaNumerosSoapOut">
-    <wsdl:part name="parameters" element="tns:MultiplicaNumerosResponse" />
-  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="LogEmpleat">
       <wsdl:input message="tns:LogEmpleatSoapIn" />
@@ -183,10 +155,6 @@
     <wsdl:operation name="SetEmpleat">
       <wsdl:input message="tns:SetEmpleatSoapIn" />
       <wsdl:output message="tns:SetEmpleatSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="MultiplicaNumeros">
-      <wsdl:input message="tns:MultiplicaNumerosSoapIn" />
-      <wsdl:output message="tns:MultiplicaNumerosSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -245,15 +213,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="MultiplicaNumeros">
-      <soap:operation soapAction="http://tempuri.org/MultiplicaNumeros" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -304,15 +263,6 @@
     </wsdl:operation>
     <wsdl:operation name="SetEmpleat">
       <soap12:operation soapAction="http://tempuri.org/SetEmpleat" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="MultiplicaNumeros">
-      <soap12:operation soapAction="http://tempuri.org/MultiplicaNumeros" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

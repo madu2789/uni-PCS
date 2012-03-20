@@ -43,7 +43,7 @@
             Dim p As Producto = New Producto()
 
             p.setNom(fila("nombre").ToString)
-            p.setPreu(CDbl(fila("precio"))
+            p.setPreu(CDbl(fila("precio")))
             p.setTipus(fila("categoria").ToString)
             productes.Add(p)
         Next
