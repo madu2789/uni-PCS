@@ -89,13 +89,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ProvaDataSet.Designer.vb">
+    <Compile Include="profit_playDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ProvaDataSet.vb">
-      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
+      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -120,25 +117,20 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="ProvaDataSet.xsc">
-      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
+    <None Include="profit_playDataSet1.xsc">
+      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="ProvaDataSet.xsd">
-      <SubType>Designer</SubType>
+    <None Include="profit_playDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProvaDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>profit_playDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="ProvaDataSet.xss">
-      <DependentUpon>ProvaDataSet.xsd</DependentUpon>
+    <None Include="profit_playDataSet1.xss">
+      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="profit_play.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

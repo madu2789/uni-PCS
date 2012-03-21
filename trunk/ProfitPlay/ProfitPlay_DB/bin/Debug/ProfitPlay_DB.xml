@@ -6,11 +6,7 @@ ProfitPlay_DB
 </name>
 </assembly>
 <members>
-<member name="T:ProfitPlay_DB.ProvaDataSet.AlergiasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProfitPlay_DB.ProvaDataSet.CartaDataTable">
+<member name="T:ProfitPlay_DB.ProvaDataSet.CartaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -45,10 +41,6 @@ Represents the strongly named DataTable class.
 </member><member name="T:ProfitPlay_DB.ProvaDataSet.UsuarioDataTable">
 	<summary>
 Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProfitPlay_DB.ProvaDataSet.AlergiasRow">
-	<summary>
-Represents strongly named DataRow class.
 </summary>
 </member><member name="T:ProfitPlay_DB.ProvaDataSet.CartaRow">
 	<summary>
@@ -85,10 +77,6 @@ Represents strongly named DataRow class.
 </member><member name="T:ProfitPlay_DB.ProvaDataSet.UsuarioRow">
 	<summary>
 Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProfitPlay_DB.ProvaDataSet.AlergiasRowChangeEvent">
-	<summary>
-Row event argument class
 </summary>
 </member><member name="T:ProfitPlay_DB.ProvaDataSet.CartaRowChangeEvent">
 	<summary>
@@ -129,10 +117,6 @@ Row event argument class
 </member><member name="T:ProfitPlay_DB.ProvaDataSet">
 	<summary>
 Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:ProfitPlay_DB.ProvaDataSetTableAdapters.AlergiasTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ProfitPlay_DB.ProvaDataSetTableAdapters.CartaTableAdapter">
 	<summary>
