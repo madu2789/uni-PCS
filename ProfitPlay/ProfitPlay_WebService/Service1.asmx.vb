@@ -9,7 +9,6 @@ Imports System.ComponentModel
 <ToolboxItem(False)> _
 Public Class Service1
     Inherits System.Web.Services.WebService
-    Dim carta As New Carta
     Dim empleat As New Empleat
     Dim comanda As New Comanda
     Dim producte As New Producte
@@ -36,7 +35,7 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetEmpleat() As String
+   Public Function GetEmpleat() As DataTable
         Return empleat.GetEmpleats
     End Function
 

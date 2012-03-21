@@ -6,17 +6,15 @@
     Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
 
     'tableadapters:
-    Dim empleatDA As New ProvaDataSetTableAdapters.EmpleadoTableAdapter
-    Dim alergiaDA As New ProvaDataSetTableAdapters.AlergiasTableAdapter
-    Dim cartaDA As New ProvaDataSetTableAdapters.CartaTableAdapter
-    Dim ingredientDA As New ProvaDataSetTableAdapters.IngredientesTableAdapter
-    Dim taulaDA As New ProvaDataSetTableAdapters.MesaTableAdapter
-    Dim comandaDA As New ProvaDataSetTableAdapters.PedidoTableAdapter
-    Dim producteDA As New ProvaDataSetTableAdapters.ProductoTableAdapter
-    Dim producte_ingredientDA As New ProvaDataSetTableAdapters.Producto_IngredienteTableAdapter
+    Dim empleatDA As New profit_playDataSetTableAdapters.ComandaTableAdapter
+    Dim ingredientDA As New profit_playDataSetTableAdapters.IngredientTableAdapter
+    Dim usuariDA As New profit_playDataSetTableAdapters.UsuariTableAdapter
+    Dim comandaDA As New profit_playDataSetTableAdapters.ComandaTableAdapter
+    Dim producteDA As New profit_playDataSetTableAdapters.ProducteTableAdapter
+    Dim producte_ingredientDA As New profit_playDataSetTableAdapters.Producte_IngredientTableAdapter
 
     'DataSet:
-    Private DS As New ProvaDataSet()
+    Private DS As New profit_playDataSet()
     Private cmd As OleDb.OleDbCommand
 
     Public Sub connect()
@@ -38,26 +36,26 @@
 
             'no mo reconeix al DS
             empleatDA.Connection = conDB
-            empleatDA.ComprovaPassword(DS.Empleado, user)
+            ' empleatDA.ComprovaPassword(DS.Empleado, user)
 
         Catch ex As Exception
             MsgBox("error llegeix user", MsgBoxStyle.Critical)
         End Try
         disconnect()
 
-        Return DS.Empleado
+        Return DS.Empleat
     End Function
 
     Public Function GetEmpleats() As DataTable
         Try
             connect()
             empleatDA.Connection = conDB
-            empleatDA.Fill(DS.Empleado)
+            ' empleatDA.Fill(DS.Empleat)
             disconnect()
         Catch ex As Exception
             MsgBox("error DB", MsgBoxStyle.Critical)
         End Try
-        Return DS.Empleado
+        Return DS.Empleat
     End Function
 
     Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
@@ -66,7 +64,7 @@
             connect()
             comandaDA.Connection = conDB
 
-            empleatDA.InsertEmpleado(nom, password, rol)
+            'empleatDA.InsertEmpleado(nom, password, rol)
             disconnect()
 
         Catch ex As Exception
@@ -79,24 +77,12 @@
         Try
             connect()
             producteDA.Connection = conDB
-            producteDA.Fill(DS.Producto)
+            producteDA.Fill(DS.Producte)
             disconnect()
         Catch ex As Exception
             MsgBox("error DB productes", MsgBoxStyle.Critical)
         End Try
-        Return DS.Producto
-    End Function
-
-    Public Function GetCarta() As DataTable
-        Try
-            connect()
-            cartaDA.Connection = conDB
-            cartaDA.Fill(DS.Carta)
-            disconnect()
-        Catch ex As Exception
-            MsgBox("error DB amb carta", MsgBoxStyle.Critical)
-        End Try
-        Return DS.Carta
+        Return DS.Producte
     End Function
 
     Public Function SetComanda(ByVal id_comanda As String, ByVal id_taula As String, ByVal productes As String) As Boolean
@@ -113,7 +99,7 @@
             Dim producte As String = ""
 
             For Each producte In productes
-                comandaDA.InsertComanda(estat, id_taula, producte, notes, hora)
+                ' comandaDA.InsertComanda(estat, id_taula, producte, notes, hora)
             Next
 
             disconnect()
@@ -127,12 +113,12 @@
         Try
             connect()
             comandaDA.Connection = conDB
-            comandaDA.Fill(DS.Pedido)
+            comandaDA.Fill(DS.Comanda)
             disconnect()
         Catch ex As Exception
             MsgBox("error DB", MsgBoxStyle.Critical)
         End Try
-        Return DS.Carta
+        Return DS.Comanda
     End Function
 
 End Class

@@ -29,19 +29,20 @@ Public Class Empleat
         Return validacio
     End Function
 
-    Public Function GetEmpleats() As String
+    Public Function GetEmpleats() As DataTable
 
         Dim empleat As String = ""
         Dim info As DataTable
 
         info = BD.GetEmpleats
 
-        For Each fila In info.Rows
-            MsgBox(fila("nom").ToString(), MsgBoxStyle.Exclamation)
-            empleat = fila("nom").ToString
-        Next
+        'For Each fila In info.Rows
+        '    MsgBox(fila("nom").ToString(), MsgBoxStyle.Exclamation)
+        '    empleat = fila("nom").ToString
+        'Next
 
-        Return empleat
+        'Return empleat
+        Return info
     End Function
 
     Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean

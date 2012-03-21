@@ -37,7 +37,7 @@ Namespace ws_profitplay
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetEmpleat() As String
+        Function GetEmpleat() As System.Data.DataTable
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
@@ -91,7 +91,7 @@ Namespace ws_profitplay
             Return MyBase.Channel.SetComanda(id_comanda, taula, producte)
         End Function
         
-        Public Function GetEmpleat() As String Implements ws_profitplay.Service1Soap.GetEmpleat
+        Public Function GetEmpleat() As System.Data.DataTable Implements ws_profitplay.Service1Soap.GetEmpleat
             Return MyBase.Channel.GetEmpleat
         End Function
         
