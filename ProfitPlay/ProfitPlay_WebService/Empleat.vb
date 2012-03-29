@@ -12,11 +12,12 @@ Public Class Empleat
         Try
             info = BD.consulta_empleat(user)
 
+            MsgBox(info.Rows.Count, MsgBoxStyle.Critical)
             For Each fila In info.Rows
-                ' MsgBox(fila("password").ToString(), MsgBoxStyle.Exclamation)
-                'MsgBox(fila("rol").ToString(), MsgBoxStyle.Exclamation)
-                passwordBD = fila("password").ToString
-                rol = fila("rol").ToString
+                MsgBox(fila("Password").ToString(), MsgBoxStyle.Exclamation)
+                MsgBox(fila("Rol").ToString(), MsgBoxStyle.Exclamation)
+                passwordBD = fila("Password").ToString
+                rol = fila("Rol").ToString
             Next
         Catch ex As Exception
             MsgBox("error al traspas de dades al WS", MsgBoxStyle.Critical)

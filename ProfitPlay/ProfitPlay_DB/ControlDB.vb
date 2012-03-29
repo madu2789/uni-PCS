@@ -6,9 +6,8 @@
     Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
 
     'tableadapters:
-    Dim empleatDA As New profit_playDataSetTableAdapters.ComandaTableAdapter
+    Dim empleatDA As New profit_playDataSetTableAdapters.EmpleatTableAdapter
     Dim ingredientDA As New profit_playDataSetTableAdapters.IngredientTableAdapter
-    Dim usuariDA As New profit_playDataSetTableAdapters.UsuariTableAdapter
     Dim comandaDA As New profit_playDataSetTableAdapters.ComandaTableAdapter
     Dim producteDA As New profit_playDataSetTableAdapters.ProducteTableAdapter
     Dim producte_ingredientDA As New profit_playDataSetTableAdapters.Producte_IngredientTableAdapter
@@ -36,7 +35,7 @@
 
             'no mo reconeix al DS
             empleatDA.Connection = conDB
-            ' empleatDA.ComprovaPassword(DS.Empleado, user)
+            empleatDA.ConsultaPassword(DS.Empleat, user)
 
         Catch ex As Exception
             MsgBox("error llegeix user", MsgBoxStyle.Critical)
