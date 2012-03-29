@@ -1,4 +1,9 @@
-﻿Public Class Emp_Gestio_usuaris
+﻿Imports System.Runtime.Serialization
+Imports System.Xml.Serialization
+Imports System.Xml
+Imports System.Collections.Generic
+
+Public Class Emp_Gestio_usuaris
     Dim ws As New ws_profitplay.Service1SoapClient
 
     Dim empleats As DataTable
@@ -56,8 +61,26 @@
 
     Private Sub ObteEmpleats()
 
-        'empleats = ws.GetEmpleat
-        'ToolStrip1.Items.Add(empleats)
+        'acces a la base de dades
+        Dim empleatsBD As DataTable = ws.GetEmpleat()
+
+        ' Dim empleats As List(Of Empleado) = 
+
+
+        'For Each fila In empleatsBD.
+        '    Dim empl As Empleado = New Empleado()
+        '    empl.id = fila("Id_empleat").ToString
+        '    empl.rol = fila("Rol").ToString
+        '    empl.nom = fila("Nom").ToString
+        '    empl.cognom = fila("Cognom").ToString
+        '    empl.username = fila("Username").ToString
+        '    empl.password = fila("Password").ToString
+
+        '    ' empleats.Add(empl)
+        '    ToolStrip1.Items.Add(empl.nom)
+        '    'MsgBox(empl.id, MsgBoxStyle.Information)
+        'Next
+
 
     End Sub
 

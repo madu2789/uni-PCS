@@ -33,7 +33,6 @@
         Try
             connect()
 
-            'no mo reconeix al DS
             empleatDA.Connection = conDB
             empleatDA.ConsultaPassword(DS.Empleat, user)
 
@@ -49,7 +48,7 @@
         Try
             connect()
             empleatDA.Connection = conDB
-            ' empleatDA.Fill(DS.Empleat)
+            empleatDA.Fill(DS.Empleat)
             disconnect()
         Catch ex As Exception
             MsgBox("error DB", MsgBoxStyle.Critical)
@@ -115,7 +114,7 @@
             comandaDA.Fill(DS.Comanda)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB", MsgBoxStyle.Critical)
+            MsgBox("error DB comandes", MsgBoxStyle.Critical)
         End Try
         Return DS.Comanda
     End Function

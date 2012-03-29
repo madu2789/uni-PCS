@@ -1,5 +1,15 @@
 ﻿
+Imports System.Runtime.Serialization
+Imports System.Collections.Generic
+
 Public Class Empleat
+
+    Dim id As Integer
+    Dim rol As String
+    Dim nom As String
+    Dim cognom As String
+    Dim username As String
+    Dim password As String
 
     Dim BD As New ProfitPlay_DB.ControlDB
 
@@ -12,10 +22,7 @@ Public Class Empleat
         Try
             info = BD.consulta_empleat(user)
 
-            MsgBox(info.Rows.Count, MsgBoxStyle.Critical)
             For Each fila In info.Rows
-                MsgBox(fila("Password").ToString(), MsgBoxStyle.Exclamation)
-                MsgBox(fila("Rol").ToString(), MsgBoxStyle.Exclamation)
                 passwordBD = fila("Password").ToString
                 rol = fila("Rol").ToString
             Next
@@ -32,17 +39,23 @@ Public Class Empleat
 
     Public Function GetEmpleats() As DataTable
 
-        Dim empleat As String = ""
-        Dim info As DataTable
+        'Dim empleat As String = ""
+        Dim info As DataTable = BD.GetEmpleats
 
-        info = BD.GetEmpleats
+        Dim empleats As New List(Of Empleat)
 
-        'For Each fila In info.Rows
-        '    MsgBox(fila("nom").ToString(), MsgBoxStyle.Exclamation)
-        '    empleat = fila("nom").ToString
-        'Next
+        For Each fila In info.Rows
+            Dim empl As Empleat = New Empleat()
+            empl.id = fila("Id_empleat").ToString
+            empl.rol = fila("Rol").ToString
+            empl.nom = fila("Nom").ToString
+            empl.cognom = fila("Cognom").ToString
+            empl.username = fila("Username").ToString
+            empl.password = fila("Password").ToString
+            empleats.Add(empl)
+            'MsgBox(empl.id, MsgBoxStyle.Information)
+        Next
 
-        'Return empleat
         Return info
     End Function
 
