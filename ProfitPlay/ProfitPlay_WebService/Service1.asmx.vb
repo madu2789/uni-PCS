@@ -11,6 +11,7 @@ Imports System.Collections.Generic
 <System.Web.Services.WebServiceBinding(ConformsTo:=WsiProfiles.BasicProfile1_1)> _
 <ToolboxItem(False)> _
 Public Class Service1
+
     Inherits System.Web.Services.WebService
     Dim empleat As New Empleat
     Dim comanda As New Comanda

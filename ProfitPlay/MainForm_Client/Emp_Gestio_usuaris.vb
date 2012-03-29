@@ -4,9 +4,9 @@ Imports System.Xml
 Imports System.Collections.Generic
 
 Public Class Emp_Gestio_usuaris
-    Dim ws As New ws_profitplay.Service1SoapClient
 
-    Dim empleats As DataTable
+    Dim ws As New ws_profitplay.Service1SoapClient
+    Dim empleats As New DataTable()
 
     Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
         grb_insert_modifica.Show()
