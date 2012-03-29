@@ -65,7 +65,6 @@
                 main.ShowDialog()
 
             Else
-                'acces a la base de dades
 
                 Dim rol As String = ws.LogEmpleat(txtb_login.Text, txtb_password.Text)
                 'Dim rol As String = "Administrador"
