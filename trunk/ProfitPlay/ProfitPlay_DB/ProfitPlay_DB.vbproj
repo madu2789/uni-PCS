@@ -89,10 +89,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="profit_playDataSet1.Designer.vb">
+    <Compile Include="profit_playDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
+      <DependentUpon>profit_playDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="profit_playDataSet.vb">
+      <DependentUpon>profit_playDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -117,20 +120,25 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="profit_playDataSet1.xsc">
-      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
+    <None Include="profit_playDataSet.xsc">
+      <DependentUpon>profit_playDataSet.xsd</DependentUpon>
     </None>
-    <None Include="profit_playDataSet1.xsd">
+    <None Include="profit_playDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>profit_playDataSet1.Designer.vb</LastGenOutput>
+      <LastGenOutput>profit_playDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="profit_playDataSet1.xss">
-      <DependentUpon>profit_playDataSet1.xsd</DependentUpon>
+    <None Include="profit_playDataSet.xss">
+      <DependentUpon>profit_playDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="profit_play.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
