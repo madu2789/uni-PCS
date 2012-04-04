@@ -13,9 +13,22 @@ Imports System.Collections.Generic
 Public Class Service1
 
     Inherits System.Web.Services.WebService
+
     Dim empleat As New Empleat
     Dim comanda As New Comanda
     Dim producte As New Producte
+
+
+    Public Class EmpleatBD
+        Public id As Integer
+        Public rol As String
+        Public nom As String
+        Public cognom As String
+        Public username As String
+        Public password As String
+    End Class
+
+    Public em As New EmpleatBD
 
 
     <WebMethod()> _
@@ -39,8 +52,35 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetEmpleat() As DataTable
-        Return empleat.GetEmpleats
+ Public Function ContaEmpleats() As Integer
+        Return empleat.ContaEmpleats
+    End Function
+
+    <WebMethod()> _
+   Public Function GetEmpleat(ByVal id As Integer) As EmpleatBD
+
+        Dim idBD As Integer
+        Dim info As DataTable = empleat.GetEmpleat(id)
+
+        Dim empl As New EmpleatBD
+
+        For Each fila In info.Rows
+
+            idBD = CInt(fila("Id_empleat"))
+            If id = idBD Then
+                ' MsgBox(fila("Id_empleat").ToString + fila("Rol").ToString + fila("Nom").ToString, MsgBoxStyle.Exclamation)
+
+                empl.id = fila("Id_empleat").ToString
+                empl.rol = fila("Rol").ToString
+                empl.nom = fila("Nom").ToString
+                empl.cognom = fila("Cognom").ToString
+                empl.username = fila("Username").ToString
+                empl.password = fila("Password").ToString
+
+            End If
+        Next
+
+        Return empl
     End Function
 
     <WebMethod()> _

@@ -35,14 +35,122 @@ Namespace ws_profitplay
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
         Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ContaEmpleats", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute()>  _
+        Function ContaEmpleats() As Integer
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetEmpleat() As System.Data.DataTable
+        Function GetEmpleat(ByVal id As Integer) As ws_profitplay.EmpleatBD
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
         Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
     End Interface
+    
+    '''<comentarios/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.5420"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class EmpleatBD
+        Inherits Object
+        Implements System.ComponentModel.INotifyPropertyChanged
+        
+        Private idField As Integer
+        
+        Private rolField As String
+        
+        Private nomField As String
+        
+        Private cognomField As String
+        
+        Private usernameField As String
+        
+        Private passwordField As String
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
+        Public Property id() As Integer
+            Get
+                Return Me.idField
+            End Get
+            Set
+                Me.idField = value
+                Me.RaisePropertyChanged("id")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
+        Public Property rol() As String
+            Get
+                Return Me.rolField
+            End Get
+            Set
+                Me.rolField = value
+                Me.RaisePropertyChanged("rol")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
+        Public Property nom() As String
+            Get
+                Return Me.nomField
+            End Get
+            Set
+                Me.nomField = value
+                Me.RaisePropertyChanged("nom")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
+        Public Property cognom() As String
+            Get
+                Return Me.cognomField
+            End Get
+            Set
+                Me.cognomField = value
+                Me.RaisePropertyChanged("cognom")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
+        Public Property username() As String
+            Get
+                Return Me.usernameField
+            End Get
+            Set
+                Me.usernameField = value
+                Me.RaisePropertyChanged("username")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
+        Public Property password() As String
+            Get
+                Return Me.passwordField
+            End Get
+            Set
+                Me.passwordField = value
+                Me.RaisePropertyChanged("password")
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
     Public Interface Service1SoapChannel
@@ -91,8 +199,12 @@ Namespace ws_profitplay
             Return MyBase.Channel.SetComanda(id_comanda, taula, producte)
         End Function
         
-        Public Function GetEmpleat() As System.Data.DataTable Implements ws_profitplay.Service1Soap.GetEmpleat
-            Return MyBase.Channel.GetEmpleat
+        Public Function ContaEmpleats() As Integer Implements ws_profitplay.Service1Soap.ContaEmpleats
+            Return MyBase.Channel.ContaEmpleats
+        End Function
+        
+        Public Function GetEmpleat(ByVal id As Integer) As ws_profitplay.EmpleatBD Implements ws_profitplay.Service1Soap.GetEmpleat
+            Return MyBase.Channel.GetEmpleat(id)
         End Function
         
         Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean Implements ws_profitplay.Service1Soap.SetEmpleat
