@@ -44,6 +44,20 @@
         Return DS.Empleat
     End Function
 
+    Public Function ContaEmpleats() As Integer
+        Dim numUsuaris As Integer = 0
+        Try
+            connect()
+            empleatDA.Connection = conDB
+            numUsuaris = empleatDA.ContaEmpleats()
+        Catch ex As Exception
+            MsgBox("error DB", MsgBoxStyle.Critical)
+        End Try
+        Return numUsuaris
+    End Function
+
+
+
     Public Function GetEmpleats() As DataTable
         Try
             connect()

@@ -8,6 +8,16 @@ Public Class Emp_Gestio_usuaris
     Dim ws As New ws_profitplay.Service1SoapClient
     Dim empleats As New DataTable()
 
+    Public Structure EmpleatBD
+        Dim id As Integer
+        Dim rol As String
+        Dim nom As String
+        Dim cognom As String
+        Dim username As String
+        Dim password As String
+    End Structure
+
+
     Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
         grb_insert_modifica.Show()
     End Sub
@@ -61,27 +71,16 @@ Public Class Emp_Gestio_usuaris
 
     Private Sub ObteEmpleats()
 
-        'acces a la base de dades
-        Dim empleatsBD As DataTable = ws.GetEmpleat()
+        Dim numUsuaris As Integer = ws.ContaEmpleats
+        'MsgBox(numUsuaris, MsgBoxStyle.Exclamation)
 
-        ' Dim empleats As List(Of Empleado) = 
+        For i = 2 To numUsuaris + 2 ' (tot+2) petit arreglo per desajust dels ids a la BD
+            Dim empleat = ws.GetEmpleat(i)
 
+            ToolStrip1.Items.Add(empleat.nom)
+            'MsgBox(empleat.nom, MsgBoxStyle.Exclamation)
 
-        'For Each fila In empleatsBD.
-        '    Dim empl As Empleado = New Empleado()
-        '    empl.id = fila("Id_empleat").ToString
-        '    empl.rol = fila("Rol").ToString
-        '    empl.nom = fila("Nom").ToString
-        '    empl.cognom = fila("Cognom").ToString
-        '    empl.username = fila("Username").ToString
-        '    empl.password = fila("Password").ToString
-
-        '    ' empleats.Add(empl)
-        '    ToolStrip1.Items.Add(empl.nom)
-        '    'MsgBox(empl.id, MsgBoxStyle.Information)
-        'Next
-
-
+        Next
     End Sub
 
     Private Sub btn_afegir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegir.Click

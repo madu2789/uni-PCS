@@ -13,8 +13,8 @@ Public Class Empleat
 
     Dim BD As New ProfitPlay_DB.ControlDB
 
-    Public Function log_empleat(ByVal user As String, ByVal password As String) As String
 
+    Public Function log_empleat(ByVal user As String, ByVal password As String) As String
         Dim validacio As String = Nothing
         Dim info As DataTable
         Dim passwordBD As String = ""
@@ -38,80 +38,19 @@ Public Class Empleat
         Return validacio
     End Function
 
-    Public Function GetEmpleats() As DataTable
+    Public Function ContaEmpleats() As Integer
+        Dim numUsuaris As Integer = 0
 
-        'Dim empleat As String = ""
-        Dim info As DataTable = New DataTable("Empleat")
-        Dim column As DataColumn
-        Dim row As DataRow
+        numUsuaris = BD.ContaEmpleats()
 
-        'Creem una nova columna per al datatable
-        column = New DataColumn()
-        column.DataType = System.Type.GetType("System.Int32")
-        column.ColumnName = "id"
-        column.Unique = True
+        Return numUsuaris
+    End Function
 
-        ' Afegim la columna
-        info.Columns.Add(column)
+    Public Function GetEmpleat(ByVal id As Integer) As DataTable
 
-       'Creem una nova columna per al datatable
-        column = New DataColumn()
-        column.DataType = System.Type.GetType("System.String")
-        column.ColumnName = "rol"
-
-        ' Afegim la columna
-        info.Columns.Add(column)
-
-        'Creem una nova columna per al datatable
-        column = New DataColumn()
-        column.DataType = System.Type.GetType("System.String")
-        column.ColumnName = "nom"
-
-        ' Afegim la columna
-        info.Columns.Add(column)
-
-        'Creem una nova columna per al datatable
-        column = New DataColumn()
-        column.DataType = System.Type.GetType("System.String")
-        column.ColumnName = "cognom"
-
-        ' Afegim la columna
-        info.Columns.Add(column)
-
-       'Creem una nova columna per al datatable
-        column = New DataColumn()
-        column.DataType = System.Type.GetType("System.String")
-        column.ColumnName = "username"
-
-        ' Afegim la columna
-        info.Columns.Add(column)
-
-        'Creem una nova columna per al datatable
-        column = New DataColumn()
-        column.DataType = System.Type.GetType("System.String")
-        column.ColumnName = "password"
-
-        ' Afegim la columna
-        info.Columns.Add(column)
-
-        info = BD.GetEmpleats
-
-        For Each fila In info.Rows
-
-            row = info.NewRow()
-            row("id") = fila("Id_empleat").ToString
-            row("rol") = fila("Rol").ToString
-            row("nom") = fila("Nom").ToString
-            row("cognom") = fila("Cognom").ToString
-            row("username") = fila("Username").ToString
-            row("password") = fila("Password").ToString
-            info.ImportRow(row)
-            MsgBox(row("id"), MsgBoxStyle.AbortRetryIgnore)
-
-        Next
+        Dim info As DataTable = BD.GetEmpleats
 
         Return info
-
     End Function
 
     Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
