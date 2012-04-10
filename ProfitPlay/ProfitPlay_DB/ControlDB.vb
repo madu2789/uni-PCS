@@ -85,6 +85,18 @@
         Return ok
     End Function
 
+    Public Function ContaProductes() As Integer
+        Dim numProductes As Integer = 0
+        Try
+            connect()
+            producteDA.Connection = conDB
+            numProductes = empleatDA.ContaEmpleats()
+        Catch ex As Exception
+            MsgBox("error DB", MsgBoxStyle.Critical)
+        End Try
+        Return numProductes
+    End Function
+
     Public Function GetProductes() As DataTable
         Try
             connect()

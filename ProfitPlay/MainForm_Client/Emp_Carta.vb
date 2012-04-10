@@ -1,5 +1,6 @@
 ﻿Public Class Emp_carta
 
+    Dim ws As New ws_profitplay.Service1SoapClient
     Private listofproducts
     Private m_comanda
 
@@ -37,7 +38,8 @@
 
         End Select
 
-        ompleLlistaProductes()
+        'ompleLlistaProductes()
+        ObteProductes()
         btn_producto.PerformClick()
 
     End Sub
@@ -89,6 +91,24 @@
 
         Next
 
+
+    End Sub
+
+    Private Sub ObteProductes()
+
+        Dim Llistaproductes = ws.GetProducte()
+
+        For Each fila In Llistaproductes
+            Dim pro As New Producto
+
+            pro.id = fila.id
+            pro.nom = fila.nom
+            pro.preu = fila.preu
+            pro.tipus = fila.tipus
+            pro.descripcio = fila.descripicio
+
+            listofproducts.Add(pro)
+        Next
 
     End Sub
 

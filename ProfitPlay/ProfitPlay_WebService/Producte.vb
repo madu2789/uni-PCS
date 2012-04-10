@@ -2,7 +2,7 @@
 Public Class Producte
 
     Dim BD As New ProfitPlay_DB.ControlDB
-    Private productes As ArrayList
+
 
     Private tipus As String
     Private nom As String
@@ -52,28 +52,19 @@ Public Class Producte
         Return BD.GetProductes()
     End Function
 
+    Public Function ContaProductes() As Integer
+        Dim numProductes As Integer = 0
 
-    Public Sub ObteProductes()
+        numProductes = BD.ContaProductes()
 
-        Dim productesDB As DataTable
+        Return numProductes
+    End Function
 
-        productesDB = BD.GetProductes()
-        'prova
-        If productesDB Is Nothing Then
-            MsgBox("error", MsgBoxStyle.Critical)
-        End If
+    Public Function ObteProductes() As DataTable
 
-        For Each fila In productesDB.Rows
-            'MsgBox(fila("password").ToString(), MsgBoxStyle.Exclamation)
+        Dim productesDB As DataTable = BD.GetProductes()
 
-            Dim p As Producte = New Producte()
-
-            p.setNom(fila("nombre").ToString)
-            p.setPreu(CDbl(fila("precio")))
-            p.setTipus(fila("categoria").ToString)
-            productes.Add(p)
-        Next
-
-    End Sub
+        Return productesDB
+    End Function
 
 End Class

@@ -28,6 +28,15 @@ Public Class Service1
         Public password As String
     End Class
 
+    Public Class ProducteBD
+        Public id As Integer
+        Public tipus As String
+        Public nom As String
+        Public descripicio As String
+        Public preu As Double
+
+    End Class
+
     Public em As New EmpleatBD
 
 
@@ -37,8 +46,27 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetProducte() As DataTable
-        Return producte.GetProducte
+Public Function ContaProductes() As Integer
+        Return producte.ContaProductes
+    End Function
+
+    <WebMethod()> _
+   Public Function GetProducte() As List(Of ProducteBD)
+
+        Dim productes As New List(Of ProducteBD)
+
+        Dim info As DataTable = producte.ObteProductes
+
+        For Each fila In info.Rows
+            Dim pro As New ProducteBD
+            pro.id = fila("Id_producte").ToString
+            pro.nom = fila("Nom").ToString
+            pro.preu = fila("Preu").ToString
+            pro.tipus = fila("Categoria").ToString
+            productes.Add(pro)
+        Next
+
+        Return productes
     End Function
 
     <WebMethod()> _

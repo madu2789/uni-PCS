@@ -17,23 +17,40 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ContaProductes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ContaProductesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContaProductesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetProducte">
         <s:complexType />
       </s:element>
       <s:element name="GetProducteResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetProducteResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProducteResult" type="tns:ArrayOfProducteBD" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfProducteBD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProducteBD" nillable="true" type="tns:ProducteBD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProducteBD">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripicio" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="preu" type="s:double" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetComanda">
         <s:complexType />
       </s:element>
@@ -87,7 +104,7 @@
       <s:element name="GetEmpleatResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="GetEmpleatResult" type="tns:EmpleatBD" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpleatResult" type="tns:EmpleatBD" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -124,6 +141,12 @@
   </wsdl:message>
   <wsdl:message name="LogEmpleatSoapOut">
     <wsdl:part name="parameters" element="tns:LogEmpleatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContaProductesSoapIn">
+    <wsdl:part name="parameters" element="tns:ContaProductes" />
+  </wsdl:message>
+  <wsdl:message name="ContaProductesSoapOut">
+    <wsdl:part name="parameters" element="tns:ContaProductesResponse" />
   </wsdl:message>
   <wsdl:message name="GetProducteSoapIn">
     <wsdl:part name="parameters" element="tns:GetProducte" />
@@ -166,6 +189,10 @@
       <wsdl:input message="tns:LogEmpleatSoapIn" />
       <wsdl:output message="tns:LogEmpleatSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ContaProductes">
+      <wsdl:input message="tns:ContaProductesSoapIn" />
+      <wsdl:output message="tns:ContaProductesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetProducte">
       <wsdl:input message="tns:GetProducteSoapIn" />
       <wsdl:output message="tns:GetProducteSoapOut" />
@@ -195,6 +222,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LogEmpleat">
       <soap:operation soapAction="http://tempuri.org/LogEmpleat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContaProductes">
+      <soap:operation soapAction="http://tempuri.org/ContaProductes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -261,6 +297,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LogEmpleat">
       <soap12:operation soapAction="http://tempuri.org/LogEmpleat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContaProductes">
+      <soap12:operation soapAction="http://tempuri.org/ContaProductes" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
