@@ -23,9 +23,13 @@ Namespace ws_profitplay
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
         Function LogEmpleat(ByVal user As String, ByVal password As String) As String
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ContaProductes", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute()>  _
+        Function ContaProductes() As Integer
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetProducte", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetProducte() As System.Data.DataTable
+        Function GetProducte() As ProducteBD()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetComanda", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
@@ -47,6 +51,96 @@ Namespace ws_profitplay
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
         Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
     End Interface
+    
+    '''<comentarios/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.5420"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class ProducteBD
+        Inherits Object
+        Implements System.ComponentModel.INotifyPropertyChanged
+        
+        Private idField As Integer
+        
+        Private tipusField As String
+        
+        Private nomField As String
+        
+        Private descripicioField As String
+        
+        Private preuField As Double
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
+        Public Property id() As Integer
+            Get
+                Return Me.idField
+            End Get
+            Set
+                Me.idField = value
+                Me.RaisePropertyChanged("id")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
+        Public Property tipus() As String
+            Get
+                Return Me.tipusField
+            End Get
+            Set
+                Me.tipusField = value
+                Me.RaisePropertyChanged("tipus")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
+        Public Property nom() As String
+            Get
+                Return Me.nomField
+            End Get
+            Set
+                Me.nomField = value
+                Me.RaisePropertyChanged("nom")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
+        Public Property descripicio() As String
+            Get
+                Return Me.descripicioField
+            End Get
+            Set
+                Me.descripicioField = value
+                Me.RaisePropertyChanged("descripicio")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
+        Public Property preu() As Double
+            Get
+                Return Me.preuField
+            End Get
+            Set
+                Me.preuField = value
+                Me.RaisePropertyChanged("preu")
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
     
     '''<comentarios/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.5420"),  _
@@ -187,7 +281,11 @@ Namespace ws_profitplay
             Return MyBase.Channel.LogEmpleat(user, password)
         End Function
         
-        Public Function GetProducte() As System.Data.DataTable Implements ws_profitplay.Service1Soap.GetProducte
+        Public Function ContaProductes() As Integer Implements ws_profitplay.Service1Soap.ContaProductes
+            Return MyBase.Channel.ContaProductes
+        End Function
+        
+        Public Function GetProducte() As ProducteBD() Implements ws_profitplay.Service1Soap.GetProducte
             Return MyBase.Channel.GetProducte
         End Function
         

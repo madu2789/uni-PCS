@@ -1,14 +1,15 @@
 ﻿Public Class Producto
 
-    Private tipus As String
-    Private nom As String
-    Private descripicio As String
-    Private preu As Double
+    Public id As Integer
+    Public tipus As String
+    Public nom As String
+    Public descripcio As String
+    Public preu As Double
 
     Public Sub New()
         tipus = ""
         nom = ""
-        descripicio = ""
+        descripcio = ""
         preu = 0
     End Sub
 
@@ -21,7 +22,7 @@
     End Sub
 
     Public Sub setDescripcio(ByVal s As String)
-        descripicio = s
+        descripcio = s
     End Sub
 
     Public Sub setPreu(ByVal s As Double)
@@ -33,7 +34,7 @@
     End Function
 
     Public Function getDescripcio() As String
-        Return descripicio
+        Return descripcio
     End Function
 
     Public Function getTipus() As String
