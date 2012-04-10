@@ -21,14 +21,30 @@
         productes = New List(Of Producto)
         m_comanda = New Comanda
 
-        fillStructure()
-        'ObteProductes()
+        'fillStructure()
+        ObteProductes()
+
+    End Sub
+
+    Private Sub ObteProductes()
+
+        Dim Llistaproductes = ws.GetProducte()
+
+        For Each fila In Llistaproductes
+            Dim pro As New Producto
+
+            pro.id = fila.id
+            pro.nom = fila.nom
+            pro.preu = fila.preu
+            pro.tipus = fila.tipus
+            pro.descripcio = fila.descripicio
+
+            productes.Add(pro)
+        Next
 
     End Sub
 
     Private Sub fillStructure()
-
-
 
         For i As Integer = 0 To 10 Step 1
 
@@ -129,22 +145,22 @@
     End Sub
 
     Private Sub btn_bebidas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_bebidas.Click
-        addInfoLvPedidos("bebida")
+        addInfoLvPedidos("Beguda")
         grb_pedido.Text = "Afegir Begudes a la comanda"
     End Sub
 
     Private Sub btn_primeros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_primeros.Click
-        addInfoLvPedidos("primero")
+        addInfoLvPedidos("Primer")
         grb_pedido.Text = "Afegir Primers a la comanda"
     End Sub
 
     Private Sub btn_segundos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_segundos.Click
-        addInfoLvPedidos("segundo")
+        addInfoLvPedidos("Segon")
         grb_pedido.Text = "Afegir Segons a la comanda"
     End Sub
 
     Private Sub btn_postres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_postres.Click
-        addInfoLvPedidos("postre")
+        addInfoLvPedidos("Postre")
         grb_pedido.Text = "Afegir Postres a la comanda"
     End Sub
 
