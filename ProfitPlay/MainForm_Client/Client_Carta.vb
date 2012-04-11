@@ -28,19 +28,27 @@
 
     Private Sub ObteProductes()
 
-        Dim Llistaproductes = ws.GetProducte()
+        Try
 
-        For Each fila In Llistaproductes
-            Dim pro As New Producto
+            Dim Llistaproductes = ws.GetProducte()
 
-            pro.id = fila.id
-            pro.nom = fila.nom
-            pro.preu = fila.preu
-            pro.tipus = fila.tipus
-            pro.descripcio = fila.descripicio
+            For Each fila In Llistaproductes
 
-            productes.Add(pro)
-        Next
+                Dim pro As New Producto
+
+                pro.id = fila.id
+                pro.nom = fila.nom
+                pro.preu = fila.preu
+                pro.tipus = fila.tipus
+                pro.descripcio = fila.descripicio
+
+                productes.Add(pro)
+            Next
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.AbortRetryIgnore)
+        End Try
+        
 
     End Sub
 

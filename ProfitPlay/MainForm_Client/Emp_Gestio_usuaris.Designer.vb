@@ -184,15 +184,15 @@ Partial Class Emp_Gestio_usuaris
         Me.pnl_plats.Controls.Add(Me.btn_gest_users)
         Me.pnl_plats.Controls.Add(Me.btn_gest_comandes)
         Me.pnl_plats.Controls.Add(Me.btn_gest_carta)
-        Me.pnl_plats.Location = New System.Drawing.Point(-1, 1)
+        Me.pnl_plats.Location = New System.Drawing.Point(-1, 5)
         Me.pnl_plats.Name = "pnl_plats"
-        Me.pnl_plats.Size = New System.Drawing.Size(143, 466)
+        Me.pnl_plats.Size = New System.Drawing.Size(143, 475)
         Me.pnl_plats.TabIndex = 34
         '
         'btn_gest_pagos
         '
         Me.btn_gest_pagos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_pagos.Location = New System.Drawing.Point(2, 305)
+        Me.btn_gest_pagos.Location = New System.Drawing.Point(2, 314)
         Me.btn_gest_pagos.Name = "btn_gest_pagos"
         Me.btn_gest_pagos.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_pagos.TabIndex = 25
@@ -202,7 +202,7 @@ Partial Class Emp_Gestio_usuaris
         'btn_gest_stock
         '
         Me.btn_gest_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_stock.Location = New System.Drawing.Point(2, 239)
+        Me.btn_gest_stock.Location = New System.Drawing.Point(2, 252)
         Me.btn_gest_stock.Name = "btn_gest_stock"
         Me.btn_gest_stock.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_stock.TabIndex = 18
@@ -212,7 +212,7 @@ Partial Class Emp_Gestio_usuaris
         'btn_config_fichero
         '
         Me.btn_config_fichero.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_config_fichero.Location = New System.Drawing.Point(2, 371)
+        Me.btn_config_fichero.Location = New System.Drawing.Point(2, 377)
         Me.btn_config_fichero.Name = "btn_config_fichero"
         Me.btn_config_fichero.Size = New System.Drawing.Size(135, 85)
         Me.btn_config_fichero.TabIndex = 17
@@ -222,7 +222,7 @@ Partial Class Emp_Gestio_usuaris
         'btn_gest_users
         '
         Me.btn_gest_users.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_users.Location = New System.Drawing.Point(3, 41)
+        Me.btn_gest_users.Location = New System.Drawing.Point(2, 64)
         Me.btn_gest_users.Name = "btn_gest_users"
         Me.btn_gest_users.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_users.TabIndex = 11
@@ -232,7 +232,7 @@ Partial Class Emp_Gestio_usuaris
         'btn_gest_comandes
         '
         Me.btn_gest_comandes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_comandes.Location = New System.Drawing.Point(2, 173)
+        Me.btn_gest_comandes.Location = New System.Drawing.Point(2, 190)
         Me.btn_gest_comandes.Name = "btn_gest_comandes"
         Me.btn_gest_comandes.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_comandes.TabIndex = 14
@@ -242,7 +242,7 @@ Partial Class Emp_Gestio_usuaris
         'btn_gest_carta
         '
         Me.btn_gest_carta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_carta.Location = New System.Drawing.Point(3, 107)
+        Me.btn_gest_carta.Location = New System.Drawing.Point(2, 127)
         Me.btn_gest_carta.Name = "btn_gest_carta"
         Me.btn_gest_carta.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_carta.TabIndex = 13

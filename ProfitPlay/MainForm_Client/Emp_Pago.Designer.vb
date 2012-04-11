@@ -121,7 +121,7 @@ Partial Class Emp_Pago
         'btn_gest_pago
         '
         Me.btn_gest_pago.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_pago.Location = New System.Drawing.Point(1, 317)
+        Me.btn_gest_pago.Location = New System.Drawing.Point(1, 319)
         Me.btn_gest_pago.Name = "btn_gest_pago"
         Me.btn_gest_pago.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_pago.TabIndex = 19
@@ -131,7 +131,7 @@ Partial Class Emp_Pago
         'btn_gest_stock
         '
         Me.btn_gest_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_stock.Location = New System.Drawing.Point(1, 251)
+        Me.btn_gest_stock.Location = New System.Drawing.Point(1, 253)
         Me.btn_gest_stock.Name = "btn_gest_stock"
         Me.btn_gest_stock.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_stock.TabIndex = 18
@@ -151,7 +151,7 @@ Partial Class Emp_Pago
         'btn_gest_users
         '
         Me.btn_gest_users.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_users.Location = New System.Drawing.Point(1, 53)
+        Me.btn_gest_users.Location = New System.Drawing.Point(1, 59)
         Me.btn_gest_users.Name = "btn_gest_users"
         Me.btn_gest_users.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_users.TabIndex = 11
@@ -161,7 +161,7 @@ Partial Class Emp_Pago
         'btn_gest_comandes
         '
         Me.btn_gest_comandes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_comandes.Location = New System.Drawing.Point(1, 185)
+        Me.btn_gest_comandes.Location = New System.Drawing.Point(1, 187)
         Me.btn_gest_comandes.Name = "btn_gest_comandes"
         Me.btn_gest_comandes.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_comandes.TabIndex = 14
@@ -171,7 +171,7 @@ Partial Class Emp_Pago
         'btn_gest_carta
         '
         Me.btn_gest_carta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_carta.Location = New System.Drawing.Point(1, 119)
+        Me.btn_gest_carta.Location = New System.Drawing.Point(1, 123)
         Me.btn_gest_carta.Name = "btn_gest_carta"
         Me.btn_gest_carta.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_carta.TabIndex = 13
