@@ -66,21 +66,21 @@
     Private Sub ObteComandes()
         Dim comandesDB As DataTable
 
-        comandesDB = ws.GetComanda
+        'comandesDB = ws.GetComanda
 
-        For Each fila In comandesDB.Rows
-            'MsgBox(fila("password").ToString(), MsgBoxStyle.Exclamation)
-            'MsgBox(fila("rol").ToString(), MsgBoxStyle.Exclamation)
+        'For Each fila In comandesDB.Rows
+        '    'MsgBox(fila("password").ToString(), MsgBoxStyle.Exclamation)
+        '    'MsgBox(fila("rol").ToString(), MsgBoxStyle.Exclamation)
 
-            Dim c As Comanda = New Comanda()
+        '    Dim c As Comanda = New Comanda()
 
-            c.setEstat(fila("estado").ToString)
-            c.setTaula(CInt(fila("Id_Mesa")))
-            c.setProducte(CInt(fila("Id_Producto")))
-            c.setHora(fila("hora").ToString)
-            c.setNotes(fila("notas").ToString)
-            'comandes.Add(p)
-        Next
+        '    c.setEstat(fila("estado").ToString)
+        '    c.setTaula(CInt(fila("Id_Mesa")))
+        '    c.setProducte(CInt(fila("Id_Producto")))
+        '    c.setHora(fila("hora").ToString)
+        '    c.setNotes(fila("notas").ToString)
+        '    'comandes.Add(p)
+        'Next
 
 
     End Sub
