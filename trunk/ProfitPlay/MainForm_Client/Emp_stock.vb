@@ -1,5 +1,7 @@
 ﻿Public Class Emp_stock
 
+    Dim ws As New ws_profitplay.Service1SoapClient
+
     Private Sub btn_gest_users_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_users.Click
         Me.Hide()
         Emp_Gestio_usuaris.Show()
@@ -21,28 +23,50 @@
         lbl_punts.Text = Mainform_empleado.rolempleat
 
         Select Case Mainform_empleado.rolempleat
+
             Case "Administrador"
                 btn_gest_comandes.Hide()
                 btn_gest_pagos.Hide()
+
             Case "Cambrero"
                 btn_gest_users.Hide()
                 btn_gest_carta.Hide()
                 btn_gest_stock.Hide()
                 btn_config_fichero.Hide()
+
             Case "Barman"
                 btn_gest_users.Hide()
                 btn_gest_carta.Hide()
                 btn_gest_pagos.Hide()
                 btn_gest_stock.Hide()
                 btn_config_fichero.Hide()
+
             Case "Cheff"
                 btn_gest_users.Hide()
                 btn_gest_carta.Hide()
                 btn_gest_pagos.Hide()
                 btn_gest_stock.Hide()
                 btn_config_fichero.Hide()
+
             Case Else
 
         End Select
+
+        Dim ingredients = ws.GetProducte
+
+        For Each fila In ingredients
+
+            Dim pro As New Producto
+
+            pro.id = fila.id
+            pro.nom = fila.nom
+            pro.preu = fila.preu
+            pro.tipus = fila.tipus
+            pro.descripcio = fila.descripicio
+
+            ts_productes_stock.Items.Add(pro.nom)
+
+        Next
+
     End Sub
 End Class

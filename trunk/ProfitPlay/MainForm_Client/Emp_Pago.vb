@@ -44,4 +44,8 @@
 
         End Select
     End Sub
+
+    Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click
+
+    End Sub
 End Class

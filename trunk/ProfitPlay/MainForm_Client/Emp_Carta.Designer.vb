@@ -24,8 +24,6 @@ Partial Class Emp_carta
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Emp_carta))
         Me.pnl_estat = New System.Windows.Forms.Panel
-        Me.btn_estat = New System.Windows.Forms.Button
-        Me.pcb_sortir = New System.Windows.Forms.PictureBox
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
@@ -50,11 +48,13 @@ Partial Class Emp_carta
         Me.btn_add_prod_emp = New System.Windows.Forms.Button
         Me.btn_del_prod_emp = New System.Windows.Forms.Button
         Me.btn_info_prod_emp = New System.Windows.Forms.Button
+        Me.btn_estat = New System.Windows.Forms.Button
+        Me.pcb_sortir = New System.Windows.Forms.PictureBox
         Me.pnl_estat.SuspendLayout()
-        CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_plats.SuspendLayout()
         Me.gpb_gestio.SuspendLayout()
         Me.grb_carta.SuspendLayout()
+        CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnl_estat
@@ -65,30 +65,10 @@ Partial Class Emp_carta
         Me.pnl_estat.Controls.Add(Me.pcb_sortir)
         Me.pnl_estat.Controls.Add(Me.lbl_taula)
         Me.pnl_estat.Controls.Add(Me.lbl_punts)
-        Me.pnl_estat.Location = New System.Drawing.Point(141, -7)
+        Me.pnl_estat.Location = New System.Drawing.Point(144, -7)
         Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(703, 66)
+        Me.pnl_estat.Size = New System.Drawing.Size(704, 66)
         Me.pnl_estat.TabIndex = 34
-        '
-        'btn_estat
-        '
-        Me.btn_estat.AutoSize = True
-        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
-        Me.btn_estat.Location = New System.Drawing.Point(543, 3)
-        Me.btn_estat.Name = "btn_estat"
-        Me.btn_estat.Size = New System.Drawing.Size(76, 86)
-        Me.btn_estat.TabIndex = 24
-        Me.btn_estat.UseVisualStyleBackColor = True
-        '
-        'pcb_sortir
-        '
-        Me.pcb_sortir.Image = CType(resources.GetObject("pcb_sortir.Image"), System.Drawing.Image)
-        Me.pcb_sortir.Location = New System.Drawing.Point(625, 3)
-        Me.pcb_sortir.Name = "pcb_sortir"
-        Me.pcb_sortir.Size = New System.Drawing.Size(76, 61)
-        Me.pcb_sortir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcb_sortir.TabIndex = 23
-        Me.pcb_sortir.TabStop = False
         '
         'lbl_taula
         '
@@ -331,6 +311,26 @@ Partial Class Emp_carta
         Me.btn_info_prod_emp.Text = "Veure Info"
         Me.btn_info_prod_emp.UseVisualStyleBackColor = True
         '
+        'btn_estat
+        '
+        Me.btn_estat.AutoSize = True
+        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_estat.Location = New System.Drawing.Point(543, 3)
+        Me.btn_estat.Name = "btn_estat"
+        Me.btn_estat.Size = New System.Drawing.Size(76, 86)
+        Me.btn_estat.TabIndex = 24
+        Me.btn_estat.UseVisualStyleBackColor = True
+        '
+        'pcb_sortir
+        '
+        Me.pcb_sortir.Image = CType(resources.GetObject("pcb_sortir.Image"), System.Drawing.Image)
+        Me.pcb_sortir.Location = New System.Drawing.Point(625, 3)
+        Me.pcb_sortir.Name = "pcb_sortir"
+        Me.pcb_sortir.Size = New System.Drawing.Size(76, 61)
+        Me.pcb_sortir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcb_sortir.TabIndex = 23
+        Me.pcb_sortir.TabStop = False
+        '
         'Emp_carta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -346,11 +346,11 @@ Partial Class Emp_carta
         Me.Text = "Emp_carta"
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
-        CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_plats.ResumeLayout(False)
         Me.gpb_gestio.ResumeLayout(False)
         Me.grb_carta.ResumeLayout(False)
         Me.grb_carta.PerformLayout()
+        CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

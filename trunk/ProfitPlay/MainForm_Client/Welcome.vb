@@ -18,17 +18,23 @@
         If (e.KeyChar.ToString() = "#") Then
 
             If estat = True Then
+
                 gpb_client.Hide()
                 gpb_empleat.Show()
                 pcb_client.Hide()
                 pcb_empleat.Show()
                 estat = False
+                txtb_login.Focus()
+
             Else
+
                 gpb_client.Show()
                 gpb_empleat.Hide()
                 pcb_client.Show()
                 pcb_empleat.Hide()
                 estat = True
+                txtb_nomTaula.Focus()
+
             End If
 
             e.Handled = True

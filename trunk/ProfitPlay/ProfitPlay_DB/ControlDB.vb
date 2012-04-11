@@ -4,7 +4,7 @@
 
     'cadena de conexio del MADU
     Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
-
+    Dim conString1 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
     'tableadapters:
     Dim empleatDA As New profit_playDataSetTableAdapters.EmpleatTableAdapter
     Dim ingredientDA As New profit_playDataSetTableAdapters.IngredientTableAdapter
@@ -18,7 +18,8 @@
 
     Public Sub connect()
         Try
-            conDB = New OleDb.OleDbConnection(conString)
+            'conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
         Catch ex As Exception
             MsgBox("error connexió!", MsgBoxStyle.Critical)
@@ -107,6 +108,20 @@
             MsgBox("error DB productes", MsgBoxStyle.Critical)
         End Try
         Return DS.Producte
+    End Function
+
+    Public Function getIngredients() As DataTable
+
+        Try
+            connect()
+            producteDA.Connection = conDB
+            ingredientDA.Fill(DS.Ingredient)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB ingredients", MsgBoxStyle.Critical)
+        End Try
+        Return DS.Ingredient
+
     End Function
 
     Public Function SetComanda(ByVal id_comanda As String, ByVal id_taula As String, ByVal productes As String) As Boolean
