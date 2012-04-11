@@ -249,4 +249,13 @@
 
         grb_carta.Text = "Veure Ingredients"
     End Sub
+
+    Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click
+        Me.Hide()
+        Emp_anula.Show()
+    End Sub
+
+    Private Sub btn_gest_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_carta.Click
+
+    End Sub
 End Class

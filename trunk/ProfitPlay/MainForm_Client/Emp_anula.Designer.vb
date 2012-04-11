@@ -24,6 +24,8 @@ Partial Class Emp_anula
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Emp_anula))
         Me.pnl_estat = New System.Windows.Forms.Panel
+        Me.btn_estat = New System.Windows.Forms.Button
+        Me.pcb_sortir = New System.Windows.Forms.PictureBox
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
@@ -33,8 +35,6 @@ Partial Class Emp_anula
         Me.btn_gest_users = New System.Windows.Forms.Button
         Me.btn_gest_comandes = New System.Windows.Forms.Button
         Me.btn_gest_carta = New System.Windows.Forms.Button
-        Me.btn_estat = New System.Windows.Forms.Button
-        Me.pcb_sortir = New System.Windows.Forms.PictureBox
         Me.grb_anular = New System.Windows.Forms.GroupBox
         Me.container2 = New System.Windows.Forms.ToolStripContainer
         Me.llista_resta_productes = New System.Windows.Forms.ToolStrip
@@ -43,8 +43,8 @@ Partial Class Emp_anula
         Me.llista_productes_eliminar = New System.Windows.Forms.ToolStrip
         Me.lbl_anular = New System.Windows.Forms.Label
         Me.pnl_estat.SuspendLayout()
-        Me.pnl_plats.SuspendLayout()
         CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_plats.SuspendLayout()
         Me.grb_anular.SuspendLayout()
         Me.container2.ContentPanel.SuspendLayout()
         Me.container2.SuspendLayout()
@@ -64,6 +64,26 @@ Partial Class Emp_anula
         Me.pnl_estat.Name = "pnl_estat"
         Me.pnl_estat.Size = New System.Drawing.Size(704, 66)
         Me.pnl_estat.TabIndex = 38
+        '
+        'btn_estat
+        '
+        Me.btn_estat.AutoSize = True
+        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_estat.Location = New System.Drawing.Point(543, 3)
+        Me.btn_estat.Name = "btn_estat"
+        Me.btn_estat.Size = New System.Drawing.Size(76, 86)
+        Me.btn_estat.TabIndex = 24
+        Me.btn_estat.UseVisualStyleBackColor = True
+        '
+        'pcb_sortir
+        '
+        Me.pcb_sortir.Image = CType(resources.GetObject("pcb_sortir.Image"), System.Drawing.Image)
+        Me.pcb_sortir.Location = New System.Drawing.Point(625, 3)
+        Me.pcb_sortir.Name = "pcb_sortir"
+        Me.pcb_sortir.Size = New System.Drawing.Size(76, 61)
+        Me.pcb_sortir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcb_sortir.TabIndex = 23
+        Me.pcb_sortir.TabStop = False
         '
         'lbl_taula
         '
@@ -161,26 +181,6 @@ Partial Class Emp_anula
         Me.btn_gest_carta.TabIndex = 13
         Me.btn_gest_carta.Text = "Gestionar Carta"
         Me.btn_gest_carta.UseVisualStyleBackColor = True
-        '
-        'btn_estat
-        '
-        Me.btn_estat.AutoSize = True
-        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
-        Me.btn_estat.Location = New System.Drawing.Point(543, 3)
-        Me.btn_estat.Name = "btn_estat"
-        Me.btn_estat.Size = New System.Drawing.Size(76, 86)
-        Me.btn_estat.TabIndex = 24
-        Me.btn_estat.UseVisualStyleBackColor = True
-        '
-        'pcb_sortir
-        '
-        Me.pcb_sortir.Image = CType(resources.GetObject("pcb_sortir.Image"), System.Drawing.Image)
-        Me.pcb_sortir.Location = New System.Drawing.Point(625, 3)
-        Me.pcb_sortir.Name = "pcb_sortir"
-        Me.pcb_sortir.Size = New System.Drawing.Size(76, 61)
-        Me.pcb_sortir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcb_sortir.TabIndex = 23
-        Me.pcb_sortir.TabStop = False
         '
         'grb_anular
         '
@@ -283,11 +283,12 @@ Partial Class Emp_anula
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_plats)
         Me.Name = "Emp_anula"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Emp_anula"
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
-        Me.pnl_plats.ResumeLayout(False)
         CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_plats.ResumeLayout(False)
         Me.grb_anular.ResumeLayout(False)
         Me.grb_anular.PerformLayout()
         Me.container2.ContentPanel.ResumeLayout(False)
