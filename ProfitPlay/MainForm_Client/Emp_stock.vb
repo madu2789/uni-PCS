@@ -69,4 +69,9 @@
         Next
 
     End Sub
+
+    Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click
+        Me.Hide()
+        Emp_anula.Show()
+    End Sub
 End Class

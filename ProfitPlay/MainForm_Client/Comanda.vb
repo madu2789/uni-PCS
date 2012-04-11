@@ -2,24 +2,16 @@
 
     Private productes As ArrayList
 
-    Private hora As String
-    Private taula As String
-    Private producte As Integer
-    Private notes As String
-    Private estat As String
+    Private Id_comanda As String
+    Private Id_Usuari As String
+    Private Hora As Integer
+    Private Notes As String
+    Private Estat As String
 
     'fer getters i setters
 
     Public Sub setHora(ByVal s As String)
         hora = s
-    End Sub
-
-    Public Sub setTaula(ByVal s As String)
-        taula = s
-    End Sub
-
-    Public Sub setProducte(ByVal s As String)
-        producte = s
     End Sub
 
     Public Sub setNotes(ByVal s As String)
