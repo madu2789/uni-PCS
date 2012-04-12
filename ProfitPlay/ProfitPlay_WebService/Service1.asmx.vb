@@ -40,8 +40,8 @@ Public Class Service1
     Public Class IngredientDB
         Public id As Integer
         Public preu As Double
-        Public quantitat As Double
-        Public stock_minim As Double
+        Public quantitat As Integer
+        Public stock_minim As Integer
         Public nom As String
     End Class
 
@@ -88,11 +88,13 @@ Public Class Service1
         For Each fila In info.Rows
 
             Dim pro As New IngredientDB
-            pro.id = fila("Id_producte").ToString
+
+            pro.id = fila("Id_ingredient").ToString
             pro.preu = fila("Preu").ToString
             pro.quantitat = fila("Quantitat").ToString
             pro.stock_minim = fila("StockMinim").ToString
-
+            pro.nom = fila("Nom").ToString
+            
             ingredients.Add(pro)
         Next
 

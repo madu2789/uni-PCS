@@ -264,9 +264,11 @@ Namespace ws_profitplay
         
         Private preuField As Double
         
-        Private quantitatField As Double
+        Private quantitatField As Integer
         
-        Private stock_minimField As Double
+        Private stock_minimField As Integer
+        
+        Private nomField As String
         
         '''<comentarios/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
@@ -294,7 +296,7 @@ Namespace ws_profitplay
         
         '''<comentarios/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
-        Public Property quantitat() As Double
+        Public Property quantitat() As Integer
             Get
                 Return Me.quantitatField
             End Get
@@ -306,13 +308,25 @@ Namespace ws_profitplay
         
         '''<comentarios/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
-        Public Property stock_minim() As Double
+        Public Property stock_minim() As Integer
             Get
                 Return Me.stock_minimField
             End Get
             Set
                 Me.stock_minimField = value
                 Me.RaisePropertyChanged("stock_minim")
+            End Set
+        End Property
+        
+        '''<comentarios/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
+        Public Property nom() As String
+            Get
+                Return Me.nomField
+            End Get
+            Set
+                Me.nomField = value
+                Me.RaisePropertyChanged("nom")
             End Set
         End Property
         
