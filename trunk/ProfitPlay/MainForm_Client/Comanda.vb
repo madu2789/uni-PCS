@@ -2,11 +2,11 @@
 
     Private productes As ArrayList
 
-    Private Id_comanda As String
-    Private Id_Usuari As String
-    Private Hora As Integer
-    Private Notes As String
-    Private Estat As String
+    Public Id_comanda As String
+    Public Id_Usuari As String
+    Public Hora As Integer
+    Public Notes As String
+    Public Estat As String
 
     'fer getters i setters
 
