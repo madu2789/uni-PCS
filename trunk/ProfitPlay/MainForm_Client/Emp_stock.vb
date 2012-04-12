@@ -52,7 +52,8 @@
 
         End Select
 
-        Dim ingredients = ws.GetIngredients
+        Dim ingredients = ws.GetIngredients()
+        MsgBox("Tenim " + ingredients.Length.ToString)
 
         For Each fila In ingredients
 
@@ -61,9 +62,10 @@
             pro.id = fila.id
             pro.preu = fila.preu
             pro.quantitat = fila.quantitat
-            pro.stock_minim = fila.stock_minim
+            pro.StockMinim = fila.stock_minim
+            pro.nom = fila.nom
 
-            ts_productes_stock.Items.Add(pro.id)
+            ts_productes_stock.Items.Add(pro.nom)
 
         Next
 
@@ -72,5 +74,6 @@
     Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click
         Me.Hide()
         Emp_anula.Show()
+        Me.Dispose()
     End Sub
 End Class

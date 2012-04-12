@@ -70,8 +70,9 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="preu" type="s:double" />
-          <s:element minOccurs="1" maxOccurs="1" name="quantitat" type="s:double" />
-          <s:element minOccurs="1" maxOccurs="1" name="stock_minim" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="quantitat" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="stock_minim" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetComanda">
