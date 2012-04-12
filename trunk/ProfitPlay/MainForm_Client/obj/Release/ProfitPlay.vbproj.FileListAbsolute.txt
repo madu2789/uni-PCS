@@ -44,6 +44,7 @@ D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ResolveAssemblyReference.cache
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Anula.resources
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Carta.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_anula.resources
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.info_producte.resources
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_carta.resources
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_Pago.resources
