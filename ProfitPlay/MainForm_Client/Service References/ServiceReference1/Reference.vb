@@ -13,10 +13,10 @@ Option Explicit On
 
 Imports System.Data
 
-Namespace ws_profitplay
+Namespace ServiceReference1
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
-     System.ServiceModel.ServiceContractAttribute(ConfigurationName:="ws_profitplay.Service1Soap")>  _
+     System.ServiceModel.ServiceContractAttribute(ConfigurationName:="ServiceReference1.Service1Soap")>  _
     Public Interface Service1Soap
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/LogEmpleat", ReplyAction:="*"),  _
@@ -49,7 +49,7 @@ Namespace ws_profitplay
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetEmpleat(ByVal id As Integer) As ws_profitplay.EmpleatBD
+        Function GetEmpleat(ByVal id As Integer) As ServiceReference1.EmpleatBD
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetEmpleat", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute()>  _
@@ -328,14 +328,14 @@ Namespace ws_profitplay
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
     Public Interface Service1SoapChannel
-        Inherits ws_profitplay.Service1Soap, System.ServiceModel.IClientChannel
+        Inherits ServiceReference1.Service1Soap, System.ServiceModel.IClientChannel
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
     Partial Public Class Service1SoapClient
-        Inherits System.ServiceModel.ClientBase(Of ws_profitplay.Service1Soap)
-        Implements ws_profitplay.Service1Soap
+        Inherits System.ServiceModel.ClientBase(Of ServiceReference1.Service1Soap)
+        Implements ServiceReference1.Service1Soap
         
         Public Sub New()
             MyBase.New
@@ -357,39 +357,39 @@ Namespace ws_profitplay
             MyBase.New(binding, remoteAddress)
         End Sub
         
-        Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String Implements ws_profitplay.Service1Soap.LogEmpleat
+        Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String Implements ServiceReference1.Service1Soap.LogEmpleat
             Return MyBase.Channel.LogEmpleat(user, password)
         End Function
         
-        Public Function ContaProductes() As Integer Implements ws_profitplay.Service1Soap.ContaProductes
+        Public Function ContaProductes() As Integer Implements ServiceReference1.Service1Soap.ContaProductes
             Return MyBase.Channel.ContaProductes
         End Function
         
-        Public Function GetProducte() As ProducteBD() Implements ws_profitplay.Service1Soap.GetProducte
+        Public Function GetProducte() As ProducteBD() Implements ServiceReference1.Service1Soap.GetProducte
             Return MyBase.Channel.GetProducte
         End Function
         
-        Public Function GetIngredients() As IngredientDB() Implements ws_profitplay.Service1Soap.GetIngredients
+        Public Function GetIngredients() As IngredientDB() Implements ServiceReference1.Service1Soap.GetIngredients
             Return MyBase.Channel.GetIngredients
         End Function
         
-        Public Function GetComanda() As System.Data.DataTable Implements ws_profitplay.Service1Soap.GetComanda
+        Public Function GetComanda() As System.Data.DataTable Implements ServiceReference1.Service1Soap.GetComanda
             Return MyBase.Channel.GetComanda
         End Function
         
-        Public Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean Implements ws_profitplay.Service1Soap.SetComanda
+        Public Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean Implements ServiceReference1.Service1Soap.SetComanda
             Return MyBase.Channel.SetComanda(id_comanda, taula, producte)
         End Function
         
-        Public Function ContaEmpleats() As Integer Implements ws_profitplay.Service1Soap.ContaEmpleats
+        Public Function ContaEmpleats() As Integer Implements ServiceReference1.Service1Soap.ContaEmpleats
             Return MyBase.Channel.ContaEmpleats
         End Function
         
-        Public Function GetEmpleat(ByVal id As Integer) As ws_profitplay.EmpleatBD Implements ws_profitplay.Service1Soap.GetEmpleat
+        Public Function GetEmpleat(ByVal id As Integer) As ServiceReference1.EmpleatBD Implements ServiceReference1.Service1Soap.GetEmpleat
             Return MyBase.Channel.GetEmpleat(id)
         End Function
         
-        Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean Implements ws_profitplay.Service1Soap.SetEmpleat
+        Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean Implements ServiceReference1.Service1Soap.SetEmpleat
             Return MyBase.Channel.SetEmpleat(nom, password, rol)
         End Function
     End Class

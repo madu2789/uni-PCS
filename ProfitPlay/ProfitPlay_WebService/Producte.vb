@@ -3,7 +3,6 @@ Public Class Producte
 
     Dim BD As New ProfitPlay_DB.ControlDB
 
-
     Private tipus As String
     Private nom As String
     Private descripicio As String

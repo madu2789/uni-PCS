@@ -114,7 +114,7 @@
 
         Try
             connect()
-            producteDA.Connection = conDB
+            ingredientDA.Connection = conDB
             ingredientDA.Fill(DS.Ingredient)
             disconnect()
         Catch ex As Exception
@@ -125,6 +125,7 @@
     End Function
 
     Public Function SetComanda(ByVal id_comanda As String, ByVal id_taula As String, ByVal productes As String) As Boolean
+
         Dim ok As Boolean = False
         Try
             connect()

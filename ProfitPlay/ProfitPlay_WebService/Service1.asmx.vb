@@ -17,6 +17,7 @@ Public Class Service1
     Dim empleat As New Empleat
     Dim comanda As New Comanda
     Dim producte As New Producte
+    Dim ingredient As New Ingredient
 
 
     Public Class EmpleatBD
@@ -41,6 +42,7 @@ Public Class Service1
         Public preu As Double
         Public quantitat As Double
         Public stock_minim As Double
+        Public nom As String
     End Class
 
     Public em As New EmpleatBD
@@ -81,15 +83,15 @@ Public Class Service1
 
         Dim ingredients As New List(Of IngredientDB)
 
-        Dim info As DataTable = producte.ObteProductes
+        Dim info As DataTable = ingredient.ObteIngredients
 
         For Each fila In info.Rows
 
             Dim pro As New IngredientDB
             pro.id = fila("Id_producte").ToString
             pro.preu = fila("Preu").ToString
-            pro.preu = fila("Quantitat").ToString
-            pro.preu = fila("StockMinim").ToString
+            pro.quantitat = fila("Quantitat").ToString
+            pro.stock_minim = fila("StockMinim").ToString
 
             ingredients.Add(pro)
         Next
