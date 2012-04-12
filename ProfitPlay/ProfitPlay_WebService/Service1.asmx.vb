@@ -45,6 +45,14 @@ Public Class Service1
         Public nom As String
     End Class
 
+    Public Class ComandaDB
+        Public id As String
+        Public Id_Usuari As String
+        Public Hora As Integer
+        Public Notes As String
+        Public Estat As String
+    End Class
+
     Public em As New EmpleatBD
 
 
@@ -102,8 +110,26 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetComanda() As DataTable
-        Return comanda.GetComanda
+   Public Function GetComanda() As List(Of ComandaDB)
+
+        Dim comandes As New List(Of ComandaDB)
+
+        Dim info As DataTable = comanda.GetComanda
+
+        For Each fila In info.Rows
+
+            Dim pro As New ComandaDB
+
+            pro.id = fila("Id_Comanda").ToString
+            pro.Id_Usuari = fila("Id_Usuari").ToString
+            pro.Hora = fila("Hora").ToString
+            pro.Notes = fila("Notes").ToString
+            pro.Estat = fila("Estat").ToString
+
+            comandes.Add(pro)
+        Next
+
+        Return comandes
     End Function
 
     <WebMethod()> _
