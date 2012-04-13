@@ -18,8 +18,8 @@
 
     Public Sub connect()
         Try
-            conDB = New OleDb.OleDbConnection(conString)
-            'conDB = New OleDb.OleDbConnection(conString1)
+            'conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
         Catch ex As Exception
             MsgBox("error connexió!", MsgBoxStyle.Critical)
