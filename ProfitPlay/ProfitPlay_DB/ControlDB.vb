@@ -151,4 +151,17 @@
         Return DS.Comanda
     End Function
 
+    Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
+        Try
+            connect()
+            producteDA.Connection = conDB
+            'dim preu As Double = producteDA.
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB productes", MsgBoxStyle.Critical)
+        End Try
+        Dim preus As Double = 1
+        Return preus
+    End Function
+
 End Class

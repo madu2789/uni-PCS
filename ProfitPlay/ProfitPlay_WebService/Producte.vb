@@ -66,4 +66,11 @@ Public Class Producte
         Return productesDB
     End Function
 
+    Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
+
+    End Function
+
+    Public Function GetNomProducteById(ByVal id_producte As Integer) As Double
+
+    End Function
 End Class

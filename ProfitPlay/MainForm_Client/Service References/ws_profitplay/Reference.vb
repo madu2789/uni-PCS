@@ -493,6 +493,12 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ContaProductes", ReplyAction:="*")>  _
         Function ContaProductes() As Integer
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetPreuProducteById", ReplyAction:="*")>  _
+        Function GetPreuProducteById(ByVal id_producte As Integer) As Double
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetNomProducteById", ReplyAction:="*")>  _
+        Function GetNomProducteById(ByVal id_producte As Integer) As Double
+        
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetProducteResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetProducte", ReplyAction:="*")>  _
         Function GetProducte(ByVal request As ws_profitplay.GetProducteRequest) As ws_profitplay.GetProducteResponse
@@ -1076,6 +1082,14 @@ Namespace ws_profitplay
         
         Public Function ContaProductes() As Integer Implements ws_profitplay.Service1Soap.ContaProductes
             Return MyBase.Channel.ContaProductes
+        End Function
+        
+        Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double Implements ws_profitplay.Service1Soap.GetPreuProducteById
+            Return MyBase.Channel.GetPreuProducteById(id_producte)
+        End Function
+        
+        Public Function GetNomProducteById(ByVal id_producte As Integer) As Double Implements ws_profitplay.Service1Soap.GetNomProducteById
+            Return MyBase.Channel.GetNomProducteById(id_producte)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
