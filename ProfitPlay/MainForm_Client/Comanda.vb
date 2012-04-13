@@ -2,13 +2,25 @@
 
     Private productes As ArrayList
 
-    Public Id_comanda As String
-    Public Id_Usuari As String
-    Public Hora As Integer
+    Public Id_comanda As Integer
+    Public Id_usuari As Integer
+    Public Id_producte As Integer
+    Public Hora As String
     Public Notes As String
     Public Estat As String
+    Public Producte As String
 
     'fer getters i setters
+
+    Public Sub New()
+
+        Hora = ""
+        Notes = ""
+        Estat = ""
+        Producte = ""
+        productes = New ArrayList
+
+    End Sub
 
     Public Sub setHora(ByVal s As String)
         hora = s
@@ -22,11 +34,25 @@
         estat = s
     End Sub
 
-    Public Sub New()
-
-        productes = New ArrayList
-
+    Public Sub setProducte(ByVal s As String)
+        Producte = s
     End Sub
+
+    Public Function getHora() As String
+        Return Hora
+    End Function
+
+    Public Function getNotes() As String
+        Return Notes
+    End Function
+
+    Public Function getEstat() As String
+        Return Estat
+    End Function
+
+    Public Function getProducte() As String
+        Return Producte
+    End Function
 
     Public Function getComanda() As ArrayList
         Return productes

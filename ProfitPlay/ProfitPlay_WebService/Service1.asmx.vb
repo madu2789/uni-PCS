@@ -46,9 +46,10 @@ Public Class Service1
     End Class
 
     Public Class ComandaDB
-        Public id As String
-        Public Id_Usuari As String
-        Public Hora As Integer
+        Public id As Integer
+        Public Id_usuari As Integer
+        Public Id_producte As Integer
+        Public Hora As String
         Public Notes As String
         Public Estat As String
     End Class
@@ -120,8 +121,9 @@ Public Class Service1
 
             Dim pro As New ComandaDB
 
-            pro.id = fila("Id_Comanda").ToString
-            pro.Id_Usuari = fila("Id_Usuari").ToString
+            pro.id = fila("Id_comanda").ToString
+            pro.Id_usuari = fila("Id_usuari").ToString
+            pro.Id_producte = fila("Id_producte").ToString
             pro.Hora = fila("Hora").ToString
             pro.Notes = fila("Notes").ToString
             pro.Estat = fila("Estat").ToString
