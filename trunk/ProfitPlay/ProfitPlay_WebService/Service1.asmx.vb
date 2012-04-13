@@ -68,6 +68,16 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+   Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
+        Return producte.GetPreuProducteById(id_producte)
+    End Function
+
+    <WebMethod()> _
+    Public Function GetNomProducteById(ByVal id_producte As Integer) As Double
+
+    End Function
+
+    <WebMethod()> _
    Public Function GetProducte() As List(Of ProducteBD)
 
         Dim productes As New List(Of ProducteBD)
@@ -103,7 +113,7 @@ Public Class Service1
             pro.quantitat = fila("Quantitat").ToString
             pro.stock_minim = fila("StockMinim").ToString
             pro.nom = fila("Nom").ToString
-            
+
             ingredients.Add(pro)
         Next
 
