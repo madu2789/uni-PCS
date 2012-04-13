@@ -11,128 +11,107 @@
 Option Strict On
 Option Explicit On
 
-Imports System.Data
+Imports System
+Imports System.Runtime.Serialization
 
 Namespace ws_profitplay
     
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
-     System.ServiceModel.ServiceContractAttribute(ConfigurationName:="ws_profitplay.Service1Soap")>  _
-    Public Interface Service1Soap
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/LogEmpleat", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function LogEmpleat(ByVal user As String, ByVal password As String) As String
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ContaProductes", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function ContaProductes() As Integer
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetProducte", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetProducte() As ProducteBD()
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetIngredients", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetIngredients() As IngredientDB()
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetComanda", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetComanda() As System.Data.DataTable
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetComanda", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ContaEmpleats", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function ContaEmpleats() As Integer
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetEmpleat", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function GetEmpleat(ByVal id As Integer) As ws_profitplay.EmpleatBD
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetEmpleat", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute()>  _
-        Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
-    End Interface
-    
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.5420"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ProducteBD", [Namespace]:="http://tempuri.org/"),  _
+     System.SerializableAttribute()>  _
     Partial Public Class ProducteBD
         Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         Private idField As Integer
         
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private tipusField As String
         
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private nomField As String
         
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private descripicioField As String
         
         Private preuField As Double
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
         Public Property id() As Integer
             Get
                 Return Me.idField
             End Get
             Set
-                Me.idField = value
-                Me.RaisePropertyChanged("id")
+                If (Me.idField.Equals(value) <> true) Then
+                    Me.idField = value
+                    Me.RaisePropertyChanged("id")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
         Public Property tipus() As String
             Get
                 Return Me.tipusField
             End Get
             Set
-                Me.tipusField = value
-                Me.RaisePropertyChanged("tipus")
+                If (Object.ReferenceEquals(Me.tipusField, value) <> true) Then
+                    Me.tipusField = value
+                    Me.RaisePropertyChanged("tipus")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
         Public Property nom() As String
             Get
                 Return Me.nomField
             End Get
             Set
-                Me.nomField = value
-                Me.RaisePropertyChanged("nom")
+                If (Object.ReferenceEquals(Me.nomField, value) <> true) Then
+                    Me.nomField = value
+                    Me.RaisePropertyChanged("nom")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
         Public Property descripicio() As String
             Get
                 Return Me.descripicioField
             End Get
             Set
-                Me.descripicioField = value
-                Me.RaisePropertyChanged("descripicio")
+                If (Object.ReferenceEquals(Me.descripicioField, value) <> true) Then
+                    Me.descripicioField = value
+                    Me.RaisePropertyChanged("descripicio")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=4)>  _
         Public Property preu() As Double
             Get
                 Return Me.preuField
             End Get
             Set
-                Me.preuField = value
-                Me.RaisePropertyChanged("preu")
+                If (Me.preuField.Equals(value) <> true) Then
+                    Me.preuField = value
+                    Me.RaisePropertyChanged("preu")
+                End If
             End Set
         End Property
         
@@ -146,119 +125,16 @@ Namespace ws_profitplay
         End Sub
     End Class
     
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.5420"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
-    Partial Public Class EmpleatBD
-        Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
-        
-        Private idField As Integer
-        
-        Private rolField As String
-        
-        Private nomField As String
-        
-        Private cognomField As String
-        
-        Private usernameField As String
-        
-        Private passwordField As String
-        
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property id() As Integer
-            Get
-                Return Me.idField
-            End Get
-            Set
-                Me.idField = value
-                Me.RaisePropertyChanged("id")
-            End Set
-        End Property
-        
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
-        Public Property rol() As String
-            Get
-                Return Me.rolField
-            End Get
-            Set
-                Me.rolField = value
-                Me.RaisePropertyChanged("rol")
-            End Set
-        End Property
-        
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
-        Public Property nom() As String
-            Get
-                Return Me.nomField
-            End Get
-            Set
-                Me.nomField = value
-                Me.RaisePropertyChanged("nom")
-            End Set
-        End Property
-        
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
-        Public Property cognom() As String
-            Get
-                Return Me.cognomField
-            End Get
-            Set
-                Me.cognomField = value
-                Me.RaisePropertyChanged("cognom")
-            End Set
-        End Property
-        
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
-        Public Property username() As String
-            Get
-                Return Me.usernameField
-            End Get
-            Set
-                Me.usernameField = value
-                Me.RaisePropertyChanged("username")
-            End Set
-        End Property
-        
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
-        Public Property password() As String
-            Get
-                Return Me.passwordField
-            End Get
-            Set
-                Me.passwordField = value
-                Me.RaisePropertyChanged("password")
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.5420"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="IngredientDB", [Namespace]:="http://tempuri.org/"),  _
+     System.SerializableAttribute()>  _
     Partial Public Class IngredientDB
         Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         Private idField As Integer
         
@@ -268,65 +144,81 @@ Namespace ws_profitplay
         
         Private stock_minimField As Integer
         
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private nomField As String
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
         Public Property id() As Integer
             Get
                 Return Me.idField
             End Get
             Set
-                Me.idField = value
-                Me.RaisePropertyChanged("id")
+                If (Me.idField.Equals(value) <> true) Then
+                    Me.idField = value
+                    Me.RaisePropertyChanged("id")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
         Public Property preu() As Double
             Get
                 Return Me.preuField
             End Get
             Set
-                Me.preuField = value
-                Me.RaisePropertyChanged("preu")
+                If (Me.preuField.Equals(value) <> true) Then
+                    Me.preuField = value
+                    Me.RaisePropertyChanged("preu")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
         Public Property quantitat() As Integer
             Get
                 Return Me.quantitatField
             End Get
             Set
-                Me.quantitatField = value
-                Me.RaisePropertyChanged("quantitat")
+                If (Me.quantitatField.Equals(value) <> true) Then
+                    Me.quantitatField = value
+                    Me.RaisePropertyChanged("quantitat")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
         Public Property stock_minim() As Integer
             Get
                 Return Me.stock_minimField
             End Get
             Set
-                Me.stock_minimField = value
-                Me.RaisePropertyChanged("stock_minim")
+                If (Me.stock_minimField.Equals(value) <> true) Then
+                    Me.stock_minimField = value
+                    Me.RaisePropertyChanged("stock_minim")
+                End If
             End Set
         End Property
         
-        '''<comentarios/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=4)>  _
         Public Property nom() As String
             Get
                 Return Me.nomField
             End Get
             Set
-                Me.nomField = value
-                Me.RaisePropertyChanged("nom")
+                If (Object.ReferenceEquals(Me.nomField, value) <> true) Then
+                    Me.nomField = value
+                    Me.RaisePropertyChanged("nom")
+                End If
             End Set
         End Property
         
@@ -337,6 +229,785 @@ Namespace ws_profitplay
             If (Not (propertyChanged) Is Nothing) Then
                 propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
             End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="ComandaDB", [Namespace]:="http://tempuri.org/"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class ComandaDB
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private idField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Id_UsuariField As String
+        
+        Private HoraField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NotesField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private EstatField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
+        Public Property id() As String
+            Get
+                Return Me.idField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.idField, value) <> true) Then
+                    Me.idField = value
+                    Me.RaisePropertyChanged("id")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public Property Id_Usuari() As String
+            Get
+                Return Me.Id_UsuariField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.Id_UsuariField, value) <> true) Then
+                    Me.Id_UsuariField = value
+                    Me.RaisePropertyChanged("Id_Usuari")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=2)>  _
+        Public Property Hora() As Integer
+            Get
+                Return Me.HoraField
+            End Get
+            Set
+                If (Me.HoraField.Equals(value) <> true) Then
+                    Me.HoraField = value
+                    Me.RaisePropertyChanged("Hora")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
+        Public Property Notes() As String
+            Get
+                Return Me.NotesField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.NotesField, value) <> true) Then
+                    Me.NotesField = value
+                    Me.RaisePropertyChanged("Notes")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=4)>  _
+        Public Property Estat() As String
+            Get
+                Return Me.EstatField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.EstatField, value) <> true) Then
+                    Me.EstatField = value
+                    Me.RaisePropertyChanged("Estat")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="EmpleatBD", [Namespace]:="http://tempuri.org/"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class EmpleatBD
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        Private idField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private rolField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private nomField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private cognomField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private usernameField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private passwordField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
+        Public Property id() As Integer
+            Get
+                Return Me.idField
+            End Get
+            Set
+                If (Me.idField.Equals(value) <> true) Then
+                    Me.idField = value
+                    Me.RaisePropertyChanged("id")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
+        Public Property rol() As String
+            Get
+                Return Me.rolField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.rolField, value) <> true) Then
+                    Me.rolField = value
+                    Me.RaisePropertyChanged("rol")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
+        Public Property nom() As String
+            Get
+                Return Me.nomField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.nomField, value) <> true) Then
+                    Me.nomField = value
+                    Me.RaisePropertyChanged("nom")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
+        Public Property cognom() As String
+            Get
+                Return Me.cognomField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.cognomField, value) <> true) Then
+                    Me.cognomField = value
+                    Me.RaisePropertyChanged("cognom")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=4)>  _
+        Public Property username() As String
+            Get
+                Return Me.usernameField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.usernameField, value) <> true) Then
+                    Me.usernameField = value
+                    Me.RaisePropertyChanged("username")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=5)>  _
+        Public Property password() As String
+            Get
+                Return Me.passwordField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.passwordField, value) <> true) Then
+                    Me.passwordField = value
+                    Me.RaisePropertyChanged("password")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.ServiceContractAttribute(ConfigurationName:="ws_profitplay.Service1Soap")>  _
+    Public Interface Service1Soap
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento user del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/LogEmpleat", ReplyAction:="*")>  _
+        Function LogEmpleat(ByVal request As ws_profitplay.LogEmpleatRequest) As ws_profitplay.LogEmpleatResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ContaProductes", ReplyAction:="*")>  _
+        Function ContaProductes() As Integer
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetProducteResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetProducte", ReplyAction:="*")>  _
+        Function GetProducte(ByVal request As ws_profitplay.GetProducteRequest) As ws_profitplay.GetProducteResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetIngredientsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetIngredients", ReplyAction:="*")>  _
+        Function GetIngredients(ByVal request As ws_profitplay.GetIngredientsRequest) As ws_profitplay.GetIngredientsResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetComandaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetComanda", ReplyAction:="*")>  _
+        Function GetComanda(ByVal request As ws_profitplay.GetComandaRequest) As ws_profitplay.GetComandaResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento id_comanda del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetComanda", ReplyAction:="*")>  _
+        Function SetComanda(ByVal request As ws_profitplay.SetComandaRequest) As ws_profitplay.SetComandaResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ContaEmpleats", ReplyAction:="*")>  _
+        Function ContaEmpleats() As Integer
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetEmpleatResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetEmpleat", ReplyAction:="*")>  _
+        Function GetEmpleat(ByVal request As ws_profitplay.GetEmpleatRequest) As ws_profitplay.GetEmpleatResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nom del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetEmpleat", ReplyAction:="*")>  _
+        Function SetEmpleat(ByVal request As ws_profitplay.SetEmpleatRequest) As ws_profitplay.SetEmpleatResponse
+    End Interface
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class LogEmpleatRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogEmpleat", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.LogEmpleatRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.LogEmpleatRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class LogEmpleatRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public user As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public password As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal user As String, ByVal password As String)
+            MyBase.New
+            Me.user = user
+            Me.password = password
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class LogEmpleatResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="LogEmpleatResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.LogEmpleatResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.LogEmpleatResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class LogEmpleatResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public LogEmpleatResult As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal LogEmpleatResult As String)
+            MyBase.New
+            Me.LogEmpleatResult = LogEmpleatResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetProducteRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetProducte", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetProducteRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetProducteRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class GetProducteRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetProducteResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetProducteResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetProducteResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetProducteResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetProducteResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public GetProducteResult() As ws_profitplay.ProducteBD
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetProducteResult() As ws_profitplay.ProducteBD)
+            MyBase.New
+            Me.GetProducteResult = GetProducteResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetIngredientsRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetIngredients", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetIngredientsRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetIngredientsRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class GetIngredientsRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetIngredientsResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetIngredientsResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetIngredientsResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetIngredientsResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetIngredientsResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public GetIngredientsResult() As ws_profitplay.IngredientDB
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetIngredientsResult() As ws_profitplay.IngredientDB)
+            MyBase.New
+            Me.GetIngredientsResult = GetIngredientsResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetComandaRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetComanda", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetComandaRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetComandaRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class GetComandaRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetComandaResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetComandaResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetComandaResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetComandaResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetComandaResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public GetComandaResult() As ws_profitplay.ComandaDB
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetComandaResult() As ws_profitplay.ComandaDB)
+            MyBase.New
+            Me.GetComandaResult = GetComandaResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class SetComandaRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="SetComanda", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.SetComandaRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.SetComandaRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class SetComandaRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public id_comanda As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public taula As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
+        Public producte As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String)
+            MyBase.New
+            Me.id_comanda = id_comanda
+            Me.taula = taula
+            Me.producte = producte
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class SetComandaResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="SetComandaResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.SetComandaResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.SetComandaResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class SetComandaResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public SetComandaResult As Boolean
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal SetComandaResult As Boolean)
+            MyBase.New
+            Me.SetComandaResult = SetComandaResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetEmpleatRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetEmpleat", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetEmpleatRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetEmpleatRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetEmpleatRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public id As Integer
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal id As Integer)
+            MyBase.New
+            Me.id = id
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetEmpleatResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetEmpleatResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetEmpleatResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetEmpleatResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetEmpleatResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public GetEmpleatResult As ws_profitplay.EmpleatBD
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetEmpleatResult As ws_profitplay.EmpleatBD)
+            MyBase.New
+            Me.GetEmpleatResult = GetEmpleatResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class SetEmpleatRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="SetEmpleat", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.SetEmpleatRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.SetEmpleatRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class SetEmpleatRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public nom As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public password As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
+        Public rol As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
+        Public cognom As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String)
+            MyBase.New
+            Me.nom = nom
+            Me.password = password
+            Me.rol = rol
+            Me.cognom = cognom
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class SetEmpleatResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="SetEmpleatResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.SetEmpleatResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.SetEmpleatResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class SetEmpleatResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public SetEmpleatResult As Boolean
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal SetEmpleatResult As Boolean)
+            MyBase.New
+            Me.SetEmpleatResult = SetEmpleatResult
         End Sub
     End Class
     
@@ -371,40 +1042,106 @@ Namespace ws_profitplay
             MyBase.New(binding, remoteAddress)
         End Sub
         
-        Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String Implements ws_profitplay.Service1Soap.LogEmpleat
-            Return MyBase.Channel.LogEmpleat(user, password)
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_LogEmpleat(ByVal request As ws_profitplay.LogEmpleatRequest) As ws_profitplay.LogEmpleatResponse Implements ws_profitplay.Service1Soap.LogEmpleat
+            Return MyBase.Channel.LogEmpleat(request)
+        End Function
+        
+        Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String
+            Dim inValue As ws_profitplay.LogEmpleatRequest = New ws_profitplay.LogEmpleatRequest
+            inValue.Body = New ws_profitplay.LogEmpleatRequestBody
+            inValue.Body.user = user
+            inValue.Body.password = password
+            Dim retVal As ws_profitplay.LogEmpleatResponse = CType(Me,ws_profitplay.Service1Soap).LogEmpleat(inValue)
+            Return retVal.Body.LogEmpleatResult
         End Function
         
         Public Function ContaProductes() As Integer Implements ws_profitplay.Service1Soap.ContaProductes
             Return MyBase.Channel.ContaProductes
         End Function
         
-        Public Function GetProducte() As ProducteBD() Implements ws_profitplay.Service1Soap.GetProducte
-            Return MyBase.Channel.GetProducte
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetProducte(ByVal request As ws_profitplay.GetProducteRequest) As ws_profitplay.GetProducteResponse Implements ws_profitplay.Service1Soap.GetProducte
+            Return MyBase.Channel.GetProducte(request)
         End Function
         
-        Public Function GetIngredients() As IngredientDB() Implements ws_profitplay.Service1Soap.GetIngredients
-            Return MyBase.Channel.GetIngredients
+        Public Function GetProducte() As ws_profitplay.ProducteBD()
+            Dim inValue As ws_profitplay.GetProducteRequest = New ws_profitplay.GetProducteRequest
+            inValue.Body = New ws_profitplay.GetProducteRequestBody
+            Dim retVal As ws_profitplay.GetProducteResponse = CType(Me,ws_profitplay.Service1Soap).GetProducte(inValue)
+            Return retVal.Body.GetProducteResult
         End Function
         
-        Public Function GetComanda() As System.Data.DataTable Implements ws_profitplay.Service1Soap.GetComanda
-            Return MyBase.Channel.GetComanda
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetIngredients(ByVal request As ws_profitplay.GetIngredientsRequest) As ws_profitplay.GetIngredientsResponse Implements ws_profitplay.Service1Soap.GetIngredients
+            Return MyBase.Channel.GetIngredients(request)
         End Function
         
-        Public Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean Implements ws_profitplay.Service1Soap.SetComanda
-            Return MyBase.Channel.SetComanda(id_comanda, taula, producte)
+        Public Function GetIngredients() As ws_profitplay.IngredientDB()
+            Dim inValue As ws_profitplay.GetIngredientsRequest = New ws_profitplay.GetIngredientsRequest
+            inValue.Body = New ws_profitplay.GetIngredientsRequestBody
+            Dim retVal As ws_profitplay.GetIngredientsResponse = CType(Me,ws_profitplay.Service1Soap).GetIngredients(inValue)
+            Return retVal.Body.GetIngredientsResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetComanda(ByVal request As ws_profitplay.GetComandaRequest) As ws_profitplay.GetComandaResponse Implements ws_profitplay.Service1Soap.GetComanda
+            Return MyBase.Channel.GetComanda(request)
+        End Function
+        
+        Public Function GetComanda() As ws_profitplay.ComandaDB()
+            Dim inValue As ws_profitplay.GetComandaRequest = New ws_profitplay.GetComandaRequest
+            inValue.Body = New ws_profitplay.GetComandaRequestBody
+            Dim retVal As ws_profitplay.GetComandaResponse = CType(Me,ws_profitplay.Service1Soap).GetComanda(inValue)
+            Return retVal.Body.GetComandaResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_SetComanda(ByVal request As ws_profitplay.SetComandaRequest) As ws_profitplay.SetComandaResponse Implements ws_profitplay.Service1Soap.SetComanda
+            Return MyBase.Channel.SetComanda(request)
+        End Function
+        
+        Public Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean
+            Dim inValue As ws_profitplay.SetComandaRequest = New ws_profitplay.SetComandaRequest
+            inValue.Body = New ws_profitplay.SetComandaRequestBody
+            inValue.Body.id_comanda = id_comanda
+            inValue.Body.taula = taula
+            inValue.Body.producte = producte
+            Dim retVal As ws_profitplay.SetComandaResponse = CType(Me,ws_profitplay.Service1Soap).SetComanda(inValue)
+            Return retVal.Body.SetComandaResult
         End Function
         
         Public Function ContaEmpleats() As Integer Implements ws_profitplay.Service1Soap.ContaEmpleats
             Return MyBase.Channel.ContaEmpleats
         End Function
         
-        Public Function GetEmpleat(ByVal id As Integer) As ws_profitplay.EmpleatBD Implements ws_profitplay.Service1Soap.GetEmpleat
-            Return MyBase.Channel.GetEmpleat(id)
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetEmpleat(ByVal request As ws_profitplay.GetEmpleatRequest) As ws_profitplay.GetEmpleatResponse Implements ws_profitplay.Service1Soap.GetEmpleat
+            Return MyBase.Channel.GetEmpleat(request)
         End Function
         
-        Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean Implements ws_profitplay.Service1Soap.SetEmpleat
-            Return MyBase.Channel.SetEmpleat(nom, password, rol)
+        Public Function GetEmpleat(ByVal id As Integer) As ws_profitplay.EmpleatBD
+            Dim inValue As ws_profitplay.GetEmpleatRequest = New ws_profitplay.GetEmpleatRequest
+            inValue.Body = New ws_profitplay.GetEmpleatRequestBody
+            inValue.Body.id = id
+            Dim retVal As ws_profitplay.GetEmpleatResponse = CType(Me,ws_profitplay.Service1Soap).GetEmpleat(inValue)
+            Return retVal.Body.GetEmpleatResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_SetEmpleat(ByVal request As ws_profitplay.SetEmpleatRequest) As ws_profitplay.SetEmpleatResponse Implements ws_profitplay.Service1Soap.SetEmpleat
+            Return MyBase.Channel.SetEmpleat(request)
+        End Function
+        
+        Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
+            Dim inValue As ws_profitplay.SetEmpleatRequest = New ws_profitplay.SetEmpleatRequest
+            inValue.Body = New ws_profitplay.SetEmpleatRequestBody
+            inValue.Body.nom = nom
+            inValue.Body.password = password
+            inValue.Body.rol = rol
+            inValue.Body.cognom = cognom
+            Dim retVal As ws_profitplay.SetEmpleatResponse = CType(Me,ws_profitplay.Service1Soap).SetEmpleat(inValue)
+            Return retVal.Body.SetEmpleatResult
         End Function
     End Class
 End Namespace

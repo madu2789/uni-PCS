@@ -294,7 +294,7 @@ Partial Class Emp_Gestio_usuaris
         'cmbx_rol
         '
         Me.cmbx_rol.FormattingEnabled = True
-        Me.cmbx_rol.Items.AddRange(New Object() {"Administrador", "Cheff", "Barman", "Camarero"})
+        Me.cmbx_rol.Items.AddRange(New Object() {"Administrador", "Cheff", "Barman", "Cambrer"})
         Me.cmbx_rol.Location = New System.Drawing.Point(128, 184)
         Me.cmbx_rol.Name = "cmbx_rol"
         Me.cmbx_rol.Size = New System.Drawing.Size(108, 21)

@@ -57,8 +57,6 @@
         Return numUsuaris
     End Function
 
-
-
     Public Function GetEmpleats() As DataTable
         Try
             connect()
@@ -71,17 +69,16 @@
         Return DS.Empleat
     End Function
 
-    Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
+    Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
         Dim ok As Boolean = False
         Try
             connect()
-            comandaDA.Connection = conDB
-
-            'empleatDA.InsertEmpleado(nom, password, rol)
+            empleatDA.Connection = conDB
+            empleatDA.InsertEmpleat(rol, nom, nom, password, cognom)
             disconnect()
-
+            ok = True
         Catch ex As Exception
-            MsgBox("error DB empleat", MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
         Return ok
     End Function

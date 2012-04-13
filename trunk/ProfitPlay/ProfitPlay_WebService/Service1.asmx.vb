@@ -170,8 +170,8 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
-        Return comanda.SetComanda(nom, password, rol)
+   Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
+        Return empleat.SetEmpleats(nom, password, rol, cognom)
     End Function
 
 

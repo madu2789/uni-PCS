@@ -306,6 +306,9 @@
     <None Include="Service References\ws_profitplay\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.ComandaDB.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.EmpleatBD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
