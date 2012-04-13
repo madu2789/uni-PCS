@@ -6,45 +6,7 @@ MainForm_Client
 </name>
 </assembly>
 <members>
-<member name="P:MainForm_Client.ws_profitplay.ProducteBD.id">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.ProducteBD.tipus">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.ProducteBD.nom">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.ProducteBD.descripicio">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.ProducteBD.preu">
-	<comentarios/>
-</member><member name="T:MainForm_Client.ws_profitplay.ProducteBD">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.EmpleatBD.id">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.EmpleatBD.rol">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.EmpleatBD.nom">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.EmpleatBD.cognom">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.EmpleatBD.username">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.EmpleatBD.password">
-	<comentarios/>
-</member><member name="T:MainForm_Client.ws_profitplay.EmpleatBD">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.IngredientDB.id">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.IngredientDB.preu">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.IngredientDB.quantitat">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.IngredientDB.stock_minim">
-	<comentarios/>
-</member><member name="P:MainForm_Client.ws_profitplay.IngredientDB.nom">
-	<comentarios/>
-</member><member name="T:MainForm_Client.ws_profitplay.IngredientDB">
-	<comentarios/>
-</member><member name="P:MainForm_Client.My.Resources.Resources.ResourceManager">
+<member name="P:MainForm_Client.My.Resources.Resources.ResourceManager">
 	<summary>
   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
 </summary>

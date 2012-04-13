@@ -22,8 +22,8 @@ Partial Class Client_Carta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem7 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
-        Dim ListViewItem8 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
         Me.lbl_taula = New System.Windows.Forms.Label
@@ -230,7 +230,7 @@ Partial Class Client_Carta
         '
         'lv_pedidos
         '
-        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem7, ListViewItem8})
+        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
         Me.lv_pedidos.Location = New System.Drawing.Point(239, 69)
         Me.lv_pedidos.Name = "lv_pedidos"
         Me.lv_pedidos.Size = New System.Drawing.Size(147, 226)
