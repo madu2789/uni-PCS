@@ -69,17 +69,18 @@
 
         Dim Llistacomandes As New List(Of Comanda)
 
-        For Each fila In comandesDB.Rows
+        For Each fila In comandesDB
 
             Dim pro As New Comanda
 
-            pro.Id_comanda = fila.Id_comanda
+            pro.Id_comanda = fila.id
             pro.Id_Usuari = fila.Id_Usuari
             pro.Hora = fila.Hora
             pro.Notes = fila.Notes
             pro.Estat = fila.Estat
 
             Llistacomandes.Add(pro)
+            llista_productes_eliminar.Items.Add(pro.Id_comanda)
         Next
 
     End Sub

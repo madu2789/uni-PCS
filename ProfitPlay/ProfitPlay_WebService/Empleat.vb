@@ -53,8 +53,8 @@ Public Class Empleat
         Return info
     End Function
 
-    Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String) As Boolean
-        Return BD.SetEmpleat(nom, password, rol)
+    Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
+        Return BD.SetEmpleat(nom, password, rol, cognom)
     End Function
 
 End Class
