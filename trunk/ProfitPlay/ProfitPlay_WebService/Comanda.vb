@@ -53,8 +53,8 @@
 
     
 
-    Public Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean
-        Dim ok = BD.SetComanda(id_comanda, taula, producte)
+    Public Function SetComanda(ByVal id_user As String, ByVal id_producte As String, ByVal notes As String, ByVal hora As Date) As Boolean
+        Dim ok = BD.SetComanda(id_user, id_producte, notes, hora)
         Return ok
     End Function
 

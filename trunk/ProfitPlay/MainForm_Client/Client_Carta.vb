@@ -212,6 +212,13 @@
 
                 m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
 
+                'variables temporalment aqui, falta agafar-les d'on sigui!!!!!
+                Dim idUsuari As String = "1"
+                Dim idProducte As String = "1"
+                Dim notes As String = ""
+                Dim hora As Date = Now
+                ws.SetComanda(idUsuari, idProducte, notes, hora)
+
             Next
 
             Dim a As New Client_Carta

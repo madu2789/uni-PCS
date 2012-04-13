@@ -18,8 +18,8 @@
 
     Public Sub connect()
         Try
-            'conDB = New OleDb.OleDbConnection(conString)
-            conDB = New OleDb.OleDbConnection(conString1)
+            conDB = New OleDb.OleDbConnection(conString)
+            'conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
         Catch ex As Exception
             MsgBox("error connexió!", MsgBoxStyle.Critical)
@@ -121,27 +121,20 @@
 
     End Function
 
-    Public Function SetComanda(ByVal id_comanda As String, ByVal id_taula As String, ByVal productes As String) As Boolean
+    Public Function SetComanda(ByVal id_user As String, ByVal id_producte As String, ByVal notes As String, ByVal hora As Date) As Boolean
 
         Dim ok As Boolean = False
+        Dim estat As String = "Sol·licitat"
         Try
             connect()
             comandaDA.Connection = conDB
 
             'revisar format de la query
-
-            Dim estat As String = ""
-            Dim notes As String = ""
-            Dim hora As String = ""
-            Dim producte As String = ""
-
-            For Each producte In productes
-                ' comandaDA.InsertComanda(estat, id_taula, producte, notes, hora)
-            Next
-
+            comandaDA.InsertComanda(CInt(id_user), CInt(id_producte), hora, notes, estat)
+            ok = True
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB", MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
         Return ok
     End Function

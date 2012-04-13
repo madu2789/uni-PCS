@@ -135,8 +135,8 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-    Public Function SetComanda(ByVal id_comanda As String, ByVal taula As String, ByVal producte As String) As Boolean
-        Return comanda.SetComanda(id_comanda, taula, producte)
+    Public Function SetComanda(ByVal id_user As String, ByVal id_producte As String, ByVal notes As String, ByVal hora As Date) As Boolean
+        Return comanda.SetComanda(id_user, id_producte, notes, hora)
     End Function
 
     <WebMethod()> _
