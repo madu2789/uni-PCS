@@ -5,6 +5,7 @@
     Public preu As Double
     Public quantitat As Integer
     Public StockMinim As Integer
+    Public StockActual As Integer
 
     Public Sub New()
         id = 0
@@ -12,6 +13,10 @@
         Preu = 0
         quantitat = 0
         StockMinim = 0
+    End Sub
+
+    Public Sub setStockActual(ByVal s As Integer)
+        StockActual = s
     End Sub
 
     Public Sub setQuantitat(ByVal s As String)
@@ -29,6 +34,10 @@
     Public Sub setStockMinim(ByVal s As Double)
         StockMinim = s
     End Sub
+
+    Public Function getStockActual() As Integer
+        Return StockActual
+    End Function
 
     Public Function getStockMinim() As Double
         Return StockMinim

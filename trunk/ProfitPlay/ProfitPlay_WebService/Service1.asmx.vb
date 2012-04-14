@@ -18,6 +18,7 @@ Public Class Service1
     Dim comanda As New Comanda
     Dim producte As New Producte
     Dim ingredient As New Ingredient
+    Public em As New EmpleatBD
 
 
     Public Class EmpleatBD
@@ -42,6 +43,7 @@ Public Class Service1
         Public preu As Double
         Public quantitat As Integer
         Public stock_minim As Integer
+        Public stock_actual As Integer
         Public nom As String
     End Class
 
@@ -54,9 +56,6 @@ Public Class Service1
         Public Estat As String
     End Class
 
-    Public em As New EmpleatBD
-
-
     <WebMethod()> _
     Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String
         Return empleat.log_empleat(user, password)
@@ -68,13 +67,18 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
-        Return producte.GetPreuProducteById(id_producte)
+    Public Function GetNomProducteById(ByVal id_producte As Integer) As String
+        Return producte.GetNomProducteById(id_producte)
     End Function
 
     <WebMethod()> _
-    Public Function GetNomProducteById(ByVal id_producte As Integer) As Double
+   Public Function GetIdProducteByNom(ByVal Nom As String) As Integer
+        Return producte.GetIdProducteByNom(Nom)
+    End Function
 
+    <WebMethod()> _
+   Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
+        Return producte.GetPreuProducteById(id_producte)
     End Function
 
     <WebMethod()> _
@@ -98,6 +102,11 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+   Public Function GetStockActualById(ByVal id As Integer) As Integer
+        Return ingredient.getStockActualById(id)
+    End Function
+
+    <WebMethod()> _
    Public Function GetIngredients() As List(Of IngredientDB)
 
         Dim ingredients As New List(Of IngredientDB)
@@ -113,6 +122,7 @@ Public Class Service1
             pro.quantitat = fila("Quantitat").ToString
             pro.stock_minim = fila("StockMinim").ToString
             pro.nom = fila("Nom").ToString
+            pro.stock_actual = fila("StockActual").ToString
 
             ingredients.Add(pro)
         Next
