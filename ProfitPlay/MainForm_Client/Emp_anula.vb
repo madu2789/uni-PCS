@@ -71,4 +71,12 @@
         Me.Hide()
         Emp_Pago.Show()
     End Sub
+
+    Private Sub llista_productes_eliminar_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
+        Dim res = MsgBox("Eliminem aquesta comanda?", MsgBoxStyle.OkCancel, "Eliminar Comanda")
+
+        If (res = MsgBoxResult.Ok) Then
+            llista_productes_eliminar.Items.Remove(e.ClickedItem)
+        End If
+    End Sub
 End Class
