@@ -144,6 +144,8 @@ Namespace ws_profitplay
         
         Private stock_minimField As Integer
         
+        Private stock_actualField As Integer
+        
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private nomField As String
         
@@ -209,7 +211,20 @@ Namespace ws_profitplay
             End Set
         End Property
         
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=4)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=4)>  _
+        Public Property stock_actual() As Integer
+            Get
+                Return Me.stock_actualField
+            End Get
+            Set
+                If (Me.stock_actualField.Equals(value) <> true) Then
+                    Me.stock_actualField = value
+                    Me.RaisePropertyChanged("stock_actual")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=5)>  _
         Public Property nom() As String
             Get
                 Return Me.nomField
@@ -507,6 +522,9 @@ Namespace ws_profitplay
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetProducteResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetProducte", ReplyAction:="*")>  _
         Function GetProducte(ByVal request As ws_profitplay.GetProducteRequest) As ws_profitplay.GetProducteResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetStockActualById", ReplyAction:="*")>  _
+        Function GetStockActualById(ByVal id As Integer) As Integer
         
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetIngredientsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetIngredients", ReplyAction:="*")>  _
@@ -1273,6 +1291,10 @@ Namespace ws_profitplay
             inValue.Body = New ws_profitplay.GetProducteRequestBody
             Dim retVal As ws_profitplay.GetProducteResponse = CType(Me,ws_profitplay.Service1Soap).GetProducte(inValue)
             Return retVal.Body.GetProducteResult
+        End Function
+        
+        Public Function GetStockActualById(ByVal id As Integer) As Integer Implements ws_profitplay.Service1Soap.GetStockActualById
+            Return MyBase.Channel.GetStockActualById(id)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _

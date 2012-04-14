@@ -53,7 +53,6 @@
         End Select
 
         Dim ingredients = ws.GetIngredients()
-        MsgBox("Tenim " + ingredients.Length.ToString)
 
         For Each fila In ingredients
 
@@ -63,9 +62,10 @@
             pro.preu = fila.preu
             pro.quantitat = fila.quantitat
             pro.StockMinim = fila.stock_minim
+            pro.StockActual = fila.stock_actual
             pro.nom = fila.nom
 
-            ts_productes_stock.Items.Add(pro.nom + "(" + pro.StockActual.ToString + ")")
+            ts_productes_stock.Items.Add(pro.nom + " (" + pro.StockActual.ToString + ")")
 
         Next
 
