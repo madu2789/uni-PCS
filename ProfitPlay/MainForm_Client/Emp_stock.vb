@@ -65,7 +65,7 @@
             pro.StockMinim = fila.stock_minim
             pro.nom = fila.nom
 
-            ts_productes_stock.Items.Add(pro.nom)
+            ts_productes_stock.Items.Add(pro.nom + "(" + pro.StockActual.ToString + ")")
 
         Next
 

@@ -55,11 +55,13 @@
     Public Function ObteIngredients() As DataTable
 
         Dim ingredientsDB As DataTable = BD.getIngredients
-
         Return ingredientsDB
 
     End Function
 
+    Public Function getStockActualById(ByVal id As Integer) As Integer
+        Dim stock = BD.GetStockActualById(id)
+    End Function
 
 
 End Class

@@ -52,10 +52,7 @@ Public Class Producte
     End Function
 
     Public Function ContaProductes() As Integer
-        Dim numProductes As Integer = 0
-
-        numProductes = BD.ContaProductes()
-
+        Dim numProductes = BD.ContaProductes()
         Return numProductes
     End Function
 
@@ -67,10 +64,14 @@ Public Class Producte
     End Function
 
     Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
-
+        Return BD.GetPreuProducteById(id_producte)
     End Function
 
-    Public Function GetNomProducteById(ByVal id_producte As Integer) As Double
+    Public Function GetNomProducteById(ByVal id_producte As Integer) As String
+        Return BD.GetNomProducteByID(id_producte)
+    End Function
 
+    Public Function GetIdProducteByNom(ByVal nom As String) As Integer
+        Return BD.GetIDProducteByNom(nom)
     End Function
 End Class

@@ -37,13 +37,14 @@
 
         For Each p In listofcommands
 
+            Dim Nom As String = ws.GetNomProducteById(p.Id_producte)
             If (p.Estat = "En Espera") Then
 
-                llista_productes_eliminar.Items.Add(p.Id_producte)
+                llista_productes_eliminar.Items.Add(Nom)
 
             Else
 
-                llista_resta_productes.Items.Add(p.Id_producte)
+                llista_resta_productes.Items.Add(Nom)
 
             End If
 

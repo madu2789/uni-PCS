@@ -18,8 +18,8 @@
 
     Public Sub connect()
         Try
-            conDB = New OleDb.OleDbConnection(conString)
-            'conDB = New OleDb.OleDbConnection(conString1)
+            'conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
         Catch ex As Exception
             MsgBox("error connexió!", MsgBoxStyle.Critical)
@@ -152,16 +152,75 @@
     End Function
 
     Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
+
+        Dim preu As Double = 0
+
+        Try
+
+            connect()
+            producteDA.Connection = conDB
+            preu = producteDA.GetPreuProducteById(id_producte)
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("error DB productes", MsgBoxStyle.Critical)
+
+        End Try
+
+        Return preu
+
+    End Function
+
+    Public Function GetNomProducteByID(ByVal id_producte As Integer) As String
+
+        Dim Nom As String = "NULL"
+
         Try
             connect()
             producteDA.Connection = conDB
-            'dim preu As Double = producteDA.
+            Nom = producteDA.GetNomProducteById(id_producte)
             disconnect()
         Catch ex As Exception
             MsgBox("error DB productes", MsgBoxStyle.Critical)
         End Try
-        Dim preus As Double = 1
-        Return preus
+
+        Return Nom
+
+    End Function
+
+    Public Function GetIDProducteByNom(ByVal Nom As String) As Integer
+
+        Dim Id As Integer = 0
+
+        Try
+            connect()
+            producteDA.Connection = conDB
+            Id = producteDA.GetIDProducteByNom(Nom)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB productes", MsgBoxStyle.Critical)
+        End Try
+
+        Return Id
+
+    End Function
+
+    Public Function GetStockActualById(ByVal id As Integer) As Integer
+
+        Dim stock As Integer = 0
+
+        Try
+            connect()
+            ingredientDA.Connection = conDB
+            stock = ingredientDA.GetStockActualById(id)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("error DB productes", MsgBoxStyle.Critical)
+        End Try
+
+        Return stock
+
     End Function
 
 End Class
