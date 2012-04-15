@@ -107,10 +107,24 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+   Public Sub UpdateStockActualById(ByVal id As Integer, ByVal s As Integer)
+        ingredient.updateStockActualById(id, s)
+    End Sub
+
+    <WebMethod()> _
+   Public Function GetNomIngredientById(ByVal id As Integer) As String
+        Return ingredient.getNomIngredientById(id)
+    End Function
+
+    <WebMethod()> _
+   Public Function GetIdIngredientByNom(ByVal nom As String) As Integer
+        Return ingredient.getIdIngredientByNom(nom)
+    End Function
+
+    <WebMethod()> _
    Public Function GetIngredients() As List(Of IngredientDB)
 
         Dim ingredients As New List(Of IngredientDB)
-
         Dim info As DataTable = ingredient.ObteIngredients
 
         For Each fila In info.Rows
@@ -134,7 +148,6 @@ Public Class Service1
    Public Function GetComanda() As List(Of ComandaDB)
 
         Dim comandes As New List(Of ComandaDB)
-
         Dim info As DataTable = comanda.GetComanda
 
         For Each fila In info.Rows

@@ -66,3 +66,4 @@ C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\P
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.info_producte.resources
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Emp_anula.resources
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Emp_anula.resources
+C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Emp_anula.resources

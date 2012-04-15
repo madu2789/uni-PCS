@@ -60,7 +60,19 @@
     End Function
 
     Public Function getStockActualById(ByVal id As Integer) As Integer
-        Dim stock = BD.GetStockActualById(id)
+        Return BD.GetStockActualById(id)
+    End Function
+
+    Public Sub updateStockActualById(ByVal id As Integer, ByVal stock As Integer)
+        BD.UpdateStockActualById(id, stock)
+    End Sub
+
+    Public Function getIdIngredientByNom(ByVal Nom As String) As Integer
+        Return BD.GetIdIngredientByNom(Nom)
+    End Function
+
+    Public Function getNomIngredientById(ByVal id As Integer) As String
+        Return BD.GetNomIngredientById(id)
     End Function
 
 

@@ -526,6 +526,17 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetStockActualById", ReplyAction:="*")>  _
         Function GetStockActualById(ByVal id As Integer) As Integer
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/UpdateStockActualById", ReplyAction:="*")>  _
+        Sub UpdateStockActualById(ByVal id As Integer, ByVal s As Integer)
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetNomIngredientByIdResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetNomIngredientById", ReplyAction:="*")>  _
+        Function GetNomIngredientById(ByVal request As ws_profitplay.GetNomIngredientByIdRequest) As ws_profitplay.GetNomIngredientByIdResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nom del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetIdIngredientByNom", ReplyAction:="*")>  _
+        Function GetIdIngredientByNom(ByVal request As ws_profitplay.GetIdIngredientByNomRequest) As ws_profitplay.GetIdIngredientByNomResponse
+        
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetIngredientsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetIngredients", ReplyAction:="*")>  _
         Function GetIngredients(ByVal request As ws_profitplay.GetIngredientsRequest) As ws_profitplay.GetIngredientsResponse
@@ -831,6 +842,150 @@ Namespace ws_profitplay
         Public Sub New(ByVal GetProducteResult() As ws_profitplay.ProducteBD)
             MyBase.New
             Me.GetProducteResult = GetProducteResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetNomIngredientByIdRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetNomIngredientById", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetNomIngredientByIdRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetNomIngredientByIdRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetNomIngredientByIdRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public id As Integer
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal id As Integer)
+            MyBase.New
+            Me.id = id
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetNomIngredientByIdResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetNomIngredientByIdResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetNomIngredientByIdResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetNomIngredientByIdResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetNomIngredientByIdResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public GetNomIngredientByIdResult As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetNomIngredientByIdResult As String)
+            MyBase.New
+            Me.GetNomIngredientByIdResult = GetNomIngredientByIdResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetIdIngredientByNomRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetIdIngredientByNom", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetIdIngredientByNomRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetIdIngredientByNomRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetIdIngredientByNomRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public nom As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal nom As String)
+            MyBase.New
+            Me.nom = nom
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetIdIngredientByNomResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetIdIngredientByNomResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetIdIngredientByNomResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetIdIngredientByNomResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetIdIngredientByNomResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public GetIdIngredientByNomResult As Integer
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetIdIngredientByNomResult As Integer)
+            MyBase.New
+            Me.GetIdIngredientByNomResult = GetIdIngredientByNomResult
         End Sub
     End Class
     
@@ -1295,6 +1450,36 @@ Namespace ws_profitplay
         
         Public Function GetStockActualById(ByVal id As Integer) As Integer Implements ws_profitplay.Service1Soap.GetStockActualById
             Return MyBase.Channel.GetStockActualById(id)
+        End Function
+        
+        Public Sub UpdateStockActualById(ByVal id As Integer, ByVal s As Integer) Implements ws_profitplay.Service1Soap.UpdateStockActualById
+            MyBase.Channel.UpdateStockActualById(id, s)
+        End Sub
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetNomIngredientById(ByVal request As ws_profitplay.GetNomIngredientByIdRequest) As ws_profitplay.GetNomIngredientByIdResponse Implements ws_profitplay.Service1Soap.GetNomIngredientById
+            Return MyBase.Channel.GetNomIngredientById(request)
+        End Function
+        
+        Public Function GetNomIngredientById(ByVal id As Integer) As String
+            Dim inValue As ws_profitplay.GetNomIngredientByIdRequest = New ws_profitplay.GetNomIngredientByIdRequest
+            inValue.Body = New ws_profitplay.GetNomIngredientByIdRequestBody
+            inValue.Body.id = id
+            Dim retVal As ws_profitplay.GetNomIngredientByIdResponse = CType(Me,ws_profitplay.Service1Soap).GetNomIngredientById(inValue)
+            Return retVal.Body.GetNomIngredientByIdResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetIdIngredientByNom(ByVal request As ws_profitplay.GetIdIngredientByNomRequest) As ws_profitplay.GetIdIngredientByNomResponse Implements ws_profitplay.Service1Soap.GetIdIngredientByNom
+            Return MyBase.Channel.GetIdIngredientByNom(request)
+        End Function
+        
+        Public Function GetIdIngredientByNom(ByVal nom As String) As Integer
+            Dim inValue As ws_profitplay.GetIdIngredientByNomRequest = New ws_profitplay.GetIdIngredientByNomRequest
+            inValue.Body = New ws_profitplay.GetIdIngredientByNomRequestBody
+            inValue.Body.nom = nom
+            Dim retVal As ws_profitplay.GetIdIngredientByNomResponse = CType(Me,ws_profitplay.Service1Soap).GetIdIngredientByNom(inValue)
+            Return retVal.Body.GetIdIngredientByNomResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
