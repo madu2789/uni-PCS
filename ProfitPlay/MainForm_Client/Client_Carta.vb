@@ -214,7 +214,7 @@
 
                 'variables temporalment aqui, falta agafar-les d'on sigui!!!!!
                 Dim idUsuari As String = "1"
-                Dim idProducte As String = "1"
+                Dim idProducte As String = ws.GetIdProducteByNom(lv_pedidos.Items.Item(s).Text)
                 Dim notes As String = ""
                 Dim hora As Date = Now
                 ws.SetComanda(idUsuari, idProducte, notes, hora)

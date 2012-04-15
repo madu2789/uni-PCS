@@ -51,10 +51,8 @@
         Return Producte
     End Function
 
-    
-
-    Public Function SetComanda(ByVal id_user As String, ByVal id_producte As String, ByVal notes As String, ByVal hora As Date) As Boolean
-        Dim ok = BD.SetComanda(id_user, id_producte, notes, hora)
+    Public Function SetComanda(ByVal id_user As String, ByVal id_producte As String, ByVal estat As String, ByVal notes As String, ByVal hora As Date) As Boolean
+        Dim ok = BD.SetComanda(id_user, id_producte, estat, notes, hora)
         Return ok
     End Function
 
