@@ -65,7 +65,7 @@
             pro.StockActual = fila.stock_actual
             pro.nom = fila.nom
 
-            ts_productes_stock.Items.Add(pro.nom + " (" + pro.StockActual.ToString + ")")
+            ts_productes_stock.Items.Add(pro.nom)
 
         Next
 
@@ -75,5 +75,22 @@
         Me.Hide()
         Emp_anula.Show()
         Me.Dispose()
+    End Sub
+
+    Private Sub ts_productes_stock_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ts_productes_stock.ItemClicked
+
+        Dim res = InputBox("Stock actual de " + e.ClickedItem.Text + ": " + ws.GetStockActualById(ws.GetIdIngredientByNom(e.ClickedItem.Text)).ToString + vbCr + "Entra el nou stock", "Canvi de stock", "", , )
+
+        If (res <> "") Then
+            Try
+                Dim newstock As Integer = Integer.Parse(res)
+                ws.UpdateStockActualById(ws.GetIdIngredientByNom(e.ClickedItem.Text), newstock)
+            Catch ex As Exception
+                Dim newstock As Integer = 0
+                MsgBox("Error en el format del nou stock", MsgBoxStyle.Critical, "Format Incorrecte")
+            End Try
+        End If
+        
+
     End Sub
 End Class

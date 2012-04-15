@@ -107,6 +107,45 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UpdateStockActualById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="s" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStockActualByIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNomIngredientById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNomIngredientByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNomIngredientByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIdIngredientByNom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIdIngredientByNomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetIdIngredientByNomResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetIngredients">
         <s:complexType />
       </s:element>
@@ -269,6 +308,24 @@
   <wsdl:message name="GetStockActualByIdSoapOut">
     <wsdl:part name="parameters" element="tns:GetStockActualByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateStockActualByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStockActualById" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStockActualByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStockActualByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNomIngredientByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNomIngredientById" />
+  </wsdl:message>
+  <wsdl:message name="GetNomIngredientByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNomIngredientByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIdIngredientByNomSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIdIngredientByNom" />
+  </wsdl:message>
+  <wsdl:message name="GetIdIngredientByNomSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIdIngredientByNomResponse" />
+  </wsdl:message>
   <wsdl:message name="GetIngredientsSoapIn">
     <wsdl:part name="parameters" element="tns:GetIngredients" />
   </wsdl:message>
@@ -333,6 +390,18 @@
     <wsdl:operation name="GetStockActualById">
       <wsdl:input message="tns:GetStockActualByIdSoapIn" />
       <wsdl:output message="tns:GetStockActualByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStockActualById">
+      <wsdl:input message="tns:UpdateStockActualByIdSoapIn" />
+      <wsdl:output message="tns:UpdateStockActualByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNomIngredientById">
+      <wsdl:input message="tns:GetNomIngredientByIdSoapIn" />
+      <wsdl:output message="tns:GetNomIngredientByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdIngredientByNom">
+      <wsdl:input message="tns:GetIdIngredientByNomSoapIn" />
+      <wsdl:output message="tns:GetIdIngredientByNomSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetIngredients">
       <wsdl:input message="tns:GetIngredientsSoapIn" />
@@ -417,6 +486,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetStockActualById">
       <soap:operation soapAction="http://tempuri.org/GetStockActualById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStockActualById">
+      <soap:operation soapAction="http://tempuri.org/UpdateStockActualById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNomIngredientById">
+      <soap:operation soapAction="http://tempuri.org/GetNomIngredientById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdIngredientByNom">
+      <soap:operation soapAction="http://tempuri.org/GetIdIngredientByNom" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -537,6 +633,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetStockActualById">
       <soap12:operation soapAction="http://tempuri.org/GetStockActualById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStockActualById">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStockActualById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNomIngredientById">
+      <soap12:operation soapAction="http://tempuri.org/GetNomIngredientById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdIngredientByNom">
+      <soap12:operation soapAction="http://tempuri.org/GetIdIngredientByNom" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -4,7 +4,12 @@
 
     'cadena de conexio del MADU
     Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
+
+    'DarkWizard Torre
     Dim conString1 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
+    'DarkWizard Portatil
+    Dim conString2 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
+
     'tableadapters:
     Dim empleatDA As New profit_playDataSetTableAdapters.EmpleatTableAdapter
     Dim ingredientDA As New profit_playDataSetTableAdapters.IngredientTableAdapter
@@ -18,11 +23,14 @@
 
     Public Sub connect()
         Try
-            'conDB = New OleDb.OleDbConnection(conString)
-            conDB = New OleDb.OleDbConnection(conString1)
+
+            conDB = New OleDb.OleDbConnection(conString2)
             conDB.Open()
+
         Catch ex As Exception
-            MsgBox("error connexió!", MsgBoxStyle.Critical)
+
+            MsgBox("Error en conectar-se a la BD", MsgBoxStyle.Critical)
+
         End Try
     End Sub
 
@@ -31,80 +39,121 @@
     End Sub
 
     Public Function consulta_empleat(ByVal user As String) As DataTable
+
         Try
             connect()
-
             empleatDA.Connection = conDB
             empleatDA.ConsultaPassword(DS.Empleat, user)
+            disconnect()
 
         Catch ex As Exception
-            MsgBox("error llegeix user", MsgBoxStyle.Critical)
+
+            MsgBox("Error llegeix usuari", MsgBoxStyle.Critical)
+
         End Try
-        disconnect()
 
         Return DS.Empleat
+
     End Function
 
     Public Function ContaEmpleats() As Integer
+
         Dim numUsuaris As Integer = 0
+
         Try
+
             connect()
             empleatDA.Connection = conDB
             numUsuaris = empleatDA.ContaEmpleats()
+            disconnect()
+
         Catch ex As Exception
-            MsgBox("error DB", MsgBoxStyle.Critical)
+
+            MsgBox("Error conta empleats", MsgBoxStyle.Critical)
+
         End Try
+
         Return numUsuaris
+
     End Function
 
     Public Function GetEmpleats() As DataTable
+
         Try
+
             connect()
             empleatDA.Connection = conDB
             empleatDA.Fill(DS.Empleat)
             disconnect()
+
         Catch ex As Exception
-            MsgBox("error DB", MsgBoxStyle.Critical)
+
+            MsgBox("Error get empleats", MsgBoxStyle.Critical)
+
         End Try
+
         Return DS.Empleat
+
     End Function
 
     Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
+
         Dim ok As Boolean = False
         Try
+
             connect()
             empleatDA.Connection = conDB
             empleatDA.InsertEmpleat(rol, nom, nom, password, cognom)
             disconnect()
             ok = True
+
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+
+            MsgBox("Set Empleat", MsgBoxStyle.Critical)
+
         End Try
+
         Return ok
+
     End Function
 
     Public Function ContaProductes() As Integer
+
         Dim numProductes As Integer = 0
         Try
+
             connect()
             producteDA.Connection = conDB
             numProductes = empleatDA.ContaEmpleats()
+            disconnect()
+
         Catch ex As Exception
-            MsgBox("error DB", MsgBoxStyle.Critical)
+
+            MsgBox("Error conta productes", MsgBoxStyle.Critical)
+
         End Try
+
         Return numProductes
+
     End Function
 
     Public Function GetProductes() As DataTable
+
         Try
+
             connect()
             producteDA.Connection = conDB
             producteDA.Fill(DS.Producte)
             disconnect()
+
         Catch ex As Exception
-            MsgBox("error DB productes", MsgBoxStyle.Critical)
+
+            MsgBox("Error get productes", MsgBoxStyle.Critical)
+
         End Try
+
         Return DS.Producte
+
     End Function
 
     Public Function getIngredients() As DataTable
@@ -115,7 +164,7 @@
             ingredientDA.Fill(DS.Ingredient)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB ingredients", MsgBoxStyle.Critical)
+            MsgBox("Error get ingredients", MsgBoxStyle.Critical)
         End Try
         Return DS.Ingredient
 
@@ -146,7 +195,7 @@
             comandaDA.Fill(DS.Comanda)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB comandes", MsgBoxStyle.Critical)
+            MsgBox("Error get comanda", MsgBoxStyle.Critical)
         End Try
         Return DS.Comanda
     End Function
@@ -164,11 +213,45 @@
 
         Catch ex As Exception
 
-            MsgBox("error DB productes", MsgBoxStyle.Critical)
+            MsgBox("Error get preu producte", MsgBoxStyle.Critical)
 
         End Try
 
         Return preu
+
+    End Function
+
+    Public Function GetNomIngredientById(ByVal id_ingredient As Integer) As String
+
+        Dim Nom As String = "NULL"
+
+        Try
+            connect()
+            ingredientDA.Connection = conDB
+            Nom = ingredientDA.GetNomIngredientById(id_ingredient)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error get preu producte", MsgBoxStyle.Critical)
+        End Try
+
+        Return Nom
+
+    End Function
+
+    Public Function GetIdIngredientByNom(ByVal Nom As String) As Integer
+
+        Dim Id As Integer = 0
+
+        Try
+            connect()
+            ingredientDA.Connection = conDB
+            Id = ingredientDA.GetIdIngredientByNom(Nom)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error get preu producte", MsgBoxStyle.Critical)
+        End Try
+
+        Return Id
 
     End Function
 
@@ -182,7 +265,7 @@
             Nom = producteDA.GetNomProducteById(id_producte)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB productes", MsgBoxStyle.Critical)
+            MsgBox("Error get nom producte", MsgBoxStyle.Critical)
         End Try
 
         Return Nom
@@ -199,7 +282,7 @@
             Id = producteDA.GetIDProducteByNom(Nom)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB productes", MsgBoxStyle.Critical)
+            MsgBox("Error get Producte", MsgBoxStyle.Critical)
         End Try
 
         Return Id
@@ -216,7 +299,22 @@
             stock = ingredientDA.GetStockActualById(id)
             disconnect()
         Catch ex As Exception
-            MsgBox("error DB productes", MsgBoxStyle.Critical)
+            MsgBox("Error get stock actual", MsgBoxStyle.Critical)
+        End Try
+
+        Return stock
+
+    End Function
+
+    Public Function UpdateStockActualById(ByVal id As Integer, ByVal stock As Integer)
+
+        Try
+            connect()
+            ingredientDA.Connection = conDB
+            stock = ingredientDA.UpdateStockById(stock, id)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error Update Stock", MsgBoxStyle.Critical)
         End Try
 
         Return stock

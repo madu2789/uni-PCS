@@ -14,10 +14,6 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:ProfitPlay_DB.profit_playDataSet.IngredientDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.ProducteDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -30,15 +26,15 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSet.IngredientDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.ComandaRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.EmpleatRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProfitPlay_DB.profit_playDataSet.IngredientRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
@@ -54,15 +50,15 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSet.IngredientRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.ComandaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.EmpleatRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ProfitPlay_DB.profit_playDataSet.IngredientRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -78,6 +74,10 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSet.IngredientRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet">
 	<summary>
 Represents a strongly typed in-memory cache of data.
@@ -90,10 +90,6 @@ Represents the connection and commands used to retrieve and save data.
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProfitPlay_DB.profit_playDataSetTableAdapters.IngredientTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSetTableAdapters.ProducteTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
@@ -103,6 +99,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSetTableAdapters.UsuariTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSetTableAdapters.IngredientTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
