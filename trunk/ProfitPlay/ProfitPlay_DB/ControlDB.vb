@@ -170,21 +170,20 @@
 
     End Function
 
-    Public Function SetComanda(ByVal id_user As String, ByVal id_producte As String, ByVal notes As String, ByVal hora As Date) As Boolean
+    Public Function SetComanda(ByVal id_user As Integer, ByVal id_producte As Integer, ByVal estat As String, ByVal notes As String, ByVal hora As String) As Boolean
 
         Dim ok As Boolean = False
-        Dim estat As String = "Sol·licitat"
+
         Try
             connect()
             comandaDA.Connection = conDB
-
-            'revisar format de la query
-            comandaDA.InsertComanda(CInt(id_user), CInt(id_producte), hora, notes, estat)
-            ok = True
+            comandaDA.InsertComanda(id_user, id_producte, estat, notes, hora)
             disconnect()
+            ok = True
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
         End Try
+
         Return ok
     End Function
 
@@ -245,7 +244,7 @@
         Try
             connect()
             ingredientDA.Connection = conDB
-            Id = ingredientDA.GetIdIngredientByNom(Nom)
+            Nom = ingredientDA.GetIdIngredientByNom(Nom)
             disconnect()
         Catch ex As Exception
             MsgBox("Error get preu producte", MsgBoxStyle.Critical)
