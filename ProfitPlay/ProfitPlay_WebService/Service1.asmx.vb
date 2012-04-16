@@ -173,6 +173,16 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+   Public Function AnulaComanda(ByVal id_comanda As String) As Boolean
+        Return comanda.AnulaComanda(id_comanda)
+    End Function
+
+    <WebMethod()> _
+  Public Function SolPagarComanda(ByVal id_comanda As String) As Boolean
+        Return comanda.SolPagarComanda(id_comanda)
+    End Function
+
+    <WebMethod()> _
  Public Function ContaEmpleats() As Integer
         Return empleat.ContaEmpleats
     End Function

@@ -201,6 +201,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="id_user" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="id_producte" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estat" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="hora" type="s:dateTime" />
           </s:sequence>
@@ -210,6 +211,34 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="SetComandaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnulaComanda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_comanda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnulaComandaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AnulaComandaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolPagarComanda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_comanda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolPagarComandaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SolPagarComandaResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -344,6 +373,18 @@
   <wsdl:message name="SetComandaSoapOut">
     <wsdl:part name="parameters" element="tns:SetComandaResponse" />
   </wsdl:message>
+  <wsdl:message name="AnulaComandaSoapIn">
+    <wsdl:part name="parameters" element="tns:AnulaComanda" />
+  </wsdl:message>
+  <wsdl:message name="AnulaComandaSoapOut">
+    <wsdl:part name="parameters" element="tns:AnulaComandaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SolPagarComandaSoapIn">
+    <wsdl:part name="parameters" element="tns:SolPagarComanda" />
+  </wsdl:message>
+  <wsdl:message name="SolPagarComandaSoapOut">
+    <wsdl:part name="parameters" element="tns:SolPagarComandaResponse" />
+  </wsdl:message>
   <wsdl:message name="ContaEmpleatsSoapIn">
     <wsdl:part name="parameters" element="tns:ContaEmpleats" />
   </wsdl:message>
@@ -414,6 +455,14 @@
     <wsdl:operation name="SetComanda">
       <wsdl:input message="tns:SetComandaSoapIn" />
       <wsdl:output message="tns:SetComandaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AnulaComanda">
+      <wsdl:input message="tns:AnulaComandaSoapIn" />
+      <wsdl:output message="tns:AnulaComandaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolPagarComanda">
+      <wsdl:input message="tns:SolPagarComandaSoapIn" />
+      <wsdl:output message="tns:SolPagarComandaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ContaEmpleats">
       <wsdl:input message="tns:ContaEmpleatsSoapIn" />
@@ -540,6 +589,24 @@
     </wsdl:operation>
     <wsdl:operation name="SetComanda">
       <soap:operation soapAction="http://tempuri.org/SetComanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnulaComanda">
+      <soap:operation soapAction="http://tempuri.org/AnulaComanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolPagarComanda">
+      <soap:operation soapAction="http://tempuri.org/SolPagarComanda" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -687,6 +754,24 @@
     </wsdl:operation>
     <wsdl:operation name="SetComanda">
       <soap12:operation soapAction="http://tempuri.org/SetComanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnulaComanda">
+      <soap12:operation soapAction="http://tempuri.org/AnulaComanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolPagarComanda">
+      <soap12:operation soapAction="http://tempuri.org/SolPagarComanda" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -217,7 +217,8 @@
                 Dim idProducte As String = ws.GetIdProducteByNom(lv_pedidos.Items.Item(s).Text)
                 Dim notes As String = ""
                 Dim hora As Date = Now
-                ws.SetComanda(idUsuari, idProducte, notes, hora)
+                Dim estat = "Sol·licitat"
+                ws.SetComanda(idUsuari, idProducte, estat, notes, hora)
 
             Next
 
