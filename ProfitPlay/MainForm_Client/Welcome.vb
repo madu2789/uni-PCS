@@ -50,13 +50,18 @@
             If num_comensals.Value < 1 Then
                 MsgBox("Número de comensals incorrecte!", MsgBoxStyle.Critical)
             Else
+
+                Dim lastid = ws.GetLastUserId()
+                MsgBox("Last id " + ws.GetLastUserId().ToString + vbCr + "New id " + (lastid + 1).ToString)
                 Me.Hide()
                 If txtb_nomTaula.Text Is Nothing Then
                     'constructor amb nom propi (nostre)!
+                    ws.InsertNewUser("NA", 1)
                     Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
                     main.ShowDialog()
                 Else
                     'constructor amb nom demanat!
+                    ws.InsertNewUser(txtb_nomTaula.Text, 1)
                     Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
                     main.ShowDialog()
                 End If

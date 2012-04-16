@@ -60,6 +60,15 @@ Public Class Service1
     Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String
         Return empleat.log_empleat(user, password)
     End Function
+    <WebMethod()> _
+        Public Function GetLastUserId() As Integer
+        Return empleat.getLastUserId()
+    End Function
+
+    <WebMethod()> _
+        Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
+        empleat.InsertNewUser(Nom, Punts)
+    End Sub
 
     <WebMethod()> _
     Public Function ContaProductes() As Integer
