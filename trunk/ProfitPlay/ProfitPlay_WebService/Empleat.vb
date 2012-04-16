@@ -46,11 +46,17 @@ Public Class Empleat
         Return numUsuaris
     End Function
 
+    Public Function getLastUserId() As Integer
+        Return BD.getLastUserId()
+    End Function
+
+    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
+        BD.InsertNewUser(Nom, Punts)
+    End Sub
+
+
     Public Function GetEmpleat(ByVal id As Integer) As DataTable
-
-        Dim info As DataTable = BD.GetEmpleats
-
-        Return info
+        Return BD.GetEmpleats
     End Function
 
     Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean

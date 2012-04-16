@@ -12,6 +12,7 @@
 
     'tableadapters:
     Dim empleatDA As New profit_playDataSetTableAdapters.EmpleatTableAdapter
+    Dim usuariDA As New profit_playDataSetTableAdapters.UsuariTableAdapter
     Dim ingredientDA As New profit_playDataSetTableAdapters.IngredientTableAdapter
     Dim comandaDA As New profit_playDataSetTableAdapters.ComandaTableAdapter
     Dim producteDA As New profit_playDataSetTableAdapters.ProducteTableAdapter
@@ -24,7 +25,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
 
         Catch ex As Exception
@@ -36,6 +37,40 @@
 
     Public Sub disconnect()
         conDB.Close()
+    End Sub
+
+    Public Function getLastUserId() As Integer
+
+        Dim res As Integer = 0
+
+        Try
+            connect()
+            usuariDA.Connection = conDB
+            res = usuariDA.GetLastUserId()
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("Error agafant ultima ID", MsgBoxStyle.Critical)
+
+        End Try
+
+        Return res
+    End Function
+
+    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
+        Try
+            connect()
+            usuariDA.Connection = conDB
+            usuariDA.InsertNewUser(0, "hey")
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("Error insereix usuari", MsgBoxStyle.Critical)
+            MsgBox(ex.ToString)
+
+        End Try
     End Sub
 
     Public Function consulta_empleat(ByVal user As String) As DataTable

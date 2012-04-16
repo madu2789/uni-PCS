@@ -17,6 +17,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetLastUserId">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLastUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLastUserIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Punts" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNewUserResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="ContaProductes">
         <s:complexType />
       </s:element>
@@ -301,6 +322,18 @@
   <wsdl:message name="LogEmpleatSoapOut">
     <wsdl:part name="parameters" element="tns:LogEmpleatResponse" />
   </wsdl:message>
+  <wsdl:message name="GetLastUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetLastUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewUserSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNewUser" />
+  </wsdl:message>
+  <wsdl:message name="InsertNewUserSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNewUserResponse" />
+  </wsdl:message>
   <wsdl:message name="ContaProductesSoapIn">
     <wsdl:part name="parameters" element="tns:ContaProductes" />
   </wsdl:message>
@@ -408,6 +441,14 @@
       <wsdl:input message="tns:LogEmpleatSoapIn" />
       <wsdl:output message="tns:LogEmpleatSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLastUserId">
+      <wsdl:input message="tns:GetLastUserIdSoapIn" />
+      <wsdl:output message="tns:GetLastUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewUser">
+      <wsdl:input message="tns:InsertNewUserSoapIn" />
+      <wsdl:output message="tns:InsertNewUserSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ContaProductes">
       <wsdl:input message="tns:ContaProductesSoapIn" />
       <wsdl:output message="tns:ContaProductesSoapOut" />
@@ -481,6 +522,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LogEmpleat">
       <soap:operation soapAction="http://tempuri.org/LogEmpleat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUserId">
+      <soap:operation soapAction="http://tempuri.org/GetLastUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewUser">
+      <soap:operation soapAction="http://tempuri.org/InsertNewUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -646,6 +705,24 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LogEmpleat">
       <soap12:operation soapAction="http://tempuri.org/LogEmpleat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetLastUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewUser">
+      <soap12:operation soapAction="http://tempuri.org/InsertNewUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
