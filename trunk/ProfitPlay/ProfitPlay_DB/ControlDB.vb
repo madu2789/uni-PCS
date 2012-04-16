@@ -24,7 +24,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString2)
+            conDB = New OleDb.OleDbConnection(conString)
             conDB.Open()
 
         Catch ex As Exception
@@ -170,18 +170,19 @@
 
     End Function
 
-    Public Function SetComanda(ByVal id_user As Integer, ByVal id_producte As Integer, ByVal estat As String, ByVal notes As String, ByVal hora As String) As Boolean
+    Public Function SetComanda(ByVal id_user As Integer, ByVal id_producte As Integer, ByVal estat As String, ByVal notes As String, ByVal hora As Date) As Boolean
 
         Dim ok As Boolean = False
 
         Try
             connect()
             comandaDA.Connection = conDB
-            comandaDA.InsertComanda(id_user, id_producte, estat, notes, hora)
+            comandaDA.InsertComanda(id_user, id_producte, hora, notes, estat)
             disconnect()
             ok = True
         Catch ex As Exception
-            MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
+            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
 
         Return ok
@@ -197,6 +198,51 @@
             MsgBox("Error get comanda", MsgBoxStyle.Critical)
         End Try
         Return DS.Comanda
+    End Function
+
+    Public Function DeleteComanda(ByVal id_comanda As String) As Boolean
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            comandaDA.DeleteComanda(id_comanda)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            MsgBox("Error delete comanda", MsgBoxStyle.Critical)
+        End Try
+        Return ok
+    End Function
+
+    Public Function SolAnulaComanda(ByVal id_comanda As String) As Boolean
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            comandaDA.UpdateEstat("Sol·licitat per anular", id_comanda)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            MsgBox("Error sol·licitut anular comanda", MsgBoxStyle.Critical)
+        End Try
+        Return ok
+    End Function
+
+    Public Function SolPagarComanda(ByVal id_comanda As String) As Boolean
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            comandaDA.UpdateEstat("Sol·licitat per pagar", id_comanda)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            MsgBox("Error sol·licitut pagar comanda", MsgBoxStyle.Critical)
+        End Try
+        Return ok
     End Function
 
     Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double

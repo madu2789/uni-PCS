@@ -98,9 +98,9 @@ Partial Class Client_Pago
         Me.lbl_importtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_importtotal.Location = New System.Drawing.Point(183, 96)
         Me.lbl_importtotal.Name = "lbl_importtotal"
-        Me.lbl_importtotal.Size = New System.Drawing.Size(172, 25)
+        Me.lbl_importtotal.Size = New System.Drawing.Size(130, 25)
         Me.lbl_importtotal.TabIndex = 26
-        Me.lbl_importtotal.Text = "Import total: XXX"
+        Me.lbl_importtotal.Text = "Import total: "
         '
         'lbl_importparcial
         '
@@ -108,9 +108,9 @@ Partial Class Client_Pago
         Me.lbl_importparcial.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_importparcial.Location = New System.Drawing.Point(506, 96)
         Me.lbl_importparcial.Name = "lbl_importparcial"
-        Me.lbl_importparcial.Size = New System.Drawing.Size(246, 25)
+        Me.lbl_importparcial.Size = New System.Drawing.Size(198, 25)
         Me.lbl_importparcial.TabIndex = 27
-        Me.lbl_importparcial.Text = "Import per persona: XXX"
+        Me.lbl_importparcial.Text = "Import per persona:"
         '
         'pnl_menu
         '
@@ -202,9 +202,9 @@ Partial Class Client_Pago
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_taula.Location = New System.Drawing.Point(122, 17)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
+        Me.lbl_taula.Size = New System.Drawing.Size(104, 31)
         Me.lbl_taula.TabIndex = 30
-        Me.lbl_taula.Text = "Taula: XXX"
+        Me.lbl_taula.Text = "Taula: "
         '
         'lbl_punts
         '

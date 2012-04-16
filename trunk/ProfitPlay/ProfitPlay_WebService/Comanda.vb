@@ -60,4 +60,16 @@
         Return BD.GetComanda()
     End Function
 
+    Public Function AnulaComanda(ByVal id_comanda As String) As Boolean
+        Return BD.DeleteComanda(id_comanda)
+    End Function
+
+    Public Function SolPagarComanda(ByVal id_comanda As String) As Boolean
+        Return BD.SolPagarComanda(id_comanda)
+    End Function
+
+    Public Function SolPagarAnula(ByVal id_comanda As String) As Boolean
+        Return BD.SolPagarComanda(id_comanda)
+    End Function
+
 End Class
