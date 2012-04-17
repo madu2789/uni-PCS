@@ -56,8 +56,8 @@
                 Me.Hide()
                 If txtb_nomTaula.Text Is Nothing Then
                     'constructor amb nom propi (nostre)!
-                    ws.InsertNewUser("NA", 1)
-                    Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
+                    ws.InsertNewUser("NA", 0)
+                    Dim main As New Mainform_client(txtb_nomTaula.Text, 0)
                     main.ShowDialog()
                 Else
                     'constructor amb nom demanat!
