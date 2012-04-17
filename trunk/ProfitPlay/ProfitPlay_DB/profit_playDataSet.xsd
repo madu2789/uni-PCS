@@ -91,7 +91,7 @@ WHERE        (Id_comanda = ?)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteComandaByUserId" Modifier="Public" Name="DeleteComandaByUserId" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="DeleteComandaByUserId">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteComandaByUserId" Modifier="Public" Name="DeleteComandaByUserId" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteComandaByUserId">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Comanda
@@ -112,7 +112,7 @@ WHERE        (Id_usuari = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="InsertComanda" Modifier="Public" Name="InsertComanda" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertComanda">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="InsertComanda" Modifier="Public" Name="InsertComanda" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertComanda">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `Comanda` (`Id_usuari`, `Id_producte`, `Hora`, `Notes`, `Estat`) VALUES (?, ?, ?, ?, ?)</CommandText>
@@ -126,7 +126,7 @@ WHERE        (Id_usuari = ?)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateEstat" Modifier="Public" Name="UpdateEstat" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateEstat">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateEstat" Modifier="Public" Name="UpdateEstat" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateEstat">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Comanda
@@ -361,52 +361,6 @@ WHERE        (Id_producte = ?)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Producte-IngredientTableAdapter" GeneratorDataComponentClassName="Producte_IngredientTableAdapter" Name="Producte-Ingredient" UserDataComponentName="Producte-IngredientTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="Producte-Ingredient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `Producte-Ingredient` WHERE ((`Id_producte` = ?) AND (`Id_ingredient` = ?))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `Producte-Ingredient` (`Id_producte`, `Id_ingredient`) VALUES (?, ?)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id_producte, Id_ingredient FROM [Producte-Ingredient]</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `Producte-Ingredient` SET `Id_producte` = ?, `Id_ingredient` = ? WHERE ((`Id_producte` = ?) AND (`Id_ingredient` = ?))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Id_producte" DataSetColumn="Id_producte" />
-              <Mapping SourceColumn="Id_ingredient" DataSetColumn="Id_ingredient" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuariTableAdapter" GeneratorDataComponentClassName="UsuariTableAdapter" Name="Usuari" UserDataComponentName="UsuariTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="Usuari" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -615,6 +569,81 @@ WHERE        (Id_ingredient = ?)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Producte-IngredientTableAdapter" GeneratorDataComponentClassName="Producte_IngredientTableAdapter" Name="Producte-Ingredient" UserDataComponentName="Producte-IngredientTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="Producte-Ingredient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Producte-Ingredient` WHERE ((`Id_producte` = ?) AND (`Id_ingredient` = ?) AND ((? = 1 AND `Quantitat` IS NULL) OR (`Quantitat` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Quantitat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantitat" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Quantitat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantitat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Producte-Ingredient` (`Id_producte`, `Id_ingredient`, `Quantitat`) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Quantitat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantitat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id_producte, Id_ingredient, Quantitat FROM [Producte-Ingredient]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Producte-Ingredient` SET `Id_producte` = ?, `Id_ingredient` = ?, `Quantitat` = ? WHERE ((`Id_producte` = ?) AND (`Id_ingredient` = ?) AND ((? = 1 AND `Quantitat` IS NULL) OR (`Quantitat` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Quantitat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantitat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Id_ingredient" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_ingredient" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Quantitat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantitat" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Quantitat" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Quantitat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_producte" DataSetColumn="Id_producte" />
+              <Mapping SourceColumn="Id_ingredient" DataSetColumn="Id_ingredient" />
+              <Mapping SourceColumn="Quantitat" DataSetColumn="Quantitat" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="Producte-Ingredient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillAllPlats" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAllPlats" GeneratorSourceName="FillAllPlats" GetMethodModifier="Public" GetMethodName="GetAllPlats" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAllPlats" UserSourceName="FillAllPlats">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Id_producte, Id_ingredient, Quantitat
+FROM            [Producte-Ingredient]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="Producte-Ingredient" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillIngredientsPlat" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetIngredientsPlat" GeneratorSourceName="FillIngredientsPlat" GetMethodModifier="Public" GetMethodName="GetIngredientsPlat" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetIngredientsPlat" UserSourceName="FillIngredientsPlat">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Id_ingredient, Quantitat
+FROM            [Producte-Ingredient]
+WHERE        (Id_producte = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Id_producte" DataSourceName="Producte-Ingredient" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="Id_producte" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Id_producte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -626,18 +655,18 @@ WHERE        (Id_ingredient = ?)</CommandText>
         <xs:element name="Comanda" msprop:Generator_UserTableName="Comanda" msprop:Generator_RowDeletedName="ComandaRowDeleted" msprop:Generator_RowChangedName="ComandaRowChanged" msprop:Generator_RowClassName="ComandaRow" msprop:Generator_RowChangingName="ComandaRowChanging" msprop:Generator_RowEvArgName="ComandaRowChangeEvent" msprop:Generator_RowEvHandlerName="ComandaRowChangeEventHandler" msprop:Generator_TableClassName="ComandaDataTable" msprop:Generator_TableVarName="tableComanda" msprop:Generator_RowDeletingName="ComandaRowDeleting" msprop:Generator_TablePropName="Comanda">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_comanda" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_comanda" msprop:Generator_ColumnPropNameInRow="Id_comanda" msprop:Generator_ColumnVarNameInTable="columnId_comanda" msprop:Generator_ColumnPropNameInTable="Id_comandaColumn" type="xs:int" />
-              <xs:element name="Id_usuari" msprop:Generator_UserColumnName="Id_usuari" msprop:Generator_ColumnPropNameInRow="Id_usuari" msprop:Generator_ColumnVarNameInTable="columnId_usuari" msprop:Generator_ColumnPropNameInTable="Id_usuariColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="Id_producte" msprop:Generator_UserColumnName="Id_producte" msprop:Generator_ColumnPropNameInRow="Id_producte" msprop:Generator_ColumnVarNameInTable="columnId_producte" msprop:Generator_ColumnPropNameInTable="Id_producteColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="Hora" msprop:Generator_UserColumnName="Hora" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" msprop:Generator_ColumnPropNameInTable="HoraColumn" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Notes" msprop:Generator_UserColumnName="Notes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInTable="NotesColumn" minOccurs="0">
+              <xs:element name="Id_comanda" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_comanda" msprop:Generator_ColumnVarNameInTable="columnId_comanda" msprop:Generator_ColumnPropNameInRow="Id_comanda" msprop:Generator_ColumnPropNameInTable="Id_comandaColumn" type="xs:int" />
+              <xs:element name="Id_usuari" msprop:Generator_UserColumnName="Id_usuari" msprop:Generator_ColumnVarNameInTable="columnId_usuari" msprop:Generator_ColumnPropNameInRow="Id_usuari" msprop:Generator_ColumnPropNameInTable="Id_usuariColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Id_producte" msprop:Generator_UserColumnName="Id_producte" msprop:Generator_ColumnVarNameInTable="columnId_producte" msprop:Generator_ColumnPropNameInRow="Id_producte" msprop:Generator_ColumnPropNameInTable="Id_producteColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Hora" msprop:Generator_UserColumnName="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_UserColumnName="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Estat" msprop:Generator_UserColumnName="Estat" msprop:Generator_ColumnPropNameInRow="Estat" msprop:Generator_ColumnVarNameInTable="columnEstat" msprop:Generator_ColumnPropNameInTable="EstatColumn" minOccurs="0">
+              <xs:element name="Estat" msprop:Generator_UserColumnName="Estat" msprop:Generator_ColumnVarNameInTable="columnEstat" msprop:Generator_ColumnPropNameInRow="Estat" msprop:Generator_ColumnPropNameInTable="EstatColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -650,36 +679,36 @@ WHERE        (Id_ingredient = ?)</CommandText>
         <xs:element name="Empleat" msprop:Generator_UserTableName="Empleat" msprop:Generator_RowDeletedName="EmpleatRowDeleted" msprop:Generator_RowChangedName="EmpleatRowChanged" msprop:Generator_RowClassName="EmpleatRow" msprop:Generator_RowChangingName="EmpleatRowChanging" msprop:Generator_RowEvArgName="EmpleatRowChangeEvent" msprop:Generator_RowEvHandlerName="EmpleatRowChangeEventHandler" msprop:Generator_TableClassName="EmpleatDataTable" msprop:Generator_TableVarName="tableEmpleat" msprop:Generator_RowDeletingName="EmpleatRowDeleting" msprop:Generator_TablePropName="Empleat">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_empleat" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_empleat" msprop:Generator_ColumnPropNameInRow="Id_empleat" msprop:Generator_ColumnVarNameInTable="columnId_empleat" msprop:Generator_ColumnPropNameInTable="Id_empleatColumn" type="xs:int" />
-              <xs:element name="Rol" msprop:Generator_UserColumnName="Rol" msprop:Generator_ColumnPropNameInRow="Rol" msprop:Generator_ColumnVarNameInTable="columnRol" msprop:Generator_ColumnPropNameInTable="RolColumn" minOccurs="0">
+              <xs:element name="Id_empleat" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_empleat" msprop:Generator_ColumnVarNameInTable="columnId_empleat" msprop:Generator_ColumnPropNameInRow="Id_empleat" msprop:Generator_ColumnPropNameInTable="Id_empleatColumn" type="xs:int" />
+              <xs:element name="Rol" msprop:Generator_UserColumnName="Rol" msprop:Generator_ColumnVarNameInTable="columnRol" msprop:Generator_ColumnPropNameInRow="Rol" msprop:Generator_ColumnPropNameInTable="RolColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
+              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Username" msprop:Generator_UserColumnName="Username" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInTable="UsernameColumn" minOccurs="0">
+              <xs:element name="Username" msprop:Generator_UserColumnName="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInTable="PasswordColumn" minOccurs="0">
+              <xs:element name="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Cognom" msprop:Generator_UserColumnName="Cognom" msprop:Generator_ColumnPropNameInRow="Cognom" msprop:Generator_ColumnVarNameInTable="columnCognom" msprop:Generator_ColumnPropNameInTable="CognomColumn" minOccurs="0">
+              <xs:element name="Cognom" msprop:Generator_UserColumnName="Cognom" msprop:Generator_ColumnVarNameInTable="columnCognom" msprop:Generator_ColumnPropNameInRow="Cognom" msprop:Generator_ColumnPropNameInTable="CognomColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -692,28 +721,61 @@ WHERE        (Id_ingredient = ?)</CommandText>
         <xs:element name="Producte" msprop:Generator_UserTableName="Producte" msprop:Generator_RowDeletedName="ProducteRowDeleted" msprop:Generator_RowChangedName="ProducteRowChanged" msprop:Generator_RowClassName="ProducteRow" msprop:Generator_RowChangingName="ProducteRowChanging" msprop:Generator_RowEvArgName="ProducteRowChangeEvent" msprop:Generator_RowEvHandlerName="ProducteRowChangeEventHandler" msprop:Generator_TableClassName="ProducteDataTable" msprop:Generator_TableVarName="tableProducte" msprop:Generator_RowDeletingName="ProducteRowDeleting" msprop:Generator_TablePropName="Producte">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id_producte" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_producte" msprop:Generator_ColumnPropNameInRow="Id_producte" msprop:Generator_ColumnVarNameInTable="columnId_producte" msprop:Generator_ColumnPropNameInTable="Id_producteColumn" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
+              <xs:element name="Id_producte" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_producte" msprop:Generator_ColumnVarNameInTable="columnId_producte" msprop:Generator_ColumnPropNameInRow="Id_producte" msprop:Generator_ColumnPropNameInTable="Id_producteColumn" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Preu" msprop:Generator_UserColumnName="Preu" msprop:Generator_ColumnPropNameInRow="Preu" msprop:Generator_ColumnVarNameInTable="columnPreu" msprop:Generator_ColumnPropNameInTable="PreuColumn" minOccurs="0">
+              <xs:element name="Preu" msprop:Generator_UserColumnName="Preu" msprop:Generator_ColumnVarNameInTable="columnPreu" msprop:Generator_ColumnPropNameInRow="Preu" msprop:Generator_ColumnPropNameInTable="PreuColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Categoria" msprop:Generator_UserColumnName="Categoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" minOccurs="0">
+              <xs:element name="Categoria" msprop:Generator_UserColumnName="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Usuari" msprop:Generator_UserTableName="Usuari" msprop:Generator_RowDeletedName="UsuariRowDeleted" msprop:Generator_RowChangedName="UsuariRowChanged" msprop:Generator_RowClassName="UsuariRow" msprop:Generator_RowChangingName="UsuariRowChanging" msprop:Generator_RowEvArgName="UsuariRowChangeEvent" msprop:Generator_RowEvHandlerName="UsuariRowChangeEventHandler" msprop:Generator_TableClassName="UsuariDataTable" msprop:Generator_TableVarName="tableUsuari" msprop:Generator_RowDeletingName="UsuariRowDeleting" msprop:Generator_TablePropName="Usuari">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_usuari" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_usuari" msprop:Generator_ColumnVarNameInTable="columnId_usuari" msprop:Generator_ColumnPropNameInRow="Id_usuari" msprop:Generator_ColumnPropNameInTable="Id_usuariColumn" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PuntsGuardats" msprop:Generator_UserColumnName="PuntsGuardats" msprop:Generator_ColumnVarNameInTable="columnPuntsGuardats" msprop:Generator_ColumnPropNameInRow="PuntsGuardats" msprop:Generator_ColumnPropNameInTable="PuntsGuardatsColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Ingredient" msprop:Generator_UserTableName="Ingredient" msprop:Generator_RowDeletedName="IngredientRowDeleted" msprop:Generator_RowChangedName="IngredientRowChanged" msprop:Generator_RowClassName="IngredientRow" msprop:Generator_RowChangingName="IngredientRowChanging" msprop:Generator_RowEvArgName="IngredientRowChangeEvent" msprop:Generator_RowEvHandlerName="IngredientRowChangeEventHandler" msprop:Generator_TableClassName="IngredientDataTable" msprop:Generator_TableVarName="tableIngredient" msprop:Generator_RowDeletingName="IngredientRowDeleting" msprop:Generator_TablePropName="Ingredient">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_ingredient" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_ingredient" msprop:Generator_ColumnVarNameInTable="columnId_ingredient" msprop:Generator_ColumnPropNameInRow="Id_ingredient" msprop:Generator_ColumnPropNameInTable="Id_ingredientColumn" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Preu" msprop:Generator_UserColumnName="Preu" msprop:Generator_ColumnVarNameInTable="columnPreu" msprop:Generator_ColumnPropNameInRow="Preu" msprop:Generator_ColumnPropNameInTable="PreuColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Quantitat" msprop:Generator_UserColumnName="Quantitat" msprop:Generator_ColumnVarNameInTable="columnQuantitat" msprop:Generator_ColumnPropNameInRow="Quantitat" msprop:Generator_ColumnPropNameInTable="QuantitatColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="StockMinim" msprop:Generator_UserColumnName="StockMinim" msprop:Generator_ColumnVarNameInTable="columnStockMinim" msprop:Generator_ColumnPropNameInRow="StockMinim" msprop:Generator_ColumnPropNameInTable="StockMinimColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="StockActual" msprop:Generator_UserColumnName="StockActual" msprop:Generator_ColumnVarNameInTable="columnStockActual" msprop:Generator_ColumnPropNameInRow="StockActual" msprop:Generator_ColumnPropNameInTable="StockActualColumn" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -722,39 +784,7 @@ WHERE        (Id_ingredient = ?)</CommandText>
             <xs:sequence>
               <xs:element name="Id_producte" msprop:Generator_UserColumnName="Id_producte" msprop:Generator_ColumnPropNameInRow="Id_producte" msprop:Generator_ColumnVarNameInTable="columnId_producte" msprop:Generator_ColumnPropNameInTable="Id_producteColumn" type="xs:int" />
               <xs:element name="Id_ingredient" msprop:Generator_UserColumnName="Id_ingredient" msprop:Generator_ColumnPropNameInRow="Id_ingredient" msprop:Generator_ColumnVarNameInTable="columnId_ingredient" msprop:Generator_ColumnPropNameInTable="Id_ingredientColumn" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Usuari" msprop:Generator_UserTableName="Usuari" msprop:Generator_RowDeletedName="UsuariRowDeleted" msprop:Generator_RowChangedName="UsuariRowChanged" msprop:Generator_RowClassName="UsuariRow" msprop:Generator_RowChangingName="UsuariRowChanging" msprop:Generator_RowEvArgName="UsuariRowChangeEvent" msprop:Generator_RowEvHandlerName="UsuariRowChangeEventHandler" msprop:Generator_TableClassName="UsuariDataTable" msprop:Generator_TableVarName="tableUsuari" msprop:Generator_RowDeletingName="UsuariRowDeleting" msprop:Generator_TablePropName="Usuari">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Id_usuari" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_usuari" msprop:Generator_ColumnPropNameInRow="Id_usuari" msprop:Generator_ColumnVarNameInTable="columnId_usuari" msprop:Generator_ColumnPropNameInTable="Id_usuariColumn" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="PuntsGuardats" msprop:Generator_UserColumnName="PuntsGuardats" msprop:Generator_ColumnPropNameInRow="PuntsGuardats" msprop:Generator_ColumnVarNameInTable="columnPuntsGuardats" msprop:Generator_ColumnPropNameInTable="PuntsGuardatsColumn" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Ingredient" msprop:Generator_UserTableName="Ingredient" msprop:Generator_RowDeletedName="IngredientRowDeleted" msprop:Generator_RowChangedName="IngredientRowChanged" msprop:Generator_RowClassName="IngredientRow" msprop:Generator_RowChangingName="IngredientRowChanging" msprop:Generator_RowEvArgName="IngredientRowChangeEvent" msprop:Generator_RowEvHandlerName="IngredientRowChangeEventHandler" msprop:Generator_TableClassName="IngredientDataTable" msprop:Generator_TableVarName="tableIngredient" msprop:Generator_RowDeletingName="IngredientRowDeleting" msprop:Generator_TablePropName="Ingredient">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Id_ingredient" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id_ingredient" msprop:Generator_ColumnPropNameInRow="Id_ingredient" msprop:Generator_ColumnVarNameInTable="columnId_ingredient" msprop:Generator_ColumnPropNameInTable="Id_ingredientColumn" type="xs:int" />
-              <xs:element name="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_ColumnPropNameInTable="NomColumn" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Preu" msprop:Generator_UserColumnName="Preu" msprop:Generator_ColumnPropNameInRow="Preu" msprop:Generator_ColumnVarNameInTable="columnPreu" msprop:Generator_ColumnPropNameInTable="PreuColumn" type="xs:int" minOccurs="0" />
               <xs:element name="Quantitat" msprop:Generator_UserColumnName="Quantitat" msprop:Generator_ColumnPropNameInRow="Quantitat" msprop:Generator_ColumnVarNameInTable="columnQuantitat" msprop:Generator_ColumnPropNameInTable="QuantitatColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="StockMinim" msprop:Generator_UserColumnName="StockMinim" msprop:Generator_ColumnPropNameInRow="StockMinim" msprop:Generator_ColumnVarNameInTable="columnStockMinim" msprop:Generator_ColumnPropNameInTable="StockMinimColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="StockActual" msprop:Generator_UserColumnName="StockActual" msprop:Generator_ColumnPropNameInRow="StockActual" msprop:Generator_ColumnVarNameInTable="columnStockActual" msprop:Generator_ColumnPropNameInTable="StockActualColumn" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -772,17 +802,17 @@ WHERE        (Id_ingredient = ?)</CommandText>
       <xs:selector xpath=".//mstns:Producte" />
       <xs:field xpath="mstns:Id_producte" />
     </xs:unique>
-    <xs:unique name="Producte-Ingredient_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Producte-Ingredient" />
-      <xs:field xpath="mstns:Id_producte" />
-      <xs:field xpath="mstns:Id_ingredient" />
-    </xs:unique>
     <xs:unique name="Usuari_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Usuari" />
       <xs:field xpath="mstns:Id_usuari" />
     </xs:unique>
     <xs:unique name="Ingredient_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Ingredient" />
+      <xs:field xpath="mstns:Id_ingredient" />
+    </xs:unique>
+    <xs:unique name="Producte-Ingredient_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Producte-Ingredient" />
+      <xs:field xpath="mstns:Id_producte" />
       <xs:field xpath="mstns:Id_ingredient" />
     </xs:unique>
   </xs:element>

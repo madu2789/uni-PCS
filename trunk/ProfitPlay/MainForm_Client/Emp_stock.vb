@@ -93,4 +93,15 @@
         
 
     End Sub
+
+    Private Sub btn_segundos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_segundos.Click
+        Dim plats = ws.GetAllPlats()
+        Dim res As String = ""
+        For Each p In plats
+            res += "Id Producte " + p.id_producte.ToString + " Id ingredient " + p.id_ingredient.ToString + " Quantitat " + p.quantitat.ToString + vbCr
+        Next
+
+        MsgBox(res)
+
+    End Sub
 End Class

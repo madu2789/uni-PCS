@@ -37,29 +37,6 @@ C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe.config
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe.config
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.pdb
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.xml
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ResolveAssemblyReference.cache
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Anula.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Carta.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_anula.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.info_producte.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_carta.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_Pago.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_stock.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_Gestio_usuaris.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Juego.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Mainform_client.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Mainform_empleado.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Resources.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Pago.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Welcome.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ProfitPlay.vbproj.GenerateResource.Cache
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.exe
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe.config
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.pdb
@@ -106,3 +83,26 @@ C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\Prof
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.exe
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe.config
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.pdb
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.xml
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ResolveAssemblyReference.cache
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Anula.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Carta.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_anula.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.info_producte.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_carta.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_Pago.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_stock.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_Gestio_usuaris.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Juego.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Mainform_client.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Mainform_empleado.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Resources.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Pago.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Welcome.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ProfitPlay.vbproj.GenerateResource.Cache
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.exe
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb

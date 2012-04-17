@@ -24,19 +24,6 @@ C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.dll
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.xml
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\ProfitPlay\pcs1112_g04\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.pdb
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\profit_play.accdb
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.dll
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.pdb
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.xml
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.exe
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.pdb
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.xml
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ResolveAssemblyReference.cache
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.Resources.resources
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.vbproj.GenerateResource.Cache
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.dll
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.xml
-D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.pdb
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ResolveAssemblyReference.cache
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.Resources.resources
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.vbproj.GenerateResource.Cache
@@ -63,3 +50,16 @@ C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\Prof
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.dll
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.xml
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.pdb
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\profit_play.accdb
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.dll
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.pdb
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.xml
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.exe
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.pdb
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.xml
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ResolveAssemblyReference.cache
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.Resources.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.vbproj.GenerateResource.Cache
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.dll
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.xml
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.pdb
