@@ -148,7 +148,7 @@ Partial Class Mainform_client
         Me.wb_pantalla_principal.Name = "wb_pantalla_principal"
         Me.wb_pantalla_principal.Size = New System.Drawing.Size(674, 398)
         Me.wb_pantalla_principal.TabIndex = 32
-        Me.wb_pantalla_principal.Url = New System.Uri("http://www.restalo.es", System.UriKind.Absolute)
+        Me.wb_pantalla_principal.Url = New System.Uri("", System.UriKind.Relative)
         Me.wb_pantalla_principal.WebBrowserShortcutsEnabled = False
         '
         'Mainform_client

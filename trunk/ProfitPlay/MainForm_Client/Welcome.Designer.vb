@@ -138,18 +138,18 @@ Partial Class Welcome
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(25, 77)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(124, 13)
+        Me.Label4.Size = New System.Drawing.Size(118, 13)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Número de comensales?"
+        Me.Label4.Text = "Nombre de comensals?"
         '
         'lbl_nombre_mesa
         '
         Me.lbl_nombre_mesa.AutoSize = True
         Me.lbl_nombre_mesa.Location = New System.Drawing.Point(25, 31)
         Me.lbl_nombre_mesa.Name = "lbl_nombre_mesa"
-        Me.lbl_nombre_mesa.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_nombre_mesa.Size = New System.Drawing.Size(29, 13)
         Me.lbl_nombre_mesa.TabIndex = 2
-        Me.lbl_nombre_mesa.Text = "Nombre"
+        Me.lbl_nombre_mesa.Text = "Nom"
         '
         'txtb_nomTaula
         '

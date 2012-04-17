@@ -65,7 +65,7 @@
 
     Private Sub ObteComandes()
 
-        Dim comandesDB = ws.GetComanda
+        Dim comandesDB = ws.GetComandaByUserId(Id_usuari)
 
         Dim Llistacomandes As New List(Of Comanda)
 
@@ -74,13 +74,14 @@
             Dim pro As New Comanda
 
             pro.Id_comanda = fila.id
+            pro.Id_producte = fila.Id_producte
             pro.Id_Usuari = fila.Id_Usuari
             pro.Hora = fila.Hora
             pro.Notes = fila.Notes
             pro.Estat = fila.Estat
 
             Llistacomandes.Add(pro)
-            llista_productes_eliminar.Items.Add(pro.Id_comanda)
+            llista_productes_eliminar.Items.Add(ws.GetNomProducteById(pro.Id_producte))
         Next
 
     End Sub

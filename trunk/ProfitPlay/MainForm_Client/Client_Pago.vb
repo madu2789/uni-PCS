@@ -9,7 +9,7 @@
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
         'més endavant dividirem el preu entre els clients de la taula <- Welcome
-        'numComensals = 
+        numComensals = GNum_comensals
 
         preuTotal = CalculaPreu()
         lbl_importtotal.Text = lbl_importtotal.Text + preuTotal.ToString
@@ -40,16 +40,16 @@
         Dim preu As Double = 0
         Dim preuProducte As Double
         'cal agafar el id del user
-        Dim id As Integer = 1
+        ' Dim id As Integer = 1
 
-        Dim comandes = ws.GetComanda()
+        Dim comandes = ws.GetComandaByUserId(Id_usuari)
 
         For Each fila In comandes
-            If fila.Id_usuari = id Then
-                ws.SolPagarComanda(fila.id)
-                preuProducte = ws.GetPreuProducteById(fila.Id_producte)
-                preu += preuProducte
-            End If
+
+            ws.SolPagarComanda(fila.id)
+            preuProducte = ws.GetPreuProducteById(fila.Id_producte)
+            preu += preuProducte
+
         Next
 
         Return preu

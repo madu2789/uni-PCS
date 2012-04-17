@@ -217,6 +217,20 @@
           <s:element minOccurs="0" maxOccurs="1" name="Estat" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetComandaByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComandaByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetComandaByUserIdResult" type="tns:ArrayOfComandaDB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SetComanda">
         <s:complexType>
           <s:sequence>
@@ -400,6 +414,12 @@
   <wsdl:message name="GetComandaSoapOut">
     <wsdl:part name="parameters" element="tns:GetComandaResponse" />
   </wsdl:message>
+  <wsdl:message name="GetComandaByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComandaByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetComandaByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetComandaByUserIdResponse" />
+  </wsdl:message>
   <wsdl:message name="SetComandaSoapIn">
     <wsdl:part name="parameters" element="tns:SetComanda" />
   </wsdl:message>
@@ -492,6 +512,10 @@
     <wsdl:operation name="GetComanda">
       <wsdl:input message="tns:GetComandaSoapIn" />
       <wsdl:output message="tns:GetComandaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComandaByUserId">
+      <wsdl:input message="tns:GetComandaByUserIdSoapIn" />
+      <wsdl:output message="tns:GetComandaByUserIdSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SetComanda">
       <wsdl:input message="tns:SetComandaSoapIn" />
@@ -639,6 +663,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetComanda">
       <soap:operation soapAction="http://tempuri.org/GetComanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComandaByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetComandaByUserId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -822,6 +855,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetComanda">
       <soap12:operation soapAction="http://tempuri.org/GetComanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComandaByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetComandaByUserId" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
