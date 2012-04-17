@@ -19,6 +19,8 @@ Public Class Service1
     Dim comanda As New Comanda
     Dim producte As New Producte
     Dim ingredient As New Ingredient
+    Dim plat As New Plat
+
     Public em As New EmpleatBD
 
     Public Class UsuariBD
@@ -60,6 +62,12 @@ Public Class Service1
         Public Hora As String
         Public Notes As String
         Public Estat As String
+    End Class
+
+    Public Class PlatDB
+        Public id_producte As Integer
+        Public id_ingredient As Integer
+        Public quantitat As Integer
     End Class
 
     <WebMethod()> _
@@ -255,6 +263,26 @@ Public Class Service1
     <WebMethod()> _
    Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
         Return empleat.SetEmpleats(nom, password, rol, cognom)
+    End Function
+
+    <WebMethod()> _
+       Public Function GetAllPlats() As List(Of PlatDB)
+
+        Dim plats As New List(Of PlatDB)
+        Dim info = plat.ObtePlats()
+
+        For Each fila In info.Rows
+
+            Dim pro As New PlatDB
+
+            pro.id_producte = fila("Id_producte").ToString
+            pro.id_ingredient = fila("Id_ingredient").ToString
+            pro.quantitat = fila("Quantitat").ToString
+            plats.Add(pro)
+
+        Next
+
+        Return plats
     End Function
 
 

@@ -25,7 +25,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
 
         Catch ex As Exception
@@ -426,5 +426,22 @@
         Return stock
 
     End Function
+
+    Public Function GetPlats() As DataTable
+
+        Dim res As DataTable = Nothing
+        Try
+            connect()
+            producte_ingredientDA.Connection = conDB
+            res = producte_ingredientDA.GetAllPlats
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error get plats", MsgBoxStyle.Critical)
+        End Try
+        Return res
+    End Function
+
+
+
 
 End Class
