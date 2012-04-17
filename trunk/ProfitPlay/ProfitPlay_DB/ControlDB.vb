@@ -25,7 +25,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString1)
+            conDB = New OleDb.OleDbConnection(conString2)
             conDB.Open()
 
         Catch ex As Exception
@@ -252,9 +252,21 @@
         Return ok
     End Function
 
-    Public Function SolAnulaComanda(ByVal id_comanda As String) As Boolean
-        Dim ok As Boolean = False
+    Public Sub DeleteComandaByUserId(ByVal id As Integer)
 
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            comandaDA.DeleteComandaByUserId(id)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error eliminar totes comandes", MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Public Function SolAnulaComanda(ByVal id_comanda As String) As Boolean
+
+        Dim ok As Boolean = False
         Try
             connect()
             comandaDA.Connection = conDB
@@ -268,8 +280,8 @@
     End Function
 
     Public Function SolPagarComanda(ByVal id_comanda As String) As Boolean
-        Dim ok As Boolean = False
 
+        Dim ok As Boolean = False
         Try
             connect()
             comandaDA.Connection = conDB

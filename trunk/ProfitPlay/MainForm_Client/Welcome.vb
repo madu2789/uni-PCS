@@ -51,8 +51,7 @@
                 MsgBox("Número de comensals incorrecte!", MsgBoxStyle.Critical)
             Else
 
-                Dim lastid = ws.GetLastUserId()
-                MsgBox("Last id " + ws.GetLastUserId().ToString + vbCr + "New id " + (lastid + 1).ToString)
+                Id_usuari = ws.GetLastUserId() + 1
                 Me.Hide()
                 If txtb_nomTaula.Text Is Nothing Then
                     'constructor amb nom propi (nostre)!
