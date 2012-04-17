@@ -52,6 +52,7 @@
             Else
 
                 Id_usuari = ws.GetLastUserId() + 1
+                GNum_comensals = num_comensals.Value
                 Me.Hide()
                 If txtb_nomTaula.Text Is Nothing Then
                     'constructor amb nom propi (nostre)!
