@@ -184,8 +184,11 @@
         Me.m_comanda = edited_command
     End Sub
 
-    Private Sub grb_menu_carta_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles grb_menu_carta.Enter
-
+    Private Sub resetForm()
+        lv_pedidos.Clear()
+        grb_pedido.Show()
+        productes = New List(Of Producto)
+        m_comanda = New Comanda
     End Sub
 
     Public Sub refreshComanda()
@@ -212,19 +215,16 @@
 
                 m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
 
-                'variables temporalment aqui, falta agafar-les d'on sigui!!!!!
                 Dim idUsuari As String = "1"
                 Dim idProducte As String = ws.GetIdProducteByNom(lv_pedidos.Items.Item(s).Text)
                 Dim notes As String = ""
                 Dim hora As Date = Now
                 Dim estat = "Sol·licitat"
-                ws.SetComanda(idUsuari, idProducte, estat, notes, hora)
+                ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
 
             Next
 
-            Dim a As New Client_Carta
-            a.ShowDialog()
-            Me.Dispose()
+            resetForm()
 
         End If
     End Sub
@@ -297,4 +297,7 @@
 
     End Sub
 
+    Private Sub btn_estat_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
+
+    End Sub
 End Class

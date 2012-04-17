@@ -170,6 +170,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="VariablesGlobals.vb" />
     <Compile Include="Welcome.vb">
       <SubType>Form</SubType>
     </Compile>
