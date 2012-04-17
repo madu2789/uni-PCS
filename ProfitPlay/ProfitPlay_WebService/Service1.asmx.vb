@@ -15,11 +15,17 @@ Public Class Service1
     Inherits System.Web.Services.WebService
 
     Dim empleat As New Empleat
+    Dim usuari As New Usuari
     Dim comanda As New Comanda
     Dim producte As New Producte
     Dim ingredient As New Ingredient
     Public em As New EmpleatBD
 
+    Public Class UsuariBD
+        Public Id_usuari As Integer
+        Public Nom As String
+        Public Punts As Integer
+    End Class
 
     Public Class EmpleatBD
         Public id As Integer
@@ -62,12 +68,12 @@ Public Class Service1
     End Function
     <WebMethod()> _
         Public Function GetLastUserId() As Integer
-        Return empleat.getLastUserId()
+        Return usuari.getLastUserId()
     End Function
 
     <WebMethod()> _
         Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
-        empleat.InsertNewUser(Nom, Punts)
+        usuari.InsertNewUser(Nom, Punts)
     End Sub
 
     <WebMethod()> _

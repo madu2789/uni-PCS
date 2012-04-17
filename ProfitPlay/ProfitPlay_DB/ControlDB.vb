@@ -59,10 +59,12 @@
     End Function
 
     Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
+
         Try
+
             connect()
             usuariDA.Connection = conDB
-            usuariDA.InsertNewUser(0, "hey")
+            usuariDA.InsertNewUser(Nom, Punts)
             disconnect()
 
         Catch ex As Exception
