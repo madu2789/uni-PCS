@@ -237,6 +237,18 @@
         Return DS.Comanda
     End Function
 
+    Public Function GetComandaByUserId(ByVal id As Integer) As DataTable
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            comandaDA.FillComandaByUserId(DS.Comanda, id)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error get comanda", MsgBoxStyle.Critical)
+        End Try
+        Return DS.Comanda
+    End Function
+
     Public Function DeleteComanda(ByVal id_comanda As String) As Boolean
         Dim ok As Boolean = False
 
