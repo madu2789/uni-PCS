@@ -183,6 +183,29 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+   Public Function GetComandaByUserId(ByVal id As Integer) As List(Of ComandaDB)
+
+        Dim comandes As New List(Of ComandaDB)
+        Dim info As DataTable = comanda.GetComandaByUserId(id)
+
+        For Each fila In info.Rows
+
+            Dim pro As New ComandaDB
+
+            pro.id = fila("Id_comanda").ToString
+            pro.Id_usuari = fila("Id_usuari").ToString
+            pro.Id_producte = fila("Id_producte").ToString
+            pro.Hora = fila("Hora").ToString
+            pro.Notes = fila("Notes").ToString
+            pro.Estat = fila("Estat").ToString
+
+            comandes.Add(pro)
+        Next
+
+        Return comandes
+    End Function
+
+    <WebMethod()> _
     Public Function SetComanda(ByVal id_user As String, ByVal id_producte As String, ByVal estat As String, ByVal notes As String, ByVal hora As Date) As Boolean
         Return comanda.SetComanda(id_user, id_producte, estat, notes, hora)
     End Function

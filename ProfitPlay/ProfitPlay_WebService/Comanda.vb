@@ -60,6 +60,10 @@
         Return BD.GetComanda()
     End Function
 
+    Public Function GetComandaByUserId(ByVal id As Integer) As DataTable
+        Return BD.GetComandaByUserId(id)
+    End Function
+
     Public Function AnulaComanda(ByVal id_comanda As String) As Boolean
         Return BD.DeleteComanda(id_comanda)
     End Function
