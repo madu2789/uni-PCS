@@ -52,18 +52,17 @@
 
         End Select
 
-        Dim ingredients = ws.GetIngredients()
+        Dim productes = ws.GetProducte
 
-        For Each fila In ingredients
+        For Each fila In productes
 
-            Dim pro As New Ingredient
+            Dim pro As New Producto
 
             pro.id = fila.id
             pro.preu = fila.preu
-            pro.quantitat = fila.quantitat
-            pro.StockMinim = fila.stock_minim
-            pro.StockActual = fila.stock_actual
             pro.nom = fila.nom
+            pro.tipus = fila.tipus
+            pro.descripcio = fila.descripicio
 
             ts_productes_stock.Items.Add(pro.nom)
 
