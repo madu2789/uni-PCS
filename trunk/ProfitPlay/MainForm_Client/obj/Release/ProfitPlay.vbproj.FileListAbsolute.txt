@@ -60,29 +60,6 @@ C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.exe
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe.config
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.pdb
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.xml
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ResolveAssemblyReference.cache
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Anula.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Carta.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_anula.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.info_producte.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_carta.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_Pago.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_stock.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Emp_Gestio_usuaris.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Juego.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Mainform_client.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Mainform_empleado.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Resources.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Client_Pago.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Welcome.resources
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ProfitPlay.vbproj.GenerateResource.Cache
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.exe
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
-C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe.config
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.pdb
@@ -106,3 +83,4 @@ D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ProfitPlay.vbpro
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.exe
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
+C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Release\MainForm_Client.exe.config
