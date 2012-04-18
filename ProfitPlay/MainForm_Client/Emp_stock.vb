@@ -97,5 +97,6 @@
 
         Dim stock As New Control_Stock
         stock.Show()
+
     End Sub
 End Class

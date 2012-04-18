@@ -120,6 +120,7 @@
     <Compile Include="InfoProducte.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Plat.vb" />
     <Compile Include="Producto.vb" />
     <Compile Include="Comanda.vb" />
     <Compile Include="Emp_Pago.Designer.vb">
