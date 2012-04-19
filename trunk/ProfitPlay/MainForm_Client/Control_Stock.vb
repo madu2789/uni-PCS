@@ -24,7 +24,6 @@
 
                 Try
 
-
                     Dim quantitat = InputBox("Quants plats de " + plats(a).getNom + " vols preparar?", "Entra la quantitat", "0")
 
                     'Deixem que pugui no posar res
@@ -81,6 +80,7 @@
 
             For Each plat In plats
 
+                MsgBox("Tenim que " + producte.getNom + " " + ws.GetIdProducteByNom(producte.getNom).ToString + " i " + plat.id_producte.ToString)
                 If (ws.GetIdProducteByNom(producte.getNom) = plat.id_producte) Then
 
                     Dim i As New Ingredient

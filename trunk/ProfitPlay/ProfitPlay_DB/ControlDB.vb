@@ -349,7 +349,6 @@
         Dim Id As Integer = 0
 
         Try
-            MsgBox("El nom es " + Nom)
             connect()
             ingredientDA.Connection = conDB
             Id = ingredientDA.GetIdIngredientByNom(Nom)
