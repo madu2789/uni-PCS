@@ -20,6 +20,7 @@ Public Class Service1
     Dim producte As New Producte
     Dim ingredient As New Ingredient
     Dim plat As New Plat
+    Dim compra As New Compra
 
     Public em As New EmpleatBD
 
@@ -282,6 +283,11 @@ Public Class Service1
         Next
 
         Return dades
+    End Function
+
+    <WebMethod()> _
+    Public Function insertCompra(ByVal id_i As Integer, ByVal q As Integer, ByVal e As String) As Integer
+        Return compra.insertCompra(id_i, q, e)
     End Function
 
 End Class

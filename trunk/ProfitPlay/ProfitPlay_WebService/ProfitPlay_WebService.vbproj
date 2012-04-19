@@ -85,6 +85,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compra.vb" />
     <Compile Include="Plat.vb" />
     <Compile Include="Usuari.vb" />
     <Compile Include="Ingredient.vb" />
