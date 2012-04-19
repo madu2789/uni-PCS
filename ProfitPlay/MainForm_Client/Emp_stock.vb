@@ -52,17 +52,18 @@
 
         End Select
 
-        Dim productes = ws.GetProducte
+        Dim productes = ws.GetIngredients
 
         For Each fila In productes
 
-            Dim pro As New Producto
+            Dim pro As New Ingredient
 
             pro.id = fila.id
             pro.preu = fila.preu
             pro.nom = fila.nom
-            pro.tipus = fila.tipus
-            pro.descripcio = fila.descripicio
+            pro.quantitat = fila.quantitat
+            pro.StockActual = fila.stock_actual
+            pro.StockMinim = fila.stock_minim
 
             ts_productes_stock.Items.Add(pro.nom)
 
@@ -78,18 +79,7 @@
 
     Private Sub ts_productes_stock_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ts_productes_stock.ItemClicked
 
-        Dim res = InputBox("Stock actual de " + e.ClickedItem.Text + ": " + ws.GetStockActualById(ws.GetIdIngredientByNom(e.ClickedItem.Text)).ToString + vbCr + "Entra el nou stock", "Canvi de stock", "", , )
-
-        If (res <> "") Then
-            Try
-                Dim newstock As Integer = Integer.Parse(res)
-                ws.UpdateStockActualById(ws.GetIdIngredientByNom(e.ClickedItem.Text), newstock)
-            Catch ex As Exception
-                Dim newstock As Integer = 0
-                MsgBox("Error en el format del nou stock", MsgBoxStyle.Critical, "Format Incorrecte")
-            End Try
-        End If
-        
+        MsgBox("Stock actual de " + e.ClickedItem.Text + ": " + ws.GetStockActualById(ws.GetIdIngredientByNom(e.ClickedItem.Text)).ToString, MsgBoxStyle.Information, "Control de Stock")
 
     End Sub
 

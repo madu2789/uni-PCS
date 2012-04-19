@@ -24,7 +24,7 @@
 
                 Try
 
-                    Me.TopMost = False
+
                     Dim quantitat = InputBox("Quants plats de " + plats(a).getNom + " vols preparar?", "Entra la quantitat", "0")
 
                     'Deixem que pugui no posar res
@@ -42,12 +42,11 @@
             End While
 
         Next
-        Me.TopMost = True
     End Sub
 
     Private Sub Control_Stock_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        Dim plats = ws.GetProducte
+        Dim plats = ws.GetProducte()
         For Each fila In plats
 
             Dim pro As New Producto
@@ -73,6 +72,34 @@
     End Function
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+        Dim ingredients As New List(Of Ingredient)
+        Dim plats = ws.GetAllPlats
+        Dim count As Integer = 0
+
+        For Each producte In plats_compra
+
+            For Each plat In plats
+
+                If (ws.GetIdProducteByNom(producte.getNom) = plat.id_producte) Then
+
+                    Dim i As New Ingredient
+                    i.setNom(ws.GetNomIngredientById(plat.id_ingredient))
+                    i.setQuantitat(i.getQuantitat + (quantitats(count) * plat.quantitat))
+                    ingredients.Add(i)
+
+                End If
+
+            Next
+            count = count + 1
+        Next
+
+        For Each i In ingredients
+
+            MsgBox("Volem " + i.getQuantitat.ToString + " de " + i.getNom)
+
+        Next
+        
         'fer els calculs
         'fer els inserts
     End Sub

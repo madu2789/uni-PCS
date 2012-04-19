@@ -1,4 +1,8 @@
 ﻿Partial Public Class profit_playDataSet
+    Partial Class IngredientDataTable
+
+    End Class
+
 End Class
 
 Namespace profit_playDataSetTableAdapters

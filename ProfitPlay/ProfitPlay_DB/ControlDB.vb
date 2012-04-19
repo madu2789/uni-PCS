@@ -349,12 +349,13 @@
         Dim Id As Integer = 0
 
         Try
+            MsgBox("El nom es " + Nom)
             connect()
             ingredientDA.Connection = conDB
-            Nom = ingredientDA.GetIdIngredientByNom(Nom)
+            Id = ingredientDA.GetIdIngredientByNom(Nom)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get preu producte", MsgBoxStyle.Critical)
+            MsgBox("Error Id Ingredient By nom", MsgBoxStyle.Critical)
         End Try
 
         Return Id
@@ -429,19 +430,15 @@
 
     Public Function GetPlats() As DataTable
 
-        Dim res As DataTable = Nothing
         Try
             connect()
             producte_ingredientDA.Connection = conDB
-            res = producte_ingredientDA.GetAllPlats
+            producte_ingredientDA.Fill(DS._Producte_Ingredient)
             disconnect()
         Catch ex As Exception
             MsgBox("Error get plats", MsgBoxStyle.Critical)
         End Try
-        Return res
+        Return DS._Producte_Ingredient
     End Function
-
-
-
 
 End Class
