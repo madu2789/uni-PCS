@@ -38,6 +38,8 @@ Partial Class Emp_stock
         Me.btn_segundos = New System.Windows.Forms.Button
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
         Me.ts_productes_stock = New System.Windows.Forms.ToolStrip
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.Label2 = New System.Windows.Forms.Label
         Me.pnl_estat.SuspendLayout()
         CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_plats.SuspendLayout()
@@ -180,7 +182,7 @@ Partial Class Emp_stock
         Me.btn_segundos.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_segundos.Location = New System.Drawing.Point(182, 400)
         Me.btn_segundos.Name = "btn_segundos"
-        Me.btn_segundos.Size = New System.Drawing.Size(296, 60)
+        Me.btn_segundos.Size = New System.Drawing.Size(318, 60)
         Me.btn_segundos.TabIndex = 37
         Me.btn_segundos.Text = "Comprar segons demanda"
         Me.btn_segundos.UseVisualStyleBackColor = True
@@ -191,24 +193,45 @@ Partial Class Emp_stock
         'ToolStripContainer1.ContentPanel
         '
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.ts_productes_stock)
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(296, 300)
-        Me.ToolStripContainer1.Location = New System.Drawing.Point(182, 62)
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(318, 274)
+        Me.ToolStripContainer1.Location = New System.Drawing.Point(182, 88)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(296, 325)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(318, 299)
         Me.ToolStripContainer1.TabIndex = 38
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         '
         'ts_productes_stock
         '
+        Me.ts_productes_stock.AutoSize = False
         Me.ts_productes_stock.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ts_productes_stock.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.ts_productes_stock.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.ts_productes_stock.Location = New System.Drawing.Point(0, 0)
         Me.ts_productes_stock.Name = "ts_productes_stock"
         Me.ts_productes_stock.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ts_productes_stock.Size = New System.Drawing.Size(296, 300)
+        Me.ts_productes_stock.Size = New System.Drawing.Size(318, 274)
         Me.ts_productes_stock.TabIndex = 2
-        Me.ts_productes_stock.Text = "ToolStrip1"
+        Me.ts_productes_stock.Text = "Stock de Ingredients"
+        '
+        'Label1
+        '
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(522, 88)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(310, 60)
+        Me.Label1.TabIndex = 39
+        Me.Label1.Text = "Fes click sobre un ingredient per veure el seu stock actual." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Label2
+        '
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(522, 199)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(310, 188)
+        Me.Label2.TabIndex = 40
+        Me.Label2.Text = resources.GetString("Label2.Text")
         '
         'Emp_stock
         '
@@ -216,6 +239,8 @@ Partial Class Emp_stock
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ToolStripContainer1)
         Me.Controls.Add(Me.btn_segundos)
         Me.Controls.Add(Me.pnl_estat)
@@ -228,7 +253,6 @@ Partial Class Emp_stock
         CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_plats.ResumeLayout(False)
         Me.ToolStripContainer1.ContentPanel.ResumeLayout(False)
-        Me.ToolStripContainer1.ContentPanel.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
         Me.ResumeLayout(False)
@@ -249,4 +273,6 @@ Partial Class Emp_stock
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents ts_productes_stock As System.Windows.Forms.ToolStrip
     Friend WithEvents btn_estat As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

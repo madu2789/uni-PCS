@@ -19,6 +19,7 @@
 
     Private Sub Emp_stock_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        Dim alerta As String = ""
         lbl_taula.Text = Mainform_empleado.nomempleat
         lbl_punts.Text = Mainform_empleado.rolempleat
 
@@ -65,9 +66,14 @@
             pro.StockActual = fila.stock_actual
             pro.StockMinim = fila.stock_minim
 
+            If (pro.StockActual <= pro.StockMinim) Then
+                alerta += pro.nom + vbCr
+            End If
             ts_productes_stock.Items.Add(pro.nom)
 
         Next
+
+        MsgBox("POC STOCK DE: " + vbCr + vbCr + alerta, MsgBoxStyle.Critical, "Sense Stock o Stock Minim")
 
     End Sub
 

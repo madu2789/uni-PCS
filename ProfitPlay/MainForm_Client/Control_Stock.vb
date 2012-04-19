@@ -8,6 +8,8 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_compra_stock.Click
 
+        plats.Clear()
+
         For i As Integer = 0 To lv_plats.Items.Count - 1 Step 1
 
             If (lv_plats.Items.Item(i).Selected) Then
@@ -28,13 +30,14 @@
 
                     'Deixem que pugui no posar res
                     If (quantitat <> "") Then
-                        plats_compra.Add(plats(a))
                         quantitats.Add(CInt(quantitat))
+                        plats_compra.Add(plats(a))
                     End If
 
                     err = False
 
                 Catch ex As Exception
+                    MsgBox("Error en el valor introduït", MsgBoxStyle.Critical, "Valor incorrecte")
                     err = True
                 End Try
 
@@ -75,7 +78,6 @@
         Dim ingredients As New List(Of Ingredient)
         Dim plats = ws.GetAllPlats
         Dim count As Integer = 0
-
         For Each producte In plats_compra
 
             For Each plat In plats
@@ -96,12 +98,10 @@
 
         For Each i In ingredients
 
-            MsgBox("Volem " + i.getQuantitat.ToString + " de " + i.getNom)
             ws.insertCompra(i.getIdIngredient, i.getQuantitat, "En espera")
 
         Next
         
-        'fer els calculs
-        'fer els inserts
+        Me.Dispose()
     End Sub
 End Class
