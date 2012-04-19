@@ -268,22 +268,20 @@ Public Class Service1
     <WebMethod()> _
        Public Function GetAllPlats() As List(Of PlatDB)
 
-        Dim plats As New List(Of PlatDB)
-        Dim info = plat.ObtePlats()
-
+        Dim dades As New List(Of PlatDB)
+        Dim info As DataTable = plat.ObtePlats()
         For Each fila In info.Rows
 
-            Dim pro As New PlatDB
+            Dim empl As New PlatDB
 
-            pro.id_producte = fila("Id_producte").ToString
-            pro.id_ingredient = fila("Id_ingredient").ToString
-            pro.quantitat = fila("Quantitat").ToString
-            plats.Add(pro)
+            empl.id_ingredient = fila("Id_ingredient").ToString
+            empl.id_producte = (fila("Id_producte").ToString)
+            empl.quantitat = fila("Quantitat").ToString
+            dades.Add(empl)
 
         Next
 
-        Return plats
+        Return dades
     End Function
-
 
 End Class

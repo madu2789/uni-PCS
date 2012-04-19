@@ -78,7 +78,6 @@ Partial Class Control_Stock
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Calcular Compra"
-        Me.TopMost = True
         Me.ResumeLayout(False)
 
     End Sub

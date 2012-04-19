@@ -51,8 +51,8 @@
         Return preu
     End Function
 
-    Public Function getQuantitat() As String
-        Return Quantitat
+    Public Function getQuantitat() As Integer
+        Return quantitat
     End Function
 
     Public Function getId() As Integer
