@@ -658,6 +658,10 @@ Namespace ws_profitplay
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllPlatsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetAllPlats", ReplyAction:="*")>  _
         Function GetAllPlats(ByVal request As ws_profitplay.GetAllPlatsRequest) As ws_profitplay.GetAllPlatsResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento e del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/insertCompra", ReplyAction:="*")>  _
+        Function insertCompra(ByVal request As ws_profitplay.insertCompraRequest) As ws_profitplay.insertCompraResponse
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -1808,6 +1812,78 @@ Namespace ws_profitplay
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class insertCompraRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="insertCompra", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.insertCompraRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.insertCompraRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class insertCompraRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public id_i As Integer
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=1)>  _
+        Public q As Integer
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
+        Public e As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal id_i As Integer, ByVal q As Integer, ByVal e As String)
+            MyBase.New
+            Me.id_i = id_i
+            Me.q = q
+            Me.e = e
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class insertCompraResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="insertCompraResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.insertCompraResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.insertCompraResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class insertCompraResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
     Public Interface Service1SoapChannel
         Inherits ws_profitplay.Service1Soap, System.ServiceModel.IClientChannel
@@ -2074,5 +2150,19 @@ Namespace ws_profitplay
             Dim retVal As ws_profitplay.GetAllPlatsResponse = CType(Me,ws_profitplay.Service1Soap).GetAllPlats(inValue)
             Return retVal.Body.GetAllPlatsResult
         End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_insertCompra(ByVal request As ws_profitplay.insertCompraRequest) As ws_profitplay.insertCompraResponse Implements ws_profitplay.Service1Soap.insertCompra
+            Return MyBase.Channel.insertCompra(request)
+        End Function
+        
+        Public Sub insertCompra(ByVal id_i As Integer, ByVal q As Integer, ByVal e As String)
+            Dim inValue As ws_profitplay.insertCompraRequest = New ws_profitplay.insertCompraRequest
+            inValue.Body = New ws_profitplay.insertCompraRequestBody
+            inValue.Body.id_i = id_i
+            inValue.Body.q = q
+            inValue.Body.e = e
+            Dim retVal As ws_profitplay.insertCompraResponse = CType(Me,ws_profitplay.Service1Soap).insertCompra(inValue)
+        End Sub
     End Class
 End Namespace

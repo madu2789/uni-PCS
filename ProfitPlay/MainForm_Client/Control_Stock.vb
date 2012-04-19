@@ -80,12 +80,12 @@
 
             For Each plat In plats
 
-                MsgBox("Tenim que " + producte.getNom + " " + ws.GetIdProducteByNom(producte.getNom).ToString + " i " + plat.id_producte.ToString)
                 If (ws.GetIdProducteByNom(producte.getNom) = plat.id_producte) Then
 
                     Dim i As New Ingredient
                     i.setNom(ws.GetNomIngredientById(plat.id_ingredient))
                     i.setQuantitat(i.getQuantitat + (quantitats(count) * plat.quantitat))
+                    i.setIdIngredient(plat.id_ingredient)
                     ingredients.Add(i)
 
                 End If
@@ -97,6 +97,7 @@
         For Each i In ingredients
 
             MsgBox("Volem " + i.getQuantitat.ToString + " de " + i.getNom)
+            ws.insertCompra(i.getIdIngredient, i.getQuantitat, "En espera")
 
         Next
         

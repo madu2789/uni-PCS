@@ -16,6 +16,7 @@
     Dim ingredientDA As New profit_playDataSetTableAdapters.IngredientTableAdapter
     Dim comandaDA As New profit_playDataSetTableAdapters.ComandaTableAdapter
     Dim producteDA As New profit_playDataSetTableAdapters.ProducteTableAdapter
+    Dim compraDA As New profit_playDataSetTableAdapters.CompraTableAdapter
     Dim producte_ingredientDA As New profit_playDataSetTableAdapters.Producte_IngredientTableAdapter
 
     'DataSet:
@@ -438,6 +439,21 @@
             MsgBox("Error get plats", MsgBoxStyle.Critical)
         End Try
         Return DS._Producte_Ingredient
+    End Function
+
+    Public Function insertCompra(ByVal id_i As Integer, ByVal q As Integer, ByVal e As String) As Integer
+
+        Dim res As Integer = 0
+
+        Try
+            connect()
+            compraDA.Connection = conDB
+            res = compraDA.Insert(id_i, q, e)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error fent la compra", MsgBoxStyle.Critical)
+        End Try
+        Return res
     End Function
 
 End Class

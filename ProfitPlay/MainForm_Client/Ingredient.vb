@@ -1,6 +1,6 @@
 ﻿Public Class Ingredient
 
-    Public id As Integer
+    Public id_ingredient As Integer
     Public nom As String
     Public preu As Double
     Public quantitat As Integer
@@ -8,13 +8,16 @@
     Public StockActual As Integer
 
     Public Sub New()
-        id = 0
+        id_ingredient = 0
         nom = ""
         Preu = 0
         quantitat = 0
         StockMinim = 0
     End Sub
 
+    Public Sub setIdIngredient(ByVal id As Integer)
+        id_ingredient = id
+    End Sub
     Public Sub setStockActual(ByVal s As Integer)
         StockActual = s
     End Sub
@@ -55,8 +58,8 @@
         Return quantitat
     End Function
 
-    Public Function getId() As Integer
-        Return Id
+    Public Function getIdIngredient() As Integer
+        Return id_ingredient
     End Function
 
 End Class

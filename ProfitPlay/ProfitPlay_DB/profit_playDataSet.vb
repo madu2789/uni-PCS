@@ -7,6 +7,10 @@ End Class
 
 Namespace profit_playDataSetTableAdapters
     
+    Partial Class CompraTableAdapter
+
+    End Class
+
     Partial Class IngredientTableAdapter
 
     End Class

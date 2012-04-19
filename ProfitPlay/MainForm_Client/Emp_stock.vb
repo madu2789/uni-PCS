@@ -58,7 +58,7 @@
 
             Dim pro As New Ingredient
 
-            pro.id = fila.id
+            pro.id_ingredient = fila.id
             pro.preu = fila.preu
             pro.nom = fila.nom
             pro.quantitat = fila.quantitat
