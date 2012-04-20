@@ -456,4 +456,17 @@
         Return res
     End Function
 
+    Public Function getCompres() As DataTable
+        Try
+            connect()
+            compraDA.Connection = conDB
+            compraDA.Fill(DS.Compra)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error capturant les compres", MsgBoxStyle.Critical)
+        End Try
+
+        Return DS.Compra
+
+    End Function
 End Class

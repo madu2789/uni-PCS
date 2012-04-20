@@ -245,6 +245,7 @@ Partial Class Emp_stock
         Me.Controls.Add(Me.btn_segundos)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_plats)
+        Me.MaximizeBox = False
         Me.Name = "Emp_stock"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleado_stock"

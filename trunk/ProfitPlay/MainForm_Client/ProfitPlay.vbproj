@@ -320,6 +320,9 @@
     <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.ComandaDB.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.Compra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.EmpleatBD.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
