@@ -290,4 +290,23 @@ Public Class Service1
         Return compra.insertCompra(id_i, q, e)
     End Function
 
+    <WebMethod()> _
+    Public Function getCompres() As List(Of Compra)
+
+        Dim dades As New List(Of Compra)
+        Dim info As DataTable = compra.getCompres()
+        For Each fila In info.Rows
+
+            Dim empl As New Compra
+
+            empl.Id_ingredient = fila("Id_ingredient").ToString
+            empl.Estat = fila("Estat").ToString
+            empl.Id_compra = fila("Id_compra").ToString
+            dades.Add(empl)
+
+        Next
+
+        Return dades
+    End Function
+
 End Class

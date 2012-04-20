@@ -366,6 +366,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getCompres">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCompresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCompresResult" type="tns:ArrayOfCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompra">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Compra" nillable="true" type="tns:Compra" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Compra">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id_compra" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_ingredient" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estat" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LogEmpleatSoapIn">
@@ -506,6 +528,12 @@
   <wsdl:message name="insertCompraSoapOut">
     <wsdl:part name="parameters" element="tns:insertCompraResponse" />
   </wsdl:message>
+  <wsdl:message name="getCompresSoapIn">
+    <wsdl:part name="parameters" element="tns:getCompres" />
+  </wsdl:message>
+  <wsdl:message name="getCompresSoapOut">
+    <wsdl:part name="parameters" element="tns:getCompresResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="LogEmpleat">
       <wsdl:input message="tns:LogEmpleatSoapIn" />
@@ -598,6 +626,10 @@
     <wsdl:operation name="insertCompra">
       <wsdl:input message="tns:insertCompraSoapIn" />
       <wsdl:output message="tns:insertCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompres">
+      <wsdl:input message="tns:getCompresSoapIn" />
+      <wsdl:output message="tns:getCompresSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -809,6 +841,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getCompres">
+      <soap:operation soapAction="http://tempuri.org/getCompres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1012,6 +1053,15 @@
     </wsdl:operation>
     <wsdl:operation name="insertCompra">
       <soap12:operation soapAction="http://tempuri.org/insertCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompres">
+      <soap12:operation soapAction="http://tempuri.org/getCompres" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

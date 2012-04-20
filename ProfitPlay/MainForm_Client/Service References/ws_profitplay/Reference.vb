@@ -573,6 +573,83 @@ Namespace ws_profitplay
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="Compra", [Namespace]:="http://tempuri.org/"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class Compra
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        Private Id_compraField As Integer
+        
+        Private Id_ingredientField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private EstatField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
+        Public Property Id_compra() As Integer
+            Get
+                Return Me.Id_compraField
+            End Get
+            Set
+                If (Me.Id_compraField.Equals(value) <> true) Then
+                    Me.Id_compraField = value
+                    Me.RaisePropertyChanged("Id_compra")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
+        Public Property Id_ingredient() As Integer
+            Get
+                Return Me.Id_ingredientField
+            End Get
+            Set
+                If (Me.Id_ingredientField.Equals(value) <> true) Then
+                    Me.Id_ingredientField = value
+                    Me.RaisePropertyChanged("Id_ingredient")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
+        Public Property Estat() As String
+            Get
+                Return Me.EstatField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.EstatField, value) <> true) Then
+                    Me.EstatField = value
+                    Me.RaisePropertyChanged("Estat")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="ws_profitplay.Service1Soap")>  _
     Public Interface Service1Soap
@@ -662,6 +739,10 @@ Namespace ws_profitplay
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento e del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/insertCompra", ReplyAction:="*")>  _
         Function insertCompra(ByVal request As ws_profitplay.insertCompraRequest) As ws_profitplay.insertCompraResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento getCompresResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getCompres", ReplyAction:="*")>  _
+        Function getCompres(ByVal request As ws_profitplay.getCompresRequest) As ws_profitplay.getCompresResponse
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -1892,6 +1973,70 @@ Namespace ws_profitplay
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class getCompresRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="getCompres", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.getCompresRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.getCompresRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class getCompresRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class getCompresResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="getCompresResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.getCompresResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.getCompresResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class getCompresResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public getCompresResult() As ws_profitplay.Compra
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal getCompresResult() As ws_profitplay.Compra)
+            MyBase.New
+            Me.getCompresResult = getCompresResult
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
     Public Interface Service1SoapChannel
         Inherits ws_profitplay.Service1Soap, System.ServiceModel.IClientChannel
@@ -2172,6 +2317,18 @@ Namespace ws_profitplay
             inValue.Body.e = e
             Dim retVal As ws_profitplay.insertCompraResponse = CType(Me,ws_profitplay.Service1Soap).insertCompra(inValue)
             Return retVal.Body.insertCompraResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_getCompres(ByVal request As ws_profitplay.getCompresRequest) As ws_profitplay.getCompresResponse Implements ws_profitplay.Service1Soap.getCompres
+            Return MyBase.Channel.getCompres(request)
+        End Function
+        
+        Public Function getCompres() As ws_profitplay.Compra()
+            Dim inValue As ws_profitplay.getCompresRequest = New ws_profitplay.getCompresRequest
+            inValue.Body = New ws_profitplay.getCompresRequestBody
+            Dim retVal As ws_profitplay.getCompresResponse = CType(Me,ws_profitplay.Service1Soap).getCompres(inValue)
+            Return retVal.Body.getCompresResult
         End Function
     End Class
 End Namespace

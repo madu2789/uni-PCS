@@ -54,6 +54,8 @@
         End Select
 
         Dim productes = ws.GetIngredients
+        Dim compres = ws.getCompres()
+        Dim comprat As Boolean = False
 
         For Each fila In productes
 
@@ -65,16 +67,29 @@
             pro.quantitat = fila.quantitat
             pro.StockActual = fila.stock_actual
             pro.StockMinim = fila.stock_minim
+            For Each c In compres
 
-            If (pro.StockActual <= pro.StockMinim) Then
+                If c.Id_ingredient = pro.id_ingredient Then
+                    comprat = True
+                End If
+
+            Next
+
+            If (pro.StockActual <= pro.StockMinim And comprat = False) Then
                 alerta += pro.nom + vbCr
             End If
+
+            If (pro.StockActual <= pro.StockMinim And comprat = True) Then
+                alerta += "(*) " + pro.nom + vbCr
+            End If
+
+            comprat = False
             ts_productes_stock.Items.Add(pro.nom)
 
         Next
 
         If alerta.Length <> 0 Then
-            MsgBox("POC STOCK DE: " + vbCr + vbCr + alerta, MsgBoxStyle.Critical, "Sense Stock o Stock Minim")
+            MsgBox("(*) Indica ja demanat" + vbCr + vbCr + alerta + vbCr + vbCr, MsgBoxStyle.Critical, "Sense Stock o Stock Minim")
         End If
 
     End Sub
