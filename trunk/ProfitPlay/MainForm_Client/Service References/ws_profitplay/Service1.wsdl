@@ -360,7 +360,11 @@
         </s:complexType>
       </s:element>
       <s:element name="insertCompraResponse">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertCompraResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>

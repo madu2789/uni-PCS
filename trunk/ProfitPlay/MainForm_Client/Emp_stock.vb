@@ -73,7 +73,9 @@
 
         Next
 
-        MsgBox("POC STOCK DE: " + vbCr + vbCr + alerta, MsgBoxStyle.Critical, "Sense Stock o Stock Minim")
+        If alerta.Length <> 0 Then
+            MsgBox("POC STOCK DE: " + vbCr + vbCr + alerta, MsgBoxStyle.Critical, "Sense Stock o Stock Minim")
+        End If
 
     End Sub
 

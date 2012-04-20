@@ -96,12 +96,14 @@
             count = count + 1
         Next
 
+        Dim quantes As Integer = 0
         For Each i In ingredients
 
-            ws.insertCompra(i.getIdIngredient, i.getQuantitat, "En espera")
+            quantes = quantes + ws.insertCompra(i.getIdIngredient, i.getQuantitat, "En espera")
 
         Next
-        
+
+        MsgBox("Realitzades " + quantes.ToString + " sol.licituds de compra", MsgBoxStyle.Information, "Compra de Ingredients")
         Me.Dispose()
     End Sub
 End Class

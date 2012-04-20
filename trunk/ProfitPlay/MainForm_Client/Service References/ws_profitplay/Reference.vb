@@ -1876,11 +1876,19 @@ Namespace ws_profitplay
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute()>  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
     Partial Public Class insertCompraResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public insertCompraResult As Integer
         
         Public Sub New()
             MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal insertCompraResult As Integer)
+            MyBase.New
+            Me.insertCompraResult = insertCompraResult
         End Sub
     End Class
     
@@ -2156,13 +2164,14 @@ Namespace ws_profitplay
             Return MyBase.Channel.insertCompra(request)
         End Function
         
-        Public Sub insertCompra(ByVal id_i As Integer, ByVal q As Integer, ByVal e As String)
+        Public Function insertCompra(ByVal id_i As Integer, ByVal q As Integer, ByVal e As String) As Integer
             Dim inValue As ws_profitplay.insertCompraRequest = New ws_profitplay.insertCompraRequest
             inValue.Body = New ws_profitplay.insertCompraRequestBody
             inValue.Body.id_i = id_i
             inValue.Body.q = q
             inValue.Body.e = e
             Dim retVal As ws_profitplay.insertCompraResponse = CType(Me,ws_profitplay.Service1Soap).insertCompra(inValue)
-        End Sub
+            Return retVal.Body.insertCompraResult
+        End Function
     End Class
 End Namespace
