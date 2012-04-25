@@ -40,6 +40,7 @@ Partial Class Emp_stock
         Me.ts_productes_stock = New System.Windows.Forms.ToolStrip
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
+        Me.btn_compres = New System.Windows.Forms.Button
         Me.pnl_estat.SuspendLayout()
         CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_plats.SuspendLayout()
@@ -233,12 +234,23 @@ Partial Class Emp_stock
         Me.Label2.TabIndex = 40
         Me.Label2.Text = resources.GetString("Label2.Text")
         '
+        'btn_compres
+        '
+        Me.btn_compres.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_compres.Location = New System.Drawing.Point(522, 400)
+        Me.btn_compres.Name = "btn_compres"
+        Me.btn_compres.Size = New System.Drawing.Size(310, 60)
+        Me.btn_compres.TabIndex = 41
+        Me.btn_compres.Text = "Veure Compres"
+        Me.btn_compres.UseVisualStyleBackColor = True
+        '
         'Emp_stock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.Controls.Add(Me.btn_compres)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ToolStripContainer1)
@@ -276,4 +288,5 @@ Partial Class Emp_stock
     Friend WithEvents btn_estat As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btn_compres As System.Windows.Forms.Button
 End Class

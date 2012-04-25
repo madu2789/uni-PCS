@@ -302,6 +302,7 @@ Public Class Service1
             empl.Id_ingredient = fila("Id_ingredient").ToString
             empl.Estat = fila("Estat").ToString
             empl.Id_compra = fila("Id_compra").ToString
+            empl.Quantitat = fila("Quantitat").ToString
             dades.Add(empl)
 
         Next

@@ -4,7 +4,7 @@
 
     Public Id_compra As Integer
     Public Id_ingredient As Integer
-    Private Quantitat As Integer
+    Public Quantitat As Integer
     Public Estat As String
 
     Public Sub setQuantitat(ByVal s As String)

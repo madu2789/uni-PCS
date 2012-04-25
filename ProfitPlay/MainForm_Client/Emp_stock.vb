@@ -112,4 +112,9 @@
         stock.Show()
 
     End Sub
+
+    Private Sub btn_compres_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_compres.Click
+        Dim compres As New Compres_Pendents
+        compres.Show()
+    End Sub
 End Class
