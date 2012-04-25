@@ -100,6 +100,12 @@
     <Compile Include="Client_Carta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Compres_Pendents.Designer.vb">
+      <DependentUpon>Compres_Pendents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compres_Pendents.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Control_Stock.Designer.vb">
       <DependentUpon>Control_Stock.vb</DependentUpon>
     </Compile>
@@ -207,6 +213,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Carta.resx">
       <DependentUpon>Client_Carta.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compres_Pendents.resx">
+      <DependentUpon>Compres_Pendents.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Emp_anula.resx">

@@ -588,6 +588,8 @@ Namespace ws_profitplay
         
         Private Id_ingredientField As Integer
         
+        Private QuantitatField As Integer
+        
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private EstatField As String
         
@@ -627,7 +629,20 @@ Namespace ws_profitplay
             End Set
         End Property
         
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
+        Public Property Quantitat() As Integer
+            Get
+                Return Me.QuantitatField
+            End Get
+            Set
+                If (Me.QuantitatField.Equals(value) <> true) Then
+                    Me.QuantitatField = value
+                    Me.RaisePropertyChanged("Quantitat")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
         Public Property Estat() As String
             Get
                 Return Me.EstatField

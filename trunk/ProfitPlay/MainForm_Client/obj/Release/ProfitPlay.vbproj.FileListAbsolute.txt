@@ -108,3 +108,4 @@ C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\Prof
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Control_Stock.resources
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Control_Stock.resources
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.Compres_Pendents.resources
