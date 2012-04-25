@@ -15,6 +15,7 @@ Public Class Empleat
 
 
     Public Function log_empleat(ByVal user As String, ByVal password As String) As String
+
         Dim validacio As String = Nothing
         Dim info As DataTable
         Dim passwordBD As String = ""
@@ -39,16 +40,16 @@ Public Class Empleat
     End Function
 
     Public Function ContaEmpleats() As Integer
-        Dim numUsuaris As Integer = 0
-
-        numUsuaris = BD.ContaEmpleats()
-
-        Return numUsuaris
+        Return BD.ContaEmpleats()
     End Function
 
 
     Public Function GetEmpleat(ByVal id As Integer) As DataTable
         Return BD.GetEmpleats
+    End Function
+
+    Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
+        Return BD.deleteEmpleat(Nom, Sur)
     End Function
 
     Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
