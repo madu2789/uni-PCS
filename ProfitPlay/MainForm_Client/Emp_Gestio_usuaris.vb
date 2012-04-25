@@ -75,9 +75,7 @@ Public Class Emp_Gestio_usuaris
 
         For i = 2 To numUsuaris + 2 ' (tot+2) petit arreglo per desajust dels ids a la BD
             Dim empleat = ws.GetEmpleat(i)
-
-            ToolStrip1.Items.Add(empleat.nom)
-            'MsgBox(empleat.nom, MsgBoxStyle.Exclamation)
+            ts_usuaris.Items.Add(empleat.nom + " " + empleat.cognom)
         Next
     End Sub
 
@@ -86,12 +84,12 @@ Public Class Emp_Gestio_usuaris
         If txtb_nom.Text = "" Or txtb_cognom.Text = "" Or txtb_password.Text = "" Or cmbx_rol.Text = "" Then
             MsgBox("Has d'introduir tots els camps!!!", MsgBoxStyle.Critical)
         Else
-            
+
             'insert a base de dades empleat
             Dim validacio As Boolean
             validacio = ws.SetEmpleat(txtb_nom.Text, txtb_password.Text, cmbx_rol.Text, txtb_cognom.Text)
             If validacio = True Then
-                ToolStrip1.Items.Add(txtb_nom.Text + " " + txtb_cognom.Text)
+                ts_usuaris.Items.Add(txtb_nom.Text + " " + txtb_cognom.Text)
                 grb_insert_modifica.Hide()
             Else
                 MsgBox("validació incorrecte!", MsgBoxStyle.Critical)
@@ -104,14 +102,11 @@ Public Class Emp_Gestio_usuaris
         grb_insert_modifica.Hide()
     End Sub
 
-    Private Sub ToolStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
-        For i As Integer = 0 To ToolStrip1.Items.Count - 1 Step 1
+    Private Sub ToolStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ts_usuaris.ItemClicked
 
-            If (e.ClickedItem.Text = ToolStrip1.Items.Item(i).Text) Then
-                ToolStrip1.Items.RemoveAt(i)
-            End If
+        ts_usuaris.Items.Remove(e.ClickedItem)
+        'ws.deleteEmpleat(e.ClickedItem.Text)
 
-        Next
     End Sub
 
     Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click

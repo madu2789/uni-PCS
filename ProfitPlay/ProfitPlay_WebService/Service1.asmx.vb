@@ -75,6 +75,12 @@ Public Class Service1
     Public Function LogEmpleat(ByVal user As String, ByVal password As String) As String
         Return empleat.log_empleat(user, password)
     End Function
+
+    <WebMethod()> _
+    Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
+        Return empleat.deleteEmpleat(Nom, Sur)
+    End Function
+
     <WebMethod()> _
         Public Function GetLastUserId() As Integer
         Return usuari.getLastUserId()

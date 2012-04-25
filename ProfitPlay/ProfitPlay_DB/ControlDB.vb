@@ -155,6 +155,27 @@
 
     End Function
 
+    Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
+
+        Dim modif As Integer = -1
+
+        Try
+
+            connect()
+            empleatDA.Connection = conDB
+            modif = empleatDA.DeleteEmpleat(Nom, Sur)
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("Error delete empleat", MsgBoxStyle.Critical)
+
+        End Try
+
+        Return modif
+
+    End Function
+
     Public Function ContaProductes() As Integer
 
         Dim numProductes As Integer = 0

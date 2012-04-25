@@ -673,6 +673,10 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/LogEmpleat", ReplyAction:="*")>  _
         Function LogEmpleat(ByVal request As ws_profitplay.LogEmpleatRequest) As ws_profitplay.LogEmpleatResponse
         
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Nom del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/deleteEmpleat", ReplyAction:="*")>  _
+        Function deleteEmpleat(ByVal request As ws_profitplay.deleteEmpleatRequest) As ws_profitplay.deleteEmpleatResponse
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetLastUserId", ReplyAction:="*")>  _
         Function GetLastUserId() As Integer
         
@@ -833,6 +837,82 @@ Namespace ws_profitplay
         Public Sub New(ByVal LogEmpleatResult As String)
             MyBase.New
             Me.LogEmpleatResult = LogEmpleatResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class deleteEmpleatRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="deleteEmpleat", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.deleteEmpleatRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.deleteEmpleatRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class deleteEmpleatRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public Nom As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public Sur As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Nom As String, ByVal Sur As String)
+            MyBase.New
+            Me.Nom = Nom
+            Me.Sur = Sur
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class deleteEmpleatResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="deleteEmpleatResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.deleteEmpleatResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.deleteEmpleatResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class deleteEmpleatResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public deleteEmpleatResult As Integer
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal deleteEmpleatResult As Integer)
+            MyBase.New
+            Me.deleteEmpleatResult = deleteEmpleatResult
         End Sub
     End Class
     
@@ -2095,6 +2175,20 @@ Namespace ws_profitplay
             inValue.Body.password = password
             Dim retVal As ws_profitplay.LogEmpleatResponse = CType(Me,ws_profitplay.Service1Soap).LogEmpleat(inValue)
             Return retVal.Body.LogEmpleatResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_deleteEmpleat(ByVal request As ws_profitplay.deleteEmpleatRequest) As ws_profitplay.deleteEmpleatResponse Implements ws_profitplay.Service1Soap.deleteEmpleat
+            Return MyBase.Channel.deleteEmpleat(request)
+        End Function
+        
+        Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
+            Dim inValue As ws_profitplay.deleteEmpleatRequest = New ws_profitplay.deleteEmpleatRequest
+            inValue.Body = New ws_profitplay.deleteEmpleatRequestBody
+            inValue.Body.Nom = Nom
+            inValue.Body.Sur = Sur
+            Dim retVal As ws_profitplay.deleteEmpleatResponse = CType(Me,ws_profitplay.Service1Soap).deleteEmpleat(inValue)
+            Return retVal.Body.deleteEmpleatResult
         End Function
         
         Public Function GetLastUserId() As Integer Implements ws_profitplay.Service1Soap.GetLastUserId

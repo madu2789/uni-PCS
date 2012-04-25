@@ -25,7 +25,7 @@ Partial Class Emp_Gestio_usuaris
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Emp_Gestio_usuaris))
         Me.grb_users = New System.Windows.Forms.GroupBox
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
+        Me.ts_usuaris = New System.Windows.Forms.ToolStrip
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.pnl_estat = New System.Windows.Forms.Panel
@@ -51,6 +51,7 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_cognom = New System.Windows.Forms.Label
         Me.lbl_password = New System.Windows.Forms.Label
         Me.lbl_nom = New System.Windows.Forms.Label
+        Me.lbl_gestio_usuaris_info = New System.Windows.Forms.Label
         Me.grb_users.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
@@ -77,7 +78,7 @@ Partial Class Emp_Gestio_usuaris
         '
         'ToolStripContainer1.ContentPanel
         '
-        Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.ToolStrip1)
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.ts_usuaris)
         Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(260, 245)
         Me.ToolStripContainer1.Location = New System.Drawing.Point(28, 39)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
@@ -89,17 +90,17 @@ Partial Class Emp_Gestio_usuaris
         '
         Me.ToolStripContainer1.TopToolStripPanel.Controls.Add(Me.ToolStrip2)
         '
-        'ToolStrip1
+        'ts_usuaris
         '
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ToolStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ToolStrip1.Size = New System.Drawing.Size(260, 245)
-        Me.ToolStrip1.TabIndex = 2
-        Me.ToolStrip1.Text = "ToolStrip1"
+        Me.ts_usuaris.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ts_usuaris.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.ts_usuaris.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
+        Me.ts_usuaris.Location = New System.Drawing.Point(0, 0)
+        Me.ts_usuaris.Name = "ts_usuaris"
+        Me.ts_usuaris.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.ts_usuaris.Size = New System.Drawing.Size(260, 245)
+        Me.ts_usuaris.TabIndex = 2
+        Me.ts_usuaris.Text = "ToolStrip1"
         '
         'ToolStrip2
         '
@@ -261,7 +262,7 @@ Partial Class Emp_Gestio_usuaris
         Me.grb_insert_modifica.Controls.Add(Me.lbl_cognom)
         Me.grb_insert_modifica.Controls.Add(Me.lbl_password)
         Me.grb_insert_modifica.Controls.Add(Me.lbl_nom)
-        Me.grb_insert_modifica.Location = New System.Drawing.Point(508, 115)
+        Me.grb_insert_modifica.Location = New System.Drawing.Point(507, 115)
         Me.grb_insert_modifica.Name = "grb_insert_modifica"
         Me.grb_insert_modifica.Size = New System.Drawing.Size(325, 345)
         Me.grb_insert_modifica.TabIndex = 37
@@ -357,6 +358,15 @@ Partial Class Emp_Gestio_usuaris
         Me.lbl_nom.TabIndex = 0
         Me.lbl_nom.Text = "Nom:"
         '
+        'lbl_gestio_usuaris_info
+        '
+        Me.lbl_gestio_usuaris_info.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_gestio_usuaris_info.Location = New System.Drawing.Point(513, 115)
+        Me.lbl_gestio_usuaris_info.Name = "lbl_gestio_usuaris_info"
+        Me.lbl_gestio_usuaris_info.Size = New System.Drawing.Size(267, 266)
+        Me.lbl_gestio_usuaris_info.TabIndex = 38
+        Me.lbl_gestio_usuaris_info.Text = "Fes click sobre un usuari per eliminar-lo del sistema"
+        '
         'Emp_Gestio_usuaris
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -367,6 +377,7 @@ Partial Class Emp_Gestio_usuaris
         Me.Controls.Add(Me.grb_users)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
+        Me.Controls.Add(Me.lbl_gestio_usuaris_info)
         Me.Name = "Emp_Gestio_usuaris"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Emp_Gestio_usuaris"
@@ -390,7 +401,7 @@ Partial Class Emp_Gestio_usuaris
     End Sub
     Friend WithEvents grb_users As System.Windows.Forms.GroupBox
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
+    Friend WithEvents ts_usuaris As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStrip2 As System.Windows.Forms.ToolStrip
     Friend WithEvents pnl_estat As System.Windows.Forms.Panel
     Friend WithEvents pcb_sortir As System.Windows.Forms.PictureBox
@@ -416,4 +427,5 @@ Partial Class Emp_Gestio_usuaris
     Friend WithEvents btn_estat As System.Windows.Forms.Button
     Friend WithEvents btn_gest_pagos As System.Windows.Forms.Button
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents lbl_gestio_usuaris_info As System.Windows.Forms.Label
 End Class
