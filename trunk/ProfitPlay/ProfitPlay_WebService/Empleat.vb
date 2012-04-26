@@ -4,12 +4,12 @@ Imports System.Collections.Generic
 
 Public Class Empleat
 
-    Dim id As Integer
-    Dim rol As String
-    Dim nom As String
-    Dim cognom As String
-    Dim username As String
-    Dim password As String
+    Public id As Integer
+    Public rol As String
+    Public nom As String
+    Public cognom As String
+    Public username As String
+    Public password As String
 
     Dim BD As New ProfitPlay_DB.ControlDB
 
@@ -22,7 +22,7 @@ Public Class Empleat
         Dim rol As String = ""
 
         Try
-            info = BD.consulta_empleat(user)
+            info = BD.ConsultaEmpleat(user)
 
             For Each fila In info.Rows
                 passwordBD = fila("Password").ToString
@@ -43,7 +43,6 @@ Public Class Empleat
         Return BD.ContaEmpleats()
     End Function
 
-
     Public Function GetEmpleat(ByVal id As Integer) As DataTable
         Return BD.GetEmpleats
     End Function
@@ -54,6 +53,10 @@ Public Class Empleat
 
     Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
         Return BD.SetEmpleat(nom, password, rol, cognom)
+    End Function
+
+    Public Function getEmpleats() As DataTable
+        Return BD.GetEmpleats()
     End Function
 
 End Class

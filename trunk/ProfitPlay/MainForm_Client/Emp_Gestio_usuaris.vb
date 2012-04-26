@@ -71,12 +71,12 @@ Public Class Emp_Gestio_usuaris
 
     Private Sub ObteEmpleats()
 
-        Dim numUsuaris As Integer = ws.ContaEmpleats
+        Dim empleats = ws.getEmpleats()
 
-        For i = 2 To numUsuaris + 2 ' (tot+2) petit arreglo per desajust dels ids a la BD
-            Dim empleat = ws.GetEmpleat(i)
-            ts_usuaris.Items.Add(empleat.nom + " " + empleat.cognom)
+        For Each empleat In empleats
+            ts_usuaris.Items.Add(empleat.nom + "_" + empleat.cognom)
         Next
+
     End Sub
 
     Private Sub btn_afegir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegir.Click
@@ -104,8 +104,22 @@ Public Class Emp_Gestio_usuaris
 
     Private Sub ToolStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ts_usuaris.ItemClicked
 
+        Dim text = e.ClickedItem.Text
+        Dim nom As String = ""
+
+        For i As Integer = 0 To text.Length - 1 Step 1
+
+            If (text(i) <> "_") Then
+                nom += text(i)
+            Else
+                Exit For
+            End If
+        Next
+
+        MsgBox("El cognom es " + text.Substring(text.IndexOf("_") + 1))
         ts_usuaris.Items.Remove(e.ClickedItem)
-        'ws.deleteEmpleat(e.ClickedItem.Text)
+        Dim res = ws.deleteEmpleat(nom, text.Substring(text.IndexOf("_") + 1))
+        MsgBox("Eliminats " + res.ToString)
 
     End Sub
 
@@ -113,4 +127,15 @@ Public Class Emp_Gestio_usuaris
         Me.Hide()
         Emp_anula.Show()
     End Sub
+
+    Public Function findEmpleatId(ByVal nom As String, ByVal sur As String) As Integer
+        Dim empleats = ws.getEmpleats
+
+        For Each empleat In empleats
+            If (empleat.nom = nom And empleat.cognom = sur) Then
+                Return empleat.id
+            End If
+        Next
+        Return -1
+    End Function
 End Class
