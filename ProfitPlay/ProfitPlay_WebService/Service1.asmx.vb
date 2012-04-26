@@ -82,6 +82,85 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+ Public Function ContaEmpleats() As Integer
+        Return empleat.ContaEmpleats
+    End Function
+
+    <WebMethod()> _
+   Public Function GetEmpleat(ByVal id As Integer) As EmpleatBD
+
+        Dim idBD As Integer
+        Dim info As DataTable = empleat.GetEmpleat(id)
+
+        Dim empl As New EmpleatBD
+
+        For Each fila In info.Rows
+
+            idBD = CInt(fila("Id_empleat"))
+            If id = idBD Then
+                ' MsgBox(fila("Id_empleat").ToString + fila("Rol").ToString + fila("Nom").ToString, MsgBoxStyle.Exclamation)
+
+                empl.id = fila("Id_empleat").ToString
+                empl.rol = fila("Rol").ToString
+                empl.nom = fila("Nom").ToString
+                empl.cognom = fila("Cognom").ToString
+                empl.username = fila("Username").ToString
+                empl.password = fila("Password").ToString
+
+            End If
+        Next
+
+        Return empl
+    End Function
+
+    <WebMethod()> _
+   Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
+        Return empleat.SetEmpleats(nom, password, rol, cognom)
+    End Function
+
+    <WebMethod()> _
+   Public Function getEmpleats() As List(Of Empleat)
+
+        Dim dades As New List(Of Empleat)
+        Dim info As DataTable = empleat.getEmpleats()
+        For Each fila In info.Rows
+
+            Dim empl As New Empleat
+
+            empl.id = fila("Id_empleat").ToString
+            empl.rol = fila("Rol").ToString
+            empl.nom = fila("Nom").ToString
+            empl.cognom = fila("Cognom").ToString
+            empl.username = fila("Username").ToString
+            empl.password = fila("Password").ToString
+            dades.Add(empl)
+
+        Next
+
+        Return dades
+
+    End Function
+
+    <WebMethod()> _
+       Public Function GetAllPlats() As List(Of PlatDB)
+
+        Dim dades As New List(Of PlatDB)
+        Dim info As DataTable = plat.ObtePlats()
+        For Each fila In info.Rows
+
+            Dim empl As New PlatDB
+
+            empl.id_ingredient = fila("Id_ingredient").ToString
+            empl.id_producte = (fila("Id_producte").ToString)
+            empl.quantitat = fila("Quantitat").ToString
+            dades.Add(empl)
+
+        Next
+
+        Return dades
+    End Function
+
+    <WebMethod()> _
         Public Function GetLastUserId() As Integer
         Return usuari.getLastUserId()
     End Function
@@ -233,62 +312,6 @@ Public Class Service1
     <WebMethod()> _
   Public Function SolPagarComanda(ByVal id_comanda As String) As Boolean
         Return comanda.SolPagarComanda(id_comanda)
-    End Function
-
-    <WebMethod()> _
- Public Function ContaEmpleats() As Integer
-        Return empleat.ContaEmpleats
-    End Function
-
-    <WebMethod()> _
-   Public Function GetEmpleat(ByVal id As Integer) As EmpleatBD
-
-        Dim idBD As Integer
-        Dim info As DataTable = empleat.GetEmpleat(id)
-
-        Dim empl As New EmpleatBD
-
-        For Each fila In info.Rows
-
-            idBD = CInt(fila("Id_empleat"))
-            If id = idBD Then
-                ' MsgBox(fila("Id_empleat").ToString + fila("Rol").ToString + fila("Nom").ToString, MsgBoxStyle.Exclamation)
-
-                empl.id = fila("Id_empleat").ToString
-                empl.rol = fila("Rol").ToString
-                empl.nom = fila("Nom").ToString
-                empl.cognom = fila("Cognom").ToString
-                empl.username = fila("Username").ToString
-                empl.password = fila("Password").ToString
-
-            End If
-        Next
-
-        Return empl
-    End Function
-
-    <WebMethod()> _
-   Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
-        Return empleat.SetEmpleats(nom, password, rol, cognom)
-    End Function
-
-    <WebMethod()> _
-       Public Function GetAllPlats() As List(Of PlatDB)
-
-        Dim dades As New List(Of PlatDB)
-        Dim info As DataTable = plat.ObtePlats()
-        For Each fila In info.Rows
-
-            Dim empl As New PlatDB
-
-            empl.id_ingredient = fila("Id_ingredient").ToString
-            empl.id_producte = (fila("Id_producte").ToString)
-            empl.quantitat = fila("Quantitat").ToString
-            dades.Add(empl)
-
-        Next
-
-        Return dades
     End Function
 
     <WebMethod()> _

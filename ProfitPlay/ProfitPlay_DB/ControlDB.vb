@@ -76,7 +76,7 @@
         End Try
     End Sub
 
-    Public Function consulta_empleat(ByVal user As String) As DataTable
+    Public Function ConsultaEmpleat(ByVal user As String) As DataTable
 
         Try
             connect()
@@ -157,13 +157,19 @@
 
     Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
 
+        MsgBox("Nom " + Nom + " Cognom " + Sur)
         Dim modif As Integer = -1
 
         Try
 
             connect()
             empleatDA.Connection = conDB
-            modif = empleatDA.DeleteEmpleat(Nom, Sur)
+            If (Sur = "") Then
+                modif = empleatDA.DeleteEmpleat(Nom, "")
+            Else
+                modif = empleatDA.DeleteEmpleat(Nom, Sur)
+            End If
+
             disconnect()
 
         Catch ex As Exception

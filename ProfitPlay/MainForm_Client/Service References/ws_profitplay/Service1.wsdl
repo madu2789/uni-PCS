@@ -32,6 +32,104 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ContaEmpleats">
+        <s:complexType />
+      </s:element>
+      <s:element name="ContaEmpleatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContaEmpleatsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpleat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpleatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpleatResult" type="tns:EmpleatBD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EmpleatBD">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cognom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetEmpleat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cognom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEmpleatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetEmpleatResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEmpleats">
+        <s:complexType />
+      </s:element>
+      <s:element name="getEmpleatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEmpleatsResult" type="tns:ArrayOfEmpleat" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmpleat">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Empleat" nillable="true" type="tns:Empleat" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Empleat">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cognom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllPlats">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPlatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPlatsResult" type="tns:ArrayOfPlatDB" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlatDB">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlatDB" nillable="true" type="tns:PlatDB" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlatDB">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_producte" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_ingredient" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="quantitat" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetLastUserId">
         <s:complexType />
       </s:element>
@@ -292,79 +390,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ContaEmpleats">
-        <s:complexType />
-      </s:element>
-      <s:element name="ContaEmpleatsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ContaEmpleatsResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetEmpleat">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetEmpleatResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetEmpleatResult" type="tns:EmpleatBD" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="EmpleatBD">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="cognom" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="SetEmpleat">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="cognom" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SetEmpleatResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="SetEmpleatResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAllPlats">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetAllPlatsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAllPlatsResult" type="tns:ArrayOfPlatDB" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfPlatDB">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="PlatDB" nillable="true" type="tns:PlatDB" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="PlatDB">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="id_producte" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="id_ingredient" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="quantitat" type="s:int" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="insertCompra">
         <s:complexType>
           <s:sequence>
@@ -417,6 +442,36 @@
   </wsdl:message>
   <wsdl:message name="deleteEmpleatSoapOut">
     <wsdl:part name="parameters" element="tns:deleteEmpleatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContaEmpleatsSoapIn">
+    <wsdl:part name="parameters" element="tns:ContaEmpleats" />
+  </wsdl:message>
+  <wsdl:message name="ContaEmpleatsSoapOut">
+    <wsdl:part name="parameters" element="tns:ContaEmpleatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpleatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpleat" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpleatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpleatResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetEmpleatSoapIn">
+    <wsdl:part name="parameters" element="tns:SetEmpleat" />
+  </wsdl:message>
+  <wsdl:message name="SetEmpleatSoapOut">
+    <wsdl:part name="parameters" element="tns:SetEmpleatResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEmpleatsSoapIn">
+    <wsdl:part name="parameters" element="tns:getEmpleats" />
+  </wsdl:message>
+  <wsdl:message name="getEmpleatsSoapOut">
+    <wsdl:part name="parameters" element="tns:getEmpleatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPlats" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPlatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPlatsResponse" />
   </wsdl:message>
   <wsdl:message name="GetLastUserIdSoapIn">
     <wsdl:part name="parameters" element="tns:GetLastUserId" />
@@ -520,30 +575,6 @@
   <wsdl:message name="SolPagarComandaSoapOut">
     <wsdl:part name="parameters" element="tns:SolPagarComandaResponse" />
   </wsdl:message>
-  <wsdl:message name="ContaEmpleatsSoapIn">
-    <wsdl:part name="parameters" element="tns:ContaEmpleats" />
-  </wsdl:message>
-  <wsdl:message name="ContaEmpleatsSoapOut">
-    <wsdl:part name="parameters" element="tns:ContaEmpleatsResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetEmpleatSoapIn">
-    <wsdl:part name="parameters" element="tns:GetEmpleat" />
-  </wsdl:message>
-  <wsdl:message name="GetEmpleatSoapOut">
-    <wsdl:part name="parameters" element="tns:GetEmpleatResponse" />
-  </wsdl:message>
-  <wsdl:message name="SetEmpleatSoapIn">
-    <wsdl:part name="parameters" element="tns:SetEmpleat" />
-  </wsdl:message>
-  <wsdl:message name="SetEmpleatSoapOut">
-    <wsdl:part name="parameters" element="tns:SetEmpleatResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetAllPlatsSoapIn">
-    <wsdl:part name="parameters" element="tns:GetAllPlats" />
-  </wsdl:message>
-  <wsdl:message name="GetAllPlatsSoapOut">
-    <wsdl:part name="parameters" element="tns:GetAllPlatsResponse" />
-  </wsdl:message>
   <wsdl:message name="insertCompraSoapIn">
     <wsdl:part name="parameters" element="tns:insertCompra" />
   </wsdl:message>
@@ -564,6 +595,26 @@
     <wsdl:operation name="deleteEmpleat">
       <wsdl:input message="tns:deleteEmpleatSoapIn" />
       <wsdl:output message="tns:deleteEmpleatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContaEmpleats">
+      <wsdl:input message="tns:ContaEmpleatsSoapIn" />
+      <wsdl:output message="tns:ContaEmpleatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpleat">
+      <wsdl:input message="tns:GetEmpleatSoapIn" />
+      <wsdl:output message="tns:GetEmpleatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEmpleat">
+      <wsdl:input message="tns:SetEmpleatSoapIn" />
+      <wsdl:output message="tns:SetEmpleatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmpleats">
+      <wsdl:input message="tns:getEmpleatsSoapIn" />
+      <wsdl:output message="tns:getEmpleatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlats">
+      <wsdl:input message="tns:GetAllPlatsSoapIn" />
+      <wsdl:output message="tns:GetAllPlatsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetLastUserId">
       <wsdl:input message="tns:GetLastUserIdSoapIn" />
@@ -633,22 +684,6 @@
       <wsdl:input message="tns:SolPagarComandaSoapIn" />
       <wsdl:output message="tns:SolPagarComandaSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ContaEmpleats">
-      <wsdl:input message="tns:ContaEmpleatsSoapIn" />
-      <wsdl:output message="tns:ContaEmpleatsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetEmpleat">
-      <wsdl:input message="tns:GetEmpleatSoapIn" />
-      <wsdl:output message="tns:GetEmpleatSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SetEmpleat">
-      <wsdl:input message="tns:SetEmpleatSoapIn" />
-      <wsdl:output message="tns:SetEmpleatSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllPlats">
-      <wsdl:input message="tns:GetAllPlatsSoapIn" />
-      <wsdl:output message="tns:GetAllPlatsSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="insertCompra">
       <wsdl:input message="tns:insertCompraSoapIn" />
       <wsdl:output message="tns:insertCompraSoapOut" />
@@ -671,6 +706,51 @@
     </wsdl:operation>
     <wsdl:operation name="deleteEmpleat">
       <soap:operation soapAction="http://tempuri.org/deleteEmpleat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContaEmpleats">
+      <soap:operation soapAction="http://tempuri.org/ContaEmpleats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpleat">
+      <soap:operation soapAction="http://tempuri.org/GetEmpleat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmpleat">
+      <soap:operation soapAction="http://tempuri.org/SetEmpleat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpleats">
+      <soap:operation soapAction="http://tempuri.org/getEmpleats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlats">
+      <soap:operation soapAction="http://tempuri.org/GetAllPlats" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -831,42 +911,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ContaEmpleats">
-      <soap:operation soapAction="http://tempuri.org/ContaEmpleats" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetEmpleat">
-      <soap:operation soapAction="http://tempuri.org/GetEmpleat" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SetEmpleat">
-      <soap:operation soapAction="http://tempuri.org/SetEmpleat" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllPlats">
-      <soap:operation soapAction="http://tempuri.org/GetAllPlats" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="insertCompra">
       <soap:operation soapAction="http://tempuri.org/insertCompra" style="document" />
       <wsdl:input>
@@ -899,6 +943,51 @@
     </wsdl:operation>
     <wsdl:operation name="deleteEmpleat">
       <soap12:operation soapAction="http://tempuri.org/deleteEmpleat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContaEmpleats">
+      <soap12:operation soapAction="http://tempuri.org/ContaEmpleats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpleat">
+      <soap12:operation soapAction="http://tempuri.org/GetEmpleat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmpleat">
+      <soap12:operation soapAction="http://tempuri.org/SetEmpleat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpleats">
+      <soap12:operation soapAction="http://tempuri.org/getEmpleats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlats">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPlats" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1052,42 +1141,6 @@
     </wsdl:operation>
     <wsdl:operation name="SolPagarComanda">
       <soap12:operation soapAction="http://tempuri.org/SolPagarComanda" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ContaEmpleats">
-      <soap12:operation soapAction="http://tempuri.org/ContaEmpleats" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetEmpleat">
-      <soap12:operation soapAction="http://tempuri.org/GetEmpleat" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SetEmpleat">
-      <soap12:operation soapAction="http://tempuri.org/SetEmpleat" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllPlats">
-      <soap12:operation soapAction="http://tempuri.org/GetAllPlats" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
