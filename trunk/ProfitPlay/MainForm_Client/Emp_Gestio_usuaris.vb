@@ -91,7 +91,7 @@ Public Class Emp_Gestio_usuaris
             If validacio = True Then
                 ts_usuaris.Items.Add(txtb_nom.Text + " " + txtb_cognom.Text)
                 grb_insert_modifica.Hide()
-            Else
+            ElseIf (validacio = False Or txtb_nom.Text = "" Or txtb_password.Text = "" Or cmbx_rol.Text = "" Or txtb_cognom.Text = "") Then
                 MsgBox("validació incorrecte!", MsgBoxStyle.Critical)
             End If
         End If
