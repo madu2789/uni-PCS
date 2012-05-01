@@ -47,9 +47,9 @@ Partial Class Emp_Gestio_usuaris
         Me.txtb_cognom = New System.Windows.Forms.TextBox
         Me.txtb_password = New System.Windows.Forms.TextBox
         Me.txtb_nom = New System.Windows.Forms.TextBox
-        Me.lbl_rol = New System.Windows.Forms.Label
-        Me.lbl_cognom = New System.Windows.Forms.Label
-        Me.lbl_password = New System.Windows.Forms.Label
+        Me.lbl_tipus = New System.Windows.Forms.Label
+        Me.lbl_descripcio = New System.Windows.Forms.Label
+        Me.lbl_preu = New System.Windows.Forms.Label
         Me.lbl_nom = New System.Windows.Forms.Label
         Me.lbl_gestio_usuaris_info = New System.Windows.Forms.Label
         Me.grb_users.SuspendLayout()
@@ -258,9 +258,9 @@ Partial Class Emp_Gestio_usuaris
         Me.grb_insert_modifica.Controls.Add(Me.txtb_cognom)
         Me.grb_insert_modifica.Controls.Add(Me.txtb_password)
         Me.grb_insert_modifica.Controls.Add(Me.txtb_nom)
-        Me.grb_insert_modifica.Controls.Add(Me.lbl_rol)
-        Me.grb_insert_modifica.Controls.Add(Me.lbl_cognom)
-        Me.grb_insert_modifica.Controls.Add(Me.lbl_password)
+        Me.grb_insert_modifica.Controls.Add(Me.lbl_tipus)
+        Me.grb_insert_modifica.Controls.Add(Me.lbl_descripcio)
+        Me.grb_insert_modifica.Controls.Add(Me.lbl_preu)
         Me.grb_insert_modifica.Controls.Add(Me.lbl_nom)
         Me.grb_insert_modifica.Location = New System.Drawing.Point(507, 115)
         Me.grb_insert_modifica.Name = "grb_insert_modifica"
@@ -322,32 +322,32 @@ Partial Class Emp_Gestio_usuaris
         Me.txtb_nom.Size = New System.Drawing.Size(108, 20)
         Me.txtb_nom.TabIndex = 3
         '
-        'lbl_rol
+        'lbl_tipus
         '
-        Me.lbl_rol.AutoSize = True
-        Me.lbl_rol.Location = New System.Drawing.Point(42, 187)
-        Me.lbl_rol.Name = "lbl_rol"
-        Me.lbl_rol.Size = New System.Drawing.Size(26, 13)
-        Me.lbl_rol.TabIndex = 2
-        Me.lbl_rol.Text = "Rol:"
+        Me.lbl_tipus.AutoSize = True
+        Me.lbl_tipus.Location = New System.Drawing.Point(42, 187)
+        Me.lbl_tipus.Name = "lbl_tipus"
+        Me.lbl_tipus.Size = New System.Drawing.Size(26, 13)
+        Me.lbl_tipus.TabIndex = 2
+        Me.lbl_tipus.Text = "Rol:"
         '
-        'lbl_cognom
+        'lbl_descripcio
         '
-        Me.lbl_cognom.AutoSize = True
-        Me.lbl_cognom.Location = New System.Drawing.Point(42, 93)
-        Me.lbl_cognom.Name = "lbl_cognom"
-        Me.lbl_cognom.Size = New System.Drawing.Size(49, 13)
-        Me.lbl_cognom.TabIndex = 1
-        Me.lbl_cognom.Text = "Cognom:"
+        Me.lbl_descripcio.AutoSize = True
+        Me.lbl_descripcio.Location = New System.Drawing.Point(42, 93)
+        Me.lbl_descripcio.Name = "lbl_descripcio"
+        Me.lbl_descripcio.Size = New System.Drawing.Size(60, 13)
+        Me.lbl_descripcio.TabIndex = 1
+        Me.lbl_descripcio.Text = "Descripció:"
         '
-        'lbl_password
+        'lbl_preu
         '
-        Me.lbl_password.AutoSize = True
-        Me.lbl_password.Location = New System.Drawing.Point(42, 139)
-        Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(56, 13)
-        Me.lbl_password.TabIndex = 1
-        Me.lbl_password.Text = "Password:"
+        Me.lbl_preu.AutoSize = True
+        Me.lbl_preu.Location = New System.Drawing.Point(42, 139)
+        Me.lbl_preu.Name = "lbl_preu"
+        Me.lbl_preu.Size = New System.Drawing.Size(32, 13)
+        Me.lbl_preu.TabIndex = 1
+        Me.lbl_preu.Text = "Preu:"
         '
         'lbl_nom
         '
@@ -414,10 +414,10 @@ Partial Class Emp_Gestio_usuaris
     Friend WithEvents btn_gest_comandes As System.Windows.Forms.Button
     Friend WithEvents btn_gest_carta As System.Windows.Forms.Button
     Friend WithEvents grb_insert_modifica As System.Windows.Forms.GroupBox
-    Friend WithEvents lbl_cognom As System.Windows.Forms.Label
-    Friend WithEvents lbl_password As System.Windows.Forms.Label
+    Friend WithEvents lbl_descripcio As System.Windows.Forms.Label
+    Friend WithEvents lbl_preu As System.Windows.Forms.Label
     Friend WithEvents lbl_nom As System.Windows.Forms.Label
-    Friend WithEvents lbl_rol As System.Windows.Forms.Label
+    Friend WithEvents lbl_tipus As System.Windows.Forms.Label
     Friend WithEvents txtb_cognom As System.Windows.Forms.TextBox
     Friend WithEvents txtb_password As System.Windows.Forms.TextBox
     Friend WithEvents txtb_nom As System.Windows.Forms.TextBox

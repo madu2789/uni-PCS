@@ -2,6 +2,7 @@
 
     Dim ws As New ws_profitplay.Service1SoapClient
     Private listofproducts
+    Private listofingredient
     Private m_comanda
 
     Private Sub Emp_carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -10,6 +11,7 @@
         lbl_punts.Text = Mainform_empleado.rolempleat
 
         listofproducts = New List(Of Producto)
+        listofingredient = New List(Of Ingredient)
         m_comanda = New Comanda()
 
         Select Case Mainform_empleado.rolempleat
@@ -44,7 +46,7 @@
 
     End Sub
 
-    'vinda de la bbdd
+    'vindra de la bbdd
     Private Sub ompleLlistaProductes()
 
         For i As Integer = 0 To 9 Step 1
@@ -112,6 +114,33 @@
 
     End Sub
 
+    Private Sub ObteIngredients()
+
+        lbl_productos_dispo.Text = "Ingredients disponibles:"
+        lbl_productes_seleccinats.Text = "Ingredients seleccionats:"
+        emp_lv_productos_seleccionats.Clear()
+        emp_lv_productos_disp.Clear()
+
+        Dim Llistaingredients = ws.GetIngredients()
+
+        For Each fila In Llistaingredients
+            Dim ingr As New Ingredient
+
+            ingr.id_ingredient = fila.id
+            ingr.nom = fila.nom
+            ingr.preu = fila.preu
+            ingr.quantitat = fila.quantitat
+            ingr.StockActual = fila.stock_actual
+            ingr.StockMinim = fila.stock_minim
+
+            listofingredient.Add(ingr)
+            emp_lv_productos_disp.Items.Add(ingr.getNom)
+        Next
+
+        emp_lv_productos_disp.Refresh()
+
+    End Sub
+
     Private Sub btn_gest_users_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_users.Click
         Me.Hide()
         Emp_Gestio_usuaris.Show()
@@ -130,6 +159,7 @@
     
     Private Sub btn_producto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_producto.Click
 
+        grb_insert.Hide()
         emp_lv_productos_seleccionats.Clear()
         emp_lv_productos_disp.Clear()
 
@@ -213,7 +243,7 @@
     End Sub
 
     'cal guardar la nova carta a la bbdd
-    Private Sub btn_crear_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_crear_carta.Click
+    Private Sub btn_crear_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         Dim result = MsgBox("Crear nova carta?", MsgBoxStyle.OkCancel, "Crear nova carta?")
         If (result = MsgBoxResult.Ok) Then
@@ -238,16 +268,19 @@
             End If
 
         End If
-        
+
     End Sub
 
-    Private Sub btn_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_carta.Click
+    Private Sub btn_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         grb_carta.Text = "Veure Cartes Creades"
     End Sub
 
     Private Sub btn_ingrediente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ingrediente.Click
 
+        grb_insert.Hide()
         grb_carta.Text = "Veure Ingredients"
+        ObteIngredients()
+
     End Sub
 
     Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click
@@ -257,5 +290,32 @@
 
     Private Sub btn_gest_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_carta.Click
 
+    End Sub
+
+    Private Sub btn_crear_producte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_crear_producte.Click
+
+        grb_insert.Show()
+
+    End Sub
+
+    Private Sub btn_afegir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegir.Click
+
+        'insert a la base de dades
+        'taula productes
+        If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or cmbx_tipus.Text = "") Then
+            MsgBox("Error, camps incomplerts!", MsgBoxStyle.Critical)
+        Else
+            ws.SetProducte(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, cmbx_tipus.Text)
+            MsgBox("Producte inserit correctament!", MsgBoxStyle.Information)
+            grb_insert.Hide()
+        End If
+
+
+        'taula productes-ingredients
+
+    End Sub
+
+    Private Sub btn_cancela_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancela.Click
+        grb_insert.Hide()
     End Sub
 End Class
