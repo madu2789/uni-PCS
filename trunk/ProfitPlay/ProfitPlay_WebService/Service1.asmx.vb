@@ -344,4 +344,14 @@ Public Class Service1
         Return producte.SetProducte(nom, descripcio, preu, tipus)
     End Function
 
+    <WebMethod()> _
+    Public Function InsertRelacioProducteIngredient(ByVal idProducte As String, ByVal idIngredient As String) As Boolean
+        Return producte.InsertRelacioProducteIngredient(idProducte, idIngredient)
+    End Function
+
+    <WebMethod()> _
+   Public Function InsertIngredient(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String) As Boolean
+        Return ingredient.SetIngredient(nom, preu, quantitat, stock, stockminim)
+    End Function
+
 End Class

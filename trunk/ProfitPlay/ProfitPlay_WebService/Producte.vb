@@ -79,4 +79,8 @@ Public Class Producte
         Return BD.SetProducte(nom, descripcio, preu, tipus)
     End Function
 
+    Public Function InsertRelacioProducteIngredient(ByVal idProducte As String, ByVal idIngredient As String) As Boolean
+        Return BD.SetIngredientProducte(idProducte, idIngredient)
+    End Function
+
 End Class

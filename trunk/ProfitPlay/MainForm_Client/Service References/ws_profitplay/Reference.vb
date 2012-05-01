@@ -896,6 +896,14 @@ Namespace ws_profitplay
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nom del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetProducte", ReplyAction:="*")>  _
         Function SetProducte(ByVal request As ws_profitplay.SetProducteRequest) As ws_profitplay.SetProducteResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento idProducte del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/InsertRelacioProducteIngredient", ReplyAction:="*")>  _
+        Function InsertRelacioProducteIngredient(ByVal request As ws_profitplay.InsertRelacioProducteIngredientRequest) As ws_profitplay.InsertRelacioProducteIngredientResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nom del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/InsertIngredient", ReplyAction:="*")>  _
+        Function InsertIngredient(ByVal request As ws_profitplay.InsertIngredientRequest) As ws_profitplay.InsertIngredientResponse
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -2414,6 +2422,170 @@ Namespace ws_profitplay
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class InsertRelacioProducteIngredientRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="InsertRelacioProducteIngredient", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.InsertRelacioProducteIngredientRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.InsertRelacioProducteIngredientRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class InsertRelacioProducteIngredientRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public idProducte As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public idIngredient As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal idProducte As String, ByVal idIngredient As String)
+            MyBase.New
+            Me.idProducte = idProducte
+            Me.idIngredient = idIngredient
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class InsertRelacioProducteIngredientResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="InsertRelacioProducteIngredientResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.InsertRelacioProducteIngredientResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.InsertRelacioProducteIngredientResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class InsertRelacioProducteIngredientResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public InsertRelacioProducteIngredientResult As Boolean
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal InsertRelacioProducteIngredientResult As Boolean)
+            MyBase.New
+            Me.InsertRelacioProducteIngredientResult = InsertRelacioProducteIngredientResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class InsertIngredientRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="InsertIngredient", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.InsertIngredientRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.InsertIngredientRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class InsertIngredientRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public nom As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public preu As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
+        Public quantitat As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
+        Public stock As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=4)>  _
+        Public stockminim As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String)
+            MyBase.New
+            Me.nom = nom
+            Me.preu = preu
+            Me.quantitat = quantitat
+            Me.stock = stock
+            Me.stockminim = stockminim
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class InsertIngredientResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="InsertIngredientResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.InsertIngredientResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.InsertIngredientResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class InsertIngredientResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public InsertIngredientResult As Boolean
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal InsertIngredientResult As Boolean)
+            MyBase.New
+            Me.InsertIngredientResult = InsertIngredientResult
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
     Public Interface Service1SoapChannel
         Inherits ws_profitplay.Service1Soap, System.ServiceModel.IClientChannel
@@ -2748,6 +2920,37 @@ Namespace ws_profitplay
             inValue.Body.tipus = tipus
             Dim retVal As ws_profitplay.SetProducteResponse = CType(Me,ws_profitplay.Service1Soap).SetProducte(inValue)
             Return retVal.Body.SetProducteResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_InsertRelacioProducteIngredient(ByVal request As ws_profitplay.InsertRelacioProducteIngredientRequest) As ws_profitplay.InsertRelacioProducteIngredientResponse Implements ws_profitplay.Service1Soap.InsertRelacioProducteIngredient
+            Return MyBase.Channel.InsertRelacioProducteIngredient(request)
+        End Function
+        
+        Public Function InsertRelacioProducteIngredient(ByVal idProducte As String, ByVal idIngredient As String) As Boolean
+            Dim inValue As ws_profitplay.InsertRelacioProducteIngredientRequest = New ws_profitplay.InsertRelacioProducteIngredientRequest
+            inValue.Body = New ws_profitplay.InsertRelacioProducteIngredientRequestBody
+            inValue.Body.idProducte = idProducte
+            inValue.Body.idIngredient = idIngredient
+            Dim retVal As ws_profitplay.InsertRelacioProducteIngredientResponse = CType(Me,ws_profitplay.Service1Soap).InsertRelacioProducteIngredient(inValue)
+            Return retVal.Body.InsertRelacioProducteIngredientResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_InsertIngredient(ByVal request As ws_profitplay.InsertIngredientRequest) As ws_profitplay.InsertIngredientResponse Implements ws_profitplay.Service1Soap.InsertIngredient
+            Return MyBase.Channel.InsertIngredient(request)
+        End Function
+        
+        Public Function InsertIngredient(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String) As Boolean
+            Dim inValue As ws_profitplay.InsertIngredientRequest = New ws_profitplay.InsertIngredientRequest
+            inValue.Body = New ws_profitplay.InsertIngredientRequestBody
+            inValue.Body.nom = nom
+            inValue.Body.preu = preu
+            inValue.Body.quantitat = quantitat
+            inValue.Body.stock = stock
+            inValue.Body.stockminim = stockminim
+            Dim retVal As ws_profitplay.InsertIngredientResponse = CType(Me,ws_profitplay.Service1Soap).InsertIngredient(inValue)
+            Return retVal.Body.InsertIngredientResult
         End Function
     End Class
 End Namespace
