@@ -3,7 +3,10 @@
     Dim ws As New ws_profitplay.Service1SoapClient
     Private listofproducts
     Private listofingredient
+    Private listofingredientSeleccionats
     Private m_comanda
+    'flag que indica si estas tramitant productes o ingredients
+    Dim producte As Boolean = True
 
     Private Sub Emp_carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -12,6 +15,7 @@
 
         listofproducts = New List(Of Producto)
         listofingredient = New List(Of Ingredient)
+        listofingredientSeleccionats = New List(Of Ingredient)
         m_comanda = New Comanda()
 
         Select Case Mainform_empleado.rolempleat
@@ -40,59 +44,8 @@
 
         End Select
 
-        'ompleLlistaProductes()
         ObteProductes()
         btn_producto.PerformClick()
-
-    End Sub
-
-    'vindra de la bbdd
-    Private Sub ompleLlistaProductes()
-
-        For i As Integer = 0 To 9 Step 1
-
-            Dim p As Producto = New Producto()
-            p.setDescripcio("Desc")
-            p.setNom("bebida " + i.ToString)
-            p.setPreu(i)
-            p.setTipus("bebida")
-            listofproducts.Add(p)
-
-        Next
-
-        For i As Integer = 0 To 9 Step 1
-
-            Dim p As Producto = New Producto()
-            p.setDescripcio("Desc")
-            p.setNom("primero " + i.ToString)
-            p.setPreu(i)
-            p.setTipus("primero")
-            listofproducts.Add(p)
-
-        Next
-
-        For i As Integer = 0 To 9 Step 1
-
-            Dim p As Producto = New Producto()
-            p.setDescripcio("Desc")
-            p.setNom("segundo " + i.ToString)
-            p.setPreu(i)
-            p.setTipus("segundo")
-            listofproducts.Add(p)
-
-        Next
-
-        For i As Integer = 0 To 9 Step 1
-
-            Dim p As Producto = New Producto()
-            p.setDescripcio("Desc")
-            p.setNom("postre " + i.ToString)
-            p.setPreu(i)
-            p.setTipus("postre")
-            listofproducts.Add(p)
-
-        Next
-
 
     End Sub
 
@@ -159,7 +112,18 @@
     
     Private Sub btn_producto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_producto.Click
 
+        producte = True
+
+        lbl_stock.Hide()
+        lbl_stockMin.Hide()
+        txtb_stock.Hide()
+        txtb_stockMin.Hide()
+        lbl_tipus.Show()
+        cmbx_tipus.Show()
+        lbl_descripció.Text = "Descripció:"
+
         grb_insert.Hide()
+
         emp_lv_productos_seleccionats.Clear()
         emp_lv_productos_disp.Clear()
 
@@ -234,11 +198,8 @@
                         added = True
 
                     Next
-
                 End If
-
             Next
-
         End If
     End Sub
 
@@ -277,6 +238,17 @@
 
     Private Sub btn_ingrediente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ingrediente.Click
 
+        producte = False
+
+        lbl_stock.Show()
+        lbl_stockMin.Show()
+        txtb_stock.Show()
+        txtb_stockMin.Show()
+        lbl_tipus.Hide()
+        cmbx_tipus.Hide()
+        lbl_descripció.Text = "Preu"
+
+
         grb_insert.Hide()
         grb_carta.Text = "Veure Ingredients"
         ObteIngredients()
@@ -293,29 +265,55 @@
     End Sub
 
     Private Sub btn_crear_producte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_crear_producte.Click
-
-        grb_insert.Show()
+        emp_lv_productos_seleccionats.Clear()
+        emp_lv_productos_disp.Clear()
+        ObteIngredients()
+        btn_confirmar.Show()
 
     End Sub
 
     Private Sub btn_afegir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegir.Click
 
-        'insert a la base de dades
-        'taula productes
-        If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or cmbx_tipus.Text = "") Then
-            MsgBox("Error, camps incomplerts!", MsgBoxStyle.Critical)
+        If (producte = True) Then
+            'inserta producte
+            'taula productes
+            If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or cmbx_tipus.Text = "") Then
+                MsgBox("Error, camps incomplerts!", MsgBoxStyle.Critical)
+            Else
+                ws.SetProducte(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, cmbx_tipus.Text)
+                MsgBox("Producte inserit correctament!", MsgBoxStyle.Information)
+                grb_insert.Hide()
+            End If
+
+            'taula productes-ingredients
+            Dim idUltimProducte = ws.GetIdProducteByNom(txtb_nom.Text)
+            For Each ingre In listofingredientSeleccionats
+                ' ws.InsertRelacioProducteIngredient(idUltimProducte, ingre.id_ingredient)
+            Next
         Else
-            ws.SetProducte(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, cmbx_tipus.Text)
-            MsgBox("Producte inserit correctament!", MsgBoxStyle.Information)
-            grb_insert.Hide()
+            'insert ingredient
+            If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or txtb_stock.Text = "" Or txtb_stockMin.Text = "") Then
+                MsgBox("Error, camps incomplerts!", MsgBoxStyle.Critical)
+            Else
+                ws.InsertIngredient(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, txtb_stock.Text, txtb_stockMin.Text)
+                MsgBox("Producte inserit correctament!", MsgBoxStyle.Information)
+                grb_insert.Hide()
+            End If
         End If
 
 
-        'taula productes-ingredients
+
+       
+
 
     End Sub
 
     Private Sub btn_cancela_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancela.Click
         grb_insert.Hide()
+    End Sub
+
+    Private Sub btn_confirmar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirmar.Click
+        grb_insert.Show()
+        btn_confirmar.Hide()
     End Sub
 End Class

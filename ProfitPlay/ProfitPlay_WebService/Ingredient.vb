@@ -75,5 +75,8 @@
         Return BD.GetNomIngredientById(id)
     End Function
 
+    Public Function SetIngredient(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String) As Boolean
+        Return BD.SetIngredient(nom, preu, quantitat, stock, stockminim)
+    End Function
 
 End Class

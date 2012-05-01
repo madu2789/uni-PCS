@@ -515,4 +515,40 @@
         Return ok
     End Function
 
+    Public Function SetIngredientProducte(ByVal idProducte As String, ByVal idIngredient As String) As Boolean
+
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            producte_ingredientDA.Connection = conDB
+            producte_ingredientDA.InsertProducteIngredient(idProducte, idIngredient, "")
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+
+        Return ok
+    End Function
+
+    Public Function SetIngredient(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String) As Boolean
+
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            ingredientDA.Connection = conDB
+            ingredientDA.InsertIngredient(nom, preu, quantitat, stock, stockminim)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+
+        Return ok
+    End Function
+
 End Class
