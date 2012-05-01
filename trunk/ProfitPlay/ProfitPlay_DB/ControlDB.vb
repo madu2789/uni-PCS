@@ -26,7 +26,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString1)
+            conDB = New OleDb.OleDbConnection(conString)
             conDB.Open()
 
         Catch ex As Exception
@@ -496,4 +496,23 @@
         Return DS.Compra
 
     End Function
+
+    Public Function SetProducte(ByVal nom As String, ByVal descripcio As String, ByVal preu As String, ByVal tipus As String) As Boolean
+
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            producteDA.Connection = conDB
+            producteDA.InsertProducte(nom, preu, tipus)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+
+        Return ok
+    End Function
+
 End Class

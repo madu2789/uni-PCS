@@ -339,4 +339,9 @@ Public Class Service1
         Return dades
     End Function
 
+    <WebMethod()> _
+    Public Function SetProducte(ByVal nom As String, ByVal descripcio As String, ByVal preu As String, ByVal tipus As String) As Boolean
+        Return producte.SetProducte(nom, descripcio, preu, tipus)
+    End Function
+
 End Class

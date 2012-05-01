@@ -70,3 +70,5 @@ C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\Prof
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Control_Stock.resources
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Control_Stock.resources
 D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Compres_Pendents.resources
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Compres_Pendents.resources
+C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Control_Stock.resources

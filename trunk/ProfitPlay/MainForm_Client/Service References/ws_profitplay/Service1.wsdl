@@ -429,6 +429,23 @@
           <s:element minOccurs="0" maxOccurs="1" name="Estat" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="SetProducte">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProducteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetProducteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LogEmpleatSoapIn">
@@ -587,6 +604,12 @@
   <wsdl:message name="getCompresSoapOut">
     <wsdl:part name="parameters" element="tns:getCompresResponse" />
   </wsdl:message>
+  <wsdl:message name="SetProducteSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProducte" />
+  </wsdl:message>
+  <wsdl:message name="SetProducteSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProducteResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="LogEmpleat">
       <wsdl:input message="tns:LogEmpleatSoapIn" />
@@ -691,6 +714,10 @@
     <wsdl:operation name="getCompres">
       <wsdl:input message="tns:getCompresSoapIn" />
       <wsdl:output message="tns:getCompresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProducte">
+      <wsdl:input message="tns:SetProducteSoapIn" />
+      <wsdl:output message="tns:SetProducteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -929,6 +956,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetProducte">
+      <soap:operation soapAction="http://tempuri.org/SetProducte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1159,6 +1195,15 @@
     </wsdl:operation>
     <wsdl:operation name="getCompres">
       <soap12:operation soapAction="http://tempuri.org/getCompres" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProducte">
+      <soap12:operation soapAction="http://tempuri.org/SetProducte" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -38,9 +38,7 @@ Partial Class Emp_carta
         Me.gpb_gestio = New System.Windows.Forms.GroupBox
         Me.btn_ingrediente = New System.Windows.Forms.Button
         Me.btn_producto = New System.Windows.Forms.Button
-        Me.btn_carta = New System.Windows.Forms.Button
         Me.grb_carta = New System.Windows.Forms.GroupBox
-        Me.btn_crear_carta = New System.Windows.Forms.Button
         Me.lbl_productos_dispo = New System.Windows.Forms.Label
         Me.emp_lv_productos_seleccionats = New System.Windows.Forms.ListView
         Me.Nombre = New System.Windows.Forms.ColumnHeader
@@ -50,11 +48,24 @@ Partial Class Emp_carta
         Me.btn_add_prod_emp = New System.Windows.Forms.Button
         Me.btn_del_prod_emp = New System.Windows.Forms.Button
         Me.btn_info_prod_emp = New System.Windows.Forms.Button
+        Me.btn_crear_producte = New System.Windows.Forms.Button
+        Me.grb_insert = New System.Windows.Forms.GroupBox
+        Me.btn_afegir = New System.Windows.Forms.Button
+        Me.btn_cancela = New System.Windows.Forms.Button
+        Me.cmbx_tipus = New System.Windows.Forms.ComboBox
+        Me.txtb_descripcio = New System.Windows.Forms.TextBox
+        Me.txtb_preu = New System.Windows.Forms.TextBox
+        Me.txtb_nom = New System.Windows.Forms.TextBox
+        Me.lbl_tipus = New System.Windows.Forms.Label
+        Me.lbl_descripció = New System.Windows.Forms.Label
+        Me.lbl_preu = New System.Windows.Forms.Label
+        Me.lbl_nom = New System.Windows.Forms.Label
         Me.pnl_estat.SuspendLayout()
         CType(Me.pcb_sortir, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_plats.SuspendLayout()
         Me.gpb_gestio.SuspendLayout()
         Me.grb_carta.SuspendLayout()
+        Me.grb_insert.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_estat
@@ -191,7 +202,6 @@ Partial Class Emp_carta
         '
         Me.gpb_gestio.Controls.Add(Me.btn_ingrediente)
         Me.gpb_gestio.Controls.Add(Me.btn_producto)
-        Me.gpb_gestio.Controls.Add(Me.btn_carta)
         Me.gpb_gestio.Location = New System.Drawing.Point(163, 78)
         Me.gpb_gestio.Name = "gpb_gestio"
         Me.gpb_gestio.Size = New System.Drawing.Size(669, 72)
@@ -202,7 +212,7 @@ Partial Class Emp_carta
         'btn_ingrediente
         '
         Me.btn_ingrediente.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ingrediente.Location = New System.Drawing.Point(460, 11)
+        Me.btn_ingrediente.Location = New System.Drawing.Point(354, 11)
         Me.btn_ingrediente.Name = "btn_ingrediente"
         Me.btn_ingrediente.Size = New System.Drawing.Size(160, 55)
         Me.btn_ingrediente.TabIndex = 12
@@ -212,26 +222,17 @@ Partial Class Emp_carta
         'btn_producto
         '
         Me.btn_producto.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_producto.Location = New System.Drawing.Point(255, 11)
+        Me.btn_producto.Location = New System.Drawing.Point(80, 12)
         Me.btn_producto.Name = "btn_producto"
         Me.btn_producto.Size = New System.Drawing.Size(136, 54)
         Me.btn_producto.TabIndex = 11
         Me.btn_producto.Text = "Productes"
         Me.btn_producto.UseVisualStyleBackColor = True
         '
-        'btn_carta
-        '
-        Me.btn_carta.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_carta.Location = New System.Drawing.Point(49, 11)
-        Me.btn_carta.Name = "btn_carta"
-        Me.btn_carta.Size = New System.Drawing.Size(136, 53)
-        Me.btn_carta.TabIndex = 10
-        Me.btn_carta.Text = "Carta"
-        Me.btn_carta.UseVisualStyleBackColor = True
-        '
         'grb_carta
         '
-        Me.grb_carta.Controls.Add(Me.btn_crear_carta)
+        Me.grb_carta.Controls.Add(Me.grb_insert)
+        Me.grb_carta.Controls.Add(Me.btn_crear_producte)
         Me.grb_carta.Controls.Add(Me.lbl_productos_dispo)
         Me.grb_carta.Controls.Add(Me.emp_lv_productos_seleccionats)
         Me.grb_carta.Controls.Add(Me.emp_lv_productos_disp)
@@ -246,19 +247,10 @@ Partial Class Emp_carta
         Me.grb_carta.TabStop = False
         Me.grb_carta.Text = "Carta"
         '
-        'btn_crear_carta
-        '
-        Me.btn_crear_carta.Location = New System.Drawing.Point(550, 266)
-        Me.btn_crear_carta.Name = "btn_crear_carta"
-        Me.btn_crear_carta.Size = New System.Drawing.Size(110, 32)
-        Me.btn_crear_carta.TabIndex = 34
-        Me.btn_crear_carta.Text = "Crear Carta"
-        Me.btn_crear_carta.UseVisualStyleBackColor = True
-        '
         'lbl_productos_dispo
         '
         Me.lbl_productos_dispo.AutoSize = True
-        Me.lbl_productos_dispo.Location = New System.Drawing.Point(6, 36)
+        Me.lbl_productos_dispo.Location = New System.Drawing.Point(6, 24)
         Me.lbl_productos_dispo.Name = "lbl_productos_dispo"
         Me.lbl_productos_dispo.Size = New System.Drawing.Size(110, 13)
         Me.lbl_productos_dispo.TabIndex = 26
@@ -267,7 +259,7 @@ Partial Class Emp_carta
         'emp_lv_productos_seleccionats
         '
         Me.emp_lv_productos_seleccionats.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Nombre, Me.Cantidad})
-        Me.emp_lv_productos_seleccionats.Location = New System.Drawing.Point(252, 68)
+        Me.emp_lv_productos_seleccionats.Location = New System.Drawing.Point(252, 56)
         Me.emp_lv_productos_seleccionats.Name = "emp_lv_productos_seleccionats"
         Me.emp_lv_productos_seleccionats.Size = New System.Drawing.Size(155, 230)
         Me.emp_lv_productos_seleccionats.Sorting = System.Windows.Forms.SortOrder.Ascending
@@ -286,7 +278,7 @@ Partial Class Emp_carta
         '
         'emp_lv_productos_disp
         '
-        Me.emp_lv_productos_disp.Location = New System.Drawing.Point(6, 68)
+        Me.emp_lv_productos_disp.Location = New System.Drawing.Point(6, 56)
         Me.emp_lv_productos_disp.Name = "emp_lv_productos_disp"
         Me.emp_lv_productos_disp.Size = New System.Drawing.Size(155, 230)
         Me.emp_lv_productos_disp.Sorting = System.Windows.Forms.SortOrder.Ascending
@@ -298,15 +290,15 @@ Partial Class Emp_carta
         'lbl_productes_seleccinats
         '
         Me.lbl_productes_seleccinats.AutoSize = True
-        Me.lbl_productes_seleccinats.Location = New System.Drawing.Point(249, 36)
+        Me.lbl_productes_seleccinats.Location = New System.Drawing.Point(249, 24)
         Me.lbl_productes_seleccinats.Name = "lbl_productes_seleccinats"
-        Me.lbl_productes_seleccinats.Size = New System.Drawing.Size(119, 13)
+        Me.lbl_productes_seleccinats.Size = New System.Drawing.Size(62, 13)
         Me.lbl_productes_seleccinats.TabIndex = 30
-        Me.lbl_productes_seleccinats.Text = "Productes Seleccionats"
+        Me.lbl_productes_seleccinats.Text = "Ingredients:"
         '
         'btn_add_prod_emp
         '
-        Me.btn_add_prod_emp.Location = New System.Drawing.Point(167, 102)
+        Me.btn_add_prod_emp.Location = New System.Drawing.Point(167, 90)
         Me.btn_add_prod_emp.Name = "btn_add_prod_emp"
         Me.btn_add_prod_emp.Size = New System.Drawing.Size(75, 23)
         Me.btn_add_prod_emp.TabIndex = 31
@@ -315,7 +307,7 @@ Partial Class Emp_carta
         '
         'btn_del_prod_emp
         '
-        Me.btn_del_prod_emp.Location = New System.Drawing.Point(167, 154)
+        Me.btn_del_prod_emp.Location = New System.Drawing.Point(167, 142)
         Me.btn_del_prod_emp.Name = "btn_del_prod_emp"
         Me.btn_del_prod_emp.Size = New System.Drawing.Size(75, 23)
         Me.btn_del_prod_emp.TabIndex = 32
@@ -324,12 +316,129 @@ Partial Class Emp_carta
         '
         'btn_info_prod_emp
         '
-        Me.btn_info_prod_emp.Location = New System.Drawing.Point(167, 204)
+        Me.btn_info_prod_emp.Location = New System.Drawing.Point(167, 193)
         Me.btn_info_prod_emp.Name = "btn_info_prod_emp"
         Me.btn_info_prod_emp.Size = New System.Drawing.Size(75, 23)
         Me.btn_info_prod_emp.TabIndex = 33
         Me.btn_info_prod_emp.Text = "Veure Info"
         Me.btn_info_prod_emp.UseVisualStyleBackColor = True
+        '
+        'btn_crear_producte
+        '
+        Me.btn_crear_producte.Location = New System.Drawing.Point(167, 246)
+        Me.btn_crear_producte.Name = "btn_crear_producte"
+        Me.btn_crear_producte.Size = New System.Drawing.Size(75, 23)
+        Me.btn_crear_producte.TabIndex = 35
+        Me.btn_crear_producte.Text = "Crear producte"
+        Me.btn_crear_producte.UseVisualStyleBackColor = True
+        '
+        'grb_insert
+        '
+        Me.grb_insert.Controls.Add(Me.btn_afegir)
+        Me.grb_insert.Controls.Add(Me.btn_cancela)
+        Me.grb_insert.Controls.Add(Me.cmbx_tipus)
+        Me.grb_insert.Controls.Add(Me.txtb_descripcio)
+        Me.grb_insert.Controls.Add(Me.txtb_preu)
+        Me.grb_insert.Controls.Add(Me.txtb_nom)
+        Me.grb_insert.Controls.Add(Me.lbl_tipus)
+        Me.grb_insert.Controls.Add(Me.lbl_descripció)
+        Me.grb_insert.Controls.Add(Me.lbl_preu)
+        Me.grb_insert.Controls.Add(Me.lbl_nom)
+        Me.grb_insert.Location = New System.Drawing.Point(167, 16)
+        Me.grb_insert.Name = "grb_insert"
+        Me.grb_insert.Size = New System.Drawing.Size(493, 282)
+        Me.grb_insert.TabIndex = 38
+        Me.grb_insert.TabStop = False
+        Me.grb_insert.Text = "Info"
+        Me.grb_insert.Visible = False
+        '
+        'btn_afegir
+        '
+        Me.btn_afegir.BackColor = System.Drawing.Color.Lime
+        Me.btn_afegir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_afegir.Location = New System.Drawing.Point(192, 222)
+        Me.btn_afegir.Name = "btn_afegir"
+        Me.btn_afegir.Size = New System.Drawing.Size(85, 45)
+        Me.btn_afegir.TabIndex = 42
+        Me.btn_afegir.Text = "Afegeix"
+        Me.btn_afegir.UseVisualStyleBackColor = False
+        '
+        'btn_cancela
+        '
+        Me.btn_cancela.BackColor = System.Drawing.Color.OrangeRed
+        Me.btn_cancela.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancela.Location = New System.Drawing.Point(47, 222)
+        Me.btn_cancela.Name = "btn_cancela"
+        Me.btn_cancela.Size = New System.Drawing.Size(85, 45)
+        Me.btn_cancela.TabIndex = 41
+        Me.btn_cancela.Text = "Cancel·la"
+        Me.btn_cancela.UseVisualStyleBackColor = False
+        '
+        'cmbx_tipus
+        '
+        Me.cmbx_tipus.FormattingEnabled = True
+        Me.cmbx_tipus.Items.AddRange(New Object() {"Beguda", "Primer", "Segon", "Postre"})
+        Me.cmbx_tipus.Location = New System.Drawing.Point(130, 172)
+        Me.cmbx_tipus.Name = "cmbx_tipus"
+        Me.cmbx_tipus.Size = New System.Drawing.Size(108, 21)
+        Me.cmbx_tipus.TabIndex = 40
+        '
+        'txtb_descripcio
+        '
+        Me.txtb_descripcio.Location = New System.Drawing.Point(130, 78)
+        Me.txtb_descripcio.Name = "txtb_descripcio"
+        Me.txtb_descripcio.Size = New System.Drawing.Size(108, 20)
+        Me.txtb_descripcio.TabIndex = 38
+        '
+        'txtb_preu
+        '
+        Me.txtb_preu.Location = New System.Drawing.Point(130, 120)
+        Me.txtb_preu.Name = "txtb_preu"
+        Me.txtb_preu.Size = New System.Drawing.Size(108, 20)
+        Me.txtb_preu.TabIndex = 39
+        '
+        'txtb_nom
+        '
+        Me.txtb_nom.Location = New System.Drawing.Point(130, 36)
+        Me.txtb_nom.Name = "txtb_nom"
+        Me.txtb_nom.Size = New System.Drawing.Size(108, 20)
+        Me.txtb_nom.TabIndex = 3
+        '
+        'lbl_tipus
+        '
+        Me.lbl_tipus.AutoSize = True
+        Me.lbl_tipus.Location = New System.Drawing.Point(44, 175)
+        Me.lbl_tipus.Name = "lbl_tipus"
+        Me.lbl_tipus.Size = New System.Drawing.Size(36, 13)
+        Me.lbl_tipus.TabIndex = 2
+        Me.lbl_tipus.Text = "Tipus:"
+        '
+        'lbl_descripció
+        '
+        Me.lbl_descripció.AutoSize = True
+        Me.lbl_descripció.Location = New System.Drawing.Point(44, 81)
+        Me.lbl_descripció.Name = "lbl_descripció"
+        Me.lbl_descripció.Size = New System.Drawing.Size(60, 13)
+        Me.lbl_descripció.TabIndex = 1
+        Me.lbl_descripció.Text = "Descripció:"
+        '
+        'lbl_preu
+        '
+        Me.lbl_preu.AutoSize = True
+        Me.lbl_preu.Location = New System.Drawing.Point(44, 127)
+        Me.lbl_preu.Name = "lbl_preu"
+        Me.lbl_preu.Size = New System.Drawing.Size(32, 13)
+        Me.lbl_preu.TabIndex = 1
+        Me.lbl_preu.Text = "Preu:"
+        '
+        'lbl_nom
+        '
+        Me.lbl_nom.AutoSize = True
+        Me.lbl_nom.Location = New System.Drawing.Point(44, 39)
+        Me.lbl_nom.Name = "lbl_nom"
+        Me.lbl_nom.Size = New System.Drawing.Size(32, 13)
+        Me.lbl_nom.TabIndex = 0
+        Me.lbl_nom.Text = "Nom:"
         '
         'Emp_carta
         '
@@ -351,6 +460,8 @@ Partial Class Emp_carta
         Me.gpb_gestio.ResumeLayout(False)
         Me.grb_carta.ResumeLayout(False)
         Me.grb_carta.PerformLayout()
+        Me.grb_insert.ResumeLayout(False)
+        Me.grb_insert.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -368,7 +479,6 @@ Partial Class Emp_carta
     Friend WithEvents gpb_gestio As System.Windows.Forms.GroupBox
     Friend WithEvents btn_ingrediente As System.Windows.Forms.Button
     Friend WithEvents btn_producto As System.Windows.Forms.Button
-    Friend WithEvents btn_carta As System.Windows.Forms.Button
     Friend WithEvents grb_carta As System.Windows.Forms.GroupBox
     Friend WithEvents lbl_productos_dispo As System.Windows.Forms.Label
     Friend WithEvents emp_lv_productos_seleccionats As System.Windows.Forms.ListView
@@ -380,5 +490,16 @@ Partial Class Emp_carta
     Friend WithEvents btn_add_prod_emp As System.Windows.Forms.Button
     Friend WithEvents btn_del_prod_emp As System.Windows.Forms.Button
     Friend WithEvents btn_info_prod_emp As System.Windows.Forms.Button
-    Friend WithEvents btn_crear_carta As System.Windows.Forms.Button
+    Friend WithEvents btn_crear_producte As System.Windows.Forms.Button
+    Friend WithEvents grb_insert As System.Windows.Forms.GroupBox
+    Friend WithEvents btn_afegir As System.Windows.Forms.Button
+    Friend WithEvents btn_cancela As System.Windows.Forms.Button
+    Friend WithEvents cmbx_tipus As System.Windows.Forms.ComboBox
+    Friend WithEvents txtb_descripcio As System.Windows.Forms.TextBox
+    Friend WithEvents txtb_preu As System.Windows.Forms.TextBox
+    Friend WithEvents txtb_nom As System.Windows.Forms.TextBox
+    Friend WithEvents lbl_tipus As System.Windows.Forms.Label
+    Friend WithEvents lbl_descripció As System.Windows.Forms.Label
+    Friend WithEvents lbl_preu As System.Windows.Forms.Label
+    Friend WithEvents lbl_nom As System.Windows.Forms.Label
 End Class
