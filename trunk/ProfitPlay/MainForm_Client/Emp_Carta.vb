@@ -114,6 +114,8 @@
 
         producte = True
 
+        btn_add_prod_emp.Show()
+        btn_del_prod_emp.Show()
         lbl_stock.Hide()
         lbl_stockMin.Hide()
         txtb_stock.Hide()
@@ -135,7 +137,7 @@
 
         emp_lv_productos_disp.Refresh()
 
-        grb_carta.Text = "Crear Carta"
+        grb_carta.Text = "Productes:"
 
     End Sub
 
@@ -240,6 +242,8 @@
 
         producte = False
 
+        btn_add_prod_emp.Hide()
+        btn_del_prod_emp.Hide()
         lbl_stock.Show()
         lbl_stockMin.Show()
         txtb_stock.Show()
@@ -250,7 +254,7 @@
 
 
         grb_insert.Hide()
-        grb_carta.Text = "Veure Ingredients"
+        grb_carta.Text = "Ingredients"
         ObteIngredients()
 
     End Sub
@@ -265,10 +269,14 @@
     End Sub
 
     Private Sub btn_crear_producte_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_crear_producte.Click
-        emp_lv_productos_seleccionats.Clear()
-        emp_lv_productos_disp.Clear()
-        ObteIngredients()
-        btn_confirmar.Show()
+        If (producte = True) Then
+            emp_lv_productos_seleccionats.Clear()
+            emp_lv_productos_disp.Clear()
+            ObteIngredients()
+            btn_confirmar.Show()
+        Else
+            grb_insert.Show()
+        End If
 
     End Sub
 
@@ -287,9 +295,12 @@
 
             'taula productes-ingredients
             Dim idUltimProducte = ws.GetIdProducteByNom(txtb_nom.Text)
+
             For Each ingre In listofingredientSeleccionats
-                ' ws.InsertRelacioProducteIngredient(idUltimProducte, ingre.id_ingredient)
+                Dim idIngredient = ws.GetIdIngredientByNom(ingre.ToString())
+                ws.InsertRelacioProducteIngredient(idUltimProducte, ingre.id_ingredient)
             Next
+
         Else
             'insert ingredient
             If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or txtb_stock.Text = "" Or txtb_stockMin.Text = "") Then
@@ -300,11 +311,7 @@
                 grb_insert.Hide()
             End If
         End If
-
-
-
-       
-
+        emp_lv_productos_seleccionats.Clear()
 
     End Sub
 
