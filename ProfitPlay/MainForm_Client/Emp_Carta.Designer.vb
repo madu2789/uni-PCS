@@ -114,9 +114,9 @@ Partial Class Emp_carta
         Me.lbl_taula.ForeColor = System.Drawing.Color.DarkOrange
         Me.lbl_taula.Location = New System.Drawing.Point(102, 20)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(173, 31)
+        Me.lbl_taula.Size = New System.Drawing.Size(108, 31)
         Me.lbl_taula.TabIndex = 22
-        Me.lbl_taula.Text = "Usuari: XXX"
+        Me.lbl_taula.Text = "Usuari:"
         '
         'lbl_punts
         '
@@ -125,9 +125,9 @@ Partial Class Emp_carta
         Me.lbl_punts.ForeColor = System.Drawing.Color.DarkOrange
         Me.lbl_punts.Location = New System.Drawing.Point(342, 20)
         Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(132, 31)
+        Me.lbl_punts.Size = New System.Drawing.Size(67, 31)
         Me.lbl_punts.TabIndex = 0
-        Me.lbl_punts.Text = "Rol: XXX"
+        Me.lbl_punts.Text = "Rol:"
         '
         'pnl_plats
         '
@@ -253,7 +253,7 @@ Partial Class Emp_carta
         Me.grb_carta.Size = New System.Drawing.Size(666, 307)
         Me.grb_carta.TabIndex = 36
         Me.grb_carta.TabStop = False
-        Me.grb_carta.Text = "Carta"
+        Me.grb_carta.Text = "Productes:"
         '
         'grb_insert
         '
