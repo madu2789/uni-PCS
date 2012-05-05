@@ -40,5 +40,9 @@
         BD.InsertNewUser(Nom, Punts)
     End Sub
 
+    Public Function getAllUsers() As DataTable
+        Return BD.getAllUsers()
+    End Function
+
 
 End Class

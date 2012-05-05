@@ -8,7 +8,7 @@
     'DarkWizard Torre
     Dim conString1 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\SVN\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
     'DarkWizard Portatil
-    Dim conString2 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
+    Dim conString2 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\profit_play.accdb;Persist Security Info=False"
 
     'tableadapters:
     Dim empleatDA As New profit_playDataSetTableAdapters.EmpleatTableAdapter
@@ -26,7 +26,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString2)
             conDB.Open()
 
         Catch ex As Exception
@@ -39,6 +39,24 @@
     Public Sub disconnect()
         conDB.Close()
     End Sub
+
+    Public Function getAllUsers() As DataTable
+
+        Try
+            connect()
+            usuariDA.Connection = conDB
+            usuariDA.Fill(DS.Usuari)
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("Error agafant tots els usuaris", MsgBoxStyle.Critical)
+
+        End Try
+
+        Return DS.Usuari
+
+    End Function
 
     Public Function getLastUserId() As Integer
 
