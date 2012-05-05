@@ -183,6 +183,11 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+        Public Function deleteUser(ByVal id As Integer) As Integer
+        Return usuari.deleteUser(id)
+    End Function
+
+    <WebMethod()> _
         Public Function GetLastUserId() As Integer
         Return usuari.getLastUserId()
     End Function
