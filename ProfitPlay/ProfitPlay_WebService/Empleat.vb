@@ -29,7 +29,7 @@ Public Class Empleat
                 rol = fila("Rol").ToString
             Next
         Catch ex As Exception
-            MsgBox("error al traspas de dades al WS", MsgBoxStyle.Critical)
+            MsgBox("Error al traspas de dades al WS", MsgBoxStyle.Critical, "ERROR EN EL WS")
         End Try
 
         If passwordBD = password Then

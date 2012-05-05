@@ -47,11 +47,11 @@
         If estat = True Then
             'client: accedeix directament al sistema
             If num_comensals.Value < 1 Then
-                MsgBox("Número de comensals incorrecte!", MsgBoxStyle.Critical)
+                MsgBox("Número de comensals incorrecte!", MsgBoxStyle.Critical, "Error en el numero de comensals")
             Else
 
                 If txtb_nomTaula.Text = "" Then
-                    MsgBox("Nom de la taula incorrecte!", MsgBoxStyle.Critical)
+                    MsgBox("Nom de la taula incorrecte!", MsgBoxStyle.Critical, "Nom no vàlid")
                 Else
 
                     Id_usuari = ws.GetLastUserId() + 1
@@ -91,7 +91,7 @@
                     Dim main As New Mainform_empleado(txtb_login.Text, rol)
                     main.ShowDialog()
                 Else
-                    MsgBox("error! accés denegat!", MsgBoxStyle.Critical)
+                    MsgBox("Accés denegat!", MsgBoxStyle.Critical, "ERROR")
                 End If
             End If
         End If

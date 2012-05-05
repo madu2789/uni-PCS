@@ -31,7 +31,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error en conectar-se a la BD", MsgBoxStyle.Critical)
+            MsgBox("Error en conectar-se a la BD", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
     End Sub
@@ -50,7 +50,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error agafant tots els usuaris", MsgBoxStyle.Critical)
+            MsgBox("Error recupetant els usuaris", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -70,7 +70,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error agafant tots els usuaris", MsgBoxStyle.Critical)
+            MsgBox("Error agafant tots els usuaris", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -90,8 +90,6 @@
 
         Catch ex As Exception
 
-            'MsgBox("Error agafant ultima ID", MsgBoxStyle.Critical)
-            'MsgBox(ex.ToString)
             res = 1
 
         End Try
@@ -111,8 +109,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error insereix usuari", MsgBoxStyle.Critical)
-            MsgBox(ex.ToString)
+            MsgBox("Error inserint usuari", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
     End Sub
@@ -127,7 +124,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error llegeix usuari", MsgBoxStyle.Critical)
+            MsgBox("Error llegint el usuari", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -148,7 +145,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error conta empleats", MsgBoxStyle.Critical)
+            MsgBox("Error contant els empleats", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -167,7 +164,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error get empleats", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant els empleats", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -188,7 +185,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Set Empleat", MsgBoxStyle.Critical)
+            MsgBox("Error inserint empleats", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -198,7 +195,6 @@
 
     Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
 
-        MsgBox("Nom " + Nom + " Cognom " + Sur)
         Dim modif As Integer = -1
 
         Try
@@ -215,7 +211,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error delete empleat", MsgBoxStyle.Critical)
+            MsgBox("Error borrant empleat", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -235,7 +231,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error conta productes", MsgBoxStyle.Critical)
+            MsgBox("Error contant productes", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -254,7 +250,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error get productes", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant productes", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -270,7 +266,7 @@
             ingredientDA.Fill(DS.Ingredient)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get ingredients", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant ingredients", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return DS.Ingredient
 
@@ -287,8 +283,7 @@
             disconnect()
             ok = True
         Catch ex As Exception
-            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return ok
@@ -301,7 +296,7 @@
             comandaDA.Fill(DS.Comanda)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get comanda", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return DS.Comanda
     End Function
@@ -313,7 +308,7 @@
             comandaDA.FillComandaByUserId(DS.Comanda, id)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get comanda", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return DS.Comanda
     End Function
@@ -328,7 +323,7 @@
             disconnect()
             ok = True
         Catch ex As Exception
-            MsgBox("Error delete comanda", MsgBoxStyle.Critical)
+            MsgBox("Error borrant la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return ok
     End Function
@@ -342,7 +337,7 @@
             res = comandaDA.DeleteComandaByUserId(id)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error eliminar totes comandes", MsgBoxStyle.Critical)
+            MsgBox("Error eliminant totes les comandes", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return res
@@ -359,7 +354,7 @@
             disconnect()
             ok = True
         Catch ex As Exception
-            MsgBox("Error sol·licitut anular comanda", MsgBoxStyle.Critical)
+            MsgBox("Error en la sol·licitut d'anular la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return ok
     End Function
@@ -374,7 +369,7 @@
             disconnect()
             ok = True
         Catch ex As Exception
-            MsgBox("Error sol·licitut pagar comanda", MsgBoxStyle.Critical)
+            MsgBox("Error sol·licitut per pagar la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return ok
     End Function
@@ -392,7 +387,7 @@
 
         Catch ex As Exception
 
-            MsgBox("Error get preu producte", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant el preu del producte", MsgBoxStyle.Critical, "Error Base de Dades")
 
         End Try
 
@@ -410,7 +405,7 @@
             Nom = ingredientDA.GetNomIngredientById(id_ingredient)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get preu producte", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant el preu del producte", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return Nom
@@ -427,7 +422,7 @@
             Id = ingredientDA.GetIdIngredientByNom(Nom)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error Id Ingredient By nom", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant el id del ingredient pel nom", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return Id
@@ -444,7 +439,7 @@
             Nom = producteDA.GetNomProducteById(id_producte)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get nom producte", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant el nom del producte", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return Nom
@@ -461,7 +456,7 @@
             Id = producteDA.GetIDProducteByNom(Nom)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get Producte", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant el producte", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return Id
@@ -478,7 +473,7 @@
             stock = ingredientDA.GetStockActualById(id)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get stock actual", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant el stock actual", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return stock
@@ -493,7 +488,7 @@
             stock = ingredientDA.UpdateStockById(stock, id)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error Update Stock", MsgBoxStyle.Critical)
+            MsgBox("Error actualitzant el stock", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return stock
@@ -508,7 +503,7 @@
             producte_ingredientDA.Fill(DS._Producte_Ingredient)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error get plats", MsgBoxStyle.Critical)
+            MsgBox("Error recuperant els plats", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return DS._Producte_Ingredient
     End Function
@@ -523,7 +518,7 @@
             res = compraDA.Insert(id_i, q, e)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error fent la compra", MsgBoxStyle.Critical)
+            MsgBox("Error fent la compra", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
         Return res
     End Function
@@ -535,7 +530,7 @@
             compraDA.Fill(DS.Compra)
             disconnect()
         Catch ex As Exception
-            MsgBox("Error capturant les compres", MsgBoxStyle.Critical)
+            MsgBox("Error capturant les compres", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return DS.Compra
@@ -553,8 +548,7 @@
             disconnect()
             ok = True
         Catch ex As Exception
-            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return ok
@@ -571,8 +565,7 @@
             disconnect()
             ok = True
         Catch ex As Exception
-            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return ok
@@ -589,8 +582,7 @@
             disconnect()
             ok = True
         Catch ex As Exception
-            ' MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical)
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return ok

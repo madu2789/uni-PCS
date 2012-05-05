@@ -46,7 +46,7 @@
             Next
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.AbortRetryIgnore)
+            MsgBox("Error obtenint productes", MsgBoxStyle.Critical, "Error en obtenir productes")
         End Try
         
 
@@ -133,7 +133,6 @@
 
         For i As Integer = 0 To lv_pedidos.Items.Count - 1
 
-            MsgBox("Seleccionat " + lv_pedidos.Items.Item(i).Text)
             m_comanda.insertElement(lv_pedidos.Items.Item(i).Text)
 
         Next
@@ -208,7 +207,7 @@
 
     Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
 
-        Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel)
+        Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel, "Està segur?")
         If (result = MsgBoxResult.Ok) Then
 
             For s As Integer = 0 To lv_pedidos.Items.Count - 1 Step 1

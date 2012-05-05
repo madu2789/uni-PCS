@@ -116,7 +116,7 @@
         Dim tot_per_pagar As Boolean = True
 
         If (id = Nothing) Then
-            MsgBox("Cap taula sel.leccionada", MsgBoxStyle.Critical)
+            MsgBox("Cap taula sel.leccionada", MsgBoxStyle.Critical, "Cap taula sel.leccionada")
         Else
             Dim comandes_user = ws.GetComandaByUserId(getIdTaula)
             For Each c In comandes_user
@@ -131,7 +131,7 @@
                 ws.deleteComandaByUserId(id)
                 ws.deleteUser(id)
             Else
-                MsgBox("Tots els productes no estan sol.licitats per pagar", MsgBoxStyle.Critical)
+                MsgBox("Tots els productes no estan sol.licitats per pagar", MsgBoxStyle.Critical, "Error en els estats de les comandes")
             End If
 
         End If

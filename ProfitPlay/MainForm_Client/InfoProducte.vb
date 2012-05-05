@@ -6,7 +6,7 @@ Public Class info_producte
 
         If (nud_cantitat.Value <= 0) Then
 
-            MsgBox("Selecciona una quantitat correcte", MsgBoxStyle.Exclamation, "Error en la quantitat")
+            MsgBox("Selecciona una quantitat correcte", MsgBoxStyle.Exclamation, "ERROR EN LA QUANTITAT")
 
         Else
 

@@ -208,7 +208,7 @@
     'cal guardar la nova carta a la bbdd
     Private Sub btn_crear_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
-        Dim result = MsgBox("Crear nova carta?", MsgBoxStyle.OkCancel, "Crear nova carta?")
+        Dim result = MsgBox("Crear nova carta?", MsgBoxStyle.OkCancel, "Creació de carta")
         If (result = MsgBoxResult.Ok) Then
 
             Dim input = InputBox("Entra nom de la carta", "Nom de la carta?", "")
@@ -286,10 +286,10 @@
             'inserta producte
             'taula productes
             If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or cmbx_tipus.Text = "") Then
-                MsgBox("Error, camps incomplerts!", MsgBoxStyle.Critical)
+                MsgBox("Camps incomplerts!", MsgBoxStyle.Critical, "ERROR")
             Else
                 ws.SetProducte(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, cmbx_tipus.Text)
-                MsgBox("Producte inserit correctament!", MsgBoxStyle.Information)
+                MsgBox("Producte inserit correctament!", MsgBoxStyle.Information, "CORRECTE")
                 grb_insert.Hide()
             End If
 
@@ -304,10 +304,10 @@
         Else
             'insert ingredient
             If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or txtb_stock.Text = "" Or txtb_stockMin.Text = "") Then
-                MsgBox("Error, camps incomplerts!", MsgBoxStyle.Critical)
+                MsgBox("Camps incomplerts!", MsgBoxStyle.Critical, "ERROR")
             Else
                 ws.InsertIngredient(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, txtb_stock.Text, txtb_stockMin.Text)
-                MsgBox("Producte inserit correctament!", MsgBoxStyle.Information)
+                MsgBox("Producte inserit correctament!", MsgBoxStyle.Information, "CORRECTE")
                 grb_insert.Hide()
             End If
         End If
