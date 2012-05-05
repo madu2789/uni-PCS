@@ -50,21 +50,29 @@
                 MsgBox("Número de comensals incorrecte!", MsgBoxStyle.Critical)
             Else
 
-                Id_usuari = ws.GetLastUserId() + 1
-                GNum_comensals = num_comensals.Value
-                Me.Hide()
-                If txtb_nomTaula.Text Is Nothing Then
-                    'constructor amb nom propi (nostre)!
-                    ws.InsertNewUser("NA", 0, num_comensals.Value)
-                    Dim main As New Mainform_client(txtb_nomTaula.Text, 0)
-                    main.ShowDialog()
+                If txtb_nomTaula.Text = "" Then
+                    MsgBox("Nom de la taula incorrecte!", MsgBoxStyle.Critical)
                 Else
-                    'constructor amb nom demanat!
-                    ws.InsertNewUser(txtb_nomTaula.Text, 1, num_comensals.Value)
-                    Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
-                    main.ShowDialog()
+
+                    Id_usuari = ws.GetLastUserId() + 1
+                    GNum_comensals = num_comensals.Value
+                    Me.Hide()
+                    If txtb_nomTaula.Text Is Nothing Then
+                        'constructor amb nom propi (nostre)!
+                        ws.InsertNewUser("NA", 0, GNum_comensals)
+                        Dim main As New Mainform_client(txtb_nomTaula.Text, 0)
+                        main.ShowDialog()
+                    Else
+                        'constructor amb nom demanat!
+                        ws.InsertNewUser(txtb_nomTaula.Text, 1, GNum_comensals)
+                        Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
+                        main.ShowDialog()
+                    End If
+
                 End If
+
             End If
+
         Else
             'empleat: accedeix a la base de dades per log
             If txtb_login.Text = "" Or txtb_password.Text = "" Then

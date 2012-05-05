@@ -108,7 +108,7 @@
     End Sub
 
     Public Sub paga(ByVal id As Integer)
-
+        ws.deleteComandaByUserId(id)
     End Sub
 
 End Class
