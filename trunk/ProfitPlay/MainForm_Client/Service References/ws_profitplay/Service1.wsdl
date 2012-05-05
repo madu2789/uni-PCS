@@ -153,6 +153,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="Comensals" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="deleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetLastUserId">
         <s:complexType />
       </s:element>
@@ -567,6 +581,12 @@
   <wsdl:message name="GetAllUsersSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
   </wsdl:message>
+  <wsdl:message name="deleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteUser" />
+  </wsdl:message>
+  <wsdl:message name="deleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteUserResponse" />
+  </wsdl:message>
   <wsdl:message name="GetLastUserIdSoapIn">
     <wsdl:part name="parameters" element="tns:GetLastUserId" />
   </wsdl:message>
@@ -738,6 +758,10 @@
       <wsdl:input message="tns:GetAllUsersSoapIn" />
       <wsdl:output message="tns:GetAllUsersSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <wsdl:input message="tns:deleteUserSoapIn" />
+      <wsdl:output message="tns:deleteUserSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetLastUserId">
       <wsdl:input message="tns:GetLastUserIdSoapIn" />
       <wsdl:output message="tns:GetLastUserIdSoapOut" />
@@ -898,6 +922,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllUsers">
       <soap:operation soapAction="http://tempuri.org/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap:operation soapAction="http://tempuri.org/deleteUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1180,6 +1213,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllUsers">
       <soap12:operation soapAction="http://tempuri.org/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap12:operation soapAction="http://tempuri.org/deleteUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

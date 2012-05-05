@@ -58,6 +58,26 @@
 
     End Function
 
+    Public Function deleteUser(ByVal id As Integer) As Integer
+
+        Dim res As Integer = 0
+
+        Try
+            connect()
+            usuariDA.Connection = conDB
+            res = usuariDA.DeleteUser(id)
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("Error agafant tots els usuaris", MsgBoxStyle.Critical)
+
+        End Try
+
+        Return res
+
+    End Function
+
     Public Function getLastUserId() As Integer
 
         Dim res As Integer = 1

@@ -53,5 +53,11 @@
         Return BD.getAllUsers()
     End Function
 
+    Public Function deleteUser(ByVal id As Integer) As Integer
+        Return BD.deleteUser(id)
+    End Function
+
+
+
 
 End Class

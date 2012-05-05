@@ -918,6 +918,9 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetAllUsers", ReplyAction:="*")>  _
         Function GetAllUsers(ByVal request As ws_profitplay.GetAllUsersRequest) As ws_profitplay.GetAllUsersResponse
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/deleteUser", ReplyAction:="*")>  _
+        Function deleteUser(ByVal id As Integer) As Integer
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetLastUserId", ReplyAction:="*")>  _
         Function GetLastUserId() As Integer
         
@@ -2879,6 +2882,10 @@ Namespace ws_profitplay
             inValue.Body = New ws_profitplay.GetAllUsersRequestBody
             Dim retVal As ws_profitplay.GetAllUsersResponse = CType(Me,ws_profitplay.Service1Soap).GetAllUsers(inValue)
             Return retVal.Body.GetAllUsersResult
+        End Function
+        
+        Public Function deleteUser(ByVal id As Integer) As Integer Implements ws_profitplay.Service1Soap.deleteUser
+            Return MyBase.Channel.deleteUser(id)
         End Function
         
         Public Function GetLastUserId() As Integer Implements ws_profitplay.Service1Soap.GetLastUserId

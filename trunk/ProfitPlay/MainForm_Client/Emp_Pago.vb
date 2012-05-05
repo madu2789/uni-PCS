@@ -113,10 +113,27 @@
 
     Public Sub paga(ByVal id As Integer)
 
+        Dim tot_per_pagar As Boolean = True
+
         If (id = Nothing) Then
             MsgBox("Cap taula sel.leccionada", MsgBoxStyle.Critical)
         Else
-            ws.deleteComandaByUserId(id)
+            Dim comandes_user = ws.GetComandaByUserId(getIdTaula)
+            For Each c In comandes_user
+
+                If c.Estat <> "Sol·licitat per pagar" Then
+                    tot_per_pagar = False
+                End If
+
+            Next
+
+            If (tot_per_pagar = True) Then
+                ws.deleteComandaByUserId(id)
+                ws.deleteUser(id)
+            Else
+                MsgBox("Tots els productes no estan sol.licitats per pagar", MsgBoxStyle.Critical)
+            End If
+
         End If
 
     End Sub
