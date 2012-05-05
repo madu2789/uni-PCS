@@ -362,6 +362,8 @@ Namespace ws_profitplay
         
         Private PuntsField As Integer
         
+        Private ComensalsField As Integer
+        
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
             Get
@@ -407,6 +409,19 @@ Namespace ws_profitplay
                 If (Me.PuntsField.Equals(value) <> true) Then
                     Me.PuntsField = value
                     Me.RaisePropertyChanged("Punts")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=3)>  _
+        Public Property Comensals() As Integer
+            Get
+                Return Me.ComensalsField
+            End Get
+            Set
+                If (Me.ComensalsField.Equals(value) <> true) Then
+                    Me.ComensalsField = value
+                    Me.RaisePropertyChanged("Comensals")
                 End If
             End Set
         End Property
@@ -1516,14 +1531,18 @@ Namespace ws_profitplay
         <System.Runtime.Serialization.DataMemberAttribute(Order:=1)>  _
         Public Punts As Integer
         
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=2)>  _
+        Public Comensals As Integer
+        
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Nom As String, ByVal Punts As Integer)
+        Public Sub New(ByVal Nom As String, ByVal Punts As Integer, ByVal Comensals As Integer)
             MyBase.New
             Me.Nom = Nom
             Me.Punts = Punts
+            Me.Comensals = Comensals
         End Sub
     End Class
     
@@ -2868,11 +2887,12 @@ Namespace ws_profitplay
             Return MyBase.Channel.InsertNewUser(request)
         End Function
         
-        Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
+        Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer, ByVal Comensals As Integer)
             Dim inValue As ws_profitplay.InsertNewUserRequest = New ws_profitplay.InsertNewUserRequest
             inValue.Body = New ws_profitplay.InsertNewUserRequestBody
             inValue.Body.Nom = Nom
             inValue.Body.Punts = Punts
+            inValue.Body.Comensals = Comensals
             Dim retVal As ws_profitplay.InsertNewUserResponse = CType(Me,ws_profitplay.Service1Soap).InsertNewUser(inValue)
         End Sub
         

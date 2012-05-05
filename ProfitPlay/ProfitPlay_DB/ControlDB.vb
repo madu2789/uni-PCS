@@ -77,13 +77,13 @@
         Return res
     End Function
 
-    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
+    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer, ByVal comensals As Integer)
 
         Try
 
             connect()
             usuariDA.Connection = conDB
-            usuariDA.InsertNewUser(Nom, Punts)
+            usuariDA.InsertNewUser(Nom, Punts, comensals)
             disconnect()
 
         Catch ex As Exception

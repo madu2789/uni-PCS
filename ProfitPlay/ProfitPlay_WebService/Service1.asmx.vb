@@ -28,6 +28,7 @@ Public Class Service1
         Public Id_usuari As Integer
         Public Nom As String
         Public Punts As Integer
+        Public Comensals As Integer
     End Class
 
     Public Class EmpleatBD
@@ -172,7 +173,7 @@ Public Class Service1
             pro.Id_usuari = fila("Id_usuari").ToString
             pro.nom = fila("Nom").ToString
             pro.Punts = fila("PuntsGuardats").ToString
-
+            pro.Comensals = fila("Comensals").ToString
             users.Add(pro)
 
         Next
@@ -187,8 +188,8 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-        Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
-        usuari.InsertNewUser(Nom, Punts)
+        Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer, ByVal Comensals As Integer)
+        usuari.InsertNewUser(Nom, Punts, Comensals)
     End Sub
 
     <WebMethod()> _

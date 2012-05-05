@@ -82,7 +82,7 @@
         For Each i In usuaris
 
             If i.Id_usuari = getIdTaula() Then
-                lbl_importparcial.Text = "Import per persona " + preu.ToString
+                lbl_importparcial.Text = "Import per persona " + (preu / i.Comensals).ToString
                 Exit For
             End If
 
