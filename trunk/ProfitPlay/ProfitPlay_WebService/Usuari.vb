@@ -5,6 +5,7 @@
     Private Id As Integer
     Private nom As String
     Private punts As Integer
+    Private comensals As Integer
 
     Public Sub New()
         Id = 0
@@ -20,6 +21,10 @@
         punts = s
     End Sub
 
+    Public Sub setComensals(ByVal s As Integer)
+        comensals = s
+    End Sub
+
     Public Function getNom() As String
         Return nom
     End Function
@@ -32,12 +37,16 @@
         Return Id
     End Function
 
+    Public Function getComensals() As Integer
+        Return comensals
+    End Function
+
     Public Function getLastUserId() As Integer
         Return BD.getLastUserId()
     End Function
 
-    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer)
-        BD.InsertNewUser(Nom, Punts)
+    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer, ByVal Comensals As Integer)
+        BD.InsertNewUser(Nom, Punts, Comensals)
     End Sub
 
     Public Function getAllUsers() As DataTable

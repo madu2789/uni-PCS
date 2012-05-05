@@ -1,4 +1,12 @@
 ﻿Partial Public Class profit_playDataSet
+    Partial Class UsuariDataTable
+
+        Private Sub UsuariDataTable_UsuariRowChanging(ByVal sender As System.Object, ByVal e As UsuariRowChangeEvent) Handles Me.UsuariRowChanging
+
+        End Sub
+
+    End Class
+
     Partial Class IngredientDataTable
 
     End Class

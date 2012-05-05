@@ -1347,6 +1347,8 @@ Partial Public Class profit_playDataSet
         
         Private columnPuntsGuardats As Global.System.Data.DataColumn
         
+        Private columnComensals As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -1400,6 +1402,13 @@ Partial Public Class profit_playDataSet
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property ComensalsColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnComensals
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1429,9 +1438,9 @@ Partial Public Class profit_playDataSet
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddUsuariRow(ByVal Nom As String, ByVal PuntsGuardats As Integer) As UsuariRow
+        Public Overloads Function AddUsuariRow(ByVal Nom As String, ByVal PuntsGuardats As Integer, ByVal Comensals As String) As UsuariRow
             Dim rowUsuariRow As UsuariRow = CType(Me.NewRow,UsuariRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nom, PuntsGuardats}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nom, PuntsGuardats, Comensals}
             rowUsuariRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowUsuariRow)
             Return rowUsuariRow
@@ -1459,6 +1468,7 @@ Partial Public Class profit_playDataSet
             Me.columnId_usuari = MyBase.Columns("Id_usuari")
             Me.columnNom = MyBase.Columns("Nom")
             Me.columnPuntsGuardats = MyBase.Columns("PuntsGuardats")
+            Me.columnComensals = MyBase.Columns("Comensals")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -1469,6 +1479,8 @@ Partial Public Class profit_playDataSet
             MyBase.Columns.Add(Me.columnNom)
             Me.columnPuntsGuardats = New Global.System.Data.DataColumn("PuntsGuardats", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPuntsGuardats)
+            Me.columnComensals = New Global.System.Data.DataColumn("Comensals", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnComensals)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_usuari}, true))
             Me.columnId_usuari.AutoIncrement = true
             Me.columnId_usuari.AutoIncrementSeed = -1
@@ -1476,6 +1488,7 @@ Partial Public Class profit_playDataSet
             Me.columnId_usuari.AllowDBNull = false
             Me.columnId_usuari.Unique = true
             Me.columnNom.MaxLength = 255
+            Me.columnComensals.DefaultValue = CType("1",String)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2878,6 +2891,20 @@ Partial Public Class profit_playDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property Comensals() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableUsuari.ComensalsColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Comensals' de la tabla 'Usuari' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableUsuari.ComensalsColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsNomNull() As Boolean
             Return Me.IsNull(Me.tableUsuari.NomColumn)
         End Function
@@ -2895,6 +2922,16 @@ Partial Public Class profit_playDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetPuntsGuardatsNull()
             Me(Me.tableUsuari.PuntsGuardatsColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsComensalsNull() As Boolean
+            Return Me.IsNull(Me.tableUsuari.ComensalsColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetComensalsNull()
+            Me(Me.tableUsuari.ComensalsColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -5296,11 +5333,12 @@ Namespace profit_playDataSetTableAdapters
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO Usuari"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Nom, PuntsGuardats)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        "& _ 
-                "(?, ?)"
+            Me._commandCollection(2).CommandText = "INSERT INTO Usuari"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Nom, PuntsGuardats, NumComensals)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "VALUES        (?, ?, ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom", Global.System.Data.OleDb.OleDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PuntsGuardats", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PuntsGuardats", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumComensals", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumComensals", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param2", Global.System.Data.OleDb.OleDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param3", Global.System.Data.OleDb.OleDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5483,17 +5521,22 @@ Namespace profit_playDataSetTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function InsertNewUser(ByVal Nom As String, ByVal PuntsGuardats As Global.System.Nullable(Of Integer)) As Object
+        Public Overloads Overridable Function InsertNewUser(ByVal NumComensals As Global.System.Nullable(Of Integer), ByVal Param2 As String, ByVal Param3 As String) As Object
             Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(2)
-            If (Nom Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Nom")
+            If (NumComensals.HasValue = true) Then
+                command.Parameters(0).Value = CType(NumComensals.Value,Integer)
             Else
-                command.Parameters(0).Value = CType(Nom,String)
+                command.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (PuntsGuardats.HasValue = true) Then
-                command.Parameters(1).Value = CType(PuntsGuardats.Value,Integer)
+            If (Param2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Param2")
             Else
-                command.Parameters(1).Value = Global.System.DBNull.Value
+                command.Parameters(1).Value = CType(Param2,String)
+            End If
+            If (Param3 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Param3")
+            Else
+                command.Parameters(2).Value = CType(Param3,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -7172,15 +7215,6 @@ Namespace profit_playDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As profit_playDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._ingredientTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._ingredientTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._producte_IngredientTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet._Producte_Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -7205,6 +7239,15 @@ Namespace profit_playDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._usuariTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._ingredientTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._ingredientTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -7244,14 +7287,6 @@ Namespace profit_playDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Function UpdateInsertedRows(ByVal dataSet As profit_playDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._ingredientTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._ingredientTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._producte_IngredientTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet._Producte_Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -7273,6 +7308,14 @@ Namespace profit_playDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._usuariTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._ingredientTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._ingredientTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -7333,6 +7376,14 @@ Namespace profit_playDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._ingredientTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._ingredientTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._usuariTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Usuari.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -7354,14 +7405,6 @@ Namespace profit_playDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._producte_IngredientTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._ingredientTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Ingredient.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._ingredientTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

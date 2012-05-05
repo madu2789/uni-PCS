@@ -8,7 +8,6 @@
     Private Sub Welcome_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Me.KeyPreview = True
-        'MsgBox("OJO MADU, per entrar com personal has de fer AltGr + 3 (#)", MsgBoxStyle.Critical, "OJO MADU")
 
     End Sub
 
@@ -56,12 +55,12 @@
                 Me.Hide()
                 If txtb_nomTaula.Text Is Nothing Then
                     'constructor amb nom propi (nostre)!
-                    ws.InsertNewUser("NA", 0)
+                    ws.InsertNewUser("NA", 0, num_comensals.Value)
                     Dim main As New Mainform_client(txtb_nomTaula.Text, 0)
                     main.ShowDialog()
                 Else
                     'constructor amb nom demanat!
-                    ws.InsertNewUser(txtb_nomTaula.Text, 1)
+                    ws.InsertNewUser(txtb_nomTaula.Text, 1, num_comensals.Value)
                     Dim main As New Mainform_client(txtb_nomTaula.Text, "0")
                     main.ShowDialog()
                 End If
