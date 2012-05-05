@@ -75,7 +75,7 @@ Public Class Producte
         Return BD.GetIDProducteByNom(nom)
     End Function
 
-    Public Function SetProducte(ByVal nom As String, ByVal descripcio As String, ByVal preu As String, ByVal tipus As String) As Boolean
+    Public Function SetProducte(ByVal nom As String, ByVal descripcio As String, ByVal preu As String, ByVal tipus As String, ByVal descripccio As String) As Boolean
         Return BD.SetProducte(nom, descripcio, preu, tipus)
     End Function
 

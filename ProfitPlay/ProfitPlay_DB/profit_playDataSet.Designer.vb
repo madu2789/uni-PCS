@@ -1071,6 +1071,8 @@ Partial Public Class profit_playDataSet
         
         Private columnCategoria As Global.System.Data.DataColumn
         
+        Private columnDescripcio As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -1131,6 +1133,13 @@ Partial Public Class profit_playDataSet
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property DescripcioColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescripcio
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1160,9 +1169,9 @@ Partial Public Class profit_playDataSet
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddProducteRow(ByVal Nom As String, ByVal Preu As String, ByVal Categoria As String) As ProducteRow
+        Public Overloads Function AddProducteRow(ByVal Nom As String, ByVal Preu As String, ByVal Categoria As String, ByVal Descripcio As String) As ProducteRow
             Dim rowProducteRow As ProducteRow = CType(Me.NewRow,ProducteRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nom, Preu, Categoria}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nom, Preu, Categoria, Descripcio}
             rowProducteRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowProducteRow)
             Return rowProducteRow
@@ -1191,6 +1200,7 @@ Partial Public Class profit_playDataSet
             Me.columnNom = MyBase.Columns("Nom")
             Me.columnPreu = MyBase.Columns("Preu")
             Me.columnCategoria = MyBase.Columns("Categoria")
+            Me.columnDescripcio = MyBase.Columns("Descripcio")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -1203,6 +1213,8 @@ Partial Public Class profit_playDataSet
             MyBase.Columns.Add(Me.columnPreu)
             Me.columnCategoria = New Global.System.Data.DataColumn("Categoria", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCategoria)
+            Me.columnDescripcio = New Global.System.Data.DataColumn("Descripcio", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescripcio)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_producte}, true))
             Me.columnId_producte.AutoIncrement = true
             Me.columnId_producte.AutoIncrementSeed = -1
@@ -2807,6 +2819,20 @@ Partial Public Class profit_playDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property Descripcio() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableProducte.DescripcioColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Descripcio' de la tabla 'Producte' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableProducte.DescripcioColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsNomNull() As Boolean
             Return Me.IsNull(Me.tableProducte.NomColumn)
         End Function
@@ -2834,6 +2860,16 @@ Partial Public Class profit_playDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetCategoriaNull()
             Me(Me.tableProducte.CategoriaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsDescripcioNull() As Boolean
+            Return Me.IsNull(Me.tableProducte.DescripcioColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetDescripcioNull()
+            Me(Me.tableProducte.DescripcioColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

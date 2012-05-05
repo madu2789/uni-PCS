@@ -942,9 +942,9 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetPreuProducteById", ReplyAction:="*")>  _
         Function GetPreuProducteById(ByVal id_producte As Integer) As Double
         
-        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetProducteResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetProducte", ReplyAction:="*")>  _
-        Function GetProducte(ByVal request As ws_profitplay.GetProducteRequest) As ws_profitplay.GetProducteResponse
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllProductesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetAllProductes", ReplyAction:="*")>  _
+        Function GetAllProductes(ByVal request As ws_profitplay.GetAllProductesRequest) As ws_profitplay.GetAllProductesResponse
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetStockActualById", ReplyAction:="*")>  _
         Function GetStockActualById(ByVal id As Integer) As Integer
@@ -1727,16 +1727,16 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class GetProducteRequest
+    Partial Public Class GetAllProductesRequest
         
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetProducte", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ws_profitplay.GetProducteRequestBody
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAllProductes", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetAllProductesRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As ws_profitplay.GetProducteRequestBody)
+        Public Sub New(ByVal Body As ws_profitplay.GetAllProductesRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -1745,7 +1745,7 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute()>  _
-    Partial Public Class GetProducteRequestBody
+    Partial Public Class GetAllProductesRequestBody
         
         Public Sub New()
             MyBase.New
@@ -1755,16 +1755,16 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class GetProducteResponse
+    Partial Public Class GetAllProductesResponse
         
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetProducteResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ws_profitplay.GetProducteResponseBody
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAllProductesResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetAllProductesResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As ws_profitplay.GetProducteResponseBody)
+        Public Sub New(ByVal Body As ws_profitplay.GetAllProductesResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -1773,18 +1773,18 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
-    Partial Public Class GetProducteResponseBody
+    Partial Public Class GetAllProductesResponseBody
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public GetProducteResult() As ws_profitplay.ProducteBD
+        Public GetAllProductesResult() As ws_profitplay.ProducteBD
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal GetProducteResult() As ws_profitplay.ProducteBD)
+        Public Sub New(ByVal GetAllProductesResult() As ws_profitplay.ProducteBD)
             MyBase.New
-            Me.GetProducteResult = GetProducteResult
+            Me.GetAllProductesResult = GetAllProductesResult
         End Sub
     End Class
     
@@ -2941,15 +2941,15 @@ Namespace ws_profitplay
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function ws_profitplay_Service1Soap_GetProducte(ByVal request As ws_profitplay.GetProducteRequest) As ws_profitplay.GetProducteResponse Implements ws_profitplay.Service1Soap.GetProducte
-            Return MyBase.Channel.GetProducte(request)
+        Function ws_profitplay_Service1Soap_GetAllProductes(ByVal request As ws_profitplay.GetAllProductesRequest) As ws_profitplay.GetAllProductesResponse Implements ws_profitplay.Service1Soap.GetAllProductes
+            Return MyBase.Channel.GetAllProductes(request)
         End Function
         
-        Public Function GetProducte() As ws_profitplay.ProducteBD()
-            Dim inValue As ws_profitplay.GetProducteRequest = New ws_profitplay.GetProducteRequest
-            inValue.Body = New ws_profitplay.GetProducteRequestBody
-            Dim retVal As ws_profitplay.GetProducteResponse = CType(Me,ws_profitplay.Service1Soap).GetProducte(inValue)
-            Return retVal.Body.GetProducteResult
+        Public Function GetAllProductes() As ws_profitplay.ProducteBD()
+            Dim inValue As ws_profitplay.GetAllProductesRequest = New ws_profitplay.GetAllProductesRequest
+            inValue.Body = New ws_profitplay.GetAllProductesRequestBody
+            Dim retVal As ws_profitplay.GetAllProductesResponse = CType(Me,ws_profitplay.Service1Soap).GetAllProductes(inValue)
+            Return retVal.Body.GetAllProductesResult
         End Function
         
         Public Function GetStockActualById(ByVal id As Integer) As Integer Implements ws_profitplay.Service1Soap.GetStockActualById

@@ -120,9 +120,9 @@ Partial Class info_producte
         Me.lbl_ingredients.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_ingredients.Location = New System.Drawing.Point(26, 107)
         Me.lbl_ingredients.Name = "lbl_ingredients"
-        Me.lbl_ingredients.Size = New System.Drawing.Size(314, 16)
+        Me.lbl_ingredients.Size = New System.Drawing.Size(80, 16)
         Me.lbl_ingredients.TabIndex = 9
-        Me.lbl_ingredients.Text = "Ingredients: macarrons, formatge, tomàquet, orenga"
+        Me.lbl_ingredients.Text = "Ingredients: "
         '
         'lbl_descripcio
         '

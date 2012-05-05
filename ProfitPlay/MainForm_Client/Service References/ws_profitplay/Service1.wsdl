@@ -241,13 +241,13 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetProducte">
+      <s:element name="GetAllProductes">
         <s:complexType />
       </s:element>
-      <s:element name="GetProducteResponse">
+      <s:element name="GetAllProductesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetProducteResult" type="tns:ArrayOfProducteBD" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProductesResult" type="tns:ArrayOfProducteBD" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -623,11 +623,11 @@
   <wsdl:message name="GetPreuProducteByIdSoapOut">
     <wsdl:part name="parameters" element="tns:GetPreuProducteByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="GetProducteSoapIn">
-    <wsdl:part name="parameters" element="tns:GetProducte" />
+  <wsdl:message name="GetAllProductesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProductes" />
   </wsdl:message>
-  <wsdl:message name="GetProducteSoapOut">
-    <wsdl:part name="parameters" element="tns:GetProducteResponse" />
+  <wsdl:message name="GetAllProductesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProductesResponse" />
   </wsdl:message>
   <wsdl:message name="GetStockActualByIdSoapIn">
     <wsdl:part name="parameters" element="tns:GetStockActualById" />
@@ -786,9 +786,9 @@
       <wsdl:input message="tns:GetPreuProducteByIdSoapIn" />
       <wsdl:output message="tns:GetPreuProducteByIdSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetProducte">
-      <wsdl:input message="tns:GetProducteSoapIn" />
-      <wsdl:output message="tns:GetProducteSoapOut" />
+    <wsdl:operation name="GetAllProductes">
+      <wsdl:input message="tns:GetAllProductesSoapIn" />
+      <wsdl:output message="tns:GetAllProductesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetStockActualById">
       <wsdl:input message="tns:GetStockActualByIdSoapIn" />
@@ -992,8 +992,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetProducte">
-      <soap:operation soapAction="http://tempuri.org/GetProducte" style="document" />
+    <wsdl:operation name="GetAllProductes">
+      <soap:operation soapAction="http://tempuri.org/GetAllProductes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1283,8 +1283,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetProducte">
-      <soap12:operation soapAction="http://tempuri.org/GetProducte" style="document" />
+    <wsdl:operation name="GetAllProductes">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProductes" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
