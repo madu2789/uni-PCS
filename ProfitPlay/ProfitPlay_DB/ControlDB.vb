@@ -172,14 +172,14 @@
 
     End Function
 
-    Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
+    Public Function SetEmpleat(ByVal nom As String, ByVal cognom As String, ByVal username As String, ByVal password As String, ByVal rol As String) As Boolean
 
         Dim ok As Boolean = False
         Try
 
             connect()
             empleatDA.Connection = conDB
-            empleatDA.InsertEmpleat(rol, nom, nom, password, cognom)
+            empleatDA.InsertEmpleat(rol, nom, username, password, cognom)
             disconnect()
             ok = True
 

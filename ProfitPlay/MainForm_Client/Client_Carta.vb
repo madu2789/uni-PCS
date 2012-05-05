@@ -219,7 +219,12 @@
                 Dim estat = "Sol·licitat"
                 ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
 
-
+                Dim plats = ws.GetAllPlats()
+                For Each p In plats
+                    If (p.id_producte = CInt(idProducte)) Then
+                        ws.UpdateStockActualById(p.id_producte, 1)
+                    End If
+                Next
             Next
 
             resetForm()

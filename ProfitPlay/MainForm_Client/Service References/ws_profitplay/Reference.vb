@@ -1259,24 +1259,28 @@ Namespace ws_profitplay
         Public nom As String
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
-        Public password As String
+        Public cognom As String
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=2)>  _
-        Public rol As String
+        Public username As String
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
-        Public cognom As String
+        Public password As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=4)>  _
+        Public rol As String
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String)
+        Public Sub New(ByVal nom As String, ByVal cognom As String, ByVal username As String, ByVal password As String, ByVal rol As String)
             MyBase.New
             Me.nom = nom
+            Me.cognom = cognom
+            Me.username = username
             Me.password = password
             Me.rol = rol
-            Me.cognom = cognom
         End Sub
     End Class
     
@@ -2837,13 +2841,14 @@ Namespace ws_profitplay
             Return MyBase.Channel.SetEmpleat(request)
         End Function
         
-        Public Function SetEmpleat(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
+        Public Function SetEmpleat(ByVal nom As String, ByVal cognom As String, ByVal username As String, ByVal password As String, ByVal rol As String) As Boolean
             Dim inValue As ws_profitplay.SetEmpleatRequest = New ws_profitplay.SetEmpleatRequest
             inValue.Body = New ws_profitplay.SetEmpleatRequestBody
             inValue.Body.nom = nom
+            inValue.Body.cognom = cognom
+            inValue.Body.username = username
             inValue.Body.password = password
             inValue.Body.rol = rol
-            inValue.Body.cognom = cognom
             Dim retVal As ws_profitplay.SetEmpleatResponse = CType(Me,ws_profitplay.Service1Soap).SetEmpleat(inValue)
             Return retVal.Body.SetEmpleatResult
         End Function

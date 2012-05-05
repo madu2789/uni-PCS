@@ -51,8 +51,8 @@ Public Class Empleat
         Return BD.deleteEmpleat(Nom, Sur)
     End Function
 
-    Public Function SetEmpleats(ByVal nom As String, ByVal password As String, ByVal rol As String, ByVal cognom As String) As Boolean
-        Return BD.SetEmpleat(nom, password, rol, cognom)
+    Public Function SetEmpleat(ByVal nom As String, ByVal cognom As String, ByVal username As String, ByVal password As String, ByVal rol As String) As Boolean
+        Return BD.SetEmpleat(nom, cognom, username, password, rol)
     End Function
 
     Public Function getEmpleats() As DataTable
