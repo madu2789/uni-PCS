@@ -78,8 +78,8 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-    Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
-        Return empleat.deleteEmpleat(Nom, Sur)
+    Public Function deleteEmpleat(ByVal id As Integer, ByVal username As String) As Integer
+        Return empleat.deleteEmpleat(id, username)
     End Function
 
     <WebMethod()> _

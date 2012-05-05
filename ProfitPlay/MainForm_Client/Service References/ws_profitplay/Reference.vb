@@ -891,7 +891,7 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/LogEmpleat", ReplyAction:="*")>  _
         Function LogEmpleat(ByVal request As ws_profitplay.LogEmpleatRequest) As ws_profitplay.LogEmpleatResponse
         
-        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Nom del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento username del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/deleteEmpleat", ReplyAction:="*")>  _
         Function deleteEmpleat(ByVal request As ws_profitplay.deleteEmpleatRequest) As ws_profitplay.deleteEmpleatResponse
         
@@ -1107,20 +1107,20 @@ Namespace ws_profitplay
      System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
     Partial Public Class deleteEmpleatRequestBody
         
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public Nom As String
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public id As Integer
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
-        Public Sur As String
+        Public username As String
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Nom As String, ByVal Sur As String)
+        Public Sub New(ByVal id As Integer, ByVal username As String)
             MyBase.New
-            Me.Nom = Nom
-            Me.Sur = Sur
+            Me.id = id
+            Me.username = username
         End Sub
     End Class
     
@@ -2810,11 +2810,11 @@ Namespace ws_profitplay
             Return MyBase.Channel.deleteEmpleat(request)
         End Function
         
-        Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
+        Public Function deleteEmpleat(ByVal id As Integer, ByVal username As String) As Integer
             Dim inValue As ws_profitplay.deleteEmpleatRequest = New ws_profitplay.deleteEmpleatRequest
             inValue.Body = New ws_profitplay.deleteEmpleatRequestBody
-            inValue.Body.Nom = Nom
-            inValue.Body.Sur = Sur
+            inValue.Body.id = id
+            inValue.Body.username = username
             Dim retVal As ws_profitplay.deleteEmpleatResponse = CType(Me,ws_profitplay.Service1Soap).deleteEmpleat(inValue)
             Return retVal.Body.deleteEmpleatResult
         End Function
