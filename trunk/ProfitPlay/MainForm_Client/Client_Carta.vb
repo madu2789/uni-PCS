@@ -21,7 +21,6 @@
         productes = New List(Of Producto)
         m_comanda = New Comanda
 
-        'fillStructure()
         ObteProductes()
 
     End Sub
@@ -30,7 +29,7 @@
 
         Try
 
-            Dim Llistaproductes = ws.GetProducte()
+            Dim Llistaproductes = ws.GetAllProductes
 
             For Each fila In Llistaproductes
 
@@ -41,14 +40,13 @@
                 pro.preu = fila.preu
                 pro.tipus = fila.tipus
                 pro.descripcio = fila.descripicio
-
                 productes.Add(pro)
+
             Next
 
         Catch ex As Exception
             MsgBox("Error obtenint productes", MsgBoxStyle.Critical, "Error en obtenir productes")
         End Try
-        
 
     End Sub
 
@@ -214,12 +212,13 @@
 
                 m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
 
-                Dim idUsuari As String = "1"
+                Dim idUsuari As String = Id_usuari.ToString
                 Dim idProducte As String = ws.GetIdProducteByNom(lv_pedidos.Items.Item(s).Text)
                 Dim notes As String = ""
                 Dim hora As Date = Now
                 Dim estat = "Sol·licitat"
                 ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
+
 
             Next
 
@@ -265,33 +264,55 @@
 
         Dim dialog As New info_producte
         Dim added As Boolean = False
+        Dim nom_prod As String = ""
 
-        'aixo ve de la bbdd
-        dialog.lbl_titol_producte.Text = "Aquesta es el titol"
-        dialog.lbl_descripcio.Text = "Aquesta es la descripccio"
-        dialog.lbl_ingredients.Text = "Els ingredients: a, b, c, d"
+        For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+
+            If (lv_productos_disp.Items.Item(i).Selected = True And added = False) Then
+                nom_prod = lv_productos_disp.Items.Item(i).Text
+                added = True
+            End If
+        Next
+
+        Dim productes = ws.GetAllProductes
+        Dim plats = ws.GetAllPlats
+
+        For Each p In productes
+
+            If p.nom = nom_prod Then
+
+                dialog.lbl_titol_producte.Text = "Nom del producte: " + p.nom
+
+                If (p.descripicio <> "") Then
+                    dialog.lbl_descripcio.Text = "Descripcció: " + p.descripicio
+                Else
+                    dialog.lbl_descripcio.Text = "Descripcció no disponible "
+                End If
+
+            End If
+
+        Next
+
+        For Each Plat In plats
+            If (Plat.id_producte = ws.GetIdProducteByNom(nom_prod)) Then
+                dialog.lbl_ingredients.Text += ws.GetNomIngredientById(Plat.id_ingredient) + ", "
+            End If
+        Next
+
+        dialog.lbl_ingredients.Text.Remove(dialog.lbl_ingredients.Text.LastIndexOf(",") - 1, 2)
 
         Dim res = dialog.ShowDialog()
         Dim quantitat = dialog.getQuanitat()
         dialog.Dispose()
 
         If (res = Windows.Forms.DialogResult.OK) Then
+            If (nom_prod <> "") Then
+                For a As Integer = 1 To quantitat Step 1
 
-            For i As Integer = 0 To lv_productos_disp.Items.Count - 1 Step 1
+                    lv_pedidos.Items.Add(nom_prod)
 
-                If (lv_productos_disp.Items.Item(i).Selected = True And added = False) Then
-
-                    For a As Integer = 1 To quantitat Step 1
-
-                        lv_pedidos.Items.Add(lv_productos_disp.Items.Item(i).Text)
-                        added = True
-
-                    Next
-
-                End If
-
-            Next
-
+                Next
+            End If
         End If
 
     End Sub

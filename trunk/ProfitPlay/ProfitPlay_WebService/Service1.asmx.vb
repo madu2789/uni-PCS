@@ -99,7 +99,6 @@ Public Class Service1
 
             idBD = CInt(fila("Id_empleat"))
             If id = idBD Then
-                ' MsgBox(fila("Id_empleat").ToString + fila("Rol").ToString + fila("Nom").ToString, MsgBoxStyle.Exclamation)
 
                 empl.id = fila("Id_empleat").ToString
                 empl.rol = fila("Rol").ToString
@@ -218,7 +217,7 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetProducte() As List(Of ProducteBD)
+   Public Function GetAllProductes() As List(Of ProducteBD)
 
         Dim productes As New List(Of ProducteBD)
         Dim info As DataTable = producte.ObteProductes
@@ -230,6 +229,7 @@ Public Class Service1
             pro.nom = fila("Nom").ToString
             pro.preu = fila("Preu").ToString
             pro.tipus = fila("Categoria").ToString
+            pro.descripicio = fila("Descripcio").ToString
 
             productes.Add(pro)
         Next
@@ -373,7 +373,7 @@ Public Class Service1
 
     <WebMethod()> _
     Public Function SetProducte(ByVal nom As String, ByVal descripcio As String, ByVal preu As String, ByVal tipus As String) As Boolean
-        Return producte.SetProducte(nom, descripcio, preu, tipus)
+        Return producte.SetProducte(nom, descripcio, preu, tipus, descripcio)
     End Function
 
     <WebMethod()> _

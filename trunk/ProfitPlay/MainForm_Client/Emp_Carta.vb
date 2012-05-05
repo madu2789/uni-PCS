@@ -51,7 +51,7 @@
 
     Private Sub ObteProductes()
 
-        Dim Llistaproductes = ws.GetProducte()
+        Dim Llistaproductes = ws.GetAllProductes()
 
         For Each fila In Llistaproductes
             Dim pro As New Producto

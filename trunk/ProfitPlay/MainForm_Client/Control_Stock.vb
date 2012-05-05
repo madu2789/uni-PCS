@@ -48,7 +48,7 @@
 
     Private Sub Control_Stock_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        Dim plats = ws.GetProducte()
+        Dim plats = ws.GetAllProductes()
         For Each fila In plats
 
             Dim pro As New Producto
