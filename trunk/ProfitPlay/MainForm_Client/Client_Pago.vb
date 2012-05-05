@@ -57,7 +57,7 @@
 
     Private Sub SolPagarComanda()
         Dim id_user As Integer = 1
-        Dim comandes = ws.GetComanda()
+        Dim comandes = ws.GetAllComandes()
 
         For Each fila In comandes
             If fila.Id_usuari = id_user Then

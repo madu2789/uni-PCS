@@ -346,6 +346,83 @@ Namespace ws_profitplay
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="UsuariBD", [Namespace]:="http://tempuri.org/"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class UsuariBD
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        Private Id_usuariField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NomField As String
+        
+        Private PuntsField As Integer
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
+        Public Property Id_usuari() As Integer
+            Get
+                Return Me.Id_usuariField
+            End Get
+            Set
+                If (Me.Id_usuariField.Equals(value) <> true) Then
+                    Me.Id_usuariField = value
+                    Me.RaisePropertyChanged("Id_usuari")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false)>  _
+        Public Property Nom() As String
+            Get
+                Return Me.NomField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.NomField, value) <> true) Then
+                    Me.NomField = value
+                    Me.RaisePropertyChanged("Nom")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
+        Public Property Punts() As Integer
+            Get
+                Return Me.PuntsField
+            End Get
+            Set
+                If (Me.PuntsField.Equals(value) <> true) Then
+                    Me.PuntsField = value
+                    Me.RaisePropertyChanged("Punts")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute(Name:="ProducteBD", [Namespace]:="http://tempuri.org/"),  _
      System.SerializableAttribute()>  _
     Partial Public Class ProducteBD
@@ -822,6 +899,10 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetAllPlats", ReplyAction:="*")>  _
         Function GetAllPlats(ByVal request As ws_profitplay.GetAllPlatsRequest) As ws_profitplay.GetAllPlatsResponse
         
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllUsersResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetAllUsers", ReplyAction:="*")>  _
+        Function GetAllUsers(ByVal request As ws_profitplay.GetAllUsersRequest) As ws_profitplay.GetAllUsersResponse
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetLastUserId", ReplyAction:="*")>  _
         Function GetLastUserId() As Integer
         
@@ -865,9 +946,9 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetIngredients", ReplyAction:="*")>  _
         Function GetIngredients(ByVal request As ws_profitplay.GetIngredientsRequest) As ws_profitplay.GetIngredientsResponse
         
-        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetComandaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetComanda", ReplyAction:="*")>  _
-        Function GetComanda(ByVal request As ws_profitplay.GetComandaRequest) As ws_profitplay.GetComandaResponse
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllComandesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetAllComandes", ReplyAction:="*")>  _
+        Function GetAllComandes(ByVal request As ws_profitplay.GetAllComandesRequest) As ws_profitplay.GetAllComandesResponse
         
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetComandaByUserIdResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetComandaByUserId", ReplyAction:="*")>  _
@@ -1339,6 +1420,70 @@ Namespace ws_profitplay
         Public Sub New(ByVal GetAllPlatsResult() As ws_profitplay.PlatDB)
             MyBase.New
             Me.GetAllPlatsResult = GetAllPlatsResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetAllUsersRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAllUsers", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetAllUsersRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetAllUsersRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class GetAllUsersRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetAllUsersResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAllUsersResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetAllUsersResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetAllUsersResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetAllUsersResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public GetAllUsersResult() As ws_profitplay.UsuariBD
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetAllUsersResult() As ws_profitplay.UsuariBD)
+            MyBase.New
+            Me.GetAllUsersResult = GetAllUsersResult
         End Sub
     End Class
     
@@ -1829,16 +1974,16 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class GetComandaRequest
+    Partial Public Class GetAllComandesRequest
         
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetComanda", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ws_profitplay.GetComandaRequestBody
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAllComandes", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetAllComandesRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As ws_profitplay.GetComandaRequestBody)
+        Public Sub New(ByVal Body As ws_profitplay.GetAllComandesRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -1847,7 +1992,7 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute()>  _
-    Partial Public Class GetComandaRequestBody
+    Partial Public Class GetAllComandesRequestBody
         
         Public Sub New()
             MyBase.New
@@ -1857,16 +2002,16 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class GetComandaResponse
+    Partial Public Class GetAllComandesResponse
         
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetComandaResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ws_profitplay.GetComandaResponseBody
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetAllComandesResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetAllComandesResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As ws_profitplay.GetComandaResponseBody)
+        Public Sub New(ByVal Body As ws_profitplay.GetAllComandesResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -1875,18 +2020,18 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
-    Partial Public Class GetComandaResponseBody
+    Partial Public Class GetAllComandesResponseBody
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public GetComandaResult() As ws_profitplay.ComandaDB
+        Public GetAllComandesResult() As ws_profitplay.ComandaDB
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal GetComandaResult() As ws_profitplay.ComandaDB)
+        Public Sub New(ByVal GetAllComandesResult() As ws_profitplay.ComandaDB)
             MyBase.New
-            Me.GetComandaResult = GetComandaResult
+            Me.GetAllComandesResult = GetAllComandesResult
         End Sub
     End Class
     
@@ -2702,6 +2847,18 @@ Namespace ws_profitplay
             Return retVal.Body.GetAllPlatsResult
         End Function
         
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetAllUsers(ByVal request As ws_profitplay.GetAllUsersRequest) As ws_profitplay.GetAllUsersResponse Implements ws_profitplay.Service1Soap.GetAllUsers
+            Return MyBase.Channel.GetAllUsers(request)
+        End Function
+        
+        Public Function GetAllUsers() As ws_profitplay.UsuariBD()
+            Dim inValue As ws_profitplay.GetAllUsersRequest = New ws_profitplay.GetAllUsersRequest
+            inValue.Body = New ws_profitplay.GetAllUsersRequestBody
+            Dim retVal As ws_profitplay.GetAllUsersResponse = CType(Me,ws_profitplay.Service1Soap).GetAllUsers(inValue)
+            Return retVal.Body.GetAllUsersResult
+        End Function
+        
         Public Function GetLastUserId() As Integer Implements ws_profitplay.Service1Soap.GetLastUserId
             Return MyBase.Channel.GetLastUserId
         End Function
@@ -2812,15 +2969,15 @@ Namespace ws_profitplay
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function ws_profitplay_Service1Soap_GetComanda(ByVal request As ws_profitplay.GetComandaRequest) As ws_profitplay.GetComandaResponse Implements ws_profitplay.Service1Soap.GetComanda
-            Return MyBase.Channel.GetComanda(request)
+        Function ws_profitplay_Service1Soap_GetAllComandes(ByVal request As ws_profitplay.GetAllComandesRequest) As ws_profitplay.GetAllComandesResponse Implements ws_profitplay.Service1Soap.GetAllComandes
+            Return MyBase.Channel.GetAllComandes(request)
         End Function
         
-        Public Function GetComanda() As ws_profitplay.ComandaDB()
-            Dim inValue As ws_profitplay.GetComandaRequest = New ws_profitplay.GetComandaRequest
-            inValue.Body = New ws_profitplay.GetComandaRequestBody
-            Dim retVal As ws_profitplay.GetComandaResponse = CType(Me,ws_profitplay.Service1Soap).GetComanda(inValue)
-            Return retVal.Body.GetComandaResult
+        Public Function GetAllComandes() As ws_profitplay.ComandaDB()
+            Dim inValue As ws_profitplay.GetAllComandesRequest = New ws_profitplay.GetAllComandesRequest
+            inValue.Body = New ws_profitplay.GetAllComandesRequestBody
+            Dim retVal As ws_profitplay.GetAllComandesResponse = CType(Me,ws_profitplay.Service1Soap).GetAllComandes(inValue)
+            Return retVal.Body.GetAllComandesResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _

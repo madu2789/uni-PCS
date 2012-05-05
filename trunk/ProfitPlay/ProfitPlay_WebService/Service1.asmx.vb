@@ -161,6 +161,27 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+        Public Function GetAllUsers() As List(Of UsuariBD)
+
+        Dim users As New List(Of UsuariBD)
+        Dim info As DataTable = usuari.getAllUsers
+
+        For Each fila In info.Rows
+
+            Dim pro As New UsuariBD
+            pro.Id_usuari = fila("Id_usuari").ToString
+            pro.nom = fila("Nom").ToString
+            pro.Punts = fila("PuntsGuardats").ToString
+
+            users.Add(pro)
+
+        Next
+
+        Return users
+
+    End Function
+
+    <WebMethod()> _
         Public Function GetLastUserId() As Integer
         Return usuari.getLastUserId()
     End Function
@@ -254,7 +275,7 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function GetComanda() As List(Of ComandaDB)
+   Public Function GetAllComandes() As List(Of ComandaDB)
 
         Dim comandes As New List(Of ComandaDB)
         Dim info As DataTable = comanda.GetComanda

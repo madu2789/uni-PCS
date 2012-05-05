@@ -14,7 +14,7 @@
 
     Private Sub CarregaComandes()
 
-        Dim comandes = ws.GetComanda
+        Dim comandes = ws.GetAllComandes
 
         For Each fila In comandes
 

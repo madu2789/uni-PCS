@@ -53,3 +53,14 @@ C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\Prof
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.exe
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.xml
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.pdb
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Release\profit_play.accdb
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Release\ProfitPlay_DB.exe
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Release\ProfitPlay_DB.pdb
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\bin\Release\ProfitPlay_DB.xml
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ResolveAssemblyReference.cache
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.ControlDB.resources
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.Resources.resources
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.vbproj.GenerateResource.Cache
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.exe
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.xml
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_DB\obj\Release\ProfitPlay_DB.pdb

@@ -1,5 +1,7 @@
 ﻿Public Class Emp_Pago
 
+    Dim ws As New ws_profitplay.Service1SoapClient
+
     Private Sub btn_gest_users_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_users.Click
         Me.Hide()
         Emp_Gestio_usuaris.Show()
@@ -41,12 +43,29 @@
                 btn_gest_stock.Hide()
                 btn_config_fichero.Hide()
             Case Else
-
         End Select
+
+        Dim users = ws.GetAllUsers()
+        cb_taula.Items.Clear()
+
+        For Each a In users
+            cb_taula.Items.Add("Taula " + a.Id_usuari.ToString)
+        Next
+
     End Sub
 
     Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click
         Me.Hide()
         Emp_anula.Show()
+    End Sub
+
+    Private Sub cb_taula_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cb_taula.SelectedIndexChanged
+
+        Dim comandes_taula As New List(Of Comanda)
+        Dim totes_comandes = ws.GetAllComandes
+
+
+
+
     End Sub
 End Class
