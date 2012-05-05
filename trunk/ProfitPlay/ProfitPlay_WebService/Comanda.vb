@@ -76,4 +76,8 @@
         Return BD.SolPagarComanda(id_comanda)
     End Function
 
+    Public Function DeleteComandaByUserId(ByVal id As Integer) As Integer
+        Return BD.DeleteComandaByUserId(id)
+    End Function
+
 End Class

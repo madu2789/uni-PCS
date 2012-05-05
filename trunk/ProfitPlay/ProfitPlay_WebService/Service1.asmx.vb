@@ -337,6 +337,11 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+    Public Function deleteComandaByUserId(ByVal id As Integer) As Integer
+        Return comanda.DeleteComandaByUserId(id)
+    End Function
+
+    <WebMethod()> _
     Public Function insertCompra(ByVal id_i As Integer, ByVal q As Integer, ByVal e As String) As Integer
         Return compra.insertCompra(id_i, q, e)
     End Function

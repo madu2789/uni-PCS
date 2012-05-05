@@ -981,6 +981,9 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SolPagarComanda", ReplyAction:="*")>  _
         Function SolPagarComanda(ByVal request As ws_profitplay.SolPagarComandaRequest) As ws_profitplay.SolPagarComandaResponse
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/deleteComandaByUserId", ReplyAction:="*")>  _
+        Function deleteComandaByUserId(ByVal id As Integer) As Integer
+        
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento e del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/insertCompra", ReplyAction:="*")>  _
         Function insertCompra(ByVal request As ws_profitplay.insertCompraRequest) As ws_profitplay.insertCompraResponse
@@ -3054,6 +3057,10 @@ Namespace ws_profitplay
             inValue.Body.id_comanda = id_comanda
             Dim retVal As ws_profitplay.SolPagarComandaResponse = CType(Me,ws_profitplay.Service1Soap).SolPagarComanda(inValue)
             Return retVal.Body.SolPagarComandaResult
+        End Function
+        
+        Public Function deleteComandaByUserId(ByVal id As Integer) As Integer Implements ws_profitplay.Service1Soap.deleteComandaByUserId
+            Return MyBase.Channel.deleteComandaByUserId(id)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _

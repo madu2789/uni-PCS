@@ -5336,9 +5336,9 @@ Namespace profit_playDataSetTableAdapters
             Me._commandCollection(2).CommandText = "INSERT INTO Usuari"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Nom, PuntsGuardats, NumComensals)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
                 "VALUES        (?, ?, ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Nom", Global.System.Data.OleDb.OleDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PuntsGuardats", Global.System.Data.OleDb.OleDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumComensals", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumComensals", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param2", Global.System.Data.OleDb.OleDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param3", Global.System.Data.OleDb.OleDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5521,22 +5521,22 @@ Namespace profit_playDataSetTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function InsertNewUser(ByVal NumComensals As Global.System.Nullable(Of Integer), ByVal Param2 As String, ByVal Param3 As String) As Object
+        Public Overloads Overridable Function InsertNewUser(ByVal Nom As String, ByVal PuntsGuardats As String, ByVal NumComensals As Global.System.Nullable(Of Integer)) As Object
             Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(2)
+            If (Nom Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Nom")
+            Else
+                command.Parameters(0).Value = CType(Nom,String)
+            End If
+            If (PuntsGuardats Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("PuntsGuardats")
+            Else
+                command.Parameters(1).Value = CType(PuntsGuardats,String)
+            End If
             If (NumComensals.HasValue = true) Then
-                command.Parameters(0).Value = CType(NumComensals.Value,Integer)
+                command.Parameters(2).Value = CType(NumComensals.Value,Integer)
             Else
-                command.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (Param2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Param2")
-            Else
-                command.Parameters(1).Value = CType(Param2,String)
-            End If
-            If (Param3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Param3")
-            Else
-                command.Parameters(2).Value = CType(Param3,String)
+                command.Parameters(2).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

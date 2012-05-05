@@ -60,7 +60,7 @@
 
     Public Function getLastUserId() As Integer
 
-        Dim res As Integer = 0
+        Dim res As Integer = 1
 
         Try
             connect()
@@ -70,20 +70,23 @@
 
         Catch ex As Exception
 
-            MsgBox("Error agafant ultima ID", MsgBoxStyle.Critical)
+            'MsgBox("Error agafant ultima ID", MsgBoxStyle.Critical)
+            'MsgBox(ex.ToString)
+            res = 1
 
         End Try
 
         Return res
+
     End Function
 
-    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer, ByVal comensals As Integer)
+    Public Sub InsertNewUser(ByVal Nom As String, ByVal Punts As Integer, ByVal Comensals As Integer)
 
         Try
 
             connect()
             usuariDA.Connection = conDB
-            usuariDA.InsertNewUser(Nom, Punts, comensals)
+            usuariDA.InsertNewUser(Nom, Punts, Comensals)
             disconnect()
 
         Catch ex As Exception
@@ -310,17 +313,21 @@
         Return ok
     End Function
 
-    Public Sub DeleteComandaByUserId(ByVal id As Integer)
+    Public Function DeleteComandaByUserId(ByVal id As Integer) As Integer
 
+        Dim res As Integer = 0
         Try
             connect()
             comandaDA.Connection = conDB
-            comandaDA.DeleteComandaByUserId(id)
+            res = comandaDA.DeleteComandaByUserId(id)
             disconnect()
         Catch ex As Exception
             MsgBox("Error eliminar totes comandes", MsgBoxStyle.Critical)
         End Try
-    End Sub
+
+        Return res
+
+    End Function
 
     Public Function SolAnulaComanda(ByVal id_comanda As String) As Boolean
 
