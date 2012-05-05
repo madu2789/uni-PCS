@@ -45,13 +45,17 @@ Partial Class Emp_Gestio_usuaris
         Me.btn_cancela = New System.Windows.Forms.Button
         Me.cmbx_rol = New System.Windows.Forms.ComboBox
         Me.txtb_cognom = New System.Windows.Forms.TextBox
-        Me.txtb_password = New System.Windows.Forms.TextBox
+        Me.txtb_username = New System.Windows.Forms.TextBox
         Me.txtb_nom = New System.Windows.Forms.TextBox
         Me.lbl_tipus = New System.Windows.Forms.Label
         Me.lbl_descripcio = New System.Windows.Forms.Label
         Me.lbl_preu = New System.Windows.Forms.Label
         Me.lbl_nom = New System.Windows.Forms.Label
         Me.lbl_gestio_usuaris_info = New System.Windows.Forms.Label
+        Me.btn_update_user = New System.Windows.Forms.Button
+        Me.btn_elimina_user = New System.Windows.Forms.Button
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.txtb_password = New System.Windows.Forms.TextBox
         Me.grb_users.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.TopToolStripPanel.SuspendLayout()
@@ -252,11 +256,13 @@ Partial Class Emp_Gestio_usuaris
         '
         'grb_insert_modifica
         '
+        Me.grb_insert_modifica.Controls.Add(Me.txtb_password)
+        Me.grb_insert_modifica.Controls.Add(Me.Label1)
         Me.grb_insert_modifica.Controls.Add(Me.btn_afegir)
         Me.grb_insert_modifica.Controls.Add(Me.btn_cancela)
         Me.grb_insert_modifica.Controls.Add(Me.cmbx_rol)
         Me.grb_insert_modifica.Controls.Add(Me.txtb_cognom)
-        Me.grb_insert_modifica.Controls.Add(Me.txtb_password)
+        Me.grb_insert_modifica.Controls.Add(Me.txtb_username)
         Me.grb_insert_modifica.Controls.Add(Me.txtb_nom)
         Me.grb_insert_modifica.Controls.Add(Me.lbl_tipus)
         Me.grb_insert_modifica.Controls.Add(Me.lbl_descripcio)
@@ -274,9 +280,9 @@ Partial Class Emp_Gestio_usuaris
         '
         Me.btn_afegir.BackColor = System.Drawing.Color.Lime
         Me.btn_afegir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_afegir.Location = New System.Drawing.Point(192, 246)
+        Me.btn_afegir.Location = New System.Drawing.Point(183, 264)
         Me.btn_afegir.Name = "btn_afegir"
-        Me.btn_afegir.Size = New System.Drawing.Size(85, 45)
+        Me.btn_afegir.Size = New System.Drawing.Size(115, 45)
         Me.btn_afegir.TabIndex = 42
         Me.btn_afegir.Text = "Afegeix"
         Me.btn_afegir.UseVisualStyleBackColor = False
@@ -285,9 +291,9 @@ Partial Class Emp_Gestio_usuaris
         '
         Me.btn_cancela.BackColor = System.Drawing.Color.OrangeRed
         Me.btn_cancela.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancela.Location = New System.Drawing.Point(38, 246)
+        Me.btn_cancela.Location = New System.Drawing.Point(33, 264)
         Me.btn_cancela.Name = "btn_cancela"
-        Me.btn_cancela.Size = New System.Drawing.Size(85, 45)
+        Me.btn_cancela.Size = New System.Drawing.Size(115, 45)
         Me.btn_cancela.TabIndex = 41
         Me.btn_cancela.Text = "Cancel·la"
         Me.btn_cancela.UseVisualStyleBackColor = False
@@ -296,36 +302,36 @@ Partial Class Emp_Gestio_usuaris
         '
         Me.cmbx_rol.FormattingEnabled = True
         Me.cmbx_rol.Items.AddRange(New Object() {"Administrador", "Cheff", "Barman", "Cambrer"})
-        Me.cmbx_rol.Location = New System.Drawing.Point(128, 184)
+        Me.cmbx_rol.Location = New System.Drawing.Point(174, 203)
         Me.cmbx_rol.Name = "cmbx_rol"
-        Me.cmbx_rol.Size = New System.Drawing.Size(108, 21)
+        Me.cmbx_rol.Size = New System.Drawing.Size(124, 21)
         Me.cmbx_rol.TabIndex = 40
         '
         'txtb_cognom
         '
-        Me.txtb_cognom.Location = New System.Drawing.Point(128, 90)
+        Me.txtb_cognom.Location = New System.Drawing.Point(173, 79)
         Me.txtb_cognom.Name = "txtb_cognom"
-        Me.txtb_cognom.Size = New System.Drawing.Size(108, 20)
+        Me.txtb_cognom.Size = New System.Drawing.Size(125, 20)
         Me.txtb_cognom.TabIndex = 38
         '
-        'txtb_password
+        'txtb_username
         '
-        Me.txtb_password.Location = New System.Drawing.Point(128, 132)
-        Me.txtb_password.Name = "txtb_password"
-        Me.txtb_password.Size = New System.Drawing.Size(108, 20)
-        Me.txtb_password.TabIndex = 39
+        Me.txtb_username.Location = New System.Drawing.Point(174, 122)
+        Me.txtb_username.Name = "txtb_username"
+        Me.txtb_username.Size = New System.Drawing.Size(124, 20)
+        Me.txtb_username.TabIndex = 39
         '
         'txtb_nom
         '
-        Me.txtb_nom.Location = New System.Drawing.Point(128, 48)
+        Me.txtb_nom.Location = New System.Drawing.Point(173, 39)
         Me.txtb_nom.Name = "txtb_nom"
-        Me.txtb_nom.Size = New System.Drawing.Size(108, 20)
+        Me.txtb_nom.Size = New System.Drawing.Size(125, 20)
         Me.txtb_nom.TabIndex = 3
         '
         'lbl_tipus
         '
         Me.lbl_tipus.AutoSize = True
-        Me.lbl_tipus.Location = New System.Drawing.Point(42, 187)
+        Me.lbl_tipus.Location = New System.Drawing.Point(30, 206)
         Me.lbl_tipus.Name = "lbl_tipus"
         Me.lbl_tipus.Size = New System.Drawing.Size(26, 13)
         Me.lbl_tipus.TabIndex = 2
@@ -334,25 +340,25 @@ Partial Class Emp_Gestio_usuaris
         'lbl_descripcio
         '
         Me.lbl_descripcio.AutoSize = True
-        Me.lbl_descripcio.Location = New System.Drawing.Point(42, 93)
+        Me.lbl_descripcio.Location = New System.Drawing.Point(30, 86)
         Me.lbl_descripcio.Name = "lbl_descripcio"
-        Me.lbl_descripcio.Size = New System.Drawing.Size(60, 13)
+        Me.lbl_descripcio.Size = New System.Drawing.Size(49, 13)
         Me.lbl_descripcio.TabIndex = 1
-        Me.lbl_descripcio.Text = "Descripció:"
+        Me.lbl_descripcio.Text = "Cognom:"
         '
         'lbl_preu
         '
         Me.lbl_preu.AutoSize = True
-        Me.lbl_preu.Location = New System.Drawing.Point(42, 139)
+        Me.lbl_preu.Location = New System.Drawing.Point(30, 125)
         Me.lbl_preu.Name = "lbl_preu"
-        Me.lbl_preu.Size = New System.Drawing.Size(32, 13)
+        Me.lbl_preu.Size = New System.Drawing.Size(55, 13)
         Me.lbl_preu.TabIndex = 1
-        Me.lbl_preu.Text = "Preu:"
+        Me.lbl_preu.Text = "Username"
         '
         'lbl_nom
         '
         Me.lbl_nom.AutoSize = True
-        Me.lbl_nom.Location = New System.Drawing.Point(42, 51)
+        Me.lbl_nom.Location = New System.Drawing.Point(30, 46)
         Me.lbl_nom.Name = "lbl_nom"
         Me.lbl_nom.Size = New System.Drawing.Size(32, 13)
         Me.lbl_nom.TabIndex = 0
@@ -360,12 +366,48 @@ Partial Class Emp_Gestio_usuaris
         '
         'lbl_gestio_usuaris_info
         '
-        Me.lbl_gestio_usuaris_info.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_gestio_usuaris_info.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_gestio_usuaris_info.Location = New System.Drawing.Point(513, 115)
         Me.lbl_gestio_usuaris_info.Name = "lbl_gestio_usuaris_info"
-        Me.lbl_gestio_usuaris_info.Size = New System.Drawing.Size(267, 266)
+        Me.lbl_gestio_usuaris_info.Size = New System.Drawing.Size(319, 266)
         Me.lbl_gestio_usuaris_info.TabIndex = 38
-        Me.lbl_gestio_usuaris_info.Text = "Fes click sobre un usuari per eliminar-lo del sistema"
+        Me.lbl_gestio_usuaris_info.Text = "Sel.lecciona els empleats a eliminar i prem el botó ""Eliminar"" per eliminar-los d" & _
+            "el sistema" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sel.lecciona un empleat, fes click sobre el botó ""Modifica"" per modi" & _
+            "ficar-ne les dades"
+        '
+        'btn_update_user
+        '
+        Me.btn_update_user.Location = New System.Drawing.Point(519, 420)
+        Me.btn_update_user.Name = "btn_update_user"
+        Me.btn_update_user.Size = New System.Drawing.Size(90, 40)
+        Me.btn_update_user.TabIndex = 39
+        Me.btn_update_user.Text = "Modifica"
+        Me.btn_update_user.UseVisualStyleBackColor = True
+        '
+        'btn_elimina_user
+        '
+        Me.btn_elimina_user.Location = New System.Drawing.Point(742, 420)
+        Me.btn_elimina_user.Name = "btn_elimina_user"
+        Me.btn_elimina_user.Size = New System.Drawing.Size(90, 40)
+        Me.btn_elimina_user.TabIndex = 40
+        Me.btn_elimina_user.Text = "Elimina"
+        Me.btn_elimina_user.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(30, 166)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 13)
+        Me.Label1.TabIndex = 43
+        Me.Label1.Text = "Password:"
+        '
+        'txtb_password
+        '
+        Me.txtb_password.Location = New System.Drawing.Point(174, 163)
+        Me.txtb_password.Name = "txtb_password"
+        Me.txtb_password.Size = New System.Drawing.Size(124, 20)
+        Me.txtb_password.TabIndex = 44
         '
         'Emp_Gestio_usuaris
         '
@@ -374,10 +416,12 @@ Partial Class Emp_Gestio_usuaris
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(844, 472)
         Me.Controls.Add(Me.grb_insert_modifica)
+        Me.Controls.Add(Me.btn_elimina_user)
         Me.Controls.Add(Me.grb_users)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.lbl_gestio_usuaris_info)
+        Me.Controls.Add(Me.btn_update_user)
         Me.Name = "Emp_Gestio_usuaris"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Emp_Gestio_usuaris"
@@ -419,7 +463,7 @@ Partial Class Emp_Gestio_usuaris
     Friend WithEvents lbl_nom As System.Windows.Forms.Label
     Friend WithEvents lbl_tipus As System.Windows.Forms.Label
     Friend WithEvents txtb_cognom As System.Windows.Forms.TextBox
-    Friend WithEvents txtb_password As System.Windows.Forms.TextBox
+    Friend WithEvents txtb_username As System.Windows.Forms.TextBox
     Friend WithEvents txtb_nom As System.Windows.Forms.TextBox
     Friend WithEvents cmbx_rol As System.Windows.Forms.ComboBox
     Friend WithEvents btn_afegir As System.Windows.Forms.Button
@@ -428,4 +472,8 @@ Partial Class Emp_Gestio_usuaris
     Friend WithEvents btn_gest_pagos As System.Windows.Forms.Button
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
     Friend WithEvents lbl_gestio_usuaris_info As System.Windows.Forms.Label
+    Friend WithEvents btn_update_user As System.Windows.Forms.Button
+    Friend WithEvents btn_elimina_user As System.Windows.Forms.Button
+    Friend WithEvents txtb_password As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

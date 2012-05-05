@@ -74,24 +74,24 @@ Public Class Emp_Gestio_usuaris
         Dim empleats = ws.getEmpleats()
 
         For Each empleat In empleats
-            ts_usuaris.Items.Add(empleat.nom + "_" + empleat.cognom)
+            ts_usuaris.Items.Add(empleat.username)
         Next
 
     End Sub
 
     Private Sub btn_afegir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_afegir.Click
 
-        If txtb_nom.Text = "" Or txtb_cognom.Text = "" Or txtb_password.Text = "" Or cmbx_rol.Text = "" Then
+        If txtb_nom.Text = "" Or txtb_cognom.Text = "" Or txtb_username.Text = "" Or cmbx_rol.Text = "" Then
             MsgBox("Has d'introduir tots els camps!!!", MsgBoxStyle.Critical, "Camps incomplerts")
         Else
 
             'insert a base de dades empleat
             Dim validacio As Boolean
-            validacio = ws.SetEmpleat(txtb_nom.Text, txtb_password.Text, cmbx_rol.Text, txtb_cognom.Text)
+            validacio = ws.SetEmpleat(txtb_nom.Text, txtb_username.Text, cmbx_rol.Text, txtb_cognom.Text)
             If validacio = True Then
                 ts_usuaris.Items.Add(txtb_nom.Text + " " + txtb_cognom.Text)
                 grb_insert_modifica.Hide()
-            ElseIf (validacio = False Or txtb_nom.Text = "" Or txtb_password.Text = "" Or cmbx_rol.Text = "" Or txtb_cognom.Text = "") Then
+            ElseIf (validacio = False Or txtb_nom.Text = "" Or txtb_username.Text = "" Or cmbx_rol.Text = "" Or txtb_cognom.Text = "") Then
                 MsgBox("Validació incorrecte!", MsgBoxStyle.Critical, "ERROR DE VALIDACIÓ")
             End If
         End If
@@ -104,20 +104,7 @@ Public Class Emp_Gestio_usuaris
 
     Private Sub ToolStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ts_usuaris.ItemClicked
 
-        Dim text = e.ClickedItem.Text
-        Dim nom As String = ""
-
-        For i As Integer = 0 To text.Length - 1 Step 1
-
-            If (text(i) <> "_") Then
-                nom += text(i)
-            Else
-                Exit For
-            End If
-        Next
-
-        ts_usuaris.Items.Remove(e.ClickedItem)
-        Dim res = ws.deleteEmpleat(nom, text.Substring(text.IndexOf("_") + 1))
+        e.ClickedItem.Select()
 
     End Sub
 
@@ -136,4 +123,30 @@ Public Class Emp_Gestio_usuaris
         Next
         Return -1
     End Function
+
+    Private Sub ts_usuaris_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ts_usuaris.MouseDoubleClick
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_elimina_user.Click
+        For i As Integer = 0 To ts_usuaris.Items.Count - 1 Step 1
+            If ts_usuaris.Items(i).Selected = True Then
+                ts_usuaris.Items.RemoveAt(i)
+            End If
+        Next
+    End Sub
+
+    Private Sub btn_update_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_update_user.Click
+
+        Dim i As Integer = 0
+        Dim moded As Boolean = False
+
+        While i < ts_usuaris.Items.Count And moded = False
+            If ts_usuaris.Items(i).Selected = True Then
+                moded = True
+                grb_insert_modifica.BringToFront()
+                'agafar id del usuari, carregar les dades i guardar
+            End If
+        End While
+    End Sub
 End Class
