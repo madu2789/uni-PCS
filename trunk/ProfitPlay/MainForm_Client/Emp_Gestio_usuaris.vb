@@ -87,7 +87,7 @@ Public Class Emp_Gestio_usuaris
 
             'insert a base de dades empleat
             Dim validacio As Boolean
-            validacio = ws.SetEmpleat(txtb_nom.Text, txtb_username.Text, cmbx_rol.Text, txtb_cognom.Text)
+            validacio = ws.SetEmpleat(txtb_nom.Text, txtb_cognom.Text, txtb_username.Text, txtb_password.Text, cmbx_rol.Text)
             If validacio = True Then
                 ts_usuaris.Items.Add(txtb_nom.Text + " " + txtb_cognom.Text)
                 grb_insert_modifica.Hide()
@@ -123,10 +123,6 @@ Public Class Emp_Gestio_usuaris
         Next
         Return -1
     End Function
-
-    Private Sub ts_usuaris_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ts_usuaris.MouseDoubleClick
-
-    End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_elimina_user.Click
         For i As Integer = 0 To ts_usuaris.Items.Count - 1 Step 1

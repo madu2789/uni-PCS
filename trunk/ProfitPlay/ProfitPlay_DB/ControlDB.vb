@@ -193,22 +193,35 @@
 
     End Function
 
-    Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
+    Public Function getIdEmpleatByUsername(ByVal username As String) As Integer
 
-        Dim modif As Integer = -1
-
+        Dim res As Integer = 0
         Try
 
             connect()
             empleatDA.Connection = conDB
-            If (Sur = "") Then
-                modif = empleatDA.DeleteEmpleat(Nom, "")
-            Else
-                modif = empleatDA.DeleteEmpleat(Nom, Sur)
-            End If
-
+            res = empleatDA.getIdEmpleatByUsername(username)
             disconnect()
 
+        Catch ex As Exception
+
+            MsgBox("Error traduint empleat", MsgBoxStyle.Critical, "Error Base de Dades")
+
+        End Try
+
+        Return res
+
+    End Function
+
+    Public Function deleteEmpleat(ByVal id As Integer, ByVal username As String) As Integer
+
+        Dim modif As Integer = 0
+
+        Try
+            connect()
+            empleatDA.Connection = conDB
+            modif = empleatDA.DeleteEmpleat(id, username)
+            disconnect()
         Catch ex As Exception
 
             MsgBox("Error borrant empleat", MsgBoxStyle.Critical, "Error Base de Dades")

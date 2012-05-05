@@ -47,8 +47,8 @@ Public Class Empleat
         Return BD.GetEmpleats
     End Function
 
-    Public Function deleteEmpleat(ByVal Nom As String, ByVal Sur As String) As Integer
-        Return BD.deleteEmpleat(Nom, Sur)
+    Public Function deleteEmpleat(ByVal id As String, ByVal username As String) As Integer
+        Return BD.deleteEmpleat(id, username)
     End Function
 
     Public Function SetEmpleat(ByVal nom As String, ByVal cognom As String, ByVal username As String, ByVal password As String, ByVal rol As String) As Boolean
@@ -57,6 +57,10 @@ Public Class Empleat
 
     Public Function getEmpleats() As DataTable
         Return BD.GetEmpleats()
+    End Function
+
+    Public Function getIdEmpleatByUsername(ByVal username As String) As Integer
+        Return BD.getIdEmpleatByUsername(username)
     End Function
 
 End Class
