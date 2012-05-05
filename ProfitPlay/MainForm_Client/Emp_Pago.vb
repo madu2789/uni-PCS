@@ -18,6 +18,7 @@
     End Sub
 
     Private Sub Emp_Pago_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         lbl_taula.Text = Mainform_empleado.nomempleat
         lbl_rol.Text = Mainform_empleado.rolempleat
 
@@ -63,9 +64,51 @@
 
         Dim comandes_taula As New List(Of Comanda)
         Dim totes_comandes = ws.GetAllComandes
+        Dim preu As Integer = 0
 
+        Dim comandes = ws.GetComandaByUserId(getIdTaula())
 
+        For Each fila In comandes
+
+            ws.SolPagarComanda(fila.id)
+            preu += ws.GetPreuProducteById(fila.Id_producte)
+
+        Next
+
+        lbl_importtotal.Text = "Import total: " + preu.ToString
+
+        Dim usuaris = ws.GetAllUsers
+
+        For Each i In usuaris
+
+            If i.Id_usuari = getIdTaula() Then
+                lbl_importparcial.Text = "Import per persona " + preu.ToString
+                Exit For
+            End If
+
+        Next
 
 
     End Sub
+
+    Public Function getIdTaula() As Integer
+        Return CInt(cb_taula.SelectedItem.ToString.Substring(cb_taula.SelectedItem.ToString.LastIndexOf("a") + 1))
+    End Function
+
+    Private Sub btn_efectiu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_efectiu.Click
+        paga(getIdTaula)
+    End Sub
+
+    Private Sub btn_mixt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_mixt.Click
+        paga(getIdTaula)
+    End Sub
+
+    Private Sub btn_tc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_tc.Click
+        paga(getIdTaula)
+    End Sub
+
+    Public Sub paga(ByVal id As Integer)
+
+    End Sub
+
 End Class
