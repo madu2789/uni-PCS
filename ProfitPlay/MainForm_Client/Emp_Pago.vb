@@ -92,7 +92,11 @@
     End Sub
 
     Public Function getIdTaula() As Integer
-        Return CInt(cb_taula.SelectedItem.ToString.Substring(cb_taula.SelectedItem.ToString.LastIndexOf("a") + 1))
+
+        If (cb_taula.SelectedItem <> Nothing) Then
+            Return CInt(cb_taula.SelectedItem.ToString.Substring(cb_taula.SelectedItem.ToString.LastIndexOf("a") + 1))
+        End If
+        Return Nothing
     End Function
 
     Private Sub btn_efectiu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_efectiu.Click
@@ -108,7 +112,13 @@
     End Sub
 
     Public Sub paga(ByVal id As Integer)
-        ws.deleteComandaByUserId(id)
+
+        If (id = Nothing) Then
+            MsgBox("Cap taula sel.leccionada", MsgBoxStyle.Critical)
+        Else
+            ws.deleteComandaByUserId(id)
+        End If
+
     End Sub
 
 End Class
