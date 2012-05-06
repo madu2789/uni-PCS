@@ -17,11 +17,6 @@ Public Class Emp_Gestio_usuaris
         Dim password As String
     End Structure
 
-
-    Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
-        grb_insert_modifica.Show()
-    End Sub
-
     Private Sub btn_gest_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_carta.Click
         Me.Hide()
         Emp_carta.Show()
@@ -41,6 +36,7 @@ Public Class Emp_Gestio_usuaris
         lbl_taula.Text = Mainform_empleado.nomempleat
         lbl_punts.Text = Mainform_empleado.rolempleat
 
+        lv_users.Items.Clear()
         ObteEmpleats()
 
         Select Case Mainform_empleado.rolempleat
@@ -74,7 +70,7 @@ Public Class Emp_Gestio_usuaris
         Dim empleats = ws.getEmpleats()
 
         For Each empleat In empleats
-            ts_usuaris.Items.Add(empleat.username)
+            lv_users.Items.Add(empleat.username)
         Next
 
     End Sub
@@ -89,7 +85,7 @@ Public Class Emp_Gestio_usuaris
             Dim validacio As Boolean
             validacio = ws.SetEmpleat(txtb_nom.Text, txtb_cognom.Text, txtb_username.Text, txtb_password.Text, cmbx_rol.Text)
             If validacio = True Then
-                ts_usuaris.Items.Add(txtb_nom.Text + " " + txtb_cognom.Text)
+                lv_users.Items.Add(txtb_username.Text)
                 grb_insert_modifica.Hide()
             ElseIf (validacio = False Or txtb_nom.Text = "" Or txtb_username.Text = "" Or cmbx_rol.Text = "" Or txtb_cognom.Text = "") Then
                 MsgBox("Validació incorrecte!", MsgBoxStyle.Critical, "ERROR DE VALIDACIÓ")
@@ -100,12 +96,6 @@ Public Class Emp_Gestio_usuaris
 
     Private Sub btn_cancela_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancela.Click
         grb_insert_modifica.Hide()
-    End Sub
-
-    Private Sub ToolStrip1_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ts_usuaris.ItemClicked
-
-        e.ClickedItem.Select()
-
     End Sub
 
     Private Sub btn_gest_comandes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_gest_comandes.Click
@@ -125,11 +115,21 @@ Public Class Emp_Gestio_usuaris
     End Function
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_elimina_user.Click
-        For i As Integer = 0 To ts_usuaris.Items.Count - 1 Step 1
-            If ts_usuaris.Items(i).Selected = True Then
-                ts_usuaris.Items.RemoveAt(i)
+
+        Dim eliminar As New List(Of Integer)
+
+        For i As Integer = 0 To lv_users.Items.Count - 1 Step 1
+            If lv_users.Items(i).Selected = True Then
+                eliminar.Add(i)
             End If
         Next
+
+
+        For i As Integer = 0 To eliminar.Count - 1 Step 1
+            lv_users.Items.RemoveAt(eliminar(i))
+        Next
+
+
     End Sub
 
     Private Sub btn_update_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_update_user.Click
@@ -137,12 +137,17 @@ Public Class Emp_Gestio_usuaris
         Dim i As Integer = 0
         Dim moded As Boolean = False
 
-        While i < ts_usuaris.Items.Count And moded = False
-            If ts_usuaris.Items(i).Selected = True Then
+        While i < lv_users.Items.Count And moded = False
+            If lv_users.Items(i).Selected = True Then
                 moded = True
                 grb_insert_modifica.BringToFront()
                 'agafar id del usuari, carregar les dades i guardar
             End If
         End While
     End Sub
+
+    Private Sub btn_add_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_add_user.Click
+        grb_insert_modifica.Show()
+    End Sub
+
 End Class
