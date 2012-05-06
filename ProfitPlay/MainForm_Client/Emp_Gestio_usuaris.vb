@@ -136,13 +136,31 @@ Public Class Emp_Gestio_usuaris
 
         Dim i As Integer = 0
         Dim moded As Boolean = False
+        Dim empleats = ws.getEmpleats()
 
         While i < lv_users.Items.Count And moded = False
+
             If lv_users.Items(i).Selected = True Then
-                moded = True
+
                 grb_insert_modifica.BringToFront()
-                'agafar id del usuari, carregar les dades i guardar
+                grb_insert_modifica.Show()
+
+                For Each emp In empleats
+
+                    MsgBox("Empleat " + emp.username + " seleccionat " + lv_users.Items(i).Text)
+                    If emp.username = lv_users.Items(i).Text Then
+                        txtb_nom.Text = emp.nom
+                        txtb_cognom.Text = emp.cognom
+                        txtb_username.Text = emp.username
+                        txtb_password.Text = emp.password
+                        cmbx_rol.SelectedItem = emp.rol
+                        moded = True
+                    End If
+                Next
             End If
+
+            i = i + 1
+
         End While
     End Sub
 
