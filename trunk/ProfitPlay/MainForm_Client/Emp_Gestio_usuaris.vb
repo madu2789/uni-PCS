@@ -87,7 +87,8 @@ Public Class Emp_Gestio_usuaris
             If validacio = True Then
                 lv_users.Items.Add(txtb_username.Text)
                 grb_insert_modifica.Hide()
-            ElseIf (validacio = False Or txtb_nom.Text = "" Or txtb_username.Text = "" Or cmbx_rol.Text = "" Or txtb_cognom.Text = "") Then
+                MsgBox("Usuari afegit correctament", MsgBoxStyle.Information, "Operació realitzada")
+            ElseIf (validacio = False Or txtb_nom.Text = "" Or txtb_username.Text = "" Or cmbx_rol.Text = "" Or txtb_cognom.Text = "" Or cmbx_rol.Text <> "Cambrer" Or cmbx_rol.Text <> "Adminstrador" Or cmbx_rol.Text <> "Barman" Or cmbx_rol.Text <> "Cheff") Then
                 MsgBox("Validació incorrecte!", MsgBoxStyle.Critical, "ERROR DE VALIDACIÓ")
             End If
         End If
