@@ -272,11 +272,14 @@ Partial Class Emp_Gestio_usuaris
         '
         'cmbx_rol
         '
+        Me.cmbx_rol.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbx_rol.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cmbx_rol.FormattingEnabled = True
-        Me.cmbx_rol.Items.AddRange(New Object() {"Administrador", "Cheff", "Barman", "Cambrer"})
+        Me.cmbx_rol.Items.AddRange(New Object() {"Administrador", "Barman", "Cambrer", "Cheff"})
         Me.cmbx_rol.Location = New System.Drawing.Point(174, 195)
         Me.cmbx_rol.Name = "cmbx_rol"
         Me.cmbx_rol.Size = New System.Drawing.Size(124, 21)
+        Me.cmbx_rol.Sorted = True
         Me.cmbx_rol.TabIndex = 5
         '
         'txtb_cognom
