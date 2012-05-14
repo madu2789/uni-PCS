@@ -98,3 +98,4 @@ C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\D
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Welcome.resources
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\ProfitPlay.vbproj.GenerateResource.Cache
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Emp_interessos.resources
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Emp_interessos.resources

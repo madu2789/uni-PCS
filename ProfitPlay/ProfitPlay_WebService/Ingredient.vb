@@ -65,7 +65,7 @@
 
     Public Function updateStockActualById(ByVal id As Integer, ByVal decrement As Integer) As Integer
         Dim actual As Integer = BD.GetStockActualById(id)
-        actual = actual - decrement
+        actual = actual - (decrement)
         MsgBox("Stock actual de " + id.ToString + " es " + actual.ToString)
         Return BD.UpdateStockActualById(id, actual)
     End Function

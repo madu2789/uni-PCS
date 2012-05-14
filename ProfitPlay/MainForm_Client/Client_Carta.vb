@@ -205,24 +205,33 @@
 
     Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
 
+        Dim plats = ws.GetAllPlats()
         Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel, "Està segur?")
         If (result = MsgBoxResult.Ok) Then
 
             For s As Integer = 0 To lv_pedidos.Items.Count - 1 Step 1
 
-                m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
-
-                Dim idUsuari As String = Id_usuari.ToString
-                Dim idProducte As String = ws.GetIdProducteByNom(lv_pedidos.Items.Item(s).Text)
-                Dim notes As String = ""
-                Dim hora As Date = Now
-                Dim estat = "Sol·licitat"
-                ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
-
-                Dim plats = ws.GetAllPlats()
                 For Each p In plats
+
+                    Dim idUsuari As String = Id_usuari.ToString
+                    Dim idProducte As String = ws.GetIdProducteByNom(lv_pedidos.Items.Item(s).Text)
+                    Dim notes As String = ""
+                    Dim hora As Date = Now
+                    Dim estat = "Sol·licitat"
+
+                    MsgBox("Id " + p.id_producte.ToString + " y " + CInt(idProducte).ToString)
                     If (p.id_producte = CInt(idProducte)) Then
-                        ws.UpdateStockActualById(p.id_producte, 1)
+
+                        Dim ok = comprovaStock(p.id_producte)
+
+                        If (ok = 1) Then
+                            m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
+                            ws.UpdateStockActualById(p.id_producte, p.quantitat)
+                            ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
+                        Else
+                            MsgBox("No tenim disponible " + ws.GetNomProducteById(idProducte))
+                            Exit For
+                        End If
                     End If
                 Next
             Next
@@ -231,6 +240,34 @@
 
         End If
     End Sub
+
+    Private Function comprovaStock(ByVal id As Integer) As Integer
+
+        Dim ingredients = ws.GetIngredients
+        Dim plats = ws.GetAllPlats
+
+        For Each p In plats
+
+            If (p.id_producte = id) Then
+
+                For Each i In ingredients
+
+                    If (p.id_ingredient = i.id) Then
+
+                        MsgBox("Tenim " + i.stock_actual.ToString + " de " + i.nom)
+                        i.stock_actual = i.stock_actual - p.quantitat
+                        If (i.stock_actual <= 0) Then
+                            Return 0
+                        End If
+
+                    End If
+                Next
+            End If
+        Next
+
+        Return 1
+
+    End Function
 
     Private Sub btn_add_prod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_add_prod.Click
 

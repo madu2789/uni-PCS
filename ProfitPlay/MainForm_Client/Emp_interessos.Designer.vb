@@ -77,9 +77,9 @@ Partial Class Emp_interessos
         Me.pnl_estat.Controls.Add(Me.pcb_sortir)
         Me.pnl_estat.Controls.Add(Me.lbl_taula)
         Me.pnl_estat.Controls.Add(Me.lbl_punts)
-        Me.pnl_estat.Location = New System.Drawing.Point(119, -1)
+        Me.pnl_estat.Location = New System.Drawing.Point(127, -1)
         Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(704, 66)
+        Me.pnl_estat.Size = New System.Drawing.Size(759, 68)
         Me.pnl_estat.TabIndex = 41
         '
         'btn_estat
@@ -134,7 +134,7 @@ Partial Class Emp_interessos
         Me.pnl_plats.Controls.Add(Me.btn_gest_users)
         Me.pnl_plats.Controls.Add(Me.btn_gest_comandes)
         Me.pnl_plats.Controls.Add(Me.btn_gest_carta)
-        Me.pnl_plats.Location = New System.Drawing.Point(-24, -1)
+        Me.pnl_plats.Location = New System.Drawing.Point(-4, -1)
         Me.pnl_plats.Name = "pnl_plats"
         Me.pnl_plats.Size = New System.Drawing.Size(147, 485)
         Me.pnl_plats.TabIndex = 40
@@ -142,7 +142,7 @@ Partial Class Emp_interessos
         'btn_gest_pagos
         '
         Me.btn_gest_pagos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_pagos.Location = New System.Drawing.Point(1, 323)
+        Me.btn_gest_pagos.Location = New System.Drawing.Point(5, 317)
         Me.btn_gest_pagos.Name = "btn_gest_pagos"
         Me.btn_gest_pagos.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_pagos.TabIndex = 24
@@ -152,7 +152,7 @@ Partial Class Emp_interessos
         'btn_gest_stock
         '
         Me.btn_gest_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_stock.Location = New System.Drawing.Point(1, 257)
+        Me.btn_gest_stock.Location = New System.Drawing.Point(5, 252)
         Me.btn_gest_stock.Name = "btn_gest_stock"
         Me.btn_gest_stock.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_stock.TabIndex = 18
@@ -162,7 +162,7 @@ Partial Class Emp_interessos
         'btn_config_fichero
         '
         Me.btn_config_fichero.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_config_fichero.Location = New System.Drawing.Point(1, 389)
+        Me.btn_config_fichero.Location = New System.Drawing.Point(5, 382)
         Me.btn_config_fichero.Name = "btn_config_fichero"
         Me.btn_config_fichero.Size = New System.Drawing.Size(135, 85)
         Me.btn_config_fichero.TabIndex = 17
@@ -172,7 +172,7 @@ Partial Class Emp_interessos
         'btn_gest_users
         '
         Me.btn_gest_users.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_users.Location = New System.Drawing.Point(1, 59)
+        Me.btn_gest_users.Location = New System.Drawing.Point(5, 61)
         Me.btn_gest_users.Name = "btn_gest_users"
         Me.btn_gest_users.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_users.TabIndex = 11
@@ -182,7 +182,7 @@ Partial Class Emp_interessos
         'btn_gest_comandes
         '
         Me.btn_gest_comandes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_comandes.Location = New System.Drawing.Point(1, 191)
+        Me.btn_gest_comandes.Location = New System.Drawing.Point(5, 188)
         Me.btn_gest_comandes.Name = "btn_gest_comandes"
         Me.btn_gest_comandes.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_comandes.TabIndex = 14
@@ -192,7 +192,7 @@ Partial Class Emp_interessos
         'btn_gest_carta
         '
         Me.btn_gest_carta.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_gest_carta.Location = New System.Drawing.Point(1, 125)
+        Me.btn_gest_carta.Location = New System.Drawing.Point(5, 124)
         Me.btn_gest_carta.Name = "btn_gest_carta"
         Me.btn_gest_carta.Size = New System.Drawing.Size(135, 60)
         Me.btn_gest_carta.TabIndex = 13
@@ -202,7 +202,7 @@ Partial Class Emp_interessos
         'lbl_moltbarat
         '
         Me.lbl_moltbarat.AutoSize = True
-        Me.lbl_moltbarat.Location = New System.Drawing.Point(129, 107)
+        Me.lbl_moltbarat.Location = New System.Drawing.Point(157, 99)
         Me.lbl_moltbarat.Name = "lbl_moltbarat"
         Me.lbl_moltbarat.Size = New System.Drawing.Size(96, 13)
         Me.lbl_moltbarat.TabIndex = 47
@@ -211,7 +211,7 @@ Partial Class Emp_interessos
         'lbl_subvencionat
         '
         Me.lbl_subvencionat.AutoSize = True
-        Me.lbl_subvencionat.Location = New System.Drawing.Point(273, 107)
+        Me.lbl_subvencionat.Location = New System.Drawing.Point(309, 99)
         Me.lbl_subvencionat.Name = "lbl_subvencionat"
         Me.lbl_subvencionat.Size = New System.Drawing.Size(73, 13)
         Me.lbl_subvencionat.TabIndex = 48
@@ -220,7 +220,7 @@ Partial Class Emp_interessos
         'lbl_normal
         '
         Me.lbl_normal.AutoSize = True
-        Me.lbl_normal.Location = New System.Drawing.Point(433, 107)
+        Me.lbl_normal.Location = New System.Drawing.Point(465, 99)
         Me.lbl_normal.Name = "lbl_normal"
         Me.lbl_normal.Size = New System.Drawing.Size(63, 13)
         Me.lbl_normal.TabIndex = 49
@@ -229,7 +229,7 @@ Partial Class Emp_interessos
         'lbl_car
         '
         Me.lbl_car.AutoSize = True
-        Me.lbl_car.Location = New System.Drawing.Point(585, 107)
+        Me.lbl_car.Location = New System.Drawing.Point(620, 99)
         Me.lbl_car.Name = "lbl_car"
         Me.lbl_car.Size = New System.Drawing.Size(52, 13)
         Me.lbl_car.TabIndex = 50
@@ -238,7 +238,7 @@ Partial Class Emp_interessos
         'lbl_moltcar
         '
         Me.lbl_moltcar.AutoSize = True
-        Me.lbl_moltcar.Location = New System.Drawing.Point(731, 107)
+        Me.lbl_moltcar.Location = New System.Drawing.Point(772, 99)
         Me.lbl_moltcar.Name = "lbl_moltcar"
         Me.lbl_moltcar.Size = New System.Drawing.Size(75, 13)
         Me.lbl_moltcar.TabIndex = 51
@@ -246,7 +246,7 @@ Partial Class Emp_interessos
         '
         'btn_puja_barat
         '
-        Me.btn_puja_barat.Location = New System.Drawing.Point(229, 235)
+        Me.btn_puja_barat.Location = New System.Drawing.Point(263, 235)
         Me.btn_puja_barat.Name = "btn_puja_barat"
         Me.btn_puja_barat.Size = New System.Drawing.Size(43, 22)
         Me.btn_puja_barat.TabIndex = 52
@@ -255,7 +255,7 @@ Partial Class Emp_interessos
         '
         'lv_moltcar
         '
-        Me.lv_moltcar.Location = New System.Drawing.Point(734, 181)
+        Me.lv_moltcar.Location = New System.Drawing.Point(775, 168)
         Me.lv_moltcar.Name = "lv_moltcar"
         Me.lv_moltcar.Size = New System.Drawing.Size(97, 239)
         Me.lv_moltcar.TabIndex = 56
@@ -263,7 +263,7 @@ Partial Class Emp_interessos
         '
         'btn_puja_normal
         '
-        Me.btn_puja_normal.Location = New System.Drawing.Point(381, 235)
+        Me.btn_puja_normal.Location = New System.Drawing.Point(419, 235)
         Me.btn_puja_normal.Name = "btn_puja_normal"
         Me.btn_puja_normal.Size = New System.Drawing.Size(43, 22)
         Me.btn_puja_normal.TabIndex = 57
@@ -272,7 +272,7 @@ Partial Class Emp_interessos
         '
         'btn_puja_moltcar
         '
-        Me.btn_puja_moltcar.Location = New System.Drawing.Point(685, 235)
+        Me.btn_puja_moltcar.Location = New System.Drawing.Point(726, 235)
         Me.btn_puja_moltcar.Name = "btn_puja_moltcar"
         Me.btn_puja_moltcar.Size = New System.Drawing.Size(43, 22)
         Me.btn_puja_moltcar.TabIndex = 58
@@ -281,7 +281,7 @@ Partial Class Emp_interessos
         '
         'btn_puja_car
         '
-        Me.btn_puja_car.Location = New System.Drawing.Point(536, 235)
+        Me.btn_puja_car.Location = New System.Drawing.Point(574, 235)
         Me.btn_puja_car.Name = "btn_puja_car"
         Me.btn_puja_car.Size = New System.Drawing.Size(43, 22)
         Me.btn_puja_car.TabIndex = 59
@@ -290,7 +290,7 @@ Partial Class Emp_interessos
         '
         'btn_baix_moltbarat
         '
-        Me.btn_baix_moltbarat.Location = New System.Drawing.Point(229, 301)
+        Me.btn_baix_moltbarat.Location = New System.Drawing.Point(263, 301)
         Me.btn_baix_moltbarat.Name = "btn_baix_moltbarat"
         Me.btn_baix_moltbarat.Size = New System.Drawing.Size(43, 22)
         Me.btn_baix_moltbarat.TabIndex = 60
@@ -299,7 +299,7 @@ Partial Class Emp_interessos
         '
         'btn_baix_barat
         '
-        Me.btn_baix_barat.Location = New System.Drawing.Point(381, 301)
+        Me.btn_baix_barat.Location = New System.Drawing.Point(419, 301)
         Me.btn_baix_barat.Name = "btn_baix_barat"
         Me.btn_baix_barat.Size = New System.Drawing.Size(43, 22)
         Me.btn_baix_barat.TabIndex = 61
@@ -308,7 +308,7 @@ Partial Class Emp_interessos
         '
         'btn_baix_normal
         '
-        Me.btn_baix_normal.Location = New System.Drawing.Point(536, 301)
+        Me.btn_baix_normal.Location = New System.Drawing.Point(574, 301)
         Me.btn_baix_normal.Name = "btn_baix_normal"
         Me.btn_baix_normal.Size = New System.Drawing.Size(43, 22)
         Me.btn_baix_normal.TabIndex = 62
@@ -317,7 +317,7 @@ Partial Class Emp_interessos
         '
         'btn_baix_car
         '
-        Me.btn_baix_car.Location = New System.Drawing.Point(685, 301)
+        Me.btn_baix_car.Location = New System.Drawing.Point(726, 291)
         Me.btn_baix_car.Name = "btn_baix_car"
         Me.btn_baix_car.Size = New System.Drawing.Size(43, 22)
         Me.btn_baix_car.TabIndex = 63
@@ -326,7 +326,7 @@ Partial Class Emp_interessos
         '
         'btn_guardarconfig
         '
-        Me.btn_guardarconfig.Location = New System.Drawing.Point(420, 444)
+        Me.btn_guardarconfig.Location = New System.Drawing.Point(456, 429)
         Me.btn_guardarconfig.Name = "btn_guardarconfig"
         Me.btn_guardarconfig.Size = New System.Drawing.Size(131, 31)
         Me.btn_guardarconfig.TabIndex = 64
@@ -335,7 +335,7 @@ Partial Class Emp_interessos
         '
         'lv_car
         '
-        Me.lv_car.Location = New System.Drawing.Point(585, 181)
+        Me.lv_car.Location = New System.Drawing.Point(623, 168)
         Me.lv_car.Name = "lv_car"
         Me.lv_car.Size = New System.Drawing.Size(97, 239)
         Me.lv_car.TabIndex = 65
@@ -343,7 +343,7 @@ Partial Class Emp_interessos
         '
         'lv_normal
         '
-        Me.lv_normal.Location = New System.Drawing.Point(430, 181)
+        Me.lv_normal.Location = New System.Drawing.Point(468, 168)
         Me.lv_normal.Name = "lv_normal"
         Me.lv_normal.Size = New System.Drawing.Size(100, 239)
         Me.lv_normal.TabIndex = 66
@@ -351,7 +351,7 @@ Partial Class Emp_interessos
         '
         'lv_barat
         '
-        Me.lv_barat.Location = New System.Drawing.Point(276, 181)
+        Me.lv_barat.Location = New System.Drawing.Point(312, 168)
         Me.lv_barat.Name = "lv_barat"
         Me.lv_barat.Size = New System.Drawing.Size(101, 239)
         Me.lv_barat.TabIndex = 67
@@ -359,7 +359,7 @@ Partial Class Emp_interessos
         '
         'lv_molbarat
         '
-        Me.lv_molbarat.Location = New System.Drawing.Point(129, 181)
+        Me.lv_molbarat.Location = New System.Drawing.Point(160, 168)
         Me.lv_molbarat.Name = "lv_molbarat"
         Me.lv_molbarat.Size = New System.Drawing.Size(97, 239)
         Me.lv_molbarat.TabIndex = 68
@@ -367,7 +367,7 @@ Partial Class Emp_interessos
         '
         'nud_moltbarat
         '
-        Me.nud_moltbarat.Location = New System.Drawing.Point(129, 138)
+        Me.nud_moltbarat.Location = New System.Drawing.Point(160, 125)
         Me.nud_moltbarat.Name = "nud_moltbarat"
         Me.nud_moltbarat.Size = New System.Drawing.Size(97, 20)
         Me.nud_moltbarat.TabIndex = 69
@@ -375,7 +375,7 @@ Partial Class Emp_interessos
         '
         'nud_barat
         '
-        Me.nud_barat.Location = New System.Drawing.Point(276, 138)
+        Me.nud_barat.Location = New System.Drawing.Point(312, 126)
         Me.nud_barat.Name = "nud_barat"
         Me.nud_barat.Size = New System.Drawing.Size(101, 20)
         Me.nud_barat.TabIndex = 70
@@ -383,7 +383,7 @@ Partial Class Emp_interessos
         '
         'nud_car
         '
-        Me.nud_car.Location = New System.Drawing.Point(585, 138)
+        Me.nud_car.Location = New System.Drawing.Point(623, 125)
         Me.nud_car.Name = "nud_car"
         Me.nud_car.Size = New System.Drawing.Size(97, 20)
         Me.nud_car.TabIndex = 71
@@ -391,7 +391,7 @@ Partial Class Emp_interessos
         '
         'nud_moltcar
         '
-        Me.nud_moltcar.Location = New System.Drawing.Point(734, 138)
+        Me.nud_moltcar.Location = New System.Drawing.Point(775, 126)
         Me.nud_moltcar.Name = "nud_moltcar"
         Me.nud_moltcar.Size = New System.Drawing.Size(97, 20)
         Me.nud_moltcar.TabIndex = 72
@@ -399,7 +399,7 @@ Partial Class Emp_interessos
         '
         'nud_normal
         '
-        Me.nud_normal.Location = New System.Drawing.Point(430, 138)
+        Me.nud_normal.Location = New System.Drawing.Point(468, 126)
         Me.nud_normal.Name = "nud_normal"
         Me.nud_normal.Size = New System.Drawing.Size(100, 20)
         Me.nud_normal.TabIndex = 73
@@ -409,7 +409,8 @@ Partial Class Emp_interessos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
-        Me.ClientSize = New System.Drawing.Size(837, 499)
+        Me.ClientSize = New System.Drawing.Size(884, 472)
+        Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.nud_normal)
         Me.Controls.Add(Me.nud_moltcar)
         Me.Controls.Add(Me.nud_car)
@@ -435,7 +436,6 @@ Partial Class Emp_interessos
         Me.Controls.Add(Me.lbl_subvencionat)
         Me.Controls.Add(Me.lbl_moltbarat)
         Me.Controls.Add(Me.pnl_estat)
-        Me.Controls.Add(Me.pnl_plats)
         Me.Name = "Emp_interessos"
         Me.Text = "Emp_interessos"
         Me.pnl_estat.ResumeLayout(False)
