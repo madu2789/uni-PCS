@@ -63,16 +63,3 @@ C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\Prof
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.dll
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.xml
 C:\Users\darkwizard\Documents\Visual Studio 2008\Projects\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.pdb
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\profit_play.accdb
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.dll
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.pdb
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_WebService.xml
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.exe
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.pdb
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\bin\ProfitPlay_DB.xml
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ResolveAssemblyReference.cache
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.Resources.resources
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.vbproj.GenerateResource.Cache
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.dll
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.xml
-C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\ProfitPlay_WebService\obj\Release\ProfitPlay_WebService.pdb

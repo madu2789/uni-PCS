@@ -24,8 +24,4 @@
         Me.Hide()
     End Sub
 
-    Private Sub btn_jugar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        grpb_menu_joc.Show()
-    End Sub
-
 End Class
