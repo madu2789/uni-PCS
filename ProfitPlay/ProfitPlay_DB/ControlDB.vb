@@ -18,6 +18,7 @@
     Dim producteDA As New profit_playDataSetTableAdapters.ProducteTableAdapter
     Dim compraDA As New profit_playDataSetTableAdapters.CompraTableAdapter
     Dim producte_ingredientDA As New profit_playDataSetTableAdapters.Producte_IngredientTableAdapter
+    Dim jocDA As New profit_playDataSetTableAdapters.JocTableAdapter
 
     'DataSet:
     Private DS As New profit_playDataSet()
@@ -26,7 +27,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString2)
+            conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
 
         Catch ex As Exception
@@ -599,6 +600,24 @@
         End Try
 
         Return ok
+    End Function
+
+    Public Function getQuestions() As DataTable
+
+        Try
+            connect()
+            jocDA.Connection = conDB
+            jocDA.Fill(DS.Joc)
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("Error recupetant els questions", MsgBoxStyle.Critical, "Error Base de Dades")
+
+        End Try
+
+        Return DS.Joc
+
     End Function
 
 End Class

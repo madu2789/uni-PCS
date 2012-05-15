@@ -21,6 +21,7 @@ Public Class Service1
     Dim ingredient As New Ingredient
     Dim plat As New Plat
     Dim compra As New Compra
+    Dim joc As New Joc
 
     Public em As New EmpleatBD
 
@@ -389,6 +390,26 @@ Public Class Service1
     <WebMethod()> _
    Public Function InsertIngredient(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String) As Boolean
         Return ingredient.SetIngredient(nom, preu, quantitat, stock, stockminim)
+    End Function
+
+    <WebMethod()> _
+   Public Function getAllQuestions() As List(Of Joc)
+
+        Dim dades As New List(Of Joc)
+        Dim info As DataTable = joc.getAllQuestions
+
+        For Each fila In info.Rows
+
+            Dim empl As New Joc
+
+            empl.pregunta = fila("Pregunta").ToString
+            empl.correcta = fila("Correcta").ToString
+            empl.incorrecta = fila("Incorrecta").ToString
+            dades.Add(empl)
+
+        Next
+        Return dades
+
     End Function
 
 End Class

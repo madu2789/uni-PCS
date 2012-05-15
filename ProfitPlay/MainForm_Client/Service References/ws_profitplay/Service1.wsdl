@@ -547,6 +547,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getAllQuestions">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllQuestionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllQuestionsResult" type="tns:ArrayOfJoc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfJoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Joc" nillable="true" type="tns:Joc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Joc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="pregunta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="correcta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="incorrecta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LogEmpleatSoapIn">
@@ -747,6 +769,12 @@
   <wsdl:message name="InsertIngredientSoapOut">
     <wsdl:part name="parameters" element="tns:InsertIngredientResponse" />
   </wsdl:message>
+  <wsdl:message name="getAllQuestionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllQuestions" />
+  </wsdl:message>
+  <wsdl:message name="getAllQuestionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllQuestionsResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="LogEmpleat">
       <wsdl:input message="tns:LogEmpleatSoapIn" />
@@ -879,6 +907,10 @@
     <wsdl:operation name="InsertIngredient">
       <wsdl:input message="tns:InsertIngredientSoapIn" />
       <wsdl:output message="tns:InsertIngredientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllQuestions">
+      <wsdl:input message="tns:getAllQuestionsSoapIn" />
+      <wsdl:output message="tns:getAllQuestionsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -1180,6 +1212,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getAllQuestions">
+      <soap:operation soapAction="http://tempuri.org/getAllQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1473,6 +1514,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertIngredient">
       <soap12:operation soapAction="http://tempuri.org/InsertIngredient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllQuestions">
+      <soap12:operation soapAction="http://tempuri.org/getAllQuestions" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

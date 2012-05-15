@@ -141,6 +141,7 @@
     <Compile Include="InfoProducte.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Joc.vb" />
     <Compile Include="Plat.vb" />
     <Compile Include="Producto.vb" />
     <Compile Include="Comanda.vb" />
@@ -402,6 +403,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\freewayfury.swf" />
+    <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.Joc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxShockwaveFlashObjects">
