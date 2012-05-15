@@ -88,181 +88,183 @@
 
     Private Sub btn_fica_punts_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_fica_punts.Click
 
-        
+        If (lbl_punts.Text = "Punts:") Then
+            lbl_punts.Text = "Punts " + punts.ToString
+        End If
+
+        btn_fica_punts.Visible = False
 
     End Sub
 
     Private Sub p1_a_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p1_a.CheckedChanged
 
-        If (p1_b.Checked) Then
-            p1_b.Checked = False
+        p1_b.Checked = Not p1_a.Checked
+
+        If (p1_a.Checked = True) Then
+
+            If (isCorrect(lbl_p1.Text, p1_a.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p1.Text Then
-
-                If (p1_a.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
-                End If
-
+        If (p1_a.Checked = False) Then
+            If (isCorrect(lbl_p1.Text, p1_a.Text) = True) Then
+                punts = punts - 1
             End If
-
-        Next
-        lbl_punts.Text = "Punts " + punts.ToString
+        End If
     End Sub
 
     Private Sub p1_b_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p1_b.CheckedChanged
 
-        If (p1_a.Checked) Then
-            p1_a.Checked = False
+        p1_a.Checked = Not p1_b.Checked
+
+        If (p1_b.Checked = True) Then
+
+            If (isCorrect(lbl_p1.Text, p1_b.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p1.Text Then
-
-                If (p1_b.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
-                End If
-
+        If (p1_b.Checked = False) Then
+            If (isCorrect(lbl_p1.Text, p1_b.Text) = True) Then
+                punts = punts - 1
             End If
-
-        Next
-        lbl_punts.Text = "Punts " + punts.ToString
+        End If
     End Sub
 
     Private Sub p2_a_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p2_a.CheckedChanged
 
-        If (p2_b.Checked) Then
-            p2_b.Checked = False
+        p2_b.Checked = Not p2_a.Checked
+
+        If (p2_a.Checked = True) Then
+
+            If (isCorrect(lbl_p2.Text, p2_a.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p2.Text Then
-
-                If (p2_a.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
-                End If
-
+        If (p2_a.Checked = False) Then
+            If (isCorrect(lbl_p2.Text, p2_a.Text) = True) Then
+                punts = punts - 1
             End If
-
-        Next
-        lbl_punts.Text = "Punts " + punts.ToString
+        End If
     End Sub
 
     Private Sub p2_b_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p2_b.CheckedChanged
-        If (p2_a.Checked) Then
-            p2_a.Checked = False
+
+        p2_a.Checked = Not p2_b.Checked
+
+        If (p2_b.Checked = True) Then
+
+            If (isCorrect(lbl_p2.Text, p2_b.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p2.Text Then
-
-                If (p2_b.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
-                End If
-
+        If (p2_b.Checked = False) Then
+            If (isCorrect(lbl_p2.Text, p2_b.Text) = True) Then
+                punts = punts - 1
             End If
-
-        Next
-        lbl_punts.Text = "Punts " + punts.ToString
+        End If
     End Sub
 
     Private Sub p3_a_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p3_a.CheckedChanged
-        If (p3_b.Checked) Then
-            p3_b.Checked = False
+
+        p3_b.Checked = Not p3_a.Checked
+
+        If (p3_a.Checked = True) Then
+
+            If (isCorrect(lbl_p3.Text, p3_a.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p3.Text Then
-
-                If (p3_a.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
-                End If
-
+        If (p3_a.Checked = False) Then
+            If (isCorrect(lbl_p3.Text, p3_a.Text) = True) Then
+                punts = punts - 1
             End If
-
-        Next
-        lbl_punts.Text = "Punts " + punts.ToString
+        End If
     End Sub
 
     Private Sub p3_b_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p3_b.CheckedChanged
 
-        If (p3_a.Checked) Then
-            p3_a.Checked = False
+        p3_a.Checked = Not p3_b.Checked
+
+        If (p3_b.Checked = True) Then
+
+            If (isCorrect(lbl_p3.Text, p3_b.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p3.Text Then
-
-                If (p3_b.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
-                End If
-
+        If (p3_b.Checked = False) Then
+            If (isCorrect(lbl_p3.Text, p3_b.Text) = True) Then
+                punts = punts - 1
             End If
-
-        Next
-        lbl_punts.Text = "Punts " + punts.ToString
+        End If
     End Sub
 
     Private Sub p4_a_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p4_a.CheckedChanged
 
-        If (p4_b.Checked) Then
-            p4_b.Checked = False
+        p4_b.Checked = Not p4_a.Checked
+
+        If (p4_a.Checked = True) Then
+
+            If (isCorrect(lbl_p4.Text, p4_a.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p4.Text Then
-
-                If (p4_a.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
-                End If
-
+        If (p4_a.Checked = False) Then
+            If (isCorrect(lbl_p4.Text, p4_a.Text) = True) Then
+                punts = punts - 1
             End If
-
-        Next
-        lbl_punts.Text = "Punts " + punts.ToString
+        End If
     End Sub
 
     Private Sub p4_b_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles p4_b.CheckedChanged
 
-        If (p4_a.Checked) Then
-            p4_a.Checked = False
+        p4_a.Checked = Not p4_b.Checked
+
+        If (p1_b.Checked = True) Then
+
+            If (isCorrect(lbl_p4.Text, p4_b.Text) = True) Then
+                punts = punts + 1
+            End If
         End If
 
-        For Each p In preguntes
 
-            If p.getPregunta = lbl_p4.Text Then
+        If (p4_b.Checked = False) Then
+            If (isCorrect(lbl_p4.Text, p4_b.Text) = True) Then
+                punts = punts - 1
+            End If
+        End If
+    End Sub
 
-                If (p4_b.Text = p.getCorrecta) Then
-                    punts = punts + 1
-                Else
-                    punts = punts - 1
+
+    Public Function isCorrect(ByVal p As String, ByVal r As String) As Boolean
+
+        For Each q In preguntes
+
+            If (q.getPregunta = p) Then
+
+                If (q.getCorrecta = r) Then
+                    Return True
                 End If
 
             End If
 
         Next
-        lbl_punts.Text = "Punts " + punts.ToString
-    End Sub
+
+        Return False
+
+    End Function
+
 End Class

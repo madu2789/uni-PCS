@@ -46,6 +46,7 @@ Partial Class Client_Juego
         Me.p3_a = New System.Windows.Forms.CheckBox
         Me.p4_b = New System.Windows.Forms.CheckBox
         Me.p4_a = New System.Windows.Forms.CheckBox
+        Me.lbl_instr = New System.Windows.Forms.Label
         Me.pnl_jocs.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
@@ -54,6 +55,7 @@ Partial Class Client_Juego
         'pnl_jocs
         '
         Me.pnl_jocs.BackColor = System.Drawing.Color.Firebrick
+        Me.pnl_jocs.Controls.Add(Me.lbl_instr)
         Me.pnl_jocs.Controls.Add(Me.btn_fica_punts)
         Me.pnl_jocs.Location = New System.Drawing.Point(676, 49)
         Me.pnl_jocs.Name = "pnl_jocs"
@@ -291,6 +293,16 @@ Partial Class Client_Juego
         Me.p4_a.Text = "CheckBox8"
         Me.p4_a.UseVisualStyleBackColor = True
         '
+        'lbl_instr
+        '
+        Me.lbl_instr.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instr.Location = New System.Drawing.Point(8, 19)
+        Me.lbl_instr.Name = "lbl_instr"
+        Me.lbl_instr.Size = New System.Drawing.Size(148, 310)
+        Me.lbl_instr.TabIndex = 28
+        Me.lbl_instr.Text = "Respon a les preguntes que i prem el botó sumar punts." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Només podràs jugar un cop" & _
+            " per cada vegada que vinguis" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Si encertes totes guanyaras un regal  de la carta" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'Client_Juego
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -346,4 +358,5 @@ Partial Class Client_Juego
     Friend WithEvents p3_a As System.Windows.Forms.CheckBox
     Friend WithEvents p4_b As System.Windows.Forms.CheckBox
     Friend WithEvents p4_a As System.Windows.Forms.CheckBox
+    Friend WithEvents lbl_instr As System.Windows.Forms.Label
 End Class
