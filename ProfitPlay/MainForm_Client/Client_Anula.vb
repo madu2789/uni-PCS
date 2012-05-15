@@ -82,6 +82,21 @@
 
             Llistacomandes.Add(pro)
             llista_productes_eliminar.Items.Add(ws.GetNomProducteById(pro.Id_producte))
+
+        Next
+
+    End Sub
+
+    Public Sub regenerateStock(ByVal id As Integer)
+
+        Dim plats = ws.GetAllPlats
+
+        For Each p In plats
+
+            If (p.id_producte = id) Then
+                ws.UpdateStockActualById(p.id_ingredient, -p.quantitat)
+            End If
+
         Next
 
     End Sub
@@ -89,15 +104,17 @@
     Private Sub DeleteItem(ByVal sender As Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
 
         Dim result = MsgBox("Realment vol eliminar " & e.ClickedItem.Text & "?", MsgBoxStyle.OkCancel, "Està segur?")
-        Dim element_list As ToolStripItemCollection = llista_productes_eliminar.Items
 
         If result = MsgBoxResult.Ok Then
 
-            For i As Integer = 0 To element_list.Count
+            For i As Integer = 0 To llista_productes_eliminar.Items.Count - 1
 
-                If (element_list.Item(i).Text = e.ClickedItem.Text) Then
+                If (llista_productes_eliminar.Items(i).Text = e.ClickedItem.Text) Then
 
-                    element_list.RemoveAt(i)
+                    MsgBox("regenerem " + llista_productes_eliminar.Items(i).Text)
+                    regenerateStock(ws.GetIdProducteByNom(llista_productes_eliminar.Items(i).Text))
+                    llista_productes_eliminar.Items.RemoveAt(i)
+
                     Exit For
 
                 End If

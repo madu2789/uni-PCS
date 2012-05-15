@@ -26,7 +26,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString2)
             conDB.Open()
 
         Catch ex As Exception
@@ -357,13 +357,13 @@
 
     End Function
 
-    Public Function SolAnulaComanda(ByVal id_comanda As String) As Boolean
+    Public Function SolAnulaComanda(ByVal id_comanda As Integer, ByVal id_usuari As Integer) As Boolean
 
         Dim ok As Boolean = False
         Try
             connect()
             comandaDA.Connection = conDB
-            comandaDA.UpdateEstat("Sol·licitat per anular", id_comanda)
+            comandaDA.solAnularComandaByUserId("Sol.licitat per anular", id_comanda, id_usuari)
             disconnect()
             ok = True
         Catch ex As Exception
