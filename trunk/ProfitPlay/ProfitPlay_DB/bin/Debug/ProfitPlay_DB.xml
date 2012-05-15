@@ -34,6 +34,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSet.TaulaPreusDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.ComandaRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -62,6 +66,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSet.TaulaPreusRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.ComandaRowChangeEvent">
 	<summary>
 Row event argument class
@@ -87,6 +95,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSet.CompraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSet.TaulaPreusRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -119,6 +131,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ProfitPlay_DB.profit_playDataSetTableAdapters.CompraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProfitPlay_DB.profit_playDataSetTableAdapters.TaulaPreusTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
