@@ -272,9 +272,51 @@
 
         'Guardar a la taula nivell de prioritat
 
+        For i As Integer = 0 To lv_molbarat.Items.Count - 1 Step 1
 
+            Try
+                Dim id_producte = ws.GetIdProducteByNom(lv_molbarat.Items.Item(i).Text)
+                ws.UpdateInteresById("1", id_producte)
+            Catch ex As Exception
 
+            End Try
+        Next
 
+        For i As Integer = 0 To lv_barat.Items.Count - 1 Step 1
+            Try
+                Dim id_producte = ws.GetIdProducteByNom(lv_barat.Items.Item(i).Text)
+                ws.UpdateInteresById("2", id_producte)
+            Catch ex As Exception
 
+            End Try 
+        Next
+
+        For i As Integer = 0 To lv_normal.Items.Count - 1 Step 1
+            Try
+                Dim id_producte = ws.GetIdProducteByNom(lv_normal.Items.Item(i).Text)
+                ws.UpdateInteresById("3", id_producte)
+            Catch ex As Exception
+
+            End Try
+        Next
+
+        For i As Integer = 0 To lv_car.Items.Count - 1 Step 1
+            Try
+                Dim id_producte = ws.GetIdProducteByNom(lv_car.Items.Item(i).Text)
+                ws.UpdateInteresById("4", id_producte)
+            Catch ex As Exception
+
+            End Try
+        Next
+
+        For i As Integer = 0 To lv_moltcar.Items.Count - 1 Step 1
+            Try
+                Dim id_producte = ws.GetIdProducteByNom(lv_moltcar.Items.Item(i).Text)
+                ws.UpdateInteresById("5", id_producte)
+            Catch ex As Exception
+
+            End Try
+        Next
     End Sub
+
 End Class
