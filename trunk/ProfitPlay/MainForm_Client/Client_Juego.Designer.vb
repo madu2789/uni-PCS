@@ -24,7 +24,6 @@ Partial Class Client_Juego
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Juego))
         Me.pnl_jocs = New System.Windows.Forms.Panel
-        Me.btn_login_joc = New System.Windows.Forms.Button
         Me.btn_fica_punts = New System.Windows.Forms.Button
         Me.pnl_plats = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
@@ -35,7 +34,18 @@ Partial Class Client_Juego
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser
+        Me.lbl_p1 = New System.Windows.Forms.Label
+        Me.lbl_p2 = New System.Windows.Forms.Label
+        Me.lbl_p3 = New System.Windows.Forms.Label
+        Me.lbl_p4 = New System.Windows.Forms.Label
+        Me.p1_a = New System.Windows.Forms.CheckBox
+        Me.p1_b = New System.Windows.Forms.CheckBox
+        Me.p2_b = New System.Windows.Forms.CheckBox
+        Me.p2_a = New System.Windows.Forms.CheckBox
+        Me.p3_b = New System.Windows.Forms.CheckBox
+        Me.p3_a = New System.Windows.Forms.CheckBox
+        Me.p4_b = New System.Windows.Forms.CheckBox
+        Me.p4_a = New System.Windows.Forms.CheckBox
         Me.pnl_jocs.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
@@ -44,24 +54,11 @@ Partial Class Client_Juego
         'pnl_jocs
         '
         Me.pnl_jocs.BackColor = System.Drawing.Color.Firebrick
-        Me.pnl_jocs.Controls.Add(Me.btn_login_joc)
         Me.pnl_jocs.Controls.Add(Me.btn_fica_punts)
         Me.pnl_jocs.Location = New System.Drawing.Point(676, 49)
         Me.pnl_jocs.Name = "pnl_jocs"
         Me.pnl_jocs.Size = New System.Drawing.Size(164, 433)
         Me.pnl_jocs.TabIndex = 26
-        '
-        'btn_login_joc
-        '
-        Me.btn_login_joc.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_login_joc.ForeColor = System.Drawing.Color.Blue
-        Me.btn_login_joc.Image = CType(resources.GetObject("btn_login_joc.Image"), System.Drawing.Image)
-        Me.btn_login_joc.Location = New System.Drawing.Point(8, 241)
-        Me.btn_login_joc.Name = "btn_login_joc"
-        Me.btn_login_joc.Size = New System.Drawing.Size(153, 85)
-        Me.btn_login_joc.TabIndex = 29
-        Me.btn_login_joc.Text = "Login cambrer"
-        Me.btn_login_joc.UseVisualStyleBackColor = True
         '
         'btn_fica_punts
         '
@@ -74,7 +71,6 @@ Partial Class Client_Juego
         Me.btn_fica_punts.TabIndex = 27
         Me.btn_fica_punts.Text = "Sumar punts"
         Me.btn_fica_punts.UseVisualStyleBackColor = True
-        Me.btn_fica_punts.Visible = False
         '
         'pnl_plats
         '
@@ -179,18 +175,121 @@ Partial Class Client_Juego
         Me.btn_estat.TabIndex = 23
         Me.btn_estat.UseVisualStyleBackColor = True
         '
-        'WebBrowser1
+        'lbl_p1
         '
-        Me.WebBrowser1.AllowNavigation = False
-        Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
-        Me.WebBrowser1.Location = New System.Drawing.Point(154, 33)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Size = New System.Drawing.Size(545, 454)
-        Me.WebBrowser1.TabIndex = 34
-        Me.WebBrowser1.Url = New System.Uri("C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\Resources\index.html", System.UriKind.Absolute)
-        Me.WebBrowser1.WebBrowserShortcutsEnabled = False
+        Me.lbl_p1.AutoSize = True
+        Me.lbl_p1.Location = New System.Drawing.Point(206, 68)
+        Me.lbl_p1.Name = "lbl_p1"
+        Me.lbl_p1.Size = New System.Drawing.Size(39, 13)
+        Me.lbl_p1.TabIndex = 34
+        Me.lbl_p1.Text = "Label1"
+        '
+        'lbl_p2
+        '
+        Me.lbl_p2.AutoSize = True
+        Me.lbl_p2.Location = New System.Drawing.Point(206, 169)
+        Me.lbl_p2.Name = "lbl_p2"
+        Me.lbl_p2.Size = New System.Drawing.Size(39, 13)
+        Me.lbl_p2.TabIndex = 35
+        Me.lbl_p2.Text = "Label2"
+        '
+        'lbl_p3
+        '
+        Me.lbl_p3.AutoSize = True
+        Me.lbl_p3.Location = New System.Drawing.Point(206, 270)
+        Me.lbl_p3.Name = "lbl_p3"
+        Me.lbl_p3.Size = New System.Drawing.Size(39, 13)
+        Me.lbl_p3.TabIndex = 36
+        Me.lbl_p3.Text = "Label3"
+        '
+        'lbl_p4
+        '
+        Me.lbl_p4.AutoSize = True
+        Me.lbl_p4.Location = New System.Drawing.Point(206, 371)
+        Me.lbl_p4.Name = "lbl_p4"
+        Me.lbl_p4.Size = New System.Drawing.Size(39, 13)
+        Me.lbl_p4.TabIndex = 37
+        Me.lbl_p4.Text = "Label4"
+        '
+        'p1_a
+        '
+        Me.p1_a.AutoSize = True
+        Me.p1_a.Location = New System.Drawing.Point(531, 88)
+        Me.p1_a.Name = "p1_a"
+        Me.p1_a.Size = New System.Drawing.Size(81, 17)
+        Me.p1_a.TabIndex = 47
+        Me.p1_a.Text = "CheckBox1"
+        Me.p1_a.UseVisualStyleBackColor = True
+        '
+        'p1_b
+        '
+        Me.p1_b.AutoSize = True
+        Me.p1_b.Location = New System.Drawing.Point(531, 111)
+        Me.p1_b.Name = "p1_b"
+        Me.p1_b.Size = New System.Drawing.Size(81, 17)
+        Me.p1_b.TabIndex = 48
+        Me.p1_b.Text = "CheckBox2"
+        Me.p1_b.UseVisualStyleBackColor = True
+        '
+        'p2_b
+        '
+        Me.p2_b.AutoSize = True
+        Me.p2_b.Location = New System.Drawing.Point(531, 212)
+        Me.p2_b.Name = "p2_b"
+        Me.p2_b.Size = New System.Drawing.Size(81, 17)
+        Me.p2_b.TabIndex = 50
+        Me.p2_b.Text = "CheckBox3"
+        Me.p2_b.UseVisualStyleBackColor = True
+        '
+        'p2_a
+        '
+        Me.p2_a.AutoSize = True
+        Me.p2_a.Location = New System.Drawing.Point(531, 189)
+        Me.p2_a.Name = "p2_a"
+        Me.p2_a.Size = New System.Drawing.Size(81, 17)
+        Me.p2_a.TabIndex = 49
+        Me.p2_a.Text = "CheckBox4"
+        Me.p2_a.UseVisualStyleBackColor = True
+        '
+        'p3_b
+        '
+        Me.p3_b.AutoSize = True
+        Me.p3_b.Location = New System.Drawing.Point(531, 313)
+        Me.p3_b.Name = "p3_b"
+        Me.p3_b.Size = New System.Drawing.Size(81, 17)
+        Me.p3_b.TabIndex = 52
+        Me.p3_b.Text = "CheckBox5"
+        Me.p3_b.UseVisualStyleBackColor = True
+        '
+        'p3_a
+        '
+        Me.p3_a.AutoSize = True
+        Me.p3_a.Location = New System.Drawing.Point(531, 290)
+        Me.p3_a.Name = "p3_a"
+        Me.p3_a.Size = New System.Drawing.Size(81, 17)
+        Me.p3_a.TabIndex = 51
+        Me.p3_a.Text = "CheckBox6"
+        Me.p3_a.UseVisualStyleBackColor = True
+        '
+        'p4_b
+        '
+        Me.p4_b.AutoSize = True
+        Me.p4_b.Location = New System.Drawing.Point(531, 414)
+        Me.p4_b.Name = "p4_b"
+        Me.p4_b.Size = New System.Drawing.Size(81, 17)
+        Me.p4_b.TabIndex = 54
+        Me.p4_b.Text = "CheckBox7"
+        Me.p4_b.UseVisualStyleBackColor = True
+        '
+        'p4_a
+        '
+        Me.p4_a.AutoSize = True
+        Me.p4_a.Location = New System.Drawing.Point(531, 391)
+        Me.p4_a.Name = "p4_a"
+        Me.p4_a.Size = New System.Drawing.Size(81, 17)
+        Me.p4_a.TabIndex = 53
+        Me.p4_a.Text = "CheckBox8"
+        Me.p4_a.UseVisualStyleBackColor = True
         '
         'Client_Juego
         '
@@ -198,10 +297,21 @@ Partial Class Client_Juego
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.Controls.Add(Me.p4_b)
+        Me.Controls.Add(Me.p4_a)
+        Me.Controls.Add(Me.p3_b)
+        Me.Controls.Add(Me.p3_a)
+        Me.Controls.Add(Me.p2_b)
+        Me.Controls.Add(Me.p2_a)
+        Me.Controls.Add(Me.p1_b)
+        Me.Controls.Add(Me.p1_a)
+        Me.Controls.Add(Me.lbl_p4)
+        Me.Controls.Add(Me.lbl_p3)
+        Me.Controls.Add(Me.lbl_p2)
+        Me.Controls.Add(Me.lbl_p1)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_jocs)
-        Me.Controls.Add(Me.WebBrowser1)
         Me.Name = "Client_Juego"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Juego"
@@ -210,10 +320,10 @@ Partial Class Client_Juego
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents pnl_jocs As System.Windows.Forms.Panel
-    Friend WithEvents btn_login_joc As System.Windows.Forms.Button
     Friend WithEvents btn_fica_punts As System.Windows.Forms.Button
     Friend WithEvents pnl_plats As System.Windows.Forms.Panel
     Friend WithEvents btn_menu_anular As System.Windows.Forms.Button
@@ -224,5 +334,16 @@ Partial Class Client_Juego
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents pnl_estat As System.Windows.Forms.Panel
     Friend WithEvents btn_estat As System.Windows.Forms.Button
-    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
+    Friend WithEvents lbl_p1 As System.Windows.Forms.Label
+    Friend WithEvents lbl_p2 As System.Windows.Forms.Label
+    Friend WithEvents lbl_p3 As System.Windows.Forms.Label
+    Friend WithEvents lbl_p4 As System.Windows.Forms.Label
+    Friend WithEvents p1_a As System.Windows.Forms.CheckBox
+    Friend WithEvents p1_b As System.Windows.Forms.CheckBox
+    Friend WithEvents p2_b As System.Windows.Forms.CheckBox
+    Friend WithEvents p2_a As System.Windows.Forms.CheckBox
+    Friend WithEvents p3_b As System.Windows.Forms.CheckBox
+    Friend WithEvents p3_a As System.Windows.Forms.CheckBox
+    Friend WithEvents p4_b As System.Windows.Forms.CheckBox
+    Friend WithEvents p4_a As System.Windows.Forms.CheckBox
 End Class

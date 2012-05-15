@@ -109,3 +109,9 @@ C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\D
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\Interop.ShockwaveFlashObjects.dll
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\ProfitPlay.vbproj.ResolveComReference.cache
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\Interop.ShockwaveFlashObjects.dll
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\ProfitPlay.vbproj.ResolveComReference.cache
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\Interop.ShockwaveFlashObjects.dll
+D:\SVN\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\MainForm_Client.Emp_interessos.resources
