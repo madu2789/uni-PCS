@@ -184,6 +184,8 @@
     Private Sub resetForm()
         lv_pedidos.Clear()
         grb_pedido.Show()
+        productes.Clear()
+
         productes = New List(Of Producto)
         m_comanda = New Comanda
     End Sub
@@ -219,14 +221,13 @@
                     Dim hora As Date = Now
                     Dim estat = "Sol·licitat"
 
-                    MsgBox("Id " + p.id_producte.ToString + " y " + CInt(idProducte).ToString)
                     If (p.id_producte = CInt(idProducte)) Then
 
                         Dim ok = comprovaStock(p.id_producte)
 
                         If (ok = 1) Then
                             m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
-                            ws.UpdateStockActualById(p.id_producte, p.quantitat)
+                            ws.UpdateStockActualById(p.id_ingredient, p.quantitat)
                             ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
                         Else
                             MsgBox("No tenim disponible " + ws.GetNomProducteById(idProducte))
@@ -256,7 +257,7 @@
 
                         MsgBox("Tenim " + i.stock_actual.ToString + " de " + i.nom)
                         i.stock_actual = i.stock_actual - p.quantitat
-                        If (i.stock_actual <= 0) Then
+                        If (i.stock_actual < 0) Then
                             Return 0
                         End If
 

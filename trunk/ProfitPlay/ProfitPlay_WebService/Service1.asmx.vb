@@ -342,6 +342,11 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
+  Public Function SolAnulaComanda(ByVal id_comanda As Integer, ByVal id_user As Integer) As Boolean
+        Return comanda.SolAnularComanda(id_comanda, id_user)
+    End Function
+
+    <WebMethod()> _
     Public Function deleteComandaByUserId(ByVal id As Integer) As Integer
         Return comanda.DeleteComandaByUserId(id)
     End Function

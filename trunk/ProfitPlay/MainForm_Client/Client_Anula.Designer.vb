@@ -56,7 +56,7 @@ Partial Class Client_Anula
         Me.grb_anular.Controls.Add(Me.lbl_anular)
         Me.grb_anular.Location = New System.Drawing.Point(178, 73)
         Me.grb_anular.Name = "grb_anular"
-        Me.grb_anular.Size = New System.Drawing.Size(500, 306)
+        Me.grb_anular.Size = New System.Drawing.Size(500, 382)
         Me.grb_anular.TabIndex = 33
         Me.grb_anular.TabStop = False
         Me.grb_anular.Text = "Anular"
@@ -67,10 +67,10 @@ Partial Class Client_Anula
         'container2.ContentPanel
         '
         Me.container2.ContentPanel.Controls.Add(Me.llista_resta_productes)
-        Me.container2.ContentPanel.Size = New System.Drawing.Size(170, 178)
+        Me.container2.ContentPanel.Size = New System.Drawing.Size(170, 294)
         Me.container2.Location = New System.Drawing.Point(288, 52)
         Me.container2.Name = "container2"
-        Me.container2.Size = New System.Drawing.Size(170, 203)
+        Me.container2.Size = New System.Drawing.Size(170, 319)
         Me.container2.TabIndex = 34
         Me.container2.Text = "ToolStripContainer2"
         '
@@ -87,7 +87,7 @@ Partial Class Client_Anula
         Me.llista_resta_productes.Name = "llista_resta_productes"
         Me.llista_resta_productes.Padding = New System.Windows.Forms.Padding(0)
         Me.llista_resta_productes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.llista_resta_productes.Size = New System.Drawing.Size(170, 178)
+        Me.llista_resta_productes.Size = New System.Drawing.Size(170, 294)
         Me.llista_resta_productes.TabIndex = 3
         Me.llista_resta_productes.Text = "ToolStrip1"
         '
@@ -106,10 +106,10 @@ Partial Class Client_Anula
         'ToolStripContainer1.ContentPanel
         '
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.llista_productes_eliminar)
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(170, 178)
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(170, 294)
         Me.ToolStripContainer1.Location = New System.Drawing.Point(54, 52)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(170, 203)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(170, 319)
         Me.ToolStripContainer1.TabIndex = 32
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         '
@@ -126,7 +126,7 @@ Partial Class Client_Anula
         Me.llista_productes_eliminar.Name = "llista_productes_eliminar"
         Me.llista_productes_eliminar.Padding = New System.Windows.Forms.Padding(0)
         Me.llista_productes_eliminar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.llista_productes_eliminar.Size = New System.Drawing.Size(170, 178)
+        Me.llista_productes_eliminar.Size = New System.Drawing.Size(170, 294)
         Me.llista_productes_eliminar.TabIndex = 2
         Me.llista_productes_eliminar.Text = "ToolStrip1"
         '
