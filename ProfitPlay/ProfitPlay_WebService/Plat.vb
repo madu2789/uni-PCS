@@ -41,4 +41,14 @@
         Return data
     End Function
 
+    'aixo no tocaria aqui:
+
+    Public Function UpdateInteresById(ByVal interes As String, ByVal id_producte As String) As Boolean
+        Return BD.UpdateInteresTaulaById(interes, id_producte)
+    End Function
+
+    Public Sub InsertProducteTaulaPreus(ByVal IdProducte As String, ByVal Preu As Double)
+        BD.InsertProducteTaulaPreus(Id_producte, Preu)
+    End Sub
+
 End Class

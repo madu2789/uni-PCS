@@ -289,6 +289,8 @@
                 MsgBox("Camps incomplerts!", MsgBoxStyle.Critical, "ERROR")
             Else
                 ws.SetProducte(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, cmbx_tipus.Text)
+                Dim IdProducte = ws.GetIdProducteByNom(txtb_nom.Text)
+                ws.InsertProducteTaulaPreus(IdProducte, txtb_preu.Text)
                 MsgBox("Producte inserit correctament!", MsgBoxStyle.Information, "CORRECTE")
                 grb_insert.Hide()
             End If

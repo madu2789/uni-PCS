@@ -412,4 +412,14 @@ Public Class Service1
 
     End Function
 
+    <WebMethod()> _
+ Public Function UpdateInteresById(ByVal interes As String, ByVal id_producte As String) As Boolean
+        Return plat.UpdateInteresById(interes, id_producte)
+    End Function
+
+    <WebMethod()> _
+ Public Sub InsertProducteTaulaPreus(ByVal IdProducte As String, ByVal Preu As Double)
+        plat.InsertProducteTaulaPreus(IdProducte, Preu)
+    End Sub
+
 End Class

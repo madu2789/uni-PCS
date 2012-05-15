@@ -15,6 +15,10 @@ End Class
 
 Namespace profit_playDataSetTableAdapters
     
+    Partial Class TaulaPreusTableAdapter
+
+    End Class
+
     Partial Class UsuariTableAdapter
 
     End Class

@@ -19,6 +19,7 @@
     Dim compraDA As New profit_playDataSetTableAdapters.CompraTableAdapter
     Dim producte_ingredientDA As New profit_playDataSetTableAdapters.Producte_IngredientTableAdapter
     Dim jocDA As New profit_playDataSetTableAdapters.JocTableAdapter
+    Dim taulapreusDA As New profit_playDataSetTableAdapters.TaulaPreusTableAdapter
 
     'DataSet:
     Private DS As New profit_playDataSet()
@@ -27,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString1)
+            conDB = New OleDb.OleDbConnection(conString)
             conDB.Open()
 
         Catch ex As Exception
@@ -619,5 +620,36 @@
         Return DS.Joc
 
     End Function
+
+    Public Function UpdateInteresTaulaById(ByVal interes As String, ByVal id_producte As String) As Boolean
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            taulapreusDA.Connection = conDB
+            taulapreusDA.UpdateInteres(interes, id_producte)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            MsgBox("Error update interes", MsgBoxStyle.Critical)
+        End Try
+        Return ok
+    End Function
+
+    Public Sub InsertProducteTaulaPreus(ByVal IdProducte As String, ByVal Preu As Double)
+
+        Try
+
+            connect()
+            taulapreusDA.Connection = conDB
+            taulapreusDA.InsertProducteTaulaPreus(IdProducte, "1", Preu, "3")
+            disconnect()
+
+        Catch ex As Exception
+
+            MsgBox("Error inserint producte a taula preus", MsgBoxStyle.Critical, "Error Base de Dades")
+
+        End Try
+    End Sub
 
 End Class
