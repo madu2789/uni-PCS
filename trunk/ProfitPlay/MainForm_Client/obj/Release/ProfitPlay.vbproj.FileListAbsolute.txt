@@ -140,3 +140,6 @@ C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\R
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.exe
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.xml
 C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\MainForm_Client.pdb
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\Interop.ShockwaveFlashObjects.dll
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Release\ProfitPlay.vbproj.ResolveComReference.cache

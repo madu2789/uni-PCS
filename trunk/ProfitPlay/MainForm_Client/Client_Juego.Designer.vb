@@ -35,6 +35,7 @@ Partial Class Client_Juego
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser
         Me.pnl_jocs.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
@@ -47,7 +48,7 @@ Partial Class Client_Juego
         Me.pnl_jocs.Controls.Add(Me.btn_demanar)
         Me.pnl_jocs.Location = New System.Drawing.Point(676, 49)
         Me.pnl_jocs.Name = "pnl_jocs"
-        Me.pnl_jocs.Size = New System.Drawing.Size(164, 408)
+        Me.pnl_jocs.Size = New System.Drawing.Size(164, 433)
         Me.pnl_jocs.TabIndex = 26
         '
         'btn_donar
@@ -55,7 +56,7 @@ Partial Class Client_Juego
         Me.btn_donar.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_donar.ForeColor = System.Drawing.Color.Blue
         Me.btn_donar.Image = CType(resources.GetObject("btn_donar.Image"), System.Drawing.Image)
-        Me.btn_donar.Location = New System.Drawing.Point(13, 135)
+        Me.btn_donar.Location = New System.Drawing.Point(21, 130)
         Me.btn_donar.Name = "btn_donar"
         Me.btn_donar.Size = New System.Drawing.Size(140, 85)
         Me.btn_donar.TabIndex = 29
@@ -67,7 +68,7 @@ Partial Class Client_Juego
         Me.btn_demanar.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_demanar.ForeColor = System.Drawing.Color.Blue
         Me.btn_demanar.Image = CType(resources.GetObject("btn_demanar.Image"), System.Drawing.Image)
-        Me.btn_demanar.Location = New System.Drawing.Point(13, 32)
+        Me.btn_demanar.Location = New System.Drawing.Point(21, 29)
         Me.btn_demanar.Name = "btn_demanar"
         Me.btn_demanar.Size = New System.Drawing.Size(140, 85)
         Me.btn_demanar.TabIndex = 27
@@ -83,14 +84,14 @@ Partial Class Client_Juego
         Me.pnl_plats.Controls.Add(Me.Button3)
         Me.pnl_plats.Location = New System.Drawing.Point(-2, -11)
         Me.pnl_plats.Name = "pnl_plats"
-        Me.pnl_plats.Size = New System.Drawing.Size(153, 473)
+        Me.pnl_plats.Size = New System.Drawing.Size(153, 493)
         Me.pnl_plats.TabIndex = 33
         '
         'btn_menu_anular
         '
         Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
-        Me.btn_menu_anular.Location = New System.Drawing.Point(5, 373)
+        Me.btn_menu_anular.Location = New System.Drawing.Point(5, 382)
         Me.btn_menu_anular.Name = "btn_menu_anular"
         Me.btn_menu_anular.Size = New System.Drawing.Size(145, 95)
         Me.btn_menu_anular.TabIndex = 17
@@ -102,7 +103,7 @@ Partial Class Client_Juego
         '
         Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
-        Me.btn_veurecarta.Location = New System.Drawing.Point(5, 73)
+        Me.btn_veurecarta.Location = New System.Drawing.Point(5, 79)
         Me.btn_veurecarta.Name = "btn_veurecarta"
         Me.btn_veurecarta.Size = New System.Drawing.Size(145, 95)
         Me.btn_veurecarta.TabIndex = 11
@@ -114,7 +115,7 @@ Partial Class Client_Juego
         '
         Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
-        Me.btn_Pagar.Location = New System.Drawing.Point(5, 273)
+        Me.btn_Pagar.Location = New System.Drawing.Point(5, 281)
         Me.btn_Pagar.Name = "btn_Pagar"
         Me.btn_Pagar.Size = New System.Drawing.Size(145, 95)
         Me.btn_Pagar.TabIndex = 14
@@ -126,7 +127,7 @@ Partial Class Client_Juego
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Image = Global.MainForm_Client.My.Resources.Resources.juego
-        Me.Button3.Location = New System.Drawing.Point(5, 172)
+        Me.Button3.Location = New System.Drawing.Point(5, 180)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(145, 95)
         Me.Button3.TabIndex = 13
@@ -139,7 +140,7 @@ Partial Class Client_Juego
         Me.lbl_punts.AutoSize = True
         Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
+        Me.lbl_punts.Location = New System.Drawing.Point(341, 29)
         Me.lbl_punts.Name = "lbl_punts"
         Me.lbl_punts.Size = New System.Drawing.Size(98, 31)
         Me.lbl_punts.TabIndex = 0
@@ -150,7 +151,7 @@ Partial Class Client_Juego
         Me.lbl_taula.AutoSize = True
         Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
+        Me.lbl_taula.Location = New System.Drawing.Point(111, 29)
         Me.lbl_taula.Name = "lbl_taula"
         Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
         Me.lbl_taula.TabIndex = 22
@@ -162,7 +163,7 @@ Partial Class Client_Juego
         Me.pnl_estat.Controls.Add(Me.btn_estat)
         Me.pnl_estat.Controls.Add(Me.lbl_taula)
         Me.pnl_estat.Controls.Add(Me.lbl_punts)
-        Me.pnl_estat.Location = New System.Drawing.Point(154, -9)
+        Me.pnl_estat.Location = New System.Drawing.Point(154, -20)
         Me.pnl_estat.Name = "pnl_estat"
         Me.pnl_estat.Size = New System.Drawing.Size(686, 72)
         Me.pnl_estat.TabIndex = 32
@@ -177,6 +178,19 @@ Partial Class Client_Juego
         Me.btn_estat.TabIndex = 23
         Me.btn_estat.UseVisualStyleBackColor = True
         '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.AllowNavigation = False
+        Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
+        Me.WebBrowser1.Location = New System.Drawing.Point(154, 33)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.ScrollBarsEnabled = False
+        Me.WebBrowser1.Size = New System.Drawing.Size(545, 454)
+        Me.WebBrowser1.TabIndex = 34
+        Me.WebBrowser1.Url = New System.Uri("C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\Resources\index.html", System.UriKind.Absolute)
+        Me.WebBrowser1.WebBrowserShortcutsEnabled = False
+        '
         'Client_Juego
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -186,6 +200,7 @@ Partial Class Client_Juego
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_jocs)
+        Me.Controls.Add(Me.WebBrowser1)
         Me.Name = "Client_Juego"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Juego"
@@ -208,4 +223,5 @@ Partial Class Client_Juego
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents pnl_estat As System.Windows.Forms.Panel
     Friend WithEvents btn_estat As System.Windows.Forms.Button
+    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
 End Class
