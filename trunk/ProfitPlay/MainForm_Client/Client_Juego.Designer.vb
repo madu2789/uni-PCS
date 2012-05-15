@@ -24,8 +24,8 @@ Partial Class Client_Juego
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Juego))
         Me.pnl_jocs = New System.Windows.Forms.Panel
-        Me.btn_donar = New System.Windows.Forms.Button
-        Me.btn_demanar = New System.Windows.Forms.Button
+        Me.btn_login_joc = New System.Windows.Forms.Button
+        Me.btn_fica_punts = New System.Windows.Forms.Button
         Me.pnl_plats = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.btn_veurecarta = New System.Windows.Forms.Button
@@ -44,36 +44,37 @@ Partial Class Client_Juego
         'pnl_jocs
         '
         Me.pnl_jocs.BackColor = System.Drawing.Color.Firebrick
-        Me.pnl_jocs.Controls.Add(Me.btn_donar)
-        Me.pnl_jocs.Controls.Add(Me.btn_demanar)
+        Me.pnl_jocs.Controls.Add(Me.btn_login_joc)
+        Me.pnl_jocs.Controls.Add(Me.btn_fica_punts)
         Me.pnl_jocs.Location = New System.Drawing.Point(676, 49)
         Me.pnl_jocs.Name = "pnl_jocs"
         Me.pnl_jocs.Size = New System.Drawing.Size(164, 433)
         Me.pnl_jocs.TabIndex = 26
         '
-        'btn_donar
+        'btn_login_joc
         '
-        Me.btn_donar.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_donar.ForeColor = System.Drawing.Color.Blue
-        Me.btn_donar.Image = CType(resources.GetObject("btn_donar.Image"), System.Drawing.Image)
-        Me.btn_donar.Location = New System.Drawing.Point(21, 130)
-        Me.btn_donar.Name = "btn_donar"
-        Me.btn_donar.Size = New System.Drawing.Size(140, 85)
-        Me.btn_donar.TabIndex = 29
-        Me.btn_donar.Text = "Donar punts"
-        Me.btn_donar.UseVisualStyleBackColor = True
+        Me.btn_login_joc.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login_joc.ForeColor = System.Drawing.Color.Blue
+        Me.btn_login_joc.Image = CType(resources.GetObject("btn_login_joc.Image"), System.Drawing.Image)
+        Me.btn_login_joc.Location = New System.Drawing.Point(8, 241)
+        Me.btn_login_joc.Name = "btn_login_joc"
+        Me.btn_login_joc.Size = New System.Drawing.Size(153, 85)
+        Me.btn_login_joc.TabIndex = 29
+        Me.btn_login_joc.Text = "Login cambrer"
+        Me.btn_login_joc.UseVisualStyleBackColor = True
         '
-        'btn_demanar
+        'btn_fica_punts
         '
-        Me.btn_demanar.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_demanar.ForeColor = System.Drawing.Color.Blue
-        Me.btn_demanar.Image = CType(resources.GetObject("btn_demanar.Image"), System.Drawing.Image)
-        Me.btn_demanar.Location = New System.Drawing.Point(21, 29)
-        Me.btn_demanar.Name = "btn_demanar"
-        Me.btn_demanar.Size = New System.Drawing.Size(140, 85)
-        Me.btn_demanar.TabIndex = 27
-        Me.btn_demanar.Text = "Demanar ajuda"
-        Me.btn_demanar.UseVisualStyleBackColor = True
+        Me.btn_fica_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_fica_punts.ForeColor = System.Drawing.Color.Blue
+        Me.btn_fica_punts.Image = CType(resources.GetObject("btn_fica_punts.Image"), System.Drawing.Image)
+        Me.btn_fica_punts.Location = New System.Drawing.Point(8, 332)
+        Me.btn_fica_punts.Name = "btn_fica_punts"
+        Me.btn_fica_punts.Size = New System.Drawing.Size(153, 85)
+        Me.btn_fica_punts.TabIndex = 27
+        Me.btn_fica_punts.Text = "Sumar punts"
+        Me.btn_fica_punts.UseVisualStyleBackColor = True
+        Me.btn_fica_punts.Visible = False
         '
         'pnl_plats
         '
@@ -212,8 +213,8 @@ Partial Class Client_Juego
 
     End Sub
     Friend WithEvents pnl_jocs As System.Windows.Forms.Panel
-    Friend WithEvents btn_donar As System.Windows.Forms.Button
-    Friend WithEvents btn_demanar As System.Windows.Forms.Button
+    Friend WithEvents btn_login_joc As System.Windows.Forms.Button
+    Friend WithEvents btn_fica_punts As System.Windows.Forms.Button
     Friend WithEvents pnl_plats As System.Windows.Forms.Panel
     Friend WithEvents btn_menu_anular As System.Windows.Forms.Button
     Friend WithEvents btn_veurecarta As System.Windows.Forms.Button
