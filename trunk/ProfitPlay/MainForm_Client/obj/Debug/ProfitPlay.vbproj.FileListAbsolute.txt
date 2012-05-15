@@ -104,3 +104,8 @@ C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\A
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\Interop.ShockwaveFlashObjects.dll
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
 C:\Users\Madu\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\ProfitPlay.vbproj.ResolveComReference.cache
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\DarkWizard\Documents\pcs1112_g04\trunk\ProfitPlay\MainForm_Client\obj\Debug\ProfitPlay.vbproj.ResolveComReference.cache

@@ -24,17 +24,17 @@ Partial Class Client_Juego
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Juego))
         Me.pnl_jocs = New System.Windows.Forms.Panel
+        Me.btn_donar = New System.Windows.Forms.Button
+        Me.btn_demanar = New System.Windows.Forms.Button
         Me.pnl_plats = New System.Windows.Forms.Panel
-        Me.lbl_punts = New System.Windows.Forms.Label
-        Me.lbl_taula = New System.Windows.Forms.Label
-        Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.btn_veurecarta = New System.Windows.Forms.Button
         Me.btn_Pagar = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
+        Me.lbl_punts = New System.Windows.Forms.Label
+        Me.lbl_taula = New System.Windows.Forms.Label
+        Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
-        Me.btn_donar = New System.Windows.Forms.Button
-        Me.btn_demanar = New System.Windows.Forms.Button
         Me.pnl_jocs.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
@@ -50,6 +50,30 @@ Partial Class Client_Juego
         Me.pnl_jocs.Size = New System.Drawing.Size(164, 408)
         Me.pnl_jocs.TabIndex = 26
         '
+        'btn_donar
+        '
+        Me.btn_donar.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_donar.ForeColor = System.Drawing.Color.Blue
+        Me.btn_donar.Image = CType(resources.GetObject("btn_donar.Image"), System.Drawing.Image)
+        Me.btn_donar.Location = New System.Drawing.Point(13, 135)
+        Me.btn_donar.Name = "btn_donar"
+        Me.btn_donar.Size = New System.Drawing.Size(140, 85)
+        Me.btn_donar.TabIndex = 29
+        Me.btn_donar.Text = "Donar punts"
+        Me.btn_donar.UseVisualStyleBackColor = True
+        '
+        'btn_demanar
+        '
+        Me.btn_demanar.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_demanar.ForeColor = System.Drawing.Color.Blue
+        Me.btn_demanar.Image = CType(resources.GetObject("btn_demanar.Image"), System.Drawing.Image)
+        Me.btn_demanar.Location = New System.Drawing.Point(13, 32)
+        Me.btn_demanar.Name = "btn_demanar"
+        Me.btn_demanar.Size = New System.Drawing.Size(140, 85)
+        Me.btn_demanar.TabIndex = 27
+        Me.btn_demanar.Text = "Demanar ajuda"
+        Me.btn_demanar.UseVisualStyleBackColor = True
+        '
         'pnl_plats
         '
         Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
@@ -61,39 +85,6 @@ Partial Class Client_Juego
         Me.pnl_plats.Name = "pnl_plats"
         Me.pnl_plats.Size = New System.Drawing.Size(153, 473)
         Me.pnl_plats.TabIndex = 33
-        '
-        'lbl_punts
-        '
-        Me.lbl_punts.AutoSize = True
-        Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
-        Me.lbl_punts.Name = "lbl_punts"
-        Me.lbl_punts.Size = New System.Drawing.Size(98, 31)
-        Me.lbl_punts.TabIndex = 0
-        Me.lbl_punts.Text = "Punts:"
-        '
-        'lbl_taula
-        '
-        Me.lbl_taula.AutoSize = True
-        Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
-        Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
-        Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
-        Me.lbl_taula.TabIndex = 22
-        Me.lbl_taula.Text = "Taula: XXX"
-        '
-        'pnl_estat
-        '
-        Me.pnl_estat.BackColor = System.Drawing.Color.RoyalBlue
-        Me.pnl_estat.Controls.Add(Me.btn_estat)
-        Me.pnl_estat.Controls.Add(Me.lbl_taula)
-        Me.pnl_estat.Controls.Add(Me.lbl_punts)
-        Me.pnl_estat.Location = New System.Drawing.Point(154, -9)
-        Me.pnl_estat.Name = "pnl_estat"
-        Me.pnl_estat.Size = New System.Drawing.Size(686, 72)
-        Me.pnl_estat.TabIndex = 32
         '
         'btn_menu_anular
         '
@@ -143,6 +134,39 @@ Partial Class Client_Juego
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'lbl_punts
+        '
+        Me.lbl_punts.AutoSize = True
+        Me.lbl_punts.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_punts.ForeColor = System.Drawing.Color.Magenta
+        Me.lbl_punts.Location = New System.Drawing.Point(341, 22)
+        Me.lbl_punts.Name = "lbl_punts"
+        Me.lbl_punts.Size = New System.Drawing.Size(98, 31)
+        Me.lbl_punts.TabIndex = 0
+        Me.lbl_punts.Text = "Punts:"
+        '
+        'lbl_taula
+        '
+        Me.lbl_taula.AutoSize = True
+        Me.lbl_taula.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
+        Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
+        Me.lbl_taula.Name = "lbl_taula"
+        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
+        Me.lbl_taula.TabIndex = 22
+        Me.lbl_taula.Text = "Taula: XXX"
+        '
+        'pnl_estat
+        '
+        Me.pnl_estat.BackColor = System.Drawing.Color.RoyalBlue
+        Me.pnl_estat.Controls.Add(Me.btn_estat)
+        Me.pnl_estat.Controls.Add(Me.lbl_taula)
+        Me.pnl_estat.Controls.Add(Me.lbl_punts)
+        Me.pnl_estat.Location = New System.Drawing.Point(154, -9)
+        Me.pnl_estat.Name = "pnl_estat"
+        Me.pnl_estat.Size = New System.Drawing.Size(686, 72)
+        Me.pnl_estat.TabIndex = 32
+        '
         'btn_estat
         '
         Me.btn_estat.AutoSize = True
@@ -152,30 +176,6 @@ Partial Class Client_Juego
         Me.btn_estat.Size = New System.Drawing.Size(88, 86)
         Me.btn_estat.TabIndex = 23
         Me.btn_estat.UseVisualStyleBackColor = True
-        '
-        'btn_donar
-        '
-        Me.btn_donar.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_donar.ForeColor = System.Drawing.Color.Blue
-        Me.btn_donar.Image = CType(resources.GetObject("btn_donar.Image"), System.Drawing.Image)
-        Me.btn_donar.Location = New System.Drawing.Point(13, 135)
-        Me.btn_donar.Name = "btn_donar"
-        Me.btn_donar.Size = New System.Drawing.Size(140, 85)
-        Me.btn_donar.TabIndex = 29
-        Me.btn_donar.Text = "Donar punts"
-        Me.btn_donar.UseVisualStyleBackColor = True
-        '
-        'btn_demanar
-        '
-        Me.btn_demanar.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_demanar.ForeColor = System.Drawing.Color.Blue
-        Me.btn_demanar.Image = CType(resources.GetObject("btn_demanar.Image"), System.Drawing.Image)
-        Me.btn_demanar.Location = New System.Drawing.Point(13, 32)
-        Me.btn_demanar.Name = "btn_demanar"
-        Me.btn_demanar.Size = New System.Drawing.Size(140, 85)
-        Me.btn_demanar.TabIndex = 27
-        Me.btn_demanar.Text = "Demanar ajuda"
-        Me.btn_demanar.UseVisualStyleBackColor = True
         '
         'Client_Juego
         '
