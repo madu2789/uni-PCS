@@ -24,4 +24,7 @@
         Me.Hide()
     End Sub
 
+    Private Sub btn_donar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_login_joc.Click
+
+    End Sub
 End Class
