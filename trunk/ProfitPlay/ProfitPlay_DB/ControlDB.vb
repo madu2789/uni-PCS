@@ -636,6 +636,21 @@
         Return ok
     End Function
 
+    Public Function UpdateStockTaulaPreus(ByVal id_producte As String, ByVal stock As String) As Boolean
+        Dim ok As Boolean = False
+
+        Try
+            connect()
+            taulapreusDA.Connection = conDB
+            taulapreusDA.UpdateEsPotPreparar(stock, id_producte)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            MsgBox("Error update interes", MsgBoxStyle.Critical)
+        End Try
+        Return ok
+    End Function
+
     Public Sub InsertProducteTaulaPreus(ByVal IdProducte As String, ByVal Preu As Double)
 
         Try
@@ -651,5 +666,20 @@
 
         End Try
     End Sub
+
+    Public Function GetTaulaPreus() As DataTable
+
+        Try
+            connect()
+            taulapreusDA.Connection = conDB
+            taulapreusDA.Fill(DS.TaulaPreus)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error recuperant taulapreus", MsgBoxStyle.Critical, "Error Base de Dades")
+        End Try
+        Return DS._Producte_Ingredient
+    End Function
+
+
 
 End Class

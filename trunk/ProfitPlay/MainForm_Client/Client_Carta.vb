@@ -228,6 +228,7 @@
                         If (ok = 1) Then
                             m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
                             ws.UpdateStockActualById(p.id_ingredient, p.quantitat)
+                            ws.UpdateStockTaulaPreus(p.id_ingredient, p.quantitat)
                             ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
                         Else
                             MsgBox("No tenim disponible " + ws.GetNomProducteById(idProducte))
@@ -357,10 +358,6 @@
                 Next
             End If
         End If
-
-    End Sub
-
-    Private Sub btn_estat_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
 
     End Sub
 End Class

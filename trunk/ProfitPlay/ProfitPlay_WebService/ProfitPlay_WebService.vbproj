@@ -88,6 +88,7 @@
     <Compile Include="Compra.vb" />
     <Compile Include="Joc.vb" />
     <Compile Include="Plat.vb" />
+    <Compile Include="TaulaPreus.vb" />
     <Compile Include="Usuari.vb" />
     <Compile Include="Ingredient.vb" />
     <Compile Include="Comanda.vb" />
