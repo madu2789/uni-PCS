@@ -48,11 +48,57 @@
 
             ws.SolPagarComanda(fila.id)
             preuProducte = ws.GetPreuProducteById(fila.Id_producte)
+            preuProducte = preuProducte * SistemaPreus(fila.Id_producte)
             preu += preuProducte
 
         Next
 
         Return preu
+    End Function
+
+    Private Function SistemaPreus(ByVal ID_Producte_actual As String) As Double
+        Dim percentatge As Double
+
+        Dim taula = ws.GetTaulaPreus()
+
+        For Each fila In taula
+            If fila.Id_producte = ID_Producte_actual Then
+                If (fila.Interes < "5") Then
+                    If fila.EsPotPreparar Then
+                        percentatge = 1.25
+                    Else
+                        percentatge = 1.5
+                    End If
+                ElseIf (fila.Interes < "4") Then
+                    If fila.EsPotPreparar Then
+                        percentatge = 1.1
+                    Else
+                        percentatge = 1.25
+                    End If
+                ElseIf (fila.Interes < "3") Then
+                    If fila.EsPotPreparar Then
+                        percentatge = 1
+                    Else
+                        percentatge = 1.1
+                    End If
+                ElseIf (fila.Interes < "2") Then
+                    If fila.EsPotPreparar Then
+                        percentatge = 0.15
+                    Else
+                        percentatge = 0.35
+                    End If
+                ElseIf (fila.Interes < "1") Then
+                    If fila.EsPotPreparar Then
+                        percentatge = 0.35
+                    Else
+                        percentatge = 0.55
+                    End If
+                End If
+            End If
+        Next
+
+
+        Return percentatge
     End Function
 
     Private Sub SolPagarComanda()

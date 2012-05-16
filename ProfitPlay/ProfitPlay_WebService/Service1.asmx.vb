@@ -22,6 +22,7 @@ Public Class Service1
     Dim plat As New Plat
     Dim compra As New Compra
     Dim joc As New Joc
+    Dim taulapreus As New TaulaPreus
 
     Public em As New EmpleatBD
 
@@ -71,6 +72,13 @@ Public Class Service1
         Public id_producte As Integer
         Public id_ingredient As Integer
         Public quantitat As Integer
+    End Class
+
+    Public Class TaulaPreusDB
+        Public Id_producte As Integer
+        Public EsPotPreparar As Integer
+        Public PreuEstandard As Integer
+        Public Interes As String
     End Class
 
     <WebMethod()> _
@@ -414,12 +422,38 @@ Public Class Service1
 
     <WebMethod()> _
  Public Function UpdateInteresById(ByVal interes As String, ByVal id_producte As String) As Boolean
-        Return plat.UpdateInteresById(interes, id_producte)
+        Return TaulaPreus.UpdateInteresById(interes, id_producte)
     End Function
 
     <WebMethod()> _
  Public Sub InsertProducteTaulaPreus(ByVal IdProducte As String, ByVal Preu As Double)
-        plat.InsertProducteTaulaPreus(IdProducte, Preu)
+        TaulaPreus.InsertProducteTaulaPreus(IdProducte, Preu)
     End Sub
+
+    <WebMethod()> _
+Public Function UpdateStockTaulaPreus(ByVal id_producte As String, ByVal stock As String) As Boolean
+        Return taulapreus.UpdateInteresById(stock, id_producte)
+    End Function
+
+    <WebMethod()> _
+Public Function GetTaulaPreus() As List(Of TaulaPreusDB)
+
+        Dim dades As New List(Of TaulaPreusDB)
+        Dim info As DataTable = taulapreus.GetTaulaPreus()
+
+        For Each fila In info.Rows
+
+            Dim taula As New TaulaPreusDB
+
+            taula.Id_producte = fila("Id_producte").ToString
+            taula.EsPotPreparar = fila("EsPotPreparar").ToString
+            taula.PreuEstandard = fila("PreuEstandard").ToString
+            taula.Interes = fila("Interes").ToString
+            dades.Add(taula)
+
+        Next
+        Return dades
+
+    End Function
 
 End Class

@@ -962,6 +962,98 @@ Namespace ws_profitplay
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="TaulaPreusDB", [Namespace]:="http://tempuri.org/"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class TaulaPreusDB
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        Private Id_producteField As Integer
+        
+        Private EsPotPrepararField As Integer
+        
+        Private PreuEstandardField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private InteresField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true)>  _
+        Public Property Id_producte() As Integer
+            Get
+                Return Me.Id_producteField
+            End Get
+            Set
+                If (Me.Id_producteField.Equals(value) <> true) Then
+                    Me.Id_producteField = value
+                    Me.RaisePropertyChanged("Id_producte")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=1)>  _
+        Public Property EsPotPreparar() As Integer
+            Get
+                Return Me.EsPotPrepararField
+            End Get
+            Set
+                If (Me.EsPotPrepararField.Equals(value) <> true) Then
+                    Me.EsPotPrepararField = value
+                    Me.RaisePropertyChanged("EsPotPreparar")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(IsRequired:=true, Order:=2)>  _
+        Public Property PreuEstandard() As Integer
+            Get
+                Return Me.PreuEstandardField
+            End Get
+            Set
+                If (Me.PreuEstandardField.Equals(value) <> true) Then
+                    Me.PreuEstandardField = value
+                    Me.RaisePropertyChanged("PreuEstandard")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=3)>  _
+        Public Property Interes() As String
+            Get
+                Return Me.InteresField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.InteresField, value) <> true) Then
+                    Me.InteresField = value
+                    Me.RaisePropertyChanged("Interes")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="ws_profitplay.Service1Soap")>  _
     Public Interface Service1Soap
@@ -1100,6 +1192,14 @@ Namespace ws_profitplay
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento IdProducte del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/InsertProducteTaulaPreus", ReplyAction:="*")>  _
         Function InsertProducteTaulaPreus(ByVal request As ws_profitplay.InsertProducteTaulaPreusRequest) As ws_profitplay.InsertProducteTaulaPreusResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento id_producte del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/UpdateStockTaulaPreus", ReplyAction:="*")>  _
+        Function UpdateStockTaulaPreus(ByVal request As ws_profitplay.UpdateStockTaulaPreusRequest) As ws_profitplay.UpdateStockTaulaPreusResponse
+        
+        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetTaulaPreusResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/GetTaulaPreus", ReplyAction:="*")>  _
+        Function GetTaulaPreus(ByVal request As ws_profitplay.GetTaulaPreusRequest) As ws_profitplay.GetTaulaPreusResponse
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -3062,6 +3162,146 @@ Namespace ws_profitplay
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class UpdateStockTaulaPreusRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateStockTaulaPreus", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.UpdateStockTaulaPreusRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.UpdateStockTaulaPreusRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class UpdateStockTaulaPreusRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public id_producte As String
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=1)>  _
+        Public stock As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal id_producte As String, ByVal stock As String)
+            MyBase.New
+            Me.id_producte = id_producte
+            Me.stock = stock
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class UpdateStockTaulaPreusResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="UpdateStockTaulaPreusResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.UpdateStockTaulaPreusResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.UpdateStockTaulaPreusResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class UpdateStockTaulaPreusResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public UpdateStockTaulaPreusResult As Boolean
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal UpdateStockTaulaPreusResult As Boolean)
+            MyBase.New
+            Me.UpdateStockTaulaPreusResult = UpdateStockTaulaPreusResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetTaulaPreusRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetTaulaPreus", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetTaulaPreusRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetTaulaPreusRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class GetTaulaPreusRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class GetTaulaPreusResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="GetTaulaPreusResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ws_profitplay.GetTaulaPreusResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ws_profitplay.GetTaulaPreusResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class GetTaulaPreusResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public GetTaulaPreusResult() As ws_profitplay.TaulaPreusDB
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetTaulaPreusResult() As ws_profitplay.TaulaPreusDB)
+            MyBase.New
+            Me.GetTaulaPreusResult = GetTaulaPreusResult
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")>  _
     Public Interface Service1SoapChannel
         Inherits ws_profitplay.Service1Soap, System.ServiceModel.IClientChannel
@@ -3493,5 +3733,31 @@ Namespace ws_profitplay
             inValue.Body.Preu = Preu
             Dim retVal As ws_profitplay.InsertProducteTaulaPreusResponse = CType(Me,ws_profitplay.Service1Soap).InsertProducteTaulaPreus(inValue)
         End Sub
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_UpdateStockTaulaPreus(ByVal request As ws_profitplay.UpdateStockTaulaPreusRequest) As ws_profitplay.UpdateStockTaulaPreusResponse Implements ws_profitplay.Service1Soap.UpdateStockTaulaPreus
+            Return MyBase.Channel.UpdateStockTaulaPreus(request)
+        End Function
+        
+        Public Function UpdateStockTaulaPreus(ByVal id_producte As String, ByVal stock As String) As Boolean
+            Dim inValue As ws_profitplay.UpdateStockTaulaPreusRequest = New ws_profitplay.UpdateStockTaulaPreusRequest
+            inValue.Body = New ws_profitplay.UpdateStockTaulaPreusRequestBody
+            inValue.Body.id_producte = id_producte
+            inValue.Body.stock = stock
+            Dim retVal As ws_profitplay.UpdateStockTaulaPreusResponse = CType(Me,ws_profitplay.Service1Soap).UpdateStockTaulaPreus(inValue)
+            Return retVal.Body.UpdateStockTaulaPreusResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ws_profitplay_Service1Soap_GetTaulaPreus(ByVal request As ws_profitplay.GetTaulaPreusRequest) As ws_profitplay.GetTaulaPreusResponse Implements ws_profitplay.Service1Soap.GetTaulaPreus
+            Return MyBase.Channel.GetTaulaPreus(request)
+        End Function
+        
+        Public Function GetTaulaPreus() As ws_profitplay.TaulaPreusDB()
+            Dim inValue As ws_profitplay.GetTaulaPreusRequest = New ws_profitplay.GetTaulaPreusRequest
+            inValue.Body = New ws_profitplay.GetTaulaPreusRequestBody
+            Dim retVal As ws_profitplay.GetTaulaPreusResponse = CType(Me,ws_profitplay.Service1Soap).GetTaulaPreus(inValue)
+            Return retVal.Body.GetTaulaPreusResult
+        End Function
     End Class
 End Namespace

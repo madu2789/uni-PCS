@@ -406,6 +406,9 @@
     <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.Joc.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ws_profitplay\MainForm_Client.ws_profitplay.TaulaPreusDB.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxShockwaveFlashObjects">
