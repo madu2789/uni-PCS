@@ -54,6 +54,7 @@
                     MsgBox("Nom de la taula incorrecte!", MsgBoxStyle.Critical, "Nom no vàlid")
                 Else
 
+                    GPunts = 0
                     Id_usuari = ws.GetLastUserId() + 1
                     GNum_comensals = num_comensals.Value
                     Me.Hide()
