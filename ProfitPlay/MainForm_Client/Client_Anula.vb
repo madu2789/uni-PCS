@@ -1,4 +1,5 @@
 ﻿Public Class Client_Anula
+
     Dim ws As New ws_profitplay.Service1SoapClient
     Dim element As New ToolStripButton()
     Dim m_comanda As Comanda
@@ -47,7 +48,7 @@
         Client_Pago.Show()
         Me.Hide()
     End Sub
-   
+
     Private Sub Client_Anula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         lbl_taula.Text = Mainform_client.nom_taula
@@ -67,21 +68,22 @@
 
         Dim comandesDB = ws.GetComandaByUserId(Id_usuari)
 
-        Dim Llistacomandes As New List(Of Comanda)
-
         For Each fila In comandesDB
 
             Dim pro As New Comanda
 
             pro.Id_comanda = fila.id
             pro.Id_producte = fila.Id_producte
-            pro.Id_Usuari = fila.Id_Usuari
+            pro.Id_usuari = fila.Id_usuari
             pro.Hora = fila.Hora
             pro.Notes = fila.Notes
             pro.Estat = fila.Estat
 
-            Llistacomandes.Add(pro)
-            llista_productes_eliminar.Items.Add(ws.GetNomProducteById(pro.Id_producte))
+            If (pro.Estat = "Sol·licitat") Then
+                llista_productes_eliminar.Items.Add(ws.GetNomProducteById(pro.Id_producte))
+            Else
+                llista_resta_productes.Items.Add(ws.GetNomProducteById(pro.Id_producte))
+            End If
 
         Next
 
@@ -111,8 +113,8 @@
 
                 If (llista_productes_eliminar.Items(i).Text = e.ClickedItem.Text) Then
 
-                    MsgBox("regenerem " + llista_productes_eliminar.Items(i).Text)
                     regenerateStock(ws.GetIdProducteByNom(llista_productes_eliminar.Items(i).Text))
+                    ws.SolAnulaComanda(ws.GetIdProducteByNom(llista_productes_eliminar.Items(i).Text), Id_usuari)
                     llista_productes_eliminar.Items.RemoveAt(i)
 
                     Exit For
@@ -122,6 +124,7 @@
             Next
 
             llista_productes_eliminar.Refresh()
+            llista_resta_productes.Refresh()
 
         End If
 
@@ -130,10 +133,9 @@
     Private Sub insertToolStripItem()
 
         If m_comanda IsNot Nothing Then
+
             For Each p As String In m_comanda.getComanda
-
                 llista_productes_eliminar.Items.Add(p)
-
             Next
 
             'nomes inserim aqui el que ja no esta en espera (de la bbdd)
@@ -142,7 +144,7 @@
 
             Next
         End If
-        
+
 
     End Sub
 

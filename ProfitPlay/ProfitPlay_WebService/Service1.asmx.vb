@@ -351,8 +351,8 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-  Public Function SolAnulaComanda(ByVal id_comanda As Integer, ByVal id_user As Integer) As Boolean
-        Return comanda.SolAnularComanda(id_comanda, id_user)
+  Public Function SolAnulaComanda(ByVal id_producte As Integer, ByVal id_user As Integer) As Boolean
+        Return comanda.SolAnularComanda(id_producte, id_user)
     End Function
 
     <WebMethod()> _

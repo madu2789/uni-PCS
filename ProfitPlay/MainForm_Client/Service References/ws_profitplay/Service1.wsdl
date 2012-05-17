@@ -432,7 +432,7 @@
       <s:element name="SolAnulaComanda">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id_comanda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_producte" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="id_user" type="s:int" />
           </s:sequence>
         </s:complexType>

@@ -1156,7 +1156,7 @@ Namespace ws_profitplay
         Function SolPagarComanda(ByVal request As ws_profitplay.SolPagarComandaRequest) As ws_profitplay.SolPagarComandaResponse
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SolAnulaComanda", ReplyAction:="*")>  _
-        Function SolAnulaComanda(ByVal id_comanda As Integer, ByVal id_user As Integer) As Boolean
+        Function SolAnulaComanda(ByVal id_producte As Integer, ByVal id_user As Integer) As Boolean
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/deleteComandaByUserId", ReplyAction:="*")>  _
         Function deleteComandaByUserId(ByVal id As Integer) As Integer
@@ -3613,8 +3613,8 @@ Namespace ws_profitplay
             Return retVal.Body.SolPagarComandaResult
         End Function
         
-        Public Function SolAnulaComanda(ByVal id_comanda As Integer, ByVal id_user As Integer) As Boolean Implements ws_profitplay.Service1Soap.SolAnulaComanda
-            Return MyBase.Channel.SolAnulaComanda(id_comanda, id_user)
+        Public Function SolAnulaComanda(ByVal id_producte As Integer, ByVal id_user As Integer) As Boolean Implements ws_profitplay.Service1Soap.SolAnulaComanda
+            Return MyBase.Channel.SolAnulaComanda(id_producte, id_user)
         End Function
         
         Public Function deleteComandaByUserId(ByVal id As Integer) As Integer Implements ws_profitplay.Service1Soap.deleteComandaByUserId
