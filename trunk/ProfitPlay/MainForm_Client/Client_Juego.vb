@@ -9,16 +9,14 @@
         lbl_taula.Text = Mainform_client.nom_taula
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
-
         Dim questions = ws.getAllQuestions
         Dim added As New List(Of Integer)
-
-        Dim rand = New Random
         Dim add As Integer = 0
 
         While (add <> 4)
 
-            Dim num = Rnd() * (100)
+            Dim rand = New Random(Now().Millisecond)
+            Dim num = rand.Next(0, 100)
             If (num < questions.Length) Then
 
                 If (added.Contains(num) = False) Then
@@ -88,11 +86,17 @@
 
     Private Sub btn_fica_punts_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_fica_punts.Click
 
+        If (punts = 4) Then
+            MsgBox("Tens un " + GDescompte.ToString + "% de descompte", MsgBoxStyle.Exclamation, "Felicitats!!")
+        End If
+
         If (lbl_punts.Text = "Punts:") Then
             lbl_punts.Text = "Punts " + punts.ToString
+            punts = GPunts
         End If
 
         btn_fica_punts.Visible = False
+
 
     End Sub
 

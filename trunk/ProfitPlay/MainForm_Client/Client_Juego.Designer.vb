@@ -24,6 +24,7 @@ Partial Class Client_Juego
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Juego))
         Me.pnl_jocs = New System.Windows.Forms.Panel
+        Me.lbl_instr = New System.Windows.Forms.Label
         Me.btn_fica_punts = New System.Windows.Forms.Button
         Me.pnl_plats = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
@@ -46,7 +47,6 @@ Partial Class Client_Juego
         Me.p3_a = New System.Windows.Forms.CheckBox
         Me.p4_b = New System.Windows.Forms.CheckBox
         Me.p4_a = New System.Windows.Forms.CheckBox
-        Me.lbl_instr = New System.Windows.Forms.Label
         Me.pnl_jocs.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
@@ -61,6 +61,16 @@ Partial Class Client_Juego
         Me.pnl_jocs.Name = "pnl_jocs"
         Me.pnl_jocs.Size = New System.Drawing.Size(164, 433)
         Me.pnl_jocs.TabIndex = 26
+        '
+        'lbl_instr
+        '
+        Me.lbl_instr.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instr.Location = New System.Drawing.Point(8, 19)
+        Me.lbl_instr.Name = "lbl_instr"
+        Me.lbl_instr.Size = New System.Drawing.Size(148, 310)
+        Me.lbl_instr.TabIndex = 28
+        Me.lbl_instr.Text = "Respon a les preguntes que i prem el botó sumar punts." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Només podràs jugar un cop" & _
+            " per cada vegada que vinguis" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Si encertes totes guanyaras un descompte." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'btn_fica_punts
         '
@@ -292,16 +302,6 @@ Partial Class Client_Juego
         Me.p4_a.TabIndex = 53
         Me.p4_a.Text = "CheckBox8"
         Me.p4_a.UseVisualStyleBackColor = True
-        '
-        'lbl_instr
-        '
-        Me.lbl_instr.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_instr.Location = New System.Drawing.Point(8, 19)
-        Me.lbl_instr.Name = "lbl_instr"
-        Me.lbl_instr.Size = New System.Drawing.Size(148, 310)
-        Me.lbl_instr.TabIndex = 28
-        Me.lbl_instr.Text = "Respon a les preguntes que i prem el botó sumar punts." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Només podràs jugar un cop" & _
-            " per cada vegada que vinguis" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Si encertes totes guanyaras un regal  de la carta" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Client_Juego
         '

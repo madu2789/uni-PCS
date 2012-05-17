@@ -5,6 +5,7 @@
     Dim numComensals As Integer = 2
 
     Private Sub Client_Pago_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
         lbl_taula.Text = Mainform_client.nom_taula
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
@@ -12,9 +13,18 @@
         numComensals = GNum_comensals
 
         preuTotal = CalculaPreu()
+
+        If (GPunts = 4) Then
+            preuTotal = preuTotal - (preuTotal * GDescompte / 100)
+        End If
+
         lbl_importtotal.Text = lbl_importtotal.Text + preuTotal.ToString
         preuParcial = preuTotal / numComensals
         lbl_importparcial.Text = lbl_importparcial.Text + preuParcial.ToString
+
+        
+
+
     End Sub
 
     Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
