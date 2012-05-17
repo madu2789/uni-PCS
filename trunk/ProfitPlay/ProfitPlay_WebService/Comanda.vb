@@ -68,7 +68,7 @@
         Return BD.DeleteComanda(id_comanda)
     End Function
 
-    Public Function SolAnularComanda(ByVal id_comanda As Integer, ByVal id_user As Integer) As Boolean
+    Public Function SolAnularComanda(ByVal id_producte As Integer, ByVal id_user As Integer) As Boolean
         Return BD.SolAnulaComanda(id_comanda, id_user)
     End Function
 
