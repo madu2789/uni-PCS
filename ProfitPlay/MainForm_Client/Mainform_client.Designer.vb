@@ -22,6 +22,7 @@ Partial Class Mainform_client
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mainform_client))
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
         Me.btn_menu_anular = New System.Windows.Forms.Button
@@ -32,8 +33,10 @@ Partial Class Mainform_client
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
         Me.wb_pantalla_principal = New System.Windows.Forms.WebBrowser
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_punts
@@ -51,6 +54,7 @@ Partial Class Mainform_client
         '
         Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
         Me.pnl_plats.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_plats.Controls.Add(Me.PictureBox1)
         Me.pnl_plats.Controls.Add(Me.btn_menu_anular)
         Me.pnl_plats.Controls.Add(Me.btn_veurecarta)
         Me.pnl_plats.Controls.Add(Me.btn_Pagar)
@@ -115,9 +119,9 @@ Partial Class Mainform_client
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_taula.Location = New System.Drawing.Point(110, 21)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
+        Me.lbl_taula.Size = New System.Drawing.Size(96, 31)
         Me.lbl_taula.TabIndex = 22
-        Me.lbl_taula.Text = "Taula: XXX"
+        Me.lbl_taula.Text = "Taula:"
         '
         'pnl_estat
         '
@@ -151,6 +155,17 @@ Partial Class Mainform_client
         Me.wb_pantalla_principal.Url = New System.Uri("", System.UriKind.Relative)
         Me.wb_pantalla_principal.WebBrowserShortcutsEnabled = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 10)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
+        '
         'Mainform_client
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -166,6 +181,7 @@ Partial Class Mainform_client
         Me.pnl_plats.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -179,4 +195,5 @@ Partial Class Mainform_client
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents pnl_estat As System.Windows.Forms.Panel
     Friend WithEvents wb_pantalla_principal As System.Windows.Forms.WebBrowser
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

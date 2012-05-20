@@ -219,7 +219,7 @@
 
                     Dim idUsuari As String = Id_usuari.ToString
                     Dim idProducte As String = ws.GetIdProducteByNom(lv_pedidos.Items.Item(s).Text)
-                    Dim notes As String = ""
+                    Dim notes As String = lbl_nota.Text
                     Dim hora As Date = Now
                     Dim estat = "Sol·licitat"
 
@@ -361,5 +361,15 @@
             End If
         End If
 
+    End Sub
+
+    Private Sub btn_estat_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
+        Client_Pago.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_notes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_notes.Click
+        txtb_nota.Show()
+        lbl_nota.Show()
     End Sub
 End Class

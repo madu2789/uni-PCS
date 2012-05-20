@@ -68,4 +68,14 @@
         Me.Hide()
         Emp_interessos.Show()
     End Sub
+
+    Private Sub pcb_sortir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pcb_sortir.Click
+        Me.Close()
+        Welcome.Show()
+    End Sub
+
+    Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
+        Me.Hide()
+        Emp_Pago.Show()
+    End Sub
 End Class

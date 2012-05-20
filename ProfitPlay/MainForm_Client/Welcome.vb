@@ -90,6 +90,9 @@
                 If rol IsNot Nothing Then
                     Me.Hide()
                     Dim main As New Mainform_empleado(txtb_login.Text, rol)
+                    'destruim el login i password logejats del formulari
+                    txtb_login.Text = ""
+                    txtb_password.Text = ""
                     main.ShowDialog()
                 Else
                     MsgBox("Accés denegat!", MsgBoxStyle.Critical, "ERROR")
