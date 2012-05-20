@@ -23,7 +23,7 @@
             Case "Administrador"
                 btn_gest_comandes.Hide()
                 btn_gest_pagos.Hide()
-            Case "Cambrero"
+            Case "Cambrer"
                 btn_gest_users.Hide()
                 btn_gest_carta.Hide()
                 btn_gest_stock.Hide()
@@ -324,5 +324,10 @@
     Private Sub btn_confirmar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirmar.Click
         grb_insert.Show()
         btn_confirmar.Hide()
+    End Sub
+
+    Private Sub btn_config_fichero_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_config_fichero.Click
+        Me.Hide()
+        Emp_interessos.Show()
     End Sub
 End Class

@@ -43,7 +43,7 @@ Public Class Emp_Gestio_usuaris
             Case "Administrador"
                 btn_gest_comandes.Hide()
                 btn_gest_pagos.Hide()
-            Case "Cambrero"
+            Case "Cambrer"
                 btn_gest_users.Hide()
                 btn_gest_carta.Hide()
                 btn_gest_stock.Hide()
@@ -167,6 +167,11 @@ Public Class Emp_Gestio_usuaris
 
     Private Sub btn_add_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_add_user.Click
         grb_insert_modifica.Show()
+    End Sub
+
+    Private Sub btn_config_fichero_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_config_fichero.Click
+        Me.Hide()
+        Emp_interessos.Show()
     End Sub
 
 End Class
