@@ -39,6 +39,7 @@ Partial Class Client_Anula
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.btn_estat = New System.Windows.Forms.Button
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.grb_anular.SuspendLayout()
         Me.container2.ContentPanel.SuspendLayout()
         Me.container2.SuspendLayout()
@@ -46,6 +47,7 @@ Partial Class Client_Anula
         Me.ToolStripContainer1.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grb_anular
@@ -143,6 +145,7 @@ Partial Class Client_Anula
         '
         Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
         Me.pnl_plats.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_plats.Controls.Add(Me.PictureBox1)
         Me.pnl_plats.Controls.Add(Me.btn_menu_anular)
         Me.pnl_plats.Controls.Add(Me.btn_veurecarta)
         Me.pnl_plats.Controls.Add(Me.btn_Pagar)
@@ -204,9 +207,9 @@ Partial Class Client_Anula
         '
         Me.pnl_estat.BackColor = System.Drawing.Color.RoyalBlue
         Me.pnl_estat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_estat.Controls.Add(Me.btn_estat)
         Me.pnl_estat.Controls.Add(Me.lbl_taula)
         Me.pnl_estat.Controls.Add(Me.lbl_punts)
-        Me.pnl_estat.Controls.Add(Me.btn_estat)
         Me.pnl_estat.Location = New System.Drawing.Point(126, -16)
         Me.pnl_estat.Name = "pnl_estat"
         Me.pnl_estat.Size = New System.Drawing.Size(707, 83)
@@ -237,12 +240,23 @@ Partial Class Client_Anula
         'btn_estat
         '
         Me.btn_estat.AutoSize = True
-        Me.btn_estat.Image = CType(resources.GetObject("btn_estat.Image"), System.Drawing.Image)
-        Me.btn_estat.Location = New System.Drawing.Point(591, 12)
+        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_estat.Location = New System.Drawing.Point(604, 4)
         Me.btn_estat.Name = "btn_estat"
-        Me.btn_estat.Size = New System.Drawing.Size(55, 57)
-        Me.btn_estat.TabIndex = 1
+        Me.btn_estat.Size = New System.Drawing.Size(96, 86)
+        Me.btn_estat.TabIndex = 35
         Me.btn_estat.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 18)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 36
+        Me.PictureBox1.TabStop = False
         '
         'Client_Anula
         '
@@ -269,6 +283,7 @@ Partial Class Client_Anula
         Me.pnl_plats.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -284,8 +299,9 @@ Partial Class Client_Anula
     Friend WithEvents pnl_estat As System.Windows.Forms.Panel
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents lbl_punts As System.Windows.Forms.Label
-    Friend WithEvents btn_estat As System.Windows.Forms.Button
     Friend WithEvents container2 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents lbl_productes_no_espera As System.Windows.Forms.Label
     Friend WithEvents llista_resta_productes As System.Windows.Forms.ToolStrip
+    Friend WithEvents btn_estat As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

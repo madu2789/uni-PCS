@@ -47,9 +47,11 @@ Partial Class Client_Juego
         Me.p3_a = New System.Windows.Forms.CheckBox
         Me.p4_b = New System.Windows.Forms.CheckBox
         Me.p4_a = New System.Windows.Forms.CheckBox
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.pnl_jocs.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnl_jocs
@@ -87,6 +89,7 @@ Partial Class Client_Juego
         'pnl_plats
         '
         Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
+        Me.pnl_plats.Controls.Add(Me.PictureBox1)
         Me.pnl_plats.Controls.Add(Me.btn_menu_anular)
         Me.pnl_plats.Controls.Add(Me.btn_veurecarta)
         Me.pnl_plats.Controls.Add(Me.btn_Pagar)
@@ -303,6 +306,17 @@ Partial Class Client_Juego
         Me.p4_a.Text = "CheckBox8"
         Me.p4_a.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 20)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
         'Client_Juego
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,6 +345,7 @@ Partial Class Client_Juego
         Me.pnl_plats.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -359,4 +374,5 @@ Partial Class Client_Juego
     Friend WithEvents p4_b As System.Windows.Forms.CheckBox
     Friend WithEvents p4_a As System.Windows.Forms.CheckBox
     Friend WithEvents lbl_instr As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

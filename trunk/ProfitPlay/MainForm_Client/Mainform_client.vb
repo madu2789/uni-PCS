@@ -21,7 +21,8 @@
     End Sub
 
     Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
-        'per fer!
+        Client_Pago.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btn_veurecarta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_veurecarta.Click

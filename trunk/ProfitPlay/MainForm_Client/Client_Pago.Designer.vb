@@ -38,8 +38,10 @@ Partial Class Client_Pago
         Me.btn_estat = New System.Windows.Forms.Button
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.pnl_menu.SuspendLayout()
         Me.pnl_estat.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_mixt
@@ -116,6 +118,7 @@ Partial Class Client_Pago
         '
         Me.pnl_menu.BackColor = System.Drawing.Color.DarkBlue
         Me.pnl_menu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pnl_menu.Controls.Add(Me.PictureBox1)
         Me.pnl_menu.Controls.Add(Me.btn_menu_anular)
         Me.pnl_menu.Controls.Add(Me.btn_veurecarta)
         Me.pnl_menu.Controls.Add(Me.btn_Pagar)
@@ -217,6 +220,17 @@ Partial Class Client_Pago
         Me.lbl_punts.TabIndex = 29
         Me.lbl_punts.Text = "Punts: "
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 31
+        Me.PictureBox1.TabStop = False
+        '
         'Client_Pago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -237,6 +251,7 @@ Partial Class Client_Pago
         Me.pnl_menu.ResumeLayout(False)
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -256,4 +271,5 @@ Partial Class Client_Pago
     Friend WithEvents lbl_punts As System.Windows.Forms.Label
     Friend WithEvents lbl_taula As System.Windows.Forms.Label
     Friend WithEvents btn_estat As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

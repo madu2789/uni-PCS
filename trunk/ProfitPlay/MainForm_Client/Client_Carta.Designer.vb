@@ -22,8 +22,9 @@ Partial Class Client_Carta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Macarrons(2)")
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Amanida verda(1)")
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Client_Carta))
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
         Me.lbl_taula = New System.Windows.Forms.Label
@@ -50,10 +51,15 @@ Partial Class Client_Carta
         Me.btn_segundos = New System.Windows.Forms.Button
         Me.btn_primeros = New System.Windows.Forms.Button
         Me.btn_bebidas = New System.Windows.Forms.Button
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.btn_notes = New System.Windows.Forms.Button
+        Me.txtb_nota = New System.Windows.Forms.TextBox
+        Me.lbl_nota = New System.Windows.Forms.Label
         Me.pnl_estat.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
         Me.grb_menu_carta.SuspendLayout()
         Me.grb_pedido.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnl_estat
@@ -84,9 +90,9 @@ Partial Class Client_Carta
         Me.lbl_taula.ForeColor = System.Drawing.Color.Magenta
         Me.lbl_taula.Location = New System.Drawing.Point(111, 21)
         Me.lbl_taula.Name = "lbl_taula"
-        Me.lbl_taula.Size = New System.Drawing.Size(161, 31)
+        Me.lbl_taula.Size = New System.Drawing.Size(96, 31)
         Me.lbl_taula.TabIndex = 22
-        Me.lbl_taula.Text = "Taula: XXX"
+        Me.lbl_taula.Text = "Taula:"
         '
         'lbl_punts
         '
@@ -102,6 +108,7 @@ Partial Class Client_Carta
         'pnl_plats
         '
         Me.pnl_plats.BackColor = System.Drawing.Color.DarkBlue
+        Me.pnl_plats.Controls.Add(Me.PictureBox1)
         Me.pnl_plats.Controls.Add(Me.btn_menu_anular)
         Me.pnl_plats.Controls.Add(Me.btn_veurecarta)
         Me.pnl_plats.Controls.Add(Me.btn_Pagar)
@@ -175,6 +182,9 @@ Partial Class Client_Carta
         '
         'grb_pedido
         '
+        Me.grb_pedido.Controls.Add(Me.lbl_nota)
+        Me.grb_pedido.Controls.Add(Me.txtb_nota)
+        Me.grb_pedido.Controls.Add(Me.btn_notes)
         Me.grb_pedido.Controls.Add(Me.btn_confirma_carta)
         Me.grb_pedido.Controls.Add(Me.btn_confirma_comanda)
         Me.grb_pedido.Controls.Add(Me.lbl_productos_sel)
@@ -230,7 +240,7 @@ Partial Class Client_Carta
         '
         'lv_pedidos
         '
-        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3, ListViewItem4})
+        Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
         Me.lv_pedidos.Location = New System.Drawing.Point(239, 69)
         Me.lv_pedidos.Name = "lv_pedidos"
         Me.lv_pedidos.Size = New System.Drawing.Size(147, 226)
@@ -324,6 +334,45 @@ Partial Class Client_Carta
         Me.btn_bebidas.Text = "Begudes"
         Me.btn_bebidas.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(18, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 19
+        Me.PictureBox1.TabStop = False
+        '
+        'btn_notes
+        '
+        Me.btn_notes.Location = New System.Drawing.Point(157, 253)
+        Me.btn_notes.Name = "btn_notes"
+        Me.btn_notes.Size = New System.Drawing.Size(75, 23)
+        Me.btn_notes.TabIndex = 28
+        Me.btn_notes.Text = "Afegir nota"
+        Me.btn_notes.UseVisualStyleBackColor = True
+        '
+        'txtb_nota
+        '
+        Me.txtb_nota.Location = New System.Drawing.Point(431, 69)
+        Me.txtb_nota.Multiline = True
+        Me.txtb_nota.Name = "txtb_nota"
+        Me.txtb_nota.Size = New System.Drawing.Size(177, 130)
+        Me.txtb_nota.TabIndex = 29
+        Me.txtb_nota.Visible = False
+        '
+        'lbl_nota
+        '
+        Me.lbl_nota.AutoSize = True
+        Me.lbl_nota.Location = New System.Drawing.Point(428, 38)
+        Me.lbl_nota.Name = "lbl_nota"
+        Me.lbl_nota.Size = New System.Drawing.Size(181, 13)
+        Me.lbl_nota.TabIndex = 30
+        Me.lbl_nota.Text = "Afegeix una nota a la teva comanda:"
+        Me.lbl_nota.Visible = False
+        '
         'Client_Carta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -342,6 +391,7 @@ Partial Class Client_Carta
         Me.grb_menu_carta.ResumeLayout(False)
         Me.grb_pedido.ResumeLayout(False)
         Me.grb_pedido.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -371,4 +421,8 @@ Partial Class Client_Carta
     Friend WithEvents btn_del_prod As System.Windows.Forms.Button
     Friend WithEvents btn_info_prod As System.Windows.Forms.Button
     Friend WithEvents btn_estat As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents txtb_nota As System.Windows.Forms.TextBox
+    Friend WithEvents btn_notes As System.Windows.Forms.Button
+    Friend WithEvents lbl_nota As System.Windows.Forms.Label
 End Class
