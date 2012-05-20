@@ -3,6 +3,8 @@
     Private m_comanda As Comanda
     Private productes As List(Of Producto)
 
+    Public Shared PreuTotal As Double
+
     Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         lbl_taula.Text = Mainform_client.nom_taula

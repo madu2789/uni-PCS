@@ -88,9 +88,9 @@ Partial Class Emp_Pago
         Me.lbl_user.ForeColor = System.Drawing.Color.DarkOrange
         Me.lbl_user.Location = New System.Drawing.Point(110, 9)
         Me.lbl_user.Name = "lbl_user"
-        Me.lbl_user.Size = New System.Drawing.Size(173, 31)
+        Me.lbl_user.Size = New System.Drawing.Size(108, 31)
         Me.lbl_user.TabIndex = 22
-        Me.lbl_user.Text = "Usuari: XXX"
+        Me.lbl_user.Text = "Usuari:"
         '
         'lbl_rol
         '
@@ -99,9 +99,9 @@ Partial Class Emp_Pago
         Me.lbl_rol.ForeColor = System.Drawing.Color.DarkOrange
         Me.lbl_rol.Location = New System.Drawing.Point(340, 9)
         Me.lbl_rol.Name = "lbl_rol"
-        Me.lbl_rol.Size = New System.Drawing.Size(132, 31)
+        Me.lbl_rol.Size = New System.Drawing.Size(67, 31)
         Me.lbl_rol.TabIndex = 0
-        Me.lbl_rol.Text = "Rol: XXX"
+        Me.lbl_rol.Text = "Rol:"
         '
         'pnl_plats
         '
@@ -184,9 +184,9 @@ Partial Class Emp_Pago
         Me.lbl_importparcial.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_importparcial.Location = New System.Drawing.Point(498, 144)
         Me.lbl_importparcial.Name = "lbl_importparcial"
-        Me.lbl_importparcial.Size = New System.Drawing.Size(246, 25)
+        Me.lbl_importparcial.Size = New System.Drawing.Size(198, 25)
         Me.lbl_importparcial.TabIndex = 40
-        Me.lbl_importparcial.Text = "Import per persona: XXX"
+        Me.lbl_importparcial.Text = "Import per persona:"
         '
         'lbl_importtotal
         '
@@ -194,9 +194,9 @@ Partial Class Emp_Pago
         Me.lbl_importtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_importtotal.Location = New System.Drawing.Point(175, 144)
         Me.lbl_importtotal.Name = "lbl_importtotal"
-        Me.lbl_importtotal.Size = New System.Drawing.Size(172, 25)
+        Me.lbl_importtotal.Size = New System.Drawing.Size(124, 25)
         Me.lbl_importtotal.TabIndex = 39
-        Me.lbl_importtotal.Text = "Import total: XXX"
+        Me.lbl_importtotal.Text = "Import total:"
         '
         'btn_previs
         '

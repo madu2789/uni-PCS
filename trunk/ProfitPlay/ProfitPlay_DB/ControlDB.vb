@@ -28,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString1)
+            conDB = New OleDb.OleDbConnection(conString)
             conDB.Open()
 
         Catch ex As Exception
@@ -677,7 +677,8 @@
         Catch ex As Exception
             MsgBox("Error recuperant taulapreus", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
-        Return DS._Producte_Ingredient
+
+        Return DS.TaulaPreus
     End Function
 
 

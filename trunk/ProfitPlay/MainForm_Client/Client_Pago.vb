@@ -22,8 +22,6 @@
         preuParcial = preuTotal / numComensals
         lbl_importparcial.Text = lbl_importparcial.Text + preuParcial.ToString
 
-        
-
 
     End Sub
 
@@ -49,8 +47,6 @@
     Private Function CalculaPreu() As Double
         Dim preu As Double = 0
         Dim preuProducte As Double
-        'cal agafar el id del user
-        ' Dim id As Integer = 1
 
         Dim comandes = ws.GetComandaByUserId(Id_usuari)
 
@@ -67,7 +63,7 @@
     End Function
 
     Private Function SistemaPreus(ByVal ID_Producte_actual As String) As Double
-        Dim percentatge As Double
+        Dim percentatge As Double = 1
 
         Dim taula = ws.GetTaulaPreus()
 
@@ -112,7 +108,8 @@
     End Function
 
     Private Sub SolPagarComanda()
-        Dim id_user As Integer = 1
+        'agafar el id del usuari
+        Dim id_user As Integer = Id_usuari
         Dim comandes = ws.GetAllComandes()
 
         For Each fila In comandes

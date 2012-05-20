@@ -6,6 +6,34 @@
 
     Private Sub Emp_anula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        lbl_taula.Text = Mainform_empleado.nomempleat
+        lbl_punts.Text = Mainform_empleado.rolempleat
+
+         Select Mainform_empleado.rolempleat
+            Case "Administrador"
+                btn_gest_comandes.Hide()
+                btn_gest_pagos.Hide()
+            Case "Cambrer"
+                btn_gest_users.Hide()
+                btn_gest_carta.Hide()
+                btn_gest_stock.Hide()
+                btn_config_fichero.Hide()
+            Case "Barman"
+                btn_gest_users.Hide()
+                btn_gest_carta.Hide()
+                btn_gest_pagos.Hide()
+                btn_gest_stock.Hide()
+                btn_config_fichero.Hide()
+            Case "Cheff"
+                btn_gest_users.Hide()
+                btn_gest_carta.Hide()
+                btn_gest_pagos.Hide()
+                btn_gest_stock.Hide()
+                btn_config_fichero.Hide()
+            Case Else
+
+        End Select
+
         listofcommands = New List(Of Comanda)
         CarregaComandes()
         MostraComandes()
@@ -78,5 +106,10 @@
         If (res = MsgBoxResult.Ok) Then
             llista_productes_eliminar.Items.Remove(e.ClickedItem)
         End If
+    End Sub
+
+    Private Sub btn_config_fichero_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_config_fichero.Click
+        Me.Hide()
+        Emp_interessos.Show()
     End Sub
 End Class
