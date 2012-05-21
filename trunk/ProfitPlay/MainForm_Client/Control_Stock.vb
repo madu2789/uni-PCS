@@ -100,6 +100,7 @@
         For Each i In ingredients
 
             quantes = quantes + ws.insertCompra(i.getIdIngredient, i.getQuantitat, "En espera")
+            ws.UpdateStockActualById(i.getIdIngredient, -i.getQuantitat)
 
         Next
 

@@ -49,6 +49,7 @@
 
     Private Sub CarregaComandes()
 
+        listofcommands.Clear()
         Dim comandes = ws.GetAllComandes
 
         For Each fila In comandes
@@ -169,6 +170,8 @@
             End If
 
         End If
+
+        CarregaComandes()
         MostraComandes()
         llista_productes_eliminar.Refresh()
         llista_resta_productes.Refresh()
