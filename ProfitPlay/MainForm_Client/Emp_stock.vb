@@ -102,7 +102,7 @@
 
     Private Sub ts_productes_stock_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles ts_productes_stock.ItemClicked
 
-        MsgBox("Stock actual de " + e.ClickedItem.Text + ": " + ws.GetStockActualById(ws.GetIdIngredientByNom(e.ClickedItem.Text)).ToString, MsgBoxStyle.Information, "Control de Stock")
+        'MsgBox("Stock actual de " + e.ClickedItem.Text + ": " + ws.GetStockActualById(ws.GetIdIngredientByNom(e.ClickedItem.Text)).ToString, MsgBoxStyle.Information, "Control de Stock")
 
     End Sub
 

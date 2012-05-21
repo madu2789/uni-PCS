@@ -4631,15 +4631,17 @@ Namespace profit_playDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id_comanda", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_comanda", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "DELETE FROM Comanda"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_usuari = ?)"
+            Me._commandCollection(2).CommandText = "SELECT Id_comanda, Id_usuari, Id_producte, Hora, Notes, Estat FROM Comanda WHERE "& _ 
+                "Id_usuari = ?"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id_usuari", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_usuari", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id_usuari", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_usuari", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT Id_comanda, Id_usuari, Id_producte, Hora, Notes, Estat FROM Comanda WHERE "& _ 
-                "Id_usuari = ?"
+            Me._commandCollection(3).CommandText = "SELECT        TOP 1 Id_comanda"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Comanda"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_usuari "& _ 
+                "= ?) AND (Id_producte = ?)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id_usuari", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_usuari", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id_producte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_producte", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "INSERT INTO `Comanda` (`Id_usuari`, `Id_producte`, `Hora`, `Notes`, `Estat`) VALU"& _ 
@@ -4693,7 +4695,7 @@ Namespace profit_playDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function FillComandaByUserId(ByVal dataTable As profit_playDataSet.ComandaDataTable, ByVal Id_usuari As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (Id_usuari.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_usuari.Value,Integer)
             Else
@@ -4710,7 +4712,7 @@ Namespace profit_playDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetComandaByUserId(ByVal Id_usuari As Global.System.Nullable(Of Integer)) As profit_playDataSet.ComandaDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (Id_usuari.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_usuari.Value,Integer)
             Else
@@ -4931,12 +4933,17 @@ Namespace profit_playDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
-        Public Overloads Overridable Function DeleteComandaByUserId(ByVal Id_usuari As Global.System.Nullable(Of Integer)) As Integer
-            Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(2)
+        Public Overloads Overridable Function GetUnaComandaByUser(ByVal Id_usuari As Global.System.Nullable(Of Integer), ByVal Id_producte As Global.System.Nullable(Of Integer)) As Integer
+            Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(3)
             If (Id_usuari.HasValue = true) Then
                 command.Parameters(0).Value = CType(Id_usuari.Value,Integer)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Id_producte.HasValue = true) Then
+                command.Parameters(1).Value = CType(Id_producte.Value,Integer)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

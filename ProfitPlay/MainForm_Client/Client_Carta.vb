@@ -209,6 +209,7 @@
 
     Private Sub btn_confirma_carta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirma_carta.Click
 
+        Dim errors As List(Of Integer) = New List(Of Integer)
         Dim plats = ws.GetAllPlats()
         Dim result = MsgBox("Confirmem la comanda?", MsgBoxStyle.OkCancel, "Està segur?")
         If (result = MsgBoxResult.Ok) Then
@@ -231,12 +232,32 @@
                             m_comanda.insertElement(lv_pedidos.Items.Item(s).Text)
                             ws.UpdateStockActualById(p.id_ingredient, p.quantitat)
                             ws.UpdateStockTaulaPreus(p.id_ingredient, p.quantitat)
-                            ws.SetComanda(Id_usuari, idProducte, estat, notes, hora)
                         Else
                             MsgBox("No tenim disponible " + ws.GetNomProducteById(idProducte))
+                            errors.Add(s)
                             Exit For
                         End If
                     End If
+                Next
+            Next
+
+            Dim prod = ws.GetAllProductes
+
+            For Each p In prod
+
+                Dim idUsuari1 As String = Id_usuari.ToString
+                Dim idProducte1 As String = p.id
+                Dim notes1 As String = lbl_nota.Text
+                Dim hora1 As Date = Now
+                Dim estat1 = "Sol·licitat"
+
+                For s As Integer = 0 To lv_pedidos.Items.Count - 1 Step 1
+
+                    If (errors.Contains(s) = False And ws.GetIdProducteByNom(lv_pedidos.Items(s).Text) = idProducte1) Then
+                        ws.SetComanda(Id_usuari, idProducte1, estat1, notes1, hora1)
+                        MsgBox("Demanem " + lv_pedidos.Items(s).Text)
+                    End If
+
                 Next
             Next
 
@@ -257,8 +278,6 @@
                 For Each i In ingredients
 
                     If (p.id_ingredient = i.id) Then
-
-                        MsgBox("Tenim " + i.stock_actual.ToString + " de " + i.nom)
                         i.stock_actual = i.stock_actual - p.quantitat
                         If (i.stock_actual < 0) Then
                             Return 0

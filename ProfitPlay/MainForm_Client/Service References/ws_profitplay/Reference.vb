@@ -1147,13 +1147,15 @@ Namespace ws_profitplay
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SetComanda", ReplyAction:="*")>  _
         Function SetComanda(ByVal request As ws_profitplay.SetComandaRequest) As ws_profitplay.SetComandaResponse
         
-        'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento id_comanda del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/AnulaComanda", ReplyAction:="*")>  _
-        Function AnulaComanda(ByVal request As ws_profitplay.AnulaComandaRequest) As ws_profitplay.AnulaComandaResponse
+        Function AnulaComanda(ByVal id_comanda As Integer) As Boolean
         
         'CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento id_comanda del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SolPagarComanda", ReplyAction:="*")>  _
         Function SolPagarComanda(ByVal request As ws_profitplay.SolPagarComandaRequest) As ws_profitplay.SolPagarComandaResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getUnaComandaByUserID", ReplyAction:="*")>  _
+        Function getUnaComandaByUserID(ByVal id_user As Integer, ByVal id_producte As Integer) As Integer
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/SolAnulaComanda", ReplyAction:="*")>  _
         Function SolAnulaComanda(ByVal id_producte As Integer, ByVal id_user As Integer) As Boolean
@@ -2421,78 +2423,6 @@ Namespace ws_profitplay
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class AnulaComandaRequest
-        
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="AnulaComanda", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ws_profitplay.AnulaComandaRequestBody
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal Body As ws_profitplay.AnulaComandaRequestBody)
-            MyBase.New
-            Me.Body = Body
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
-    Partial Public Class AnulaComandaRequestBody
-        
-        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public id_comanda As String
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal id_comanda As String)
-            MyBase.New
-            Me.id_comanda = id_comanda
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class AnulaComandaResponse
-        
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="AnulaComandaResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ws_profitplay.AnulaComandaResponseBody
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal Body As ws_profitplay.AnulaComandaResponseBody)
-            MyBase.New
-            Me.Body = Body
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
-     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
-    Partial Public Class AnulaComandaResponseBody
-        
-        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
-        Public AnulaComandaResult As Boolean
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal AnulaComandaResult As Boolean)
-            MyBase.New
-            Me.AnulaComandaResult = AnulaComandaResult
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0"),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
     Partial Public Class SolPagarComandaRequest
         
         <System.ServiceModel.MessageBodyMemberAttribute(Name:="SolPagarComanda", [Namespace]:="http://tempuri.org/", Order:=0)>  _
@@ -3587,17 +3517,8 @@ Namespace ws_profitplay
             Return retVal.Body.SetComandaResult
         End Function
         
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function ws_profitplay_Service1Soap_AnulaComanda(ByVal request As ws_profitplay.AnulaComandaRequest) As ws_profitplay.AnulaComandaResponse Implements ws_profitplay.Service1Soap.AnulaComanda
-            Return MyBase.Channel.AnulaComanda(request)
-        End Function
-        
-        Public Function AnulaComanda(ByVal id_comanda As String) As Boolean
-            Dim inValue As ws_profitplay.AnulaComandaRequest = New ws_profitplay.AnulaComandaRequest
-            inValue.Body = New ws_profitplay.AnulaComandaRequestBody
-            inValue.Body.id_comanda = id_comanda
-            Dim retVal As ws_profitplay.AnulaComandaResponse = CType(Me,ws_profitplay.Service1Soap).AnulaComanda(inValue)
-            Return retVal.Body.AnulaComandaResult
+        Public Function AnulaComanda(ByVal id_comanda As Integer) As Boolean Implements ws_profitplay.Service1Soap.AnulaComanda
+            Return MyBase.Channel.AnulaComanda(id_comanda)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
@@ -3611,6 +3532,10 @@ Namespace ws_profitplay
             inValue.Body.id_comanda = id_comanda
             Dim retVal As ws_profitplay.SolPagarComandaResponse = CType(Me,ws_profitplay.Service1Soap).SolPagarComanda(inValue)
             Return retVal.Body.SolPagarComandaResult
+        End Function
+        
+        Public Function getUnaComandaByUserID(ByVal id_user As Integer, ByVal id_producte As Integer) As Integer Implements ws_profitplay.Service1Soap.getUnaComandaByUserID
+            Return MyBase.Channel.getUnaComandaByUserID(id_user, id_producte)
         End Function
         
         Public Function SolAnulaComanda(ByVal id_producte As Integer, ByVal id_user As Integer) As Boolean Implements ws_profitplay.Service1Soap.SolAnulaComanda

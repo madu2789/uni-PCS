@@ -404,7 +404,7 @@
       <s:element name="AnulaComanda">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="id_comanda" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_comanda" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -426,6 +426,21 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="SolPagarComandaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnaComandaByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_user" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_producte" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnaComandaByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getUnaComandaByUserIDResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -791,6 +806,12 @@
   <wsdl:message name="SolPagarComandaSoapOut">
     <wsdl:part name="parameters" element="tns:SolPagarComandaResponse" />
   </wsdl:message>
+  <wsdl:message name="getUnaComandaByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnaComandaByUserID" />
+  </wsdl:message>
+  <wsdl:message name="getUnaComandaByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnaComandaByUserIDResponse" />
+  </wsdl:message>
   <wsdl:message name="SolAnulaComandaSoapIn">
     <wsdl:part name="parameters" element="tns:SolAnulaComanda" />
   </wsdl:message>
@@ -967,6 +988,10 @@
     <wsdl:operation name="SolPagarComanda">
       <wsdl:input message="tns:SolPagarComandaSoapIn" />
       <wsdl:output message="tns:SolPagarComandaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnaComandaByUserID">
+      <wsdl:input message="tns:getUnaComandaByUserIDSoapIn" />
+      <wsdl:output message="tns:getUnaComandaByUserIDSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SolAnulaComanda">
       <wsdl:input message="tns:SolAnulaComandaSoapIn" />
@@ -1246,6 +1271,15 @@
     </wsdl:operation>
     <wsdl:operation name="SolPagarComanda">
       <soap:operation soapAction="http://tempuri.org/SolPagarComanda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnaComandaByUserID">
+      <soap:operation soapAction="http://tempuri.org/getUnaComandaByUserID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1591,6 +1625,15 @@
     </wsdl:operation>
     <wsdl:operation name="SolPagarComanda">
       <soap12:operation soapAction="http://tempuri.org/SolPagarComanda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnaComandaByUserID">
+      <soap12:operation soapAction="http://tempuri.org/getUnaComandaByUserID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

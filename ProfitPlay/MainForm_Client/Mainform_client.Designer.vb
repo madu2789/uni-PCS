@@ -25,6 +25,7 @@ Partial Class Mainform_client
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mainform_client))
         Me.lbl_punts = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.btn_veurecarta = New System.Windows.Forms.Button
         Me.btn_Pagar = New System.Windows.Forms.Button
@@ -33,10 +34,9 @@ Partial Class Mainform_client
         Me.pnl_estat = New System.Windows.Forms.Panel
         Me.btn_estat = New System.Windows.Forms.Button
         Me.wb_pantalla_principal = New System.Windows.Forms.WebBrowser
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.pnl_plats.SuspendLayout()
-        Me.pnl_estat.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbl_punts
@@ -61,14 +61,25 @@ Partial Class Mainform_client
         Me.pnl_plats.Controls.Add(Me.btn_jugar)
         Me.pnl_plats.Location = New System.Drawing.Point(-1, -13)
         Me.pnl_plats.Name = "pnl_plats"
-        Me.pnl_plats.Size = New System.Drawing.Size(159, 473)
+        Me.pnl_plats.Size = New System.Drawing.Size(159, 476)
         Me.pnl_plats.TabIndex = 16
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 10)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
         '
         'btn_menu_anular
         '
         Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_menu_anular.Image = Global.MainForm_Client.My.Resources.Resources.carta
-        Me.btn_menu_anular.Location = New System.Drawing.Point(4, 368)
+        Me.btn_menu_anular.Location = New System.Drawing.Point(4, 371)
         Me.btn_menu_anular.Name = "btn_menu_anular"
         Me.btn_menu_anular.Size = New System.Drawing.Size(145, 95)
         Me.btn_menu_anular.TabIndex = 17
@@ -80,7 +91,7 @@ Partial Class Mainform_client
         '
         Me.btn_veurecarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_veurecarta.Image = Global.MainForm_Client.My.Resources.Resources.cubiertos
-        Me.btn_veurecarta.Location = New System.Drawing.Point(4, 66)
+        Me.btn_veurecarta.Location = New System.Drawing.Point(4, 71)
         Me.btn_veurecarta.Name = "btn_veurecarta"
         Me.btn_veurecarta.Size = New System.Drawing.Size(145, 95)
         Me.btn_veurecarta.TabIndex = 11
@@ -92,7 +103,7 @@ Partial Class Mainform_client
         '
         Me.btn_Pagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Pagar.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
-        Me.btn_Pagar.Location = New System.Drawing.Point(4, 267)
+        Me.btn_Pagar.Location = New System.Drawing.Point(4, 272)
         Me.btn_Pagar.Name = "btn_Pagar"
         Me.btn_Pagar.Size = New System.Drawing.Size(145, 95)
         Me.btn_Pagar.TabIndex = 14
@@ -104,7 +115,7 @@ Partial Class Mainform_client
         '
         Me.btn_jugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_jugar.Image = Global.MainForm_Client.My.Resources.Resources.juego
-        Me.btn_jugar.Location = New System.Drawing.Point(4, 167)
+        Me.btn_jugar.Location = New System.Drawing.Point(4, 171)
         Me.btn_jugar.Name = "btn_jugar"
         Me.btn_jugar.Size = New System.Drawing.Size(145, 95)
         Me.btn_jugar.TabIndex = 13
@@ -155,17 +166,6 @@ Partial Class Mainform_client
         Me.wb_pantalla_principal.Url = New System.Uri("", System.UriKind.Relative)
         Me.wb_pantalla_principal.WebBrowserShortcutsEnabled = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 10)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 33
-        Me.PictureBox1.TabStop = False
-        '
         'Mainform_client
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -179,9 +179,9 @@ Partial Class Mainform_client
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mainform_client"
         Me.pnl_plats.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

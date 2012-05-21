@@ -64,7 +64,7 @@
         Return BD.GetComandaByUserId(id)
     End Function
 
-    Public Function AnulaComanda(ByVal id_comanda As String) As Boolean
+    Public Function AnulaComanda(ByVal id_comanda As Integer) As Boolean
         Return BD.DeleteComanda(id_comanda)
     End Function
 
@@ -78,6 +78,10 @@
 
     Public Function DeleteComandaByUserId(ByVal id As Integer) As Integer
         Return BD.DeleteComandaByUserId(id)
+    End Function
+
+    Public Function getUnaComandaByUserId(ByVal user_id As Integer, ByVal id_producte As Integer) As Integer
+        Return BD.getUnaComandaByUserID(user_id, id_producte)
     End Function
 
 End Class
