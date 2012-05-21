@@ -28,8 +28,7 @@
 
     End Sub
 
-    Sub Form1_KeyPress(ByVal sender As Object, _
-   ByVal e As KeyPressEventArgs) Handles Me.KeyPress
+    Sub Form1_KeyPress(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles Me.KeyPress
 
         If (e.KeyChar.ToString() = "#") Then
 
