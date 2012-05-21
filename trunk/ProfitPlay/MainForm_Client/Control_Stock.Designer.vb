@@ -74,6 +74,8 @@ Partial Class Control_Stock
         Me.Controls.Add(Me.lv_plats)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_compra_stock)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Control_Stock"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

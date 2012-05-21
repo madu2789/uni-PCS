@@ -250,6 +250,7 @@ Partial Class Emp_stock
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btn_compres)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -257,6 +258,7 @@ Partial Class Emp_stock
         Me.Controls.Add(Me.btn_segundos)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_plats)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.Name = "Emp_stock"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

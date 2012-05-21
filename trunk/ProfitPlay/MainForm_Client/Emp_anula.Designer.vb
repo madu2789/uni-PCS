@@ -302,9 +302,12 @@ Partial Class Emp_anula
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.grb_anular)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_plats)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Emp_anula"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Emp_anula"

@@ -206,6 +206,7 @@ Partial Class Welcome
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(766, 405)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lbl_bienvenidos)
         Me.Controls.Add(Me.lbl_benvinguts)
         Me.Controls.Add(Me.gpb_client)
@@ -214,6 +215,8 @@ Partial Class Welcome
         Me.Controls.Add(Me.lbl_welcome)
         Me.Controls.Add(Me.pcb_empleat)
         Me.Controls.Add(Me.pcb_client)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Welcome"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Benvinguda"

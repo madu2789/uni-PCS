@@ -273,6 +273,7 @@ Partial Class Emp_Pago
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lbl_taula)
         Me.Controls.Add(Me.cb_taula)
         Me.Controls.Add(Me.lbl_importparcial)
@@ -283,6 +284,8 @@ Partial Class Emp_Pago
         Me.Controls.Add(Me.btn_tc)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Emp_Pago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleado_Pago"

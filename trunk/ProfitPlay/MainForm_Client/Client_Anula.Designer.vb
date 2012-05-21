@@ -31,23 +31,23 @@ Partial Class Client_Anula
         Me.llista_productes_eliminar = New System.Windows.Forms.ToolStrip
         Me.lbl_anular = New System.Windows.Forms.Label
         Me.pnl_plats = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.btn_veurecarta = New System.Windows.Forms.Button
         Me.btn_Pagar = New System.Windows.Forms.Button
         Me.btn_jugar = New System.Windows.Forms.Button
         Me.pnl_estat = New System.Windows.Forms.Panel
+        Me.btn_estat = New System.Windows.Forms.Button
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
-        Me.btn_estat = New System.Windows.Forms.Button
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.grb_anular.SuspendLayout()
         Me.container2.ContentPanel.SuspendLayout()
         Me.container2.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
-        Me.pnl_estat.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
         '
         'grb_anular
@@ -155,6 +155,17 @@ Partial Class Client_Anula
         Me.pnl_plats.Size = New System.Drawing.Size(159, 473)
         Me.pnl_plats.TabIndex = 32
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 18)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 36
+        Me.PictureBox1.TabStop = False
+        '
         'btn_menu_anular
         '
         Me.btn_menu_anular.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -215,6 +226,16 @@ Partial Class Client_Anula
         Me.pnl_estat.Size = New System.Drawing.Size(707, 83)
         Me.pnl_estat.TabIndex = 34
         '
+        'btn_estat
+        '
+        Me.btn_estat.AutoSize = True
+        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
+        Me.btn_estat.Location = New System.Drawing.Point(604, 4)
+        Me.btn_estat.Name = "btn_estat"
+        Me.btn_estat.Size = New System.Drawing.Size(96, 86)
+        Me.btn_estat.TabIndex = 35
+        Me.btn_estat.UseVisualStyleBackColor = True
+        '
         'lbl_taula
         '
         Me.lbl_taula.AutoSize = True
@@ -237,36 +258,18 @@ Partial Class Client_Anula
         Me.lbl_punts.TabIndex = 0
         Me.lbl_punts.Text = "Punts: "
         '
-        'btn_estat
-        '
-        Me.btn_estat.AutoSize = True
-        Me.btn_estat.Image = Global.MainForm_Client.My.Resources.Resources.cuenta
-        Me.btn_estat.Location = New System.Drawing.Point(604, 4)
-        Me.btn_estat.Name = "btn_estat"
-        Me.btn_estat.Size = New System.Drawing.Size(96, 86)
-        Me.btn_estat.TabIndex = 35
-        Me.btn_estat.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 18)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 36
-        Me.PictureBox1.TabStop = False
-        '
         'Client_Anula
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightBlue
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.grb_anular)
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Client_Anula"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Client_Anula"
@@ -281,9 +284,9 @@ Partial Class Client_Anula
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
         Me.pnl_plats.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

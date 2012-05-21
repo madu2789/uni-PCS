@@ -154,7 +154,7 @@ Partial Class info_producte
         Me.ClientSize = New System.Drawing.Size(555, 358)
         Me.Controls.Add(Me.pnl_info_producte)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "info_producte"
