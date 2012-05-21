@@ -625,6 +625,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UpdateEstatById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_comanda" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEstatByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEstatByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetTaulaPreus">
         <s:complexType />
       </s:element>
@@ -878,6 +893,12 @@
   <wsdl:message name="UpdateStockTaulaPreusSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateStockTaulaPreusResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateEstatByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEstatById" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEstatByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEstatByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="GetTaulaPreusSoapIn">
     <wsdl:part name="parameters" element="tns:GetTaulaPreus" />
   </wsdl:message>
@@ -1036,6 +1057,10 @@
     <wsdl:operation name="UpdateStockTaulaPreus">
       <wsdl:input message="tns:UpdateStockTaulaPreusSoapIn" />
       <wsdl:output message="tns:UpdateStockTaulaPreusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEstatById">
+      <wsdl:input message="tns:UpdateEstatByIdSoapIn" />
+      <wsdl:output message="tns:UpdateEstatByIdSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetTaulaPreus">
       <wsdl:input message="tns:GetTaulaPreusSoapIn" />
@@ -1379,6 +1404,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateStockTaulaPreus">
       <soap:operation soapAction="http://tempuri.org/UpdateStockTaulaPreus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEstatById">
+      <soap:operation soapAction="http://tempuri.org/UpdateEstatById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1733,6 +1767,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateStockTaulaPreus">
       <soap12:operation soapAction="http://tempuri.org/UpdateStockTaulaPreus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEstatById">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEstatById" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

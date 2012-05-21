@@ -85,4 +85,9 @@
         Return id
     End Function
 
+    Public Function UpdateStockActualById(ByVal id_comanda As Integer, ByVal estat As String) As Integer
+        Dim id As Integer = BD.UpdateEstatById(id_comanda, estat)
+        Return id
+    End Function
+
 End Class
