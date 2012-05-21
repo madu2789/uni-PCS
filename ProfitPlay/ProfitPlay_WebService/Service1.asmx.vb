@@ -427,22 +427,27 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
- Public Function UpdateInteresById(ByVal interes As String, ByVal id_producte As String) As Boolean
-        Return TaulaPreus.UpdateInteresById(interes, id_producte)
+    Public Function UpdateInteresById(ByVal interes As String, ByVal id_producte As String) As Boolean
+        Return taulapreus.UpdateInteresById(interes, id_producte)
     End Function
 
     <WebMethod()> _
- Public Sub InsertProducteTaulaPreus(ByVal IdProducte As String, ByVal Preu As Double)
-        TaulaPreus.InsertProducteTaulaPreus(IdProducte, Preu)
+    Public Sub InsertProducteTaulaPreus(ByVal IdProducte As String, ByVal Preu As Double)
+        taulapreus.InsertProducteTaulaPreus(IdProducte, Preu)
     End Sub
 
     <WebMethod()> _
-Public Function UpdateStockTaulaPreus(ByVal id_producte As String, ByVal stock As String) As Boolean
+    Public Function UpdateStockTaulaPreus(ByVal id_producte As String, ByVal stock As String) As Boolean
         Return taulapreus.UpdateInteresById(stock, id_producte)
     End Function
 
     <WebMethod()> _
-Public Function GetTaulaPreus() As List(Of TaulaPreusDB)
+    Public Function UpdateEstatById(ByVal id_comanda As String, ByVal estat As String) As Boolean
+        Return comanda.UpdateStockActualById(id_comanda, estat)
+    End Function
+
+    <WebMethod()> _
+    Public Function GetTaulaPreus() As List(Of TaulaPreusDB)
 
         Dim dades As New List(Of TaulaPreusDB)
         Dim info As DataTable = taulapreus.GetTaulaPreus()

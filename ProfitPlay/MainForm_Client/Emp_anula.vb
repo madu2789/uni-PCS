@@ -1,6 +1,8 @@
 ﻿Public Class Emp_anula
 
     Dim ws As New ws_profitplay.Service1SoapClient
+    Dim Msender As System.Object
+    Dim Mee As System.EventArgs
     Dim listofcommands As List(Of Comanda)
 
 
@@ -132,6 +134,8 @@
     End Sub
 
     Private Sub cb_llista_taules_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cb_llista_taules.SelectedIndexChanged
+        Mee = e
+        Msender = sender
         MostraComandes(getIdTaula)
     End Sub
 
@@ -149,11 +153,12 @@
 
             Dim res = MsgBox("Eliminem aquesta comanda?", MsgBoxStyle.OkCancel, "Eliminar Comanda")
             If (res = MsgBoxResult.Ok) Then
-                MsgBox("Id producte " + ws.GetIdProducteByNom(e.ClickedItem.Text).ToString)
+                'MsgBox("Id producte " + ws.GetIdProducteByNom(e.ClickedItem.Text).ToString)
                 Dim id_comanda = ws.getUnaComandaByUserID(getIdTaula(), ws.GetIdProducteByNom(e.ClickedItem.Text))
-                ws.deleteComandaByUserId(id_comanda)
-                llista_productes_eliminar.Items.Remove(e.ClickedItem)
-                'eliminar de la bbdd
+
+                If (ws.deleteComandaByUserId(id_comanda) <> 0) Then
+                    llista_productes_eliminar.Items.Remove(e.ClickedItem)
+                End If
             End If
 
         Else
@@ -162,9 +167,14 @@
 
                 Dim res = MsgBox("Marcar com finalitzat", MsgBoxStyle.OkCancel, "Comanda finalitzada?")
                 If (res = MsgBoxResult.Ok) Then
+
+                    Dim id_comanda = ws.getUnaComandaByUserID(getIdTaula(), ws.GetIdProducteByNom(e.ClickedItem.Text))
+                    ws.UpdateEstatById(id_comanda, "Finalitzada")
                     llista_resta_productes.Items.Add(e.ClickedItem.Text)
                     llista_productes_eliminar.Items.Remove(e.ClickedItem)
-                    'actualitzar bbdd
+                    llista_productes_eliminar.Refresh()
+                    llista_resta_productes.Refresh()
+
                 End If
 
             End If
@@ -173,8 +183,8 @@
 
         CarregaComandes()
         MostraComandes()
-        llista_productes_eliminar.Refresh()
-        llista_resta_productes.Refresh()
+        cb_llista_taules_SelectedIndexChanged(Msender, Mee)
+        
 
     End Sub
 

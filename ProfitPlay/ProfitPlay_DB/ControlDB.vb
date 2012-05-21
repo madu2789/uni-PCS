@@ -406,6 +406,21 @@
         Return ok
     End Function
 
+    Public Function UpdateEstatById(ByVal id_comanda As String, ByVal estat As String) As Boolean
+
+        Dim ok As Boolean = False
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            comandaDA.UpdateEstat(estat, id_comanda)
+            disconnect()
+            ok = True
+        Catch ex As Exception
+            MsgBox("Error sol·licitut per pagar la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
+        End Try
+        Return ok
+    End Function
+
     Public Function GetPreuProducteById(ByVal id_producte As Integer) As Double
 
         Dim preu As Double = 0
