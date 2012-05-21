@@ -341,13 +341,18 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function AnulaComanda(ByVal id_comanda As String) As Boolean
+   Public Function AnulaComanda(ByVal id_comanda As Integer) As Boolean
         Return comanda.AnulaComanda(id_comanda)
     End Function
 
     <WebMethod()> _
   Public Function SolPagarComanda(ByVal id_comanda As String) As Boolean
         Return comanda.SolPagarComanda(id_comanda)
+    End Function
+
+    <WebMethod()> _
+    Public Function getUnaComandaByUserID(ByVal id_user As Integer, ByVal id_producte As Integer) As Integer
+        Return comanda.getUnaComandaByUserId(id_user, id_producte)
     End Function
 
     <WebMethod()> _

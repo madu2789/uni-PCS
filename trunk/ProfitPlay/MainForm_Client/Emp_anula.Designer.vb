@@ -36,6 +36,8 @@ Partial Class Emp_anula
         Me.btn_gest_comandes = New System.Windows.Forms.Button
         Me.btn_gest_carta = New System.Windows.Forms.Button
         Me.grb_anular = New System.Windows.Forms.GroupBox
+        Me.cb_llista_taules = New System.Windows.Forms.ComboBox
+        Me.lbl_instr_anula = New System.Windows.Forms.Label
         Me.container2 = New System.Windows.Forms.ToolStripContainer
         Me.llista_resta_productes = New System.Windows.Forms.ToolStrip
         Me.lbl_productes_no_espera = New System.Windows.Forms.Label
@@ -184,6 +186,8 @@ Partial Class Emp_anula
         '
         'grb_anular
         '
+        Me.grb_anular.Controls.Add(Me.cb_llista_taules)
+        Me.grb_anular.Controls.Add(Me.lbl_instr_anula)
         Me.grb_anular.Controls.Add(Me.container2)
         Me.grb_anular.Controls.Add(Me.lbl_productes_no_espera)
         Me.grb_anular.Controls.Add(Me.ToolStripContainer1)
@@ -195,6 +199,25 @@ Partial Class Emp_anula
         Me.grb_anular.TabStop = False
         Me.grb_anular.Text = "Anular"
         '
+        'cb_llista_taules
+        '
+        Me.cb_llista_taules.FormattingEnabled = True
+        Me.cb_llista_taules.Location = New System.Drawing.Point(10, 246)
+        Me.cb_llista_taules.Name = "cb_llista_taules"
+        Me.cb_llista_taules.Size = New System.Drawing.Size(244, 21)
+        Me.cb_llista_taules.TabIndex = 36
+        '
+        'lbl_instr_anula
+        '
+        Me.lbl_instr_anula.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instr_anula.Location = New System.Drawing.Point(6, 48)
+        Me.lbl_instr_anula.Name = "lbl_instr_anula"
+        Me.lbl_instr_anula.Size = New System.Drawing.Size(248, 192)
+        Me.lbl_instr_anula.TabIndex = 35
+        Me.lbl_instr_anula.Text = "Instruccions:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sel.lecciona el ID de la taula per mostrar les comandes de aques" & _
+            "ta taula." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Fes click sobre un producte en espera per veure les opcions disponi" & _
+            "bles."
+        '
         'container2
         '
         '
@@ -202,7 +225,7 @@ Partial Class Emp_anula
         '
         Me.container2.ContentPanel.Controls.Add(Me.llista_resta_productes)
         Me.container2.ContentPanel.Size = New System.Drawing.Size(170, 305)
-        Me.container2.Location = New System.Drawing.Point(300, 52)
+        Me.container2.Location = New System.Drawing.Point(486, 52)
         Me.container2.Name = "container2"
         Me.container2.Size = New System.Drawing.Size(170, 330)
         Me.container2.TabIndex = 34
@@ -228,7 +251,7 @@ Partial Class Emp_anula
         'lbl_productes_no_espera
         '
         Me.lbl_productes_no_espera.AutoSize = True
-        Me.lbl_productes_no_espera.Location = New System.Drawing.Point(325, 23)
+        Me.lbl_productes_no_espera.Location = New System.Drawing.Point(511, 23)
         Me.lbl_productes_no_espera.Name = "lbl_productes_no_espera"
         Me.lbl_productes_no_espera.Size = New System.Drawing.Size(101, 13)
         Me.lbl_productes_no_espera.TabIndex = 33
@@ -241,7 +264,7 @@ Partial Class Emp_anula
         '
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.llista_productes_eliminar)
         Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(170, 305)
-        Me.ToolStripContainer1.Location = New System.Drawing.Point(54, 52)
+        Me.ToolStripContainer1.Location = New System.Drawing.Point(260, 52)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
         Me.ToolStripContainer1.Size = New System.Drawing.Size(170, 330)
         Me.ToolStripContainer1.TabIndex = 32
@@ -267,7 +290,7 @@ Partial Class Emp_anula
         'lbl_anular
         '
         Me.lbl_anular.AutoSize = True
-        Me.lbl_anular.Location = New System.Drawing.Point(87, 23)
+        Me.lbl_anular.Location = New System.Drawing.Point(293, 23)
         Me.lbl_anular.Name = "lbl_anular"
         Me.lbl_anular.Size = New System.Drawing.Size(108, 13)
         Me.lbl_anular.TabIndex = 1
@@ -321,4 +344,6 @@ Partial Class Emp_anula
     Friend WithEvents ToolStripContainer1 As System.Windows.Forms.ToolStripContainer
     Friend WithEvents llista_productes_eliminar As System.Windows.Forms.ToolStrip
     Friend WithEvents lbl_anular As System.Windows.Forms.Label
+    Friend WithEvents lbl_instr_anula As System.Windows.Forms.Label
+    Friend WithEvents cb_llista_taules As System.Windows.Forms.ComboBox
 End Class

@@ -34,6 +34,13 @@
 
         End Select
 
+        Dim users = ws.GetAllUsers()
+        cb_llista_taules.Items.Clear()
+
+        For Each a In users
+            cb_llista_taules.Items.Add("Taula " + a.Id_usuari.ToString)
+        Next
+
         listofcommands = New List(Of Comanda)
         CarregaComandes()
         MostraComandes()
@@ -61,18 +68,26 @@
 
     End Sub
 
-    Private Sub MostraComandes()
+    Private Sub MostraComandes(Optional ByVal id_usuari As Integer = 0)
+
+        llista_productes_eliminar.Items.Clear()
+        llista_resta_productes.Items.Clear()
 
         For Each p In listofcommands
 
             Dim Nom As String = ws.GetNomProducteById(p.Id_producte)
-            If (p.Estat = "En Espera") Then
 
-                llista_productes_eliminar.Items.Add(Nom)
+            If (p.Id_usuari = id_usuari) Then
 
-            Else
+                If (p.Estat = "Sol·licitat") Then
 
-                llista_resta_productes.Items.Add(Nom)
+                    llista_productes_eliminar.Items.Add(Nom)
+
+                Else
+
+                    llista_resta_productes.Items.Add(Nom)
+
+                End If
 
             End If
 
@@ -100,14 +115,6 @@
         Emp_Pago.Show()
     End Sub
 
-    Private Sub llista_productes_eliminar_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
-        Dim res = MsgBox("Eliminem aquesta comanda?", MsgBoxStyle.OkCancel, "Eliminar Comanda")
-
-        If (res = MsgBoxResult.Ok) Then
-            llista_productes_eliminar.Items.Remove(e.ClickedItem)
-        End If
-    End Sub
-
     Private Sub btn_config_fichero_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_config_fichero.Click
         Me.Hide()
         Emp_interessos.Show()
@@ -121,5 +128,67 @@
     Private Sub btn_estat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
         Me.Hide()
         Emp_Pago.Show()
+    End Sub
+
+    Private Sub cb_llista_taules_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cb_llista_taules.SelectedIndexChanged
+        MostraComandes(getIdTaula)
+    End Sub
+
+    Public Function getIdTaula() As Integer
+
+        If (cb_llista_taules.SelectedItem <> Nothing) Then
+            Return CInt(cb_llista_taules.SelectedItem.ToString.Substring(cb_llista_taules.SelectedItem.ToString.LastIndexOf("a") + 1))
+        End If
+        Return Nothing
+    End Function
+
+    Private Sub llista_productes_eliminar_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
+
+        If (Mainform_empleado.rolempleat = "Cambrer") Then
+
+            Dim res = MsgBox("Eliminem aquesta comanda?", MsgBoxStyle.OkCancel, "Eliminar Comanda")
+            If (res = MsgBoxResult.Ok) Then
+                MsgBox("Id producte " + ws.GetIdProducteByNom(e.ClickedItem.Text).ToString)
+                Dim id_comanda = ws.getUnaComandaByUserID(getIdTaula(), ws.GetIdProducteByNom(e.ClickedItem.Text))
+                ws.deleteComandaByUserId(id_comanda)
+                llista_productes_eliminar.Items.Remove(e.ClickedItem)
+                'eliminar de la bbdd
+            End If
+
+        Else
+
+            If (Mainform_empleado.rolempleat = "Cheff" Or Mainform_empleado.rolempleat = "Barman") Then
+
+                Dim res = MsgBox("Marcar com finalitzat", MsgBoxStyle.OkCancel, "Comanda finalitzada?")
+                If (res = MsgBoxResult.Ok) Then
+                    llista_resta_productes.Items.Add(e.ClickedItem.Text)
+                    llista_productes_eliminar.Items.Remove(e.ClickedItem)
+                    'actualitzar bbdd
+                End If
+
+            End If
+
+        End If
+
+        llista_productes_eliminar.Refresh()
+        llista_resta_productes.Refresh()
+
+    End Sub
+
+    Private Sub llista_resta_productes_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_resta_productes.ItemClicked
+
+        If (Mainform_empleado.rolempleat = "Cambrer") Then
+
+            Dim res = MsgBox("Marcar com entregat?", MsgBoxStyle.OkCancel, "Comanda entregada?")
+            If (res = MsgBoxResult.Ok) Then
+                llista_productes_eliminar.Items.Remove(e.ClickedItem)
+                'actualitzar bbdd
+            End If
+
+        End If
+
+        llista_productes_eliminar.Refresh()
+        llista_resta_productes.Refresh()
+
     End Sub
 End Class

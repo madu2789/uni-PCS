@@ -28,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString2)
             conDB.Open()
 
         Catch ex As Exception
@@ -328,7 +328,7 @@
         Return DS.Comanda
     End Function
 
-    Public Function DeleteComanda(ByVal id_comanda As String) As Boolean
+    Public Function DeleteComanda(ByVal id_comanda As Integer) As Boolean
         Dim ok As Boolean = False
 
         Try
@@ -343,13 +343,31 @@
         Return ok
     End Function
 
+    Public Function getUnaComandaByUserID(ByVal id_user As Integer, ByVal id_producte As Integer) As Boolean
+
+        MsgBox("Id usuari " + id_user.ToString + " id prod " + id_producte.ToString)
+        Dim val As Integer
+
+        Try
+            connect()
+            comandaDA.Connection = conDB
+            val = comandaDA.GetUnaComandaByUser(id_producte, id_user)
+            disconnect()
+        Catch ex As Exception
+            MsgBox("Error borrant la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
+            val = 0
+        End Try
+
+        Return val
+    End Function
+
     Public Function DeleteComandaByUserId(ByVal id As Integer) As Integer
 
         Dim res As Integer = 0
         Try
             connect()
             comandaDA.Connection = conDB
-            res = comandaDA.DeleteComandaByUserId(id)
+            res = comandaDA.DeleteComanda(id)
             disconnect()
         Catch ex As Exception
             MsgBox("Error eliminant totes les comandes", MsgBoxStyle.Critical, "Error Base de Dades")
