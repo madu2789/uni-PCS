@@ -410,6 +410,7 @@ Partial Class Emp_interessos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(884, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.nud_normal)
         Me.Controls.Add(Me.nud_moltcar)
@@ -436,7 +437,10 @@ Partial Class Emp_interessos
         Me.Controls.Add(Me.lbl_subvencionat)
         Me.Controls.Add(Me.lbl_moltbarat)
         Me.Controls.Add(Me.pnl_estat)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Emp_interessos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Emp_interessos"
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()

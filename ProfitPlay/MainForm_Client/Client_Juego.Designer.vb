@@ -27,6 +27,7 @@ Partial Class Client_Juego
         Me.lbl_instr = New System.Windows.Forms.Label
         Me.btn_fica_punts = New System.Windows.Forms.Button
         Me.pnl_plats = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.btn_veurecarta = New System.Windows.Forms.Button
         Me.btn_Pagar = New System.Windows.Forms.Button
@@ -47,11 +48,10 @@ Partial Class Client_Juego
         Me.p3_a = New System.Windows.Forms.CheckBox
         Me.p4_b = New System.Windows.Forms.CheckBox
         Me.p4_a = New System.Windows.Forms.CheckBox
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.pnl_jocs.SuspendLayout()
         Me.pnl_plats.SuspendLayout()
-        Me.pnl_estat.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_jocs
@@ -98,6 +98,17 @@ Partial Class Client_Juego
         Me.pnl_plats.Name = "pnl_plats"
         Me.pnl_plats.Size = New System.Drawing.Size(153, 493)
         Me.pnl_plats.TabIndex = 33
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 20)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
         '
         'btn_menu_anular
         '
@@ -306,23 +317,13 @@ Partial Class Client_Juego
         Me.p4_a.Text = "CheckBox8"
         Me.p4_a.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 20)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
-        '
         'Client_Juego
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleTurquoise
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.p4_b)
         Me.Controls.Add(Me.p4_a)
         Me.Controls.Add(Me.p3_b)
@@ -338,14 +339,16 @@ Partial Class Client_Juego
         Me.Controls.Add(Me.pnl_plats)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.pnl_jocs)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Client_Juego"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Juego"
         Me.pnl_jocs.ResumeLayout(False)
         Me.pnl_plats.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

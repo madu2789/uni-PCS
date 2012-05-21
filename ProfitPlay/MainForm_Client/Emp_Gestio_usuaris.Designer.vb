@@ -381,6 +381,7 @@ Partial Class Emp_Gestio_usuaris
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.grb_insert_modifica)
         Me.Controls.Add(Me.grb_users)
         Me.Controls.Add(Me.pnl_plats)
@@ -389,6 +390,8 @@ Partial Class Emp_Gestio_usuaris
         Me.Controls.Add(Me.btn_add_user)
         Me.Controls.Add(Me.btn_elimina_user)
         Me.Controls.Add(Me.lbl_gestio_usuaris_info)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Emp_Gestio_usuaris"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Emp_Gestio_usuaris"

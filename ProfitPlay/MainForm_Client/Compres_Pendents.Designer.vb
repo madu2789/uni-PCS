@@ -85,6 +85,8 @@ Partial Class Compres_Pendents
         Me.Controls.Add(Me.btn_compres_fet)
         Me.Controls.Add(Me.lv_compres_rebudes)
         Me.Controls.Add(Me.lv_compres_espera)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Compres_Pendents"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Compres_Pendents"

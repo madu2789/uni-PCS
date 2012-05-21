@@ -30,6 +30,7 @@ Partial Class Client_Pago
         Me.lbl_importtotal = New System.Windows.Forms.Label
         Me.lbl_importparcial = New System.Windows.Forms.Label
         Me.pnl_menu = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btn_menu_anular = New System.Windows.Forms.Button
         Me.btn_veurecarta = New System.Windows.Forms.Button
         Me.btn_Pagar = New System.Windows.Forms.Button
@@ -38,10 +39,9 @@ Partial Class Client_Pago
         Me.btn_estat = New System.Windows.Forms.Button
         Me.lbl_taula = New System.Windows.Forms.Label
         Me.lbl_punts = New System.Windows.Forms.Label
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.pnl_menu.SuspendLayout()
-        Me.pnl_estat.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_estat.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_mixt
@@ -127,6 +127,17 @@ Partial Class Client_Pago
         Me.pnl_menu.Name = "pnl_menu"
         Me.pnl_menu.Size = New System.Drawing.Size(159, 473)
         Me.pnl_menu.TabIndex = 29
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 31
+        Me.PictureBox1.TabStop = False
         '
         'btn_menu_anular
         '
@@ -220,23 +231,13 @@ Partial Class Client_Pago
         Me.lbl_punts.TabIndex = 29
         Me.lbl_punts.Text = "Punts: "
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(140, 60)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 31
-        Me.PictureBox1.TabStop = False
-        '
         'Client_Pago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Turquoise
         Me.ClientSize = New System.Drawing.Size(844, 472)
+        Me.ControlBox = False
         Me.Controls.Add(Me.pnl_menu)
         Me.Controls.Add(Me.pnl_estat)
         Me.Controls.Add(Me.lbl_importparcial)
@@ -245,13 +246,15 @@ Partial Class Client_Pago
         Me.Controls.Add(Me.btn_mixt)
         Me.Controls.Add(Me.btn_efectiu)
         Me.Controls.Add(Me.btn_tc)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
         Me.Name = "Client_Pago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pago"
         Me.pnl_menu.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_estat.ResumeLayout(False)
         Me.pnl_estat.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
