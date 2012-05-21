@@ -352,7 +352,8 @@ Public Class Service1
 
     <WebMethod()> _
     Public Function getUnaComandaByUserID(ByVal id_user As Integer, ByVal id_producte As Integer) As Integer
-        Return comanda.getUnaComandaByUserId(id_user, id_producte)
+        Dim id As Integer = comanda.getUnaComandaByUserId(id_user, id_producte)
+        Return id
     End Function
 
     <WebMethod()> _
@@ -362,7 +363,7 @@ Public Class Service1
 
     <WebMethod()> _
     Public Function deleteComandaByUserId(ByVal id As Integer) As Integer
-        Return comanda.DeleteComandaByUserId(id)
+        Return comanda.AnulaComanda(id)
     End Function
 
     <WebMethod()> _

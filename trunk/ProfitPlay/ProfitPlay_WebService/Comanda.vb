@@ -81,7 +81,8 @@
     End Function
 
     Public Function getUnaComandaByUserId(ByVal user_id As Integer, ByVal id_producte As Integer) As Integer
-        Return BD.getUnaComandaByUserID(user_id, id_producte)
+        Dim id As Integer = BD.getUnaComandaByUserID(user_id, id_producte)
+        Return id
     End Function
 
 End Class
