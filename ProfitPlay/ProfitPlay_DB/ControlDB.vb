@@ -28,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString2)
+            conDB = New OleDb.OleDbConnection(conString)
             conDB.Open()
 
         Catch ex As Exception
@@ -343,19 +343,18 @@
         Return ok
     End Function
 
-    Public Function getUnaComandaByUserID(ByVal id_user As Integer, ByVal id_producte As Integer) As Boolean
+    Public Function getUnaComandaByUserID(ByVal id_user As Integer, ByVal id_producte As Integer) As Integer
 
-        MsgBox("Id usuari " + id_user.ToString + " id prod " + id_producte.ToString)
+        'MsgBox("Id usuari " + id_user.ToString + " id prod " + id_producte.ToString)
         Dim val As Integer
 
         Try
             connect()
             comandaDA.Connection = conDB
-            val = comandaDA.GetUnaComandaByUser(id_producte, id_user)
+            val = comandaDA.GetUnaComandaByIdUser(id_producte, id_user)
             disconnect()
         Catch ex As Exception
             MsgBox("Error borrant la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
-            val = 0
         End Try
 
         Return val
