@@ -149,7 +149,7 @@
 
     Private Sub llista_productes_eliminar_ItemClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
 
-        If (Mainform_empleado.rolempleat = "Cambrer") Then
+        If (Mainform_empleado.rolempleat = "Cambrer" Or Mainform_empleado.rolempleat = "debug") Then
 
             Dim res = MsgBox("Eliminem aquesta comanda?", MsgBoxStyle.OkCancel, "Eliminar Comanda")
             If (res = MsgBoxResult.Ok) Then
@@ -163,7 +163,7 @@
 
         Else
 
-            If (Mainform_empleado.rolempleat = "Cheff" Or Mainform_empleado.rolempleat = "Barman") Then
+            If (Mainform_empleado.rolempleat = "Cheff" Or Mainform_empleado.rolempleat = "Barman" Or Mainform_empleado.rolempleat = "debug") Then
 
                 Dim res = MsgBox("Marcar com finalitzat", MsgBoxStyle.OkCancel, "Comanda finalitzada?")
                 If (res = MsgBoxResult.Ok) Then
