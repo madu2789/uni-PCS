@@ -4638,7 +4638,8 @@ Namespace profit_playDataSetTableAdapters
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT        MAX(Id_comanda) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Comanda"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id"& _ 
-                "_producte = ?) AND (Id_usuari = ?)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Id_comanda"
+                "_producte = ?) AND (Id_usuari = ?) AND (Estat = 'Sol·licitat')"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Id_coma"& _ 
+                "nda"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id_producte", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_producte", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Id_usuari", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Id_usuari", Global.System.Data.DataRowVersion.Current, false, Nothing))
