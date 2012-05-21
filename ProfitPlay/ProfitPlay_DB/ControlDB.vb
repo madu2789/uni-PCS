@@ -28,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString1)
+            conDB = New OleDb.OleDbConnection(conString)
             conDB.Open()
 
         Catch ex As Exception
