@@ -6,6 +6,9 @@
 
     Private Sub Client_Pago_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        'intent dimitar al david amb
+        Me.KeyPreview = True
+
         lbl_taula.Text = Mainform_client.nom_taula
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
@@ -22,6 +25,24 @@
         preuParcial = preuTotal / numComensals
         lbl_importparcial.Text = lbl_importparcial.Text + preuParcial.ToString
 
+
+    End Sub
+
+    Sub Form1_KeyPress(ByVal sender As Object, _
+   ByVal e As KeyPressEventArgs) Handles Me.KeyPress
+
+        If (e.KeyChar.ToString() = "#") Then
+
+            'elimina usuari actual
+            ws.deleteUser(Id_usuari)
+
+            Welcome.Show()
+            Welcome.txtb_nomTaula.Text = ""
+            Me.Close()
+
+            e.Handled = True
+
+        End If
 
     End Sub
 

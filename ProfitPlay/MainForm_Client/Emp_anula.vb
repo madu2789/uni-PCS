@@ -169,7 +169,7 @@
             End If
 
         End If
-
+        MostraComandes()
         llista_productes_eliminar.Refresh()
         llista_resta_productes.Refresh()
 
