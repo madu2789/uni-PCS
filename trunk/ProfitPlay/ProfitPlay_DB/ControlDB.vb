@@ -28,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString2)
+            conDB = New OleDb.OleDbConnection(conString)
             conDB.Open()
 
         Catch ex As Exception
@@ -215,14 +215,14 @@
 
     End Function
 
-    Public Function deleteEmpleat(ByVal id As Integer, ByVal username As String) As Integer
+    Public Function deleteEmpleat(ByVal username As String) As Integer
 
         Dim modif As Integer = 0
 
         Try
             connect()
             empleatDA.Connection = conDB
-            modif = empleatDA.DeleteEmpleat(id, username)
+            modif = empleatDA.DeleteEmpleat(username)
             disconnect()
         Catch ex As Exception
 
@@ -618,18 +618,19 @@
         Return ok
     End Function
 
-    Public Function SetIngredient(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String) As Boolean
+    Public Function SetIngredient(ByVal nom As String, ByVal preu As Integer, ByVal quantitat As Integer, ByVal stock As Integer, ByVal stockminim As Integer) As Boolean
 
         Dim ok As Boolean = False
 
         Try
             connect()
             ingredientDA.Connection = conDB
-            ingredientDA.InsertIngredient(nom, preu, quantitat, stock, stockminim)
+            ingredientDA.InsertIngredient(nom, CInt(preu), CInt(quantitat), CInt(stock), CInt(stockminim))
             disconnect()
             ok = True
         Catch ex As Exception
-            MsgBox("Error en guardar la comanda", MsgBoxStyle.Critical, "Error Base de Dades")
+            ' MsgBox(ex.Message, MsgBoxStyle.Critical)
+            ' MsgBox("Error en guardar el ingredient", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return ok

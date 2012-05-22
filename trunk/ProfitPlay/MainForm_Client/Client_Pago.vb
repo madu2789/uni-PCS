@@ -21,9 +21,9 @@
             preuTotal = preuTotal - (preuTotal * GDescompte / 100)
         End If
 
-        lbl_importtotal.Text = lbl_importtotal.Text + preuTotal.ToString
+        lbl_importtotal.Text = lbl_importtotal.Text + " " + preuTotal.ToString
         preuParcial = preuTotal / numComensals
-        lbl_importparcial.Text = lbl_importparcial.Text + preuParcial.ToString
+        lbl_importparcial.Text = lbl_importparcial.Text + " " + preuParcial.ToString
 
 
     End Sub
