@@ -47,8 +47,8 @@ Public Class Empleat
         Return BD.GetEmpleats
     End Function
 
-    Public Function deleteEmpleat(ByVal id As String, ByVal username As String) As Integer
-        Return BD.deleteEmpleat(id, username)
+    Public Function deleteEmpleat(ByVal username As String) As Integer
+        Return BD.deleteEmpleat(username)
     End Function
 
     Public Function SetEmpleat(ByVal nom As String, ByVal cognom As String, ByVal username As String, ByVal password As String, ByVal rol As String) As Boolean

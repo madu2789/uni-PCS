@@ -121,7 +121,12 @@ Public Class Emp_Gestio_usuaris
 
         For i As Integer = 0 To lv_users.Items.Count - 1 Step 1
             If lv_users.Items(i).Selected = True Then
-                eliminar.Add(i)
+                Dim res = MsgBox("Realment vols eliminar a: " + lv_users.Items(i).Text + " ?", MsgBoxStyle.YesNo, "Eliminar empleat")
+                If res = MsgBoxResult.Yes Then
+                    eliminar.Add(i)
+                    ws.deleteEmpleat(lv_users.Items(i).Text)
+                End If
+                
             End If
         Next
 
@@ -155,6 +160,7 @@ Public Class Emp_Gestio_usuaris
                         txtb_password.Text = emp.password
                         cmbx_rol.SelectedItem = emp.rol
                         moded = True
+                        ws.deleteEmpleat(emp.username)
                     End If
                 Next
             End If
@@ -162,6 +168,9 @@ Public Class Emp_Gestio_usuaris
             i = i + 1
 
         End While
+        lv_users.Items.Clear()
+        ObteEmpleats()
+
     End Sub
 
     Private Sub btn_add_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_add_user.Click

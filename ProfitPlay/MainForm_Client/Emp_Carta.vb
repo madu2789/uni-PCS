@@ -250,7 +250,7 @@
         txtb_stockMin.Show()
         lbl_tipus.Hide()
         cmbx_tipus.Hide()
-        lbl_descripció.Text = "Preu"
+        lbl_descripció.Text = "Quantitat"
 
 
         grb_insert.Hide()
@@ -308,8 +308,9 @@
             If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or txtb_stock.Text = "" Or txtb_stockMin.Text = "") Then
                 MsgBox("Camps incomplerts!", MsgBoxStyle.Critical, "ERROR")
             Else
-                ws.InsertIngredient(txtb_nom.Text, txtb_descripcio.Text, txtb_preu.Text, txtb_stock.Text, txtb_stockMin.Text)
-                MsgBox("Producte inserit correctament!", MsgBoxStyle.Information, "CORRECTE")
+                If (ws.InsertIngredient(txtb_nom.Text, CInt(txtb_descripcio.Text), CInt(txtb_preu.Text), CInt(txtb_stock.Text), CInt(txtb_stockMin.Text)) = True) Then
+                    MsgBox("Producte inserit correctament!", MsgBoxStyle.Information, "CORRECTE")
+                End If
                 grb_insert.Hide()
             End If
         End If

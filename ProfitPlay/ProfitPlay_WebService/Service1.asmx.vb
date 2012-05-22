@@ -87,8 +87,8 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-    Public Function deleteEmpleat(ByVal id As Integer, ByVal username As String) As Integer
-        Return empleat.deleteEmpleat(id, username)
+    Public Function deleteEmpleat(ByVal username As String) As Integer
+        Return empleat.deleteEmpleat(username)
     End Function
 
     <WebMethod()> _
@@ -402,7 +402,7 @@ Public Class Service1
     End Function
 
     <WebMethod()> _
-   Public Function InsertIngredient(ByVal nom As String, ByVal preu As String, ByVal quantitat As String, ByVal stock As String, ByVal stockminim As String) As Boolean
+   Public Function InsertIngredient(ByVal nom As String, ByVal preu As Integer, ByVal quantitat As Integer, ByVal stock As Integer, ByVal stockminim As Integer) As Boolean
         Return ingredient.SetIngredient(nom, preu, quantitat, stock, stockminim)
     End Function
 
