@@ -194,9 +194,9 @@
 
             Dim res = MsgBox("Marcar com entregat?", MsgBoxStyle.OkCancel, "Comanda entregada?")
             If (res = MsgBoxResult.Ok) Then
-                llista_productes_eliminar.Items.Remove(e.ClickedItem)
                 Dim id_comanda = ws.getUnaComandaByUserID(getIdTaula(), ws.GetIdProducteByNom(e.ClickedItem.Text))
                 ws.UpdateEstatById(id_comanda, "Entregada")
+                e.ClickedItem.Text = e.ClickedItem.Text + " - E"
             End If
 
         End If

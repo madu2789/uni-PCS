@@ -148,7 +148,6 @@ Public Class Emp_Gestio_usuaris
 
                 For Each emp In empleats
 
-                    MsgBox("Empleat " + emp.username + " seleccionat " + lv_users.Items(i).Text)
                     If emp.username = lv_users.Items(i).Text Then
                         txtb_nom.Text = emp.nom
                         txtb_cognom.Text = emp.cognom

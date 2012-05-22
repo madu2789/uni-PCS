@@ -9,7 +9,7 @@
         'intent dimitar al david amb
         Me.KeyPreview = True
 
-        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_taula.Text = Mainform_client.nom_taula + ": " + Id_usuari.ToString
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
         'més endavant dividirem el preu entre els clients de la taula <- Welcome

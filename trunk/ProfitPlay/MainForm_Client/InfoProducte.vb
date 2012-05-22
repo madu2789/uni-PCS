@@ -27,4 +27,7 @@ Public Class info_producte
         Return nud_cantitat.Value
     End Function
 
+    Private Sub pnl_info_producte_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles pnl_info_producte.Paint
+
+    End Sub
 End Class

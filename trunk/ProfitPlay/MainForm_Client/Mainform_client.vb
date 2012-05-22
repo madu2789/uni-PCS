@@ -5,7 +5,7 @@
 
     Public Sub New(ByVal nom As String, ByVal punts As String)
         InitializeComponent()
-        lbl_taula.Text = nom
+        lbl_taula.Text = nom + ": " + Id_usuari.ToString
         lbl_punts.Text = lbl_punts.Text + punts
         nom_taula = nom
         punts_taula = punts
@@ -49,4 +49,7 @@
     End Function
 
 
+    Private Sub lbl_taula_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbl_taula.Click
+
+    End Sub
 End Class
