@@ -280,7 +280,7 @@ Partial Class Client_Carta
         'lv_pedidos
         '
         Me.lv_pedidos.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
-        Me.lv_pedidos.Location = New System.Drawing.Point(239, 69)
+        Me.lv_pedidos.Location = New System.Drawing.Point(252, 67)
         Me.lv_pedidos.Name = "lv_pedidos"
         Me.lv_pedidos.Size = New System.Drawing.Size(147, 226)
         Me.lv_pedidos.TabIndex = 19

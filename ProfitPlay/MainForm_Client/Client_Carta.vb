@@ -7,7 +7,7 @@
 
     Private Sub Client_Carta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_taula.Text = Mainform_client.nom_taula + ": " + Id_usuari.ToString
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
         initStructure()
         btn_bebidas.PerformClick()
@@ -184,12 +184,14 @@
     End Sub
 
     Private Sub resetForm()
+
         lv_pedidos.Clear()
-        grb_pedido.Show()
+        grb_pedido.Refresh()
         productes.Clear()
 
-        productes = New List(Of Producto)
-        m_comanda = New Comanda
+        initStructure()
+        btn_bebidas.PerformClick()
+
     End Sub
 
     Public Sub refreshComanda()
@@ -233,7 +235,7 @@
                             ws.UpdateStockActualById(p.id_ingredient, p.quantitat)
                             ws.UpdateStockTaulaPreus(p.id_ingredient, p.quantitat)
                         Else
-                            MsgBox("No tenim disponible " + ws.GetNomProducteById(idProducte))
+                            MsgBox("No tenim disponible " + ws.GetNomProducteById(idProducte), MsgBoxStyle.Critical)
                             errors.Add(s)
                             Exit For
                         End If
@@ -255,7 +257,6 @@
 
                     If (errors.Contains(s) = False And ws.GetIdProducteByNom(lv_pedidos.Items(s).Text) = idProducte1) Then
                         ws.SetComanda(Id_usuari, idProducte1, estat1, notes1, hora1)
-                        MsgBox("Demanem " + lv_pedidos.Items(s).Text)
                     End If
 
                 Next
@@ -353,6 +354,8 @@
                 Else
                     dialog.lbl_descripcio.Text = "Descripcció no disponible "
                 End If
+
+                dialog.lbl_preu.Text = p.preu.ToString + "€"
 
             End If
 

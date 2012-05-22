@@ -6,7 +6,7 @@
 
     Private Sub Client_Juego_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_taula.Text = Mainform_client.nom_taula + ": " + Id_usuari.ToString
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
         Dim questions = ws.getAllQuestions
@@ -93,7 +93,10 @@
         If (lbl_punts.Text = "Punts:") Then
             lbl_punts.Text = "Punts " + punts.ToString
             punts = GPunts
+        Else
+            MsgBox("No has aconseguit cap descompte", MsgBoxStyle.Critical, "Llàstima...")
         End If
+
 
         btn_fica_punts.Visible = False
 

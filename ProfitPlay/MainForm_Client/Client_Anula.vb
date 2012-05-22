@@ -51,7 +51,7 @@
 
     Private Sub Client_Anula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        lbl_taula.Text = Mainform_client.nom_taula
+        lbl_taula.Text = Mainform_client.nom_taula + ": " + Id_usuari.ToString
         lbl_punts.Text = lbl_punts.Text + Mainform_client.punts_taula
 
         m_comanda = Client_Carta.getComanda()
@@ -105,7 +105,7 @@
 
     Private Sub DeleteItem(ByVal sender As Object, ByVal e As System.Windows.Forms.ToolStripItemClickedEventArgs) Handles llista_productes_eliminar.ItemClicked
 
-        Dim result = MsgBox("Realment vol eliminar " & e.ClickedItem.Text & "?", MsgBoxStyle.OkCancel, "Està segur?")
+        Dim result = MsgBox("Realment vol SOLICITAR ANULAR " & e.ClickedItem.Text & "?", MsgBoxStyle.OkCancel, "Està segur?")
 
         If result = MsgBoxResult.Ok Then
 
@@ -115,7 +115,8 @@
 
                     regenerateStock(ws.GetIdProducteByNom(llista_productes_eliminar.Items(i).Text))
                     ws.SolAnulaComanda(ws.GetIdProducteByNom(llista_productes_eliminar.Items(i).Text), Id_usuari)
-                    llista_productes_eliminar.Items.RemoveAt(i)
+                    llista_productes_eliminar.Items(i).Text = llista_productes_eliminar.Items(i).Text + " - A"
+                    'llista_productes_eliminar.Items.RemoveAt(i)
 
                     Exit For
 
@@ -174,5 +175,14 @@
     Private Sub btn_estat_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_estat.Click
         Client_Pago.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btn_menu_anular_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_menu_anular.Click
+
+        Me.Close()
+        Me.Dispose()
+        Dim a = New Client_Anula
+        a.Show()
+
     End Sub
 End Class

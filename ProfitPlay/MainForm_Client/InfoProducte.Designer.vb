@@ -33,6 +33,8 @@ Partial Class info_producte
         Me.lbl_ingredients = New System.Windows.Forms.Label
         Me.lbl_descripcio = New System.Windows.Forms.Label
         Me.lbl_titol_producte = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.lbl_preu = New System.Windows.Forms.Label
         Me.TableLayoutPanel1.SuspendLayout()
         Me.pnl_info_producte.SuspendLayout()
         CType(Me.pcb_producte, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +77,8 @@ Partial Class info_producte
         '
         'pnl_info_producte
         '
+        Me.pnl_info_producte.Controls.Add(Me.lbl_preu)
+        Me.pnl_info_producte.Controls.Add(Me.Label1)
         Me.pnl_info_producte.Controls.Add(Me.pcb_producte)
         Me.pnl_info_producte.Controls.Add(Me.nud_cantitat)
         Me.pnl_info_producte.Controls.Add(Me.lbl_cantitat)
@@ -98,7 +102,7 @@ Partial Class info_producte
         '
         'nud_cantitat
         '
-        Me.nud_cantitat.Location = New System.Drawing.Point(123, 156)
+        Me.nud_cantitat.Location = New System.Drawing.Point(120, 204)
         Me.nud_cantitat.Name = "nud_cantitat"
         Me.nud_cantitat.Size = New System.Drawing.Size(36, 20)
         Me.nud_cantitat.TabIndex = 13
@@ -108,7 +112,7 @@ Partial Class info_producte
         '
         Me.lbl_cantitat.AutoSize = True
         Me.lbl_cantitat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_cantitat.Location = New System.Drawing.Point(26, 156)
+        Me.lbl_cantitat.Location = New System.Drawing.Point(26, 204)
         Me.lbl_cantitat.Name = "lbl_cantitat"
         Me.lbl_cantitat.Size = New System.Drawing.Size(63, 16)
         Me.lbl_cantitat.TabIndex = 10
@@ -118,7 +122,7 @@ Partial Class info_producte
         '
         Me.lbl_ingredients.AutoSize = True
         Me.lbl_ingredients.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ingredients.Location = New System.Drawing.Point(26, 107)
+        Me.lbl_ingredients.Location = New System.Drawing.Point(26, 151)
         Me.lbl_ingredients.Name = "lbl_ingredients"
         Me.lbl_ingredients.Size = New System.Drawing.Size(80, 16)
         Me.lbl_ingredients.TabIndex = 9
@@ -143,6 +147,24 @@ Partial Class info_producte
         Me.lbl_titol_producte.Size = New System.Drawing.Size(187, 20)
         Me.lbl_titol_producte.TabIndex = 7
         Me.lbl_titol_producte.Text = "Macarrons amb formatge"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(26, 103)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 16)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Preu:"
+        '
+        'lbl_preu
+        '
+        Me.lbl_preu.AutoSize = True
+        Me.lbl_preu.Location = New System.Drawing.Point(71, 105)
+        Me.lbl_preu.Name = "lbl_preu"
+        Me.lbl_preu.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_preu.TabIndex = 16
         '
         'info_producte
         '
@@ -180,5 +202,7 @@ Partial Class info_producte
     Friend WithEvents lbl_ingredients As System.Windows.Forms.Label
     Friend WithEvents lbl_descripcio As System.Windows.Forms.Label
     Friend WithEvents lbl_titol_producte As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lbl_preu As System.Windows.Forms.Label
 
 End Class
