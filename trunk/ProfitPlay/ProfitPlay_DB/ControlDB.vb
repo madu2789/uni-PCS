@@ -28,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString)
+            conDB = New OleDb.OleDbConnection(conString1)
             conDB.Open()
 
         Catch ex As Exception
@@ -625,12 +625,12 @@
         Try
             connect()
             ingredientDA.Connection = conDB
-            ingredientDA.InsertIngredient(nom, CInt(preu), CInt(quantitat), CInt(stock), CInt(stockminim))
+            ingredientDA.InsertIngredient(stock, nom, preu, quantitat, stockminim)
             disconnect()
             ok = True
         Catch ex As Exception
-            ' MsgBox(ex.Message, MsgBoxStyle.Critical)
-            ' MsgBox("Error en guardar el ingredient", MsgBoxStyle.Critical, "Error Base de Dades")
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error en guardar el ingredient", MsgBoxStyle.Critical, "Error Base de Dades")
         End Try
 
         Return ok

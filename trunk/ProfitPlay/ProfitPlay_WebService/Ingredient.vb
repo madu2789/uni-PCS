@@ -16,7 +16,7 @@
         StockMinim = 0
     End Sub
 
-    Public Sub setQuantitat(ByVal s As String)
+    Public Sub setQuantitat(ByVal s As Integer)
         Quantitat = s
     End Sub
 
@@ -28,11 +28,11 @@
         preu = s
     End Sub
 
-    Public Sub setStockMinim(ByVal s As Double)
+    Public Sub setStockMinim(ByVal s As Integer)
         StockMinim = s
     End Sub
 
-    Public Function getStockMinim() As Double
+    Public Function getStockMinim() As Integer
         Return StockMinim
     End Function
 
@@ -44,7 +44,7 @@
         Return preu
     End Function
 
-    Public Function getQuantitat() As String
+    Public Function getQuantitat() As Integer
         Return Quantitat
     End Function
 
@@ -77,7 +77,7 @@
         Return BD.GetNomIngredientById(id)
     End Function
 
-    Public Function SetIngredient(ByVal nom As String, ByVal preu As Integer, ByVal quantitat As Integer, ByVal stock As Integer, ByVal stockminim As Integer) As Boolean
+    Public Function SetIngredient(ByVal nom As String, ByVal preu As Double, ByVal quantitat As Integer, ByVal stock As Integer, ByVal stockminim As Integer) As Boolean
         Return BD.SetIngredient(nom, preu, quantitat, stock, stockminim)
     End Function
 

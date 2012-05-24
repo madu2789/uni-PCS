@@ -308,12 +308,14 @@
             If (txtb_nom.Text = "" Or txtb_descripcio.Text = "" Or txtb_preu.Text = "" Or txtb_stock.Text = "" Or txtb_stockMin.Text = "") Then
                 MsgBox("Camps incomplerts!", MsgBoxStyle.Critical, "ERROR")
             Else
-                If (ws.InsertIngredient(txtb_nom.Text, CInt(txtb_descripcio.Text), CInt(txtb_preu.Text), CInt(txtb_stock.Text), CInt(txtb_stockMin.Text)) = True) Then
+                Dim errora = ws.InsertIngredient(txtb_nom.Text, CInt(txtb_descripcio.Text), CInt(txtb_preu.Text), CInt(txtb_stock.Text), CInt(txtb_stockMin.Text))
+                If (Not errora = True) Then
                     MsgBox("Producte inserit correctament!", MsgBoxStyle.Information, "CORRECTE")
                 End If
                 grb_insert.Hide()
             End If
         End If
+
         emp_lv_productos_seleccionats.Clear()
 
     End Sub
