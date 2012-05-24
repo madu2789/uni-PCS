@@ -28,7 +28,7 @@
     Public Sub connect()
         Try
 
-            conDB = New OleDb.OleDbConnection(conString1)
+            conDB = New OleDb.OleDbConnection(conString2)
             conDB.Open()
 
         Catch ex As Exception
@@ -625,7 +625,7 @@
         Try
             connect()
             ingredientDA.Connection = conDB
-            ingredientDA.InsertIngredient(stock, nom, preu, quantitat, stockminim)
+            ingredientDA.InsertIngredient(nom, preu, quantitat, stockminim, stock)
             disconnect()
             ok = True
         Catch ex As Exception
